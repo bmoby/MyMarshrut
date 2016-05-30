@@ -1,0 +1,56 @@
+<div class='container text-center'>
+	<div class='row vxodline'>
+<h2><i class='glyphicon glyphicon-cog'></i> Настройки профиля </h2>
+	</div>
+</br></br></br>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, class:'inputter', placeholder:'E-mail' %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Пожалуйста подтвердите  <%= resource.unconfirmed_email %></div>
+  <% end %>
+  
+  <div class='field'>
+	  <%= f.text_field :nom, class:'inputter', placeholder:'Фамилия '%>
+  </div>
+  
+  <div class='field'>
+	  <%= f.text_field :prenom, class:'inputter', placeholder: 'Имя'%>
+  </div>
+  
+  <div class='field'>
+	  <%= f.text_field :telephone_personnel, class:'inputter', placeholder:'Ваш телефон'%>
+  </div>
+
+   <div class='field'>
+  	 <%= f.date_field :date_naissance, class:'inputter', placeholder:'Дата рождения (день/месяц/год)'%>
+   </div>
+	
+  <div class="field">
+    <i>(Если не меняете пароль, оставьте клетки пустыми)</i><br/>
+    <%= f.password_field :password, autocomplete: "off", class:'inputter', placeholder:'Новый пароль' %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "off", class:'inputter', placeholder:'Повторить ввод нового пароля' %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :current_password, autocomplete: "off", class:'inputter', placeholder:'Старый пароль' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Изменить", class:'btn btn-info' %>
+  </div>
+<% end %>
+</br>
+<%= link_to "Удалить свой профиль", registration_path(resource_name), data: { confirm: "Вы уверены?" }, method: :delete %></br>
+<%= link_to "Вернуться назад", :back %>
+</br>
+</div>
+</br></br>

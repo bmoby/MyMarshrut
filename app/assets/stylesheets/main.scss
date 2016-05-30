@@ -1,0 +1,624 @@
+// DESIGN BODY LAYOUT --------->
+
+body{
+	background-color:#F2F2F2;
+	font-family: 'Comfort', sans-serif;
+}
+
+a:focus { outline: 0; }
+textarea:focus, input:focus{
+    outline: none;
+}
+
+// LOGIN DESIGN 
+
+.vxodline{
+	border-bottom:solid 1px gray;
+}
+
+
+// CREATE ANNONCE DESIGN 
+
+.podrobnosti{
+	padding-left:15px;
+	padding-right:15px;
+	word-wrap: break-word;
+	width:100%;
+	height:150px;
+}
+
+.listerreurs li{
+	list-style-type:none;
+}
+
+.listerreurs li p {
+	color:red;
+}
+
+.perevozka{
+	display:none;
+}
+
+.intercalere{
+	border-top:solid 1px #B8B89F;
+}
+
+//NAVBAR GENERAL DESIGN
+
+.dropdown-toggle{
+	margin:0;
+	padding:0;
+	font-size:25px;
+}
+
+.menudroite:hover{
+	color:white;
+}
+
+
+.menudroite{
+	list-style-type:none;
+	text-decoration:none;
+	margin-top:15px;
+}
+
+.navbar-right a{
+	text-decoration:none;
+	color:#B8B89F;
+}
+
+.navbar-right a:hover{
+	text-decoration:none;
+	color:white;
+}
+
+.navbar{
+	background-color:#2F3738;
+	width:100%;
+	height:70px;
+	margin:0;
+	padding:0;
+	border:none;
+}
+
+.navbar-brand{
+	margin-top:10px;
+	font-size:15px;
+	color:#B8B89F;
+}
+
+.navbar-brand:hover{
+	color:white;
+}
+
+.notifCount{
+	position: relative;
+	text-align:center;
+	text-decoration:none;
+	font-size:10px;
+	width:15px;
+	height:15px;
+	background: red;
+	border-radius: 50%;
+	color: #f2f2f2;
+	right: -15px;
+	top: -15px;
+}
+
+// DESIGN ANNONCE DISPLAY ALL --------->
+
+.annonce{
+	background-color:white;
+	margin-bottom:10px;
+	margin-top:10px;
+	padding-left:0;
+	padding-right:0;
+	border-bottom: solid 1px #B8B89F;
+	border-radius: 5px;
+}
+
+
+.lienslog{
+	list-style-type:none;
+	margin-top:15px;
+	color:#B8B89F;
+}
+
+.lienslog a{
+	color:white;
+}
+
+.photo img{
+	border-radius: 5px;
+	border: solid 1px #B8B89F;
+}
+
+.prixcontact{
+	border-left:solid 1px #C3C4BC;
+}
+
+.prix h3{
+	color:#67AA36;
+	font-family: sans-serif;
+}
+
+.prix .fa{
+	color:#67AA36;
+}
+
+
+.datedirection h4{
+	font-size:25px;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.datedirection p{
+	font-size:25px;
+	font-family: 'Crimson Text', serif;
+}
+
+.datedirection{
+	border-bottom:solid 1px #C3C4BC;
+}
+
+// DESIGN ANNONCE DISPLAY INDIVIDUAL --------->
+
+
+.tabulation{
+	margin-right:15px;
+}
+
+.enteteannonce{
+	background-color:#34393E;
+	margin-top:15px;
+	border-radius:5px;
+	border-top:solid 1px gray;
+}
+
+.enteteannonce h4{
+	font-family: 'Exo 2', sans-serif;
+	color:#D1B882;
+}
+
+p{
+	color:gray;
+}
+.contact{
+	display:none;
+}
+
+.menuhaut{
+	list-style:none;
+}
+
+.menuhaut li{
+	display:inline;
+	margin-left:20px;
+}
+
+.menuhaut li a {
+	color:#5BC0DE;
+}
+.menuhaut li a:active {
+    color:#B8B89F;
+}
+
+.menurow{
+	border-bottom:solid 1px gray;
+}
+
+.descriptionannonce{
+	word-wrap: break-word;
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:5px;
+	padding-bottom:5px;
+	width:100%;
+	height:auto;
+}
+
+.cenazaproezd{
+	word-wrap: break-word;
+	color:#5FBA7D;
+}
+
+.conseil{
+	word-wrap: break-word;
+	border-bottom:solid 1px #B8B89F;
+	margin-bottom:15px;
+}
+
+.telephonesChauffeurs p{
+	color:gray;
+}
+
+h4{
+	color:#B8B89F;
+}
+
+
+.conseil h3{
+	color:#B8B89F;
+}
+
+.conseil p{
+	color:gray;
+}
+input, textarea{
+	word-wrap: break-word;
+       -webkit-border-radius: 30px; 
+       -moz-border-radius: 30px; 
+       border-radius: 30px; 
+
+}
+
+.inputter {
+    background-position: 5px -7px !important;
+    padding: 10px 10px 10px 25px;
+    width: 270px;
+	height:40px;
+    border: 1px solid #CCC;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+    -webkit-box-shadow: 0 1px 1px #CCC inset, 0 1px 0 #FFF;
+    box-shadow: 0 1px 1px #CCC inset, 0 1px 0 #FFF;
+	margin-bottom:10px;
+}
+
+.inputter:focus {
+    background-color: #FFF;
+    border-color: #E8C291;
+    outline: none;
+    -moz-box-shadow: 0 0 0 1px #e8c291 inset;
+    -webkit-box-shadow: 0 0 0 1px #E8C291 inset;
+    box-shadow: 0 0 0 1px #E8C291 inset;
+}
+
+.perevoziti{
+	
+	color:gray ;
+}
+
+.imageput {
+	margin-left:30%;
+	margin-bottom:10px;
+}
+
+select {
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  border-radius: 5px;
+  color:gray;
+  text-align:center;
+  margin-bottom:10px;
+}
+
+select.date-select {
+    width:auto;
+    border: 1px solid #cccccc;
+    background-color: gray;
+}
+
+select:focus {
+	outline: 0;
+	border:solid 2px #E8C291;
+}
+
+.voditelphoto{
+	width:200px;
+	height:200px;
+	text-align:center;
+}
+
+.zapis{
+	border-radius:10px;
+	margin-top:20px;
+	margin-bottom:20px;
+	text-align:center;
+	width:auto;
+	height:auto;
+	background-color:white;
+}
+
+.parol{
+	margin-bottom:10px;
+}
+
+.parol em{
+	color:#919191;
+}
+
+.nazvanie{
+	color:#919191;
+}
+
+.registraciya-title{
+	border-bottom:solid 1px #F2F2F2;
+}
+
+.registraciya-title h2 {
+	color:#74C0CF;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.allinfo{
+	word-wrap: break-word;
+	background-color:white;
+	radius:5px;
+}
+
+.mapinfo{
+	word-wrap: break-word;
+	border-bottom:solid 1px #B8B89F;
+}
+
+.vehiculeinfo{
+	word-wrap: break-word;
+	border-bottom:solid 1px #B8B89F;
+}
+
+.annonceindividuel{
+	border-bottom:solid 1px gray;
+	margin-top:10px;
+	background-color:white;
+	border-radius:5px;
+}
+
+.check{
+	width:20px;
+	height:20px;
+	margin-left:0;
+}
+
+.check-label{
+	margin-left:2px;
+	margin-right:2px;
+	
+}
+
+.messagebox{
+	word-wrap: break-word;
+	width:100%;
+	height:150px;
+	padding-left:20px;
+	padding-right:20px;
+}
+
+.listcontact .glyphicon{
+	margin-top:15px;
+	font-size:25px;
+}
+
+//HOMEPAGE DESIGN 
+
+.nowyoucan{
+	color:green;
+}
+
+.registrationkletka:hover{
+	text-decoration:none;
+	
+}
+
+.iconjaune{
+	color:#F28D00;
+}
+
+.iconjaune:hover{
+	color:red;
+}
+
+.couleurnouveaumessage .glyphicon{
+	color:#EB7878;
+}
+
+.couleurnouveaumessage p{
+	display:inline;
+	color:#EB7878;
+}
+
+.backgourndimage{
+	background-color:#2C3E50;
+	width:auto;
+	height:500px;
+	background-image: image-url('montagnes.jpg') ;
+	background-size:100%;
+	background-repeat: no-repeat;
+}
+.imagehome img{
+	margin-top:8px;
+	width:250px;
+}
+.imagehome{
+	color:#5BC0DE;
+}
+
+.howitworks{
+	border-top:solid 1px gray;
+	margin:0;
+	padding:0;
+}
+
+.description h1{
+	color:white;
+}
+
+.inputfieldhome{
+	
+	margin-top:240px;
+}
+.poisk{
+	width:30%;
+	height:40px;
+	padding-left:15px;
+	padding-right:15px;
+	color:none;
+	border:none;
+	border-radius:5px;
+	background-color:#E85A5A;
+}
+
+.poisk:hover{
+	width:30%;
+	height:40px;
+	padding-left:15px;
+	padding-right:15px;
+	color:none;
+	border:none;
+	border-radius:5px;
+	background-color:#D93636;
+}
+
+.sozdatannonce{
+	width:90%;
+	height:50px;
+	padding-left:15px;
+	padding-right:15px;
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius:5px;
+	border:2px solid #2C3E50;
+	
+}
+
+.sozdatannonce p{
+	font-size:16px;
+	color:#2C3E50;
+	margin-top:8px;
+	
+}
+
+
+.sozdatannonce:hover{
+	width:90%;
+	height:50px;
+	padding-left:15px;
+	padding-right:15px;
+	background-color:#C44C51;
+	border:none;
+	border-radius:5px;
+	
+}
+
+.sozdatannonce:hover p{
+	color:white;
+	margin-top:10px;
+	
+	
+}
+
+//MAIL INBOX
+.messagelien{
+	padding-top:20px;
+	border-bottom:solid 1px #B8B89F;
+	border-radius:25px;
+}
+
+.messagelien .glyphicon{
+	color:#28BE9B;
+}
+
+.messagelien:hover{
+	background-color:#F0F1EE;
+	border-radius:25px;
+}
+
+.messagelienNonlu{
+	background-color:#F5F6D4;
+	padding-top:20px;
+	border-bottom:solid 1px #B8B89F;
+	border-radius:25px;
+}
+
+.messagelienNonlu:hover{
+	background-color:#F0F1EE;
+	border-radius:25px;
+}
+
+.messagelienNonlu .glyphicon{
+	color:#E94C6F;
+}
+
+.messagerie{
+	background-color:white;
+	border-radius:25px;
+	margin-top:15px;
+}
+
+.subject{
+	margin-bottom:20px;
+	border-radius:25px;
+}
+
+.subjecttext a{
+	color:#67727A;
+}
+
+.subjecttext a:hover{
+	text-decoration: none;
+	color:#6991AC;
+}
+
+.created_at{
+	color:#5A6A62;
+}
+
+.deletemessage .fa {
+	color:#D96459;
+}
+
+.nomdemessage{
+	
+	color:#B8B89F;
+}
+
+.moisoobshenie{
+	border-bottom:solid 1px #B8B89F;
+	margin-bottom:0;
+}
+
+// MESSAGE AREA DESIGN
+
+.messengerarea{
+	word-wrap: break-word;
+	border-radius: 15px;
+	margin-bottom:15px;
+}
+
+.messagemoi{
+	margin:0;
+	padding-right:10px;
+	padding-left:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	background-color:#4E7AC7;
+	border-radius:20px 20px 20px 0;
+}
+
+.messagelui{
+	margin:0;
+	padding-right:10px;
+	padding-left:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	background-color:#D7DADB;
+	border-radius:20px 20px 0px 20px;
+}
+
+.msgmoi{
+	margin:0;
+	padding:0;
+	color:white;
+}
+
+.msglui{
+	margin:0;
+	padding:0;
+	color:gray;
+}
+
+.messageinput{
+	width:80%;
+	height:50px;
+}

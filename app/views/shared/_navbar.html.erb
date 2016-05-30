@@ -1,0 +1,66 @@
+<nav class="navbar  navbar-static-top">
+  <div class="container">
+	  <div class='row'>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    	<div class="navbar-header col-md-10 col-xs-8">
+	  <%= link_to 'My-Marshrut', root_path, class: 'navbar-brand' %>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    	<div class="right-part col-md-2 col-xs-4">
+		<%if user_signed_in?%>
+			<% if current_user.mailbox.conversations.unread(current_user).count != 0 %>
+			<ul class="navbar-right">
+	        	<li class="dropdown menudroite">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				<i class='glyphicon glyphicon-th-large'></i>
+				<p class='notifCount'><%=current_user.mailbox.conversations.unread(current_user).count%></p></a>
+             	<ul class="dropdown-menu">
+   				<li class='couleurnouveaumessage'><%= link_to conversations_path(current_user) do %>
+				<i class="glyphicon glyphicon-envelope"></i> <p> - У вас  <%=current_user.mailbox.conversations.unread(current_user).count%> сообщение</p>
+				<%end%>
+				</li>
+			<%else%>
+			<ul class=" navbar-right">
+	        	<li class="dropdown menudroite">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				<i class='glyphicon glyphicon-th-large'></i>
+             	<ul class="dropdown-menu">
+				<li><%= link_to conversations_path(current_user) do%>
+				<i class="glyphicon glyphicon-envelope"></i> - Мои сообщения
+				<%end%>
+				</li>	
+			 <%end%>
+            <li> <%= link_to  edit_user_registration_path do%>
+				<i class="glyphicon glyphicon-cog"></i> - Настройки профиля
+				<%end%>
+			</li>
+			<%if current_user.voditel?%>
+            <li> <%= link_to  annonces_moiobyavlenie_path do%>
+				<i class="glyphicon glyphicon-tasks"></i> - Мои обявление
+				<%end%>
+			</li>
+			<%else%>
+            <li> <%= link_to  new_annonce_path do%>
+				<i class="glyphicon glyphicon-tasks"></i> - Создать объявление
+				<%end%>
+			</li>
+			<%end%>
+            	<li role="separator" class="divider"></li>
+            <li><%= link_to destroy_user_session_path, :method => :delete do%>
+				<i class='glyphicon glyphicon-off'></i> - Выход 
+				<%end%>
+			</li>
+         	   </ul>
+		  
+        </li>
+      	</ul>
+	  	<%else%>
+		<div class='text-right lienslog col-md-3 col-xs-2 col-xs-offset-2'>
+	  	<li class='loginRegisterLink'><%= link_to "Вход", new_user_session_path%> </li>
+	 	<li class='loginRegisterLink'><%= link_to "Регистрация", new_user_registration_path%> </li>
+		</div>
+	  	<%end%>
+    </div><!-- /.navbar-collapse -->
+	</div>
+  </div><!-- /.container-fluid -->
+</nav>

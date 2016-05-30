@@ -1,0 +1,27 @@
+ul.ui-autocomplete {
+	position: absolute;
+	list-style:none;
+	margin:0;
+	padding:0;
+	border:solid 2px #999;
+
+	cursor:default;
+}
+
+ul.ui-autocomplete li{
+	background-color: #FFF;
+	border-top:solid 1px #DDD;
+	padding-left:5px;
+}
+
+ul.ui-autocomplete li a{
+	color:white;
+	display:block;
+	padding:3px;
+}
+
+ul.ui-autocomplete li:hover{
+	background-color:#E8C291;
+}
+
+.ui-helper-hidden-accessible { display:none; }

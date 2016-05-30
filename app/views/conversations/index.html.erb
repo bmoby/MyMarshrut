@@ -1,0 +1,45 @@
+
+
+	<div class=' container text-center inboxtitle'>
+		<h3 class='moisoobshenie'>Мои сообщения</h3>
+	</div>
+<div class='container messagerie text-center'>
+		<%@conversations.each do |conversation|%>
+		
+		<% if conversation.messages.last.is_unread?(current_user)%>
+		<div class='row messagelienNonlu text-center'>
+			<div class='col-md-4'>
+				<div class='col-md-4'>
+					<i class='glyphicon glyphicon-envelope'></i>
+				</div>
+				<div class='col-md-8'>
+					<p class='nomdemessage'><%=link_to conversation.messages.last.sender.nom, conversation_path(conversation), class:'lobjet'%>  <i class="fa fa-comment-o"></i></p>
+				</div>
+			</div>
+			<%else%>
+		<div class='row messagelien text-center'>
+			<div class='col-md-4'>
+				<div class='col-md-4'>
+				<i class='glyphicon glyphicon-eye-open'></i>
+				</div>
+				<div class='col-md-8'>
+				<p class='nomdemessage'><%=link_to conversation.messages.last.sender.nom, conversation_path(conversation), class:'lobjet'%>  <i class="fa fa-comment-o"></i></p>
+				</div>
+			</div>
+			<%end%>
+			<div class='col-md-8  subject'>
+				<div class='col-md-6 subjecttext'>
+					<%=link_to truncate(conversation.messages.last.body, length: 40), conversation_path(conversation), class:'lobjet'%>
+				</div>
+				<div class='col-md-3 created_at'>
+					<%=link_to conversation.created_at.to_date, conversation_path(conversation), class:'lobjet'%>
+				</div>
+				<div class='col-md-3 deletemessage'>
+					<%= link_to conversation_path(conversation) do%>
+					<i class ='glyphicon glyphicon-share-alt'></i>
+					<%end%>
+				</div>
+			</div>
+		</div>
+	<%end%>
+</div>

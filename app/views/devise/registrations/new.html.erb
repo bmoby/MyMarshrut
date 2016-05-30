@@ -1,0 +1,60 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class='container text-center'>
+	  <% if resource.errors.any? %>
+	    <div id="error_explanation">
+	      <h2>Пожалуйста, заполните следующие поля и нажмите на «Подтвердить» </h2>
+
+		  <ul class='listerreurs'>
+		      <% resource.errors.each do |attribute, message| -%>
+		          <% if message.is_a?(String)%>
+		              <li><p><%= message %></p></li>
+		          <% end %>
+		      <% end -%>
+		  </ul>
+	    </div>
+	  <% end %>
+<div class=' zapis text-center'>
+	<div class='row'>
+	<div class=' registraciya-title text-center'>
+		<h2>Регистрация</h2>
+	</div>
+	</div>
+</br></br>
+  <div class="field">
+    <%= f.text_field :nom, class: 'inputter', :placeholder => 'Фамилия' %>
+	<%= f.text_field :prenom, class: 'inputter', :placeholder => 'Имя'%>
+  </div>
+
+  <div class="field">
+    <%= f.email_field :email, class: 'inputter', :placeholder => 'E-mail' %>
+	<%= f.telephone_field :telephone_personnel, class: 'inputter', :placeholder => 'Телефон' %>
+  </div>
+
+
+  <div class="field">
+    <%= f.text_field :pays, class: 'inputter', :placeholder => 'Страна' %>
+	<%= f.text_field :ville, class: 'inputter', :placeholder => 'Город' %>
+  </div>
+
+  <div class="field parol">
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> символов минимум)</em>
+    <% end %><br/>
+    <%= f.password_field :password, autocomplete: "off", class:'inputter', :placeholder => 'Пароль' %>
+  </div>
+
+  <div class="field parol">
+    <%= f.password_field :password_confirmation, autocomplete: "off", class:'inputter', :placeholder => 'Повторить пароль' %>
+  </div>
+	
+  <div class="actions sub">
+	  <p>Нажав на кнопку «Подтвердить», вы соглашаетесь с Правилами MyMarshrut.</p></br>
+	  
+    <%= f.submit "Подтвердить", class: "btn-large btn-info" %>
+  </div>
+<% end %>
+</br></br></br>
+</div>
+
+</div>
+</div>

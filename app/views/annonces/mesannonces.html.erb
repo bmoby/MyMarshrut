@@ -1,0 +1,91 @@
+
+
+<% @mesannonces.each do |annonce| %>
+
+<div class='container annonce'>
+<%# container * %>
+	
+	<div class='row ligne text-left'>
+	<%# general row * * %>
+	
+		
+			<div class=' col-md-4 photo'>
+			<%# first col in the general row IMAGE * * * * # %>
+				<%= image_tag annonce.image.thumb('300x250#').url if annonce.image_stored?%>
+			<%# first col in the general row IMAGE * * * * # %>
+			</div>
+			
+			<div class='col-md-8 text-left'>
+			<%# second col in general row CONTENU * * * * #%>
+				<div class='row'>
+				<%# first rov in  CONTENU  ENTENTE* * * * # ¥%>
+					<div class= 'col-md-8 text-center datedirection'>
+					<h4> <%= truncate(annonce.ville_depart, length: 15) %> -> <%= truncate(annonce.ville_arrive, length: 15)%></h4> <p>  <%= annonce.date_depart.strftime("%d/%m/%Y") %> </p>
+					</div>
+					<div class= 'col-md-4 text-center prix'>
+					<h3><%= annonce.prix_passager%><i class='fa fa-eur'> </i> </h3>
+					</div>
+				<%# first rov in  CONTENU ENTETE * * * * # ¥%>
+				</div>
+			</br>
+					
+				<div class='row'>
+				<%# second rov in  CONTENU  INFO* * * * # ¥%>
+					<div class='col-md-4 col-md-offset-1'>
+						<% if annonce.nombre_chauffeurs == 1%>
+						<p><i class='fa fa-male'> </i>   <%= annonce.nombre_chauffeurs %> водитель</p>
+						<%else%>
+						<p><i class='fa fa-users'> </i>   <%= annonce.nombre_chauffeurs %> водителя</p>
+						<%end%>
+						<p><i class='fa fa-suitcase'></i>   <%= annonce.poid_max_passager %> кило/макс</p> 
+						<% if annonce.arrets_chaque == 1%>
+						<p><i class='fa fa-coffee'></i> остановка каждый час</p>
+						<%elsif annonce.arrets_chaque == 2%>
+						<p><i class='fa fa-coffee'></i> остановка каждые <%= annonce.arrets_chaque %> часа</p>
+						<%elsif annonce.arrets_chaque == 3%>
+						<p><i class='fa fa-coffee'></i> остановка каждые <%= annonce.arrets_chaque %> часа</p>
+						<%elsif annonce.arrets_chaque == 4%>
+						<p><i class='fa fa-coffee'></i> остановка каждые <%= annonce.arrets_chaque %> часа</p>
+						<%elsif annonce.arrets_chaque > 4%>
+						<p><i class='fa fa-coffee'></i> остановка каждые <%= annonce.arrets_chaque %> часов</p>
+						<%end%>
+						
+						<p><i class='glyphicon glyphicon-road'></i> длительность поездки -- дня </p>
+					</div>
+					<div class='col-md-4 annonce_info2'>
+						<% if annonce.accept_colis == true%>
+						<p><i class='fa fa-check-circle'> </i> перевозка посылок </p>
+						<p><i class='fa fa-eur'> </i> <%= annonce.prix_kg_colis%> /kg, minimum <%= annonce.poid_min_colis%> kg</p>
+						<%else%>
+						<p><i class='fa fa-times-circle'> </i> перевозка посылок</p>
+						<%end%>
+						<% if annonce.accept_colis_valeur == true%>
+						<p><i class='fa fa-check-circle'> </i> перевозка важных посылок</p>
+						<%else%>
+						<p><i class='fa fa-times-circle'> </i> перевозка важных посылок</p>
+						<%end%>
+					</div>
+					<div class='col-md-3 text-left prixcontact'>
+						
+						<%if user_signed_in?%>
+							<p><i class='fa fa-phone'> </i> <%= annonce.user.telephone_personnel%></p>
+							<% if annonce.telephones? %>
+							<p> <i class='fa fa-phone'> </i>  <%= annonce.telephones%></p>
+							<%end%>
+							<%= link_to 'Podrobnee', annonce_path(annonce), :class => "btn btn-info" %>
+						<%else%>
+							<p>чтобы связаться с водителем, необходимо <%= link_to "зарегистрироваться", new_user_registration_path%>.</p>
+						<%end%>
+						
+						
+					</div>
+				<%# second rov in  CONTENU  INFO* * * * # ¥%>
+				</div>
+			<%# second col in general row CONTENU * * * * #%>
+			</div>
+
+	<%# general row %>
+	</div>
+<%# container %>
+</div>
+	<%end%>

@@ -1,0 +1,48 @@
+<div class='backgourndimage'>
+	<div class='container text-center description clear-top'>
+		<h1>MyMarshrut</h1>
+		<div class='row'>
+			<div class='container text-center inputfieldhome'>
+				<%= form_for @search, class:'gaga' do |s| %>
+				  <div class="field">  
+				    <%= s.text_field :ville_d, class:'inputter', placeholder: 'Откуда?', id:'villesd'%>
+					<%= s.text_field :ville_a, class:'inputter', placeholder: 'Куда?', id:'villesa'%></br>
+					
+					<%= button_tag(type: "submit", class: "poisk larg-btn btn-info") do %>
+					    <i class="glyphicon glyphicon-search"></i> Поиск
+					<% end %>
+			  		</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+<div class='row howitworks'>
+	<div class='col-md-4 col-sm-4 col-xs-6 imagehome text-center'>
+	</br>
+	<%unless user_signed_in?%>
+	<%= link_to new_user_registration_path, class:'registrationkletka' do%>
+	<p> <i class='iconjaune glyphicon glyphicon-alert'></i> Чтоб создать объявление нужно регистрироватсья</p>
+	<%end%>
+			<%= link_to new_user_registration_path, class:'btn btn-info sozdatannonce' do%>
+			<p><i class="glyphicon glyphicon-pencil"></i> Регистрация </p>
+			<%end%>
+			
+			</br></br>
+	<%else%>
+	<p> <i class='nowyoucan glyphicon glyphicon-ok-sign'></i> Теперь вы можете создать свое объявление</p>
+			<%= link_to new_annonce_path, class:'btn btn-info sozdatannonce' do%>
+			<p><i class="glyphicon glyphicon-pencil"></i> Создать объявление </p>
+			<%end%>
+			</br></br>
+	<%end%>
+	</div>
+		<div class='col-md-4  col-sm-4 col-xs-6'>
+			<h3>Поиск маршрута</h3>
+			<p>На сайте указанно "Куда", "Откуда", вам всего лишь нужно ввести название городов, чтобы найти нужный маршрут.  </p>
+		 </br></div>
+		<div class='col-md-4  col-sm-4 text-center'>
+			<h3>Зарегистрироваться </h3>
+			<p>Чтобы связаться с водителем вам необходимо зарегистрироваться, для этого нажмите <%=link_to 'сюда', new_user_registration_path%></p>
+		</div>
+</div>
