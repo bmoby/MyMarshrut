@@ -32,6 +32,7 @@ gem 'jquery-turbolinks'
 gem 'jquery-ui-rails'
 gem 'will_paginate', '~> 3.1'
 gem 'will_paginate-bootstrap'
+gem 'rubygems-update', '~> 2.6', '>= 2.6.4'
 
 group :development do
   gem 'web-console', '~> 2.0'
@@ -47,4 +48,4 @@ group :production do
   gem 'rails_12factor'
 end
 
-ruby "2.2.3"
+ruby "2.3.0"
