@@ -4,13 +4,7 @@ gem 'multi_json'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 
-group :production do
-  gem 'pg'
-end
 
-group :development do
-  gem 'sqlite3', '~> 1.3', '>= 1.3.11'
-end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -49,40 +43,35 @@ group :development, :test do
 gem 'byebug'
 end
 
-group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-end
-
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
 #gem 'aws-sdk'
-#gem 'refile', require: 'refile/rails'
-#gem 'refile-mini_magick', '~> 0.2.0'
 gem 'active_interaction'
-
 gem 'sinatra-activerecord', '~> 2.0', '>= 2.0.9'
 gem "rake"
 gem 'yell-rails', '~> 2.0'
-#gem 'serverspec', '~> 2.35'
 gem 'fog-serverlove', '~> 0.1.2'
 gem 'dragonfly', '~> 1.0.12'
-
-#gem 'ransack', '~> 1.7'
-
 gem 'mailboxer', '~> 0.13.0'
 gem 'jquery-turbolinks'
 gem 'jquery-ui-rails'
-
 gem 'will_paginate', '~> 3.1'
 gem 'will_paginate-bootstrap'
-
 gem 'breach-mitigation-rails'
 gem 'rack-attack'
-
 gem 'heroku', '~> 3.43', '>= 3.43.3'
+
+group :development do
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0'
+  gem 'sqlite3'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
