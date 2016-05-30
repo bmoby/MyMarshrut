@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 gem 'rails', '4.2.6'
 gem 'multi_json'
 gem 'sass-rails'
@@ -33,7 +32,7 @@ gem 'jquery-turbolinks'
 gem 'jquery-ui-rails'
 gem 'will_paginate', '~> 3.1'
 gem 'will_paginate-bootstrap'
-
+gem 'rubygems-update', '~> 2.6', '>= 2.6.4'
 
 group :development do
   gem 'web-console', '~> 2.0'

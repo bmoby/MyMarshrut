@@ -180,6 +180,7 @@ GEM
     ref (2.0.0)
     responders (2.2.0)
       railties (>= 4.2.0, < 5.1)
+    rubygems-update (2.6.4)
     sass (3.4.22)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -261,6 +262,7 @@ DEPENDENCIES
   rails (= 4.2.6)
   rails_12factor
   rake
+  rubygems-update (~> 2.6, >= 2.6.4)
   sass-rails
   sdoc (~> 0.4.0)
   sinatra-activerecord
