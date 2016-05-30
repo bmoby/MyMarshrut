@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 gem 'multi_json'
 gem 'rails', '4.2.6'
 gem 'sass-rails', '~> 5.0'
@@ -15,7 +16,7 @@ gem 'sys-uname', '~> 1.0'
 gem 'therubyracer', '~> 0.12.2'
 gem 'tilt', '~> 2.0'
 group :development, :test do
-gem 'byebug'
+  gem 'byebug'
 end
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -34,16 +35,16 @@ gem 'will_paginate', '~> 3.1'
 gem 'will_paginate-bootstrap'
 gem 'breach-mitigation-rails'
 gem 'rack-attack'
-gem 'heroku', '~> 3.43', '>= 3.43.3'
 
-group :devlopment do
+group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
 
-group :devlopment do 
-    gem 'sqlite3'
+group :development do 
+  gem 'sqlite3'
 end
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
