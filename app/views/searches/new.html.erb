@@ -46,21 +46,20 @@
 			<p>Чтобы связаться с водителем вам необходимо зарегистрироваться, для этого нажмите <%=link_to 'сюда', new_user_registration_path%></p>
 		</div>
 </div>
-<div class= 'container mobileback hidden-lg hidden-md hidden-sm'>
-	<div class='container text-center description'>
+<div class= 'container mobileback hidden-lg hidden-md hidden-sm text-center'>
+	<div class='row text-center description'>
 		<h1>MyMarshrut</h1>
-			<div class='container text-center inputfieldhomexs'>
-				<%= form_for @search, class:'gaga' do |s| %>
-				  <div class="field">  
-				    <%= s.text_field :ville_d, class:'inputter', placeholder: 'Откуда?', id:'villesdxs'%>
-					<%= s.text_field :ville_a, class:'inputter', placeholder: 'Куда?', id:'villesaxs'%></br>
-					
-					<%= button_tag(type: "submit", class: "poiskxs larg-btn btn-info") do %>
-					    <i class="glyphicon glyphicon-search"></i> Поиск
-					<% end %>
-			  		</div>
-				<% end %>
-			</div>
+	</divv>
+	<div class='row inputfieldhomexs'>
+		<%= form_for @search, class:'gagaaa' do |s| %>
+		<div class="field">  
+			<%= s.text_field :ville_d, class:'inputter', placeholder: 'Откуда?', id:'villesdxs'%>
+			<%= s.text_field :ville_a, class:'inputter', placeholder: 'Куда?', id:'villesaxs'%></br>	
+			<%= button_tag(type: "submit", class: "poiskxs larg-btn btn-info") do %>
+				<i class="glyphicon glyphicon-search"></i> Поиск
+			<% end %>
+		</div>
+		<% end %>
 	</div>
 </div>
 <div class='container hidden-lg hidden-md hidden-sm text-center '>
