@@ -976,4 +976,12 @@
 		minLength:3,
       	source: availableTags
     });
+    $( "#villesdxs" ).autocomplete({
+		minLength:3,
+      	source: availableTags
+    });
+    $( "#villesaxs" ).autocomplete({
+		minLength:3,
+      	source: availableTags
+    });
   });

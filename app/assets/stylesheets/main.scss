@@ -405,8 +405,7 @@ select:focus {
 
 .mobileback{
 	background-color:#2C3E50;
-	width:150px;
-	background-image: image-url('montagnes.jpg') ;
+	background-image: image-url('mobbackground.jpg') ;
 	background-size:100%;
 	background-repeat: no-repeat;
 }
@@ -449,13 +448,13 @@ select:focus {
 .backgourndimage{
 	background-color:#2C3E50;
 	width:auto;
+	min-height: 300px;
 	background-image: image-url('montagnes.jpg') ;
 	background-size:100%;
 	background-repeat: no-repeat;
 }
 .imagehome img{
 	margin-top:8px;
-	width:250px;
 }
 .imagehome{
 	color:#5BC0DE;
@@ -472,10 +471,10 @@ select:focus {
 }
 
 .inputfieldhome{
-	
-	margin-top:30px;
+	margin-top:270px;
 	margin-bottom:30px;
 }
+
 .poisk{
 	width:40%;
 	height:40px;
@@ -488,7 +487,7 @@ select:focus {
 }
 
 .poisk:hover{
-	width:30%;
+	width:40%;
 	height:40px;
 	padding-left:15px;
 	padding-right:15px;
