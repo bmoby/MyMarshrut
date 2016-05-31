@@ -403,21 +403,29 @@ select:focus {
 	
 }
 
-.mobileback{
-	background-image: image-url('mobbackground.png') ;
-	background-size:100%;
-	background-repeat: no-repeat;
+.container{
 	margin:0;
 	padding:0;
+}
+.mobileback{
+	background-image: image-url('mobbackground.png') ;
+	width:100%;
+	height:400px;
+	background-size:100%;
+	background-repeat: no-repeat;
 }
 
 .xsintercaler{
 	border-bottom:solid 1px #A7A37E;
+	margin:0;
+	padding:0;
 }
 
 .xsintercaler h3{
 	color:#3498DB;
 	font-size:20px;
+	margin:0;
+	padding:0;
 }
 
 .nowyoucan{
@@ -453,12 +461,6 @@ select:focus {
 	background-image: image-url('montagnes.jpg') ;
 	background-size:100%;
 	background-repeat: no-repeat;
-}
-.imagehome img{
-	margin-top:8px;
-}
-.imagehome{
-	color:#5BC0DE;
 }
 
 .howitworks{
