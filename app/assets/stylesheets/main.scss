@@ -397,13 +397,27 @@ select:focus {
 }
 
 //HOMEPAGE DESIGN 
+.inputfieldhomexs{
+	margin-top:150px;
+	margin-bottom:20px;
+	
+}
+
+.mobileback{
+	background-color:#2C3E50;
+	width:auto;
+	background-image: image-url('mobilebackground.jpg') ;
+	background-size:100%;
+	background-repeat: no-repeat;
+}
 
 .xsintercaler{
 	border-bottom:solid 1px #A7A37E;
 }
 
 .xsintercaler h3{
-	color:#1695A3;
+	color:#3498DB;
+	font-size:20px;
 }
 
 .nowyoucan{
@@ -435,7 +449,6 @@ select:focus {
 .backgourndimage{
 	background-color:#2C3E50;
 	width:auto;
-	height:500px;
 	background-image: image-url('montagnes.jpg') ;
 	background-size:100%;
 	background-repeat: no-repeat;
@@ -460,7 +473,8 @@ select:focus {
 
 .inputfieldhome{
 	
-	margin-top:240px;
+	margin-top:150px;
+	margin-bottom:30px;
 }
 .poisk{
 	width:30%;
@@ -482,6 +496,19 @@ select:focus {
 	border:none;
 	border-radius:5px;
 	background-color:#D93636;
+}
+
+.poiskxs{
+	
+	width:60%;
+	height:40px;
+	padding-left:15px;
+	padding-right:15px;
+	color:none;
+	border:none;
+	border-radius:5px;
+	background-color:#3498DB;
+	
 }
 
 .sozdatannonce{
