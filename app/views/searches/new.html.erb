@@ -47,9 +47,8 @@
 		</div>
 </div>
 <div class= 'row mobileback hidden-lg hidden-md hidden-sm'>
-	<div class='container text-center description clear-top'>
+	<div class='container text-center description'>
 		<h1>MyMarshrut</h1>
-		<div class='row'>
 			<div class='container text-center inputfieldhomexs'>
 				<%= form_for @search, class:'gaga' do |s| %>
 				  <div class="field">  
@@ -62,10 +61,9 @@
 			  		</div>
 				<% end %>
 			</div>
-		</div>
 	</div>
 </div>
-<div class='container visible-xs text-center '>
+<div class='container hidden-lg hidden-md hidden-sm text-center '>
 	<div class='xsintercaler'>
 	</br>
 	<%unless user_signed_in?%>
