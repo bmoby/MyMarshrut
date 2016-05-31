@@ -17,7 +17,7 @@
 		</div>
 	</div>
 </div>
-<div class='row howitworks'>
+<div class='row howitworks hidden-xs'>
 	<div class='col-md-4 col-sm-4 col-xs-6 imagehome text-center'>
 	</br>
 	<%unless user_signed_in?%>
@@ -45,4 +45,31 @@
 			<h3>Зарегистрироваться </h3>
 			<p>Чтобы связаться с водителем вам необходимо зарегистрироваться, для этого нажмите <%=link_to 'сюда', new_user_registration_path%></p>
 		</div>
+</div>
+<div class='container visible-xs text-center '>
+	<div class='xsintercaler'>
+	</br>
+	<%unless user_signed_in?%>
+	<p> <i class='iconjaune glyphicon glyphicon-alert'></i> Чтоб создать объявление нужно регистрироватсья</p>
+	<%= link_to new_user_registration_path, class:'clasika' do%>
+	<i class="glyphicon glyphicon-pencil"></i> Регистрация
+	<%end%>
+	</br></br>
+	<%else%>
+	<p> <i class='nowyoucan glyphicon glyphicon-ok-sign'></i> Теперь вы можете создать свое объявление</p>
+			<%= link_to new_annonce_path, class:'clasika' do%>
+			<i class="glyphicon glyphicon-pencil"></i> Создать объявление 
+			<%end%>
+			</br></br>
+	<%end%>
+	</div>
+	</br>
+	<div class='xsintercaler'>
+		<h3>Поиск маршрута</h3>
+		<p>На сайте указанно "Куда", "Откуда", вам всего лишь нужно ввести название городов, чтобы найти нужный маршрут.</p>
+	 </br></div>
+	 
+ 	<div class='xsintercaler'>
+		<h3>Зарегистрироваться </h3>
+		<p>Чтобы связаться с водителем вам необходимо зарегистрироваться, для этого нажмите <%=link_to 'сюда', new_user_registration_path%></p>
 </div>

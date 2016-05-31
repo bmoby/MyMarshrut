@@ -10,6 +10,11 @@ textarea:focus, input:focus{
     outline: none;
 }
 
+.row{
+	margin:0;
+	padding:0;
+}
+
 // LOGIN DESIGN 
 
 .vxodline{
@@ -392,6 +397,14 @@ select:focus {
 }
 
 //HOMEPAGE DESIGN 
+
+.xsintercaler{
+	border-bottom:solid 1px #A7A37E;
+}
+
+.xsintercaler h3{
+	color:#1695A3;
+}
 
 .nowyoucan{
 	color:green;

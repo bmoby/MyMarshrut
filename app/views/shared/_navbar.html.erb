@@ -2,11 +2,11 @@
   <div class="container">
 	  <div class='row'>
     <!-- Brand and toggle get grouped for better mobile display -->
-    	<div class="navbar-header col-md-10 col-xs-8">
+    	<div class="navbar-header col-md-10 col-xs-7">
 	  <%= link_to 'My-Marshrut', root_path, class: 'navbar-brand' %>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
-    	<div class="right-part col-md-2 col-xs-4">
+    	<div class="right-part col-md-2 col-xs-5">
 		<%if user_signed_in?%>
 			<% if current_user.mailbox.conversations.unread(current_user).count != 0 %>
 			<ul class="navbar-right">
@@ -55,7 +55,7 @@
         </li>
       	</ul>
 	  	<%else%>
-		<div class='text-right lienslog col-md-3 col-xs-2 col-xs-offset-2'>
+		<div class='text-right lienslog col-md-3 col-xs-2 col-xs-offset-1 text-right-xs'>
 	  	<li class='loginRegisterLink'><%= link_to "Вход", new_user_session_path%> </li>
 	 	<li class='loginRegisterLink'><%= link_to "Регистрация", new_user_registration_path%> </li>
 		</div>
