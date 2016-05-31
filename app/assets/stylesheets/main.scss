@@ -404,10 +404,11 @@ select:focus {
 }
 
 .mobileback{
-	background-color:#2C3E50;
-	background-image: image-url('mobbackground.jpg') ;
+	background-image: image-url('mobbackground.png') ;
 	background-size:100%;
 	background-repeat: no-repeat;
+	margin:0;
+	padding:0;
 }
 
 .xsintercaler{
