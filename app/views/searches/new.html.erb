@@ -1,93 +1,67 @@
-<div class='backgourndimagehome hidden-xs'>
-	<div class='container text-center description clear-top'>
-		<h1>MyMarshrut</h1>
-		<div class='row'>
-			<div class='container text-center inputfieldhome'>
-				<%= form_for @search, class:'gaga' do |s| %>
-				  <div class="field">  
-				    <%= s.text_field :ville_d, class:'inputter', placeholder: 'Откуда?', id:'villesd'%>
-					<%= s.text_field :ville_a, class:'inputter', placeholder: 'Куда?', id:'villesa'%></br>
-					
-					<%= button_tag(type: "submit", class: "poisk larg-btn btn-info") do %>
-					    <i class="glyphicon glyphicon-search"></i> Поиск
-					<% end %>
-			  		</div>
-				<% end %>
-			</div>
-		</div>
-	</div>
-</div>
-<div class='row howitworks hidden-xs'>
-	<div class='col-md-4 col-sm-4 imagehome text-center'>
-	</br>
-	<%unless user_signed_in?%>
-	<%= link_to new_user_registration_path, class:'registrationkletka' do%>
-	<p> <i class='iconjaune glyphicon glyphicon-alert'></i> Чтоб создать объявление нужно регистрироватсья</p>
-	<%end%>
-			<%= link_to new_user_registration_path, class:'btn btn-info sozdatannonce' do%>
-			<p><i class="glyphicon glyphicon-pencil"></i> Регистрация </p>
-			<%end%>
+
+<div class='cont_1part hidden-xs'>
+		<%= render 'shared/navbar' %>
+<div class='container text-center'>
+	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
+	<div class='row searchform'>
+		<%= form_for @search, class:'gaga' do |s| %>
+		  <div class="field">  
+		    <%= s.text_field :ville_d, class:'inputter', placeholder: 'Откуда?', id:'villesd'%>
+			<%= s.text_field :ville_a, class:'inputter', placeholder: 'Куда?', id:'villesa'%></br>
 			
-			</br></br>
-	<%else%>
-	<p> <i class='nowyoucan glyphicon glyphicon-ok-sign'></i> Теперь вы можете создать свое объявление</p>
-			<%= link_to new_annonce_path, class:'btn btn-info sozdatannonce' do%>
-			<p><i class="glyphicon glyphicon-pencil"></i> Создать объявление </p>
-			<%end%>
-			</br></br>
-	<%end%>
-	</div>
-		<div class='col-md-4  col-sm-4'>
-			<h3>Поиск маршрута</h3>
-			<p>На сайте указанно "Куда", "Откуда", вам всего лишь нужно ввести название городов, чтобы найти нужный маршрут.  </p>
-		 </br></div>
-		<div class='col-md-4  col-sm-4 text-center'>
-			<h3>Зарегистрироваться </h3>
-			<p>Чтобы связаться с водителем вам необходимо зарегистрироваться, для этого нажмите <%=link_to 'сюда', new_user_registration_path%></p>
-		</div>
-</div>
-<div class= 'hidden-lg hidden-md hidden-sm text-center'>
-	<div class='mobileback'>
-	<div class='container text-center description'>
-		<h1>MyMarshrut</h1>
-	</div>
-	<div class='row inputfieldhomexs'>
-		<%= form_for @search, class:'gagaaa' do |s| %>
-		<div class="field">  
-			<%= s.text_field :ville_d, class:'inputter', placeholder: 'Откуда?', id:'villesdxs'%>
-			<%= s.text_field :ville_a, class:'inputter', placeholder: 'Куда?', id:'villesaxs'%></br>	
-			<%= button_tag(type: "submit", class: "poiskxs larg-btn btn-info") do %>
-				<i class="glyphicon glyphicon-search"></i> Поиск
+			<%= button_tag(type: "submit", class: "poisk larg-btn btn-info") do %>
+			    <i class="glyphicon glyphicon-search"></i> Поиск
 			<% end %>
-		</div>
+	  		</div>
 		<% end %>
 	</div>
-	</div>
+	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
 </div>
-<div class='container hidden-lg hidden-md hidden-sm text-center '>
-	<div class='xsintercaler'>
-	</br></br>
-	<%unless user_signed_in?%>
-	<p> <i class='iconjaune glyphicon glyphicon-alert'></i> Чтоб создать объявление нужно регистрироватсья</p>
-	<%= link_to new_user_registration_path, class:'clasika' do%>
-	<i class="glyphicon glyphicon-pencil"></i> Регистрация
-	<%end%>
-	</br></br>
-	<%else%>
-	<p> <i class='nowyoucan glyphicon glyphicon-ok-sign'></i> Теперь вы можете создать свое объявление</p>
-			<%= link_to new_annonce_path, class:'clasika' do%>
-			<i class="glyphicon glyphicon-pencil"></i> Создать объявление 
-			<%end%>
-			</br></br>
-	<%end%>
-	</div>
+</div>
+<div class='cont_2part hidden-xs'>
+	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
+	<div class='col-sm-4 info'>
+		<div class='row iconinfo text-center'>
+		<i class="fa fa-tag" aria-hidden="true"></i>
+		</div>
 	</br>
-	<div class='xsintercaler'>
 		<h3>Поиск маршрута</h3>
 		<p>На сайте указанно "Куда", "Откуда", вам всего лишь нужно ввести название городов, чтобы найти нужный маршрут.</p>
-	 </br></div>
-	 
- 	<div class='xsintercaler'>
-		<h3>Зарегистрироваться </h3>
-		<p>Чтобы связаться с водителем вам необходимо зарегистрироваться, для этого нажмите <%=link_to 'сюда', new_user_registration_path%></p>
+	</br>
+	</div>
+	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
+	<div class='col-sm-4 tuto'>
+		<div class='row icontuto text-center'>
+		<i class="fa fa-thumbs-up" aria-hidden="true"></i>
+		</div>
+	</br>
+	<h3>Зарегистрироваться </h3>
+	<p>Чтобы связаться с водителем вам необходимо зарегистрироваться, для этого нажмите <%=link_to 'сюда', new_user_registration_path%> <i class="fa fa-reply"></i></p>
+	</br>
+	</div>
+	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
+	<div class='col-sm-4 agir'>
+		<%unless user_signed_in?%>
+		<div class='row icontuto text-center'>
+		<i class="fa fa-user-plus" aria-hidden="true"></i>
+		</div>
+		<h3>Создать объявление</h3>
+		<p>Чтоб создать объявление нужно регистрироватсья</br>
+		для этого нажмите <%=link_to 'сюда', new_user_registration_path, class:'syudavert'%> <i class="fa fa-reply" aria-hidden="true"></i>
+</p>
+		</br></br>
+		<%else%>
+		<div class='row icontuto text-center'>
+		<i class="fa fa-check-square-o" aria-hidden="true"></i>
+		
+		</div>
+		<h3>Создать объявление</h3>
+		<p> Теперь вы можете создать свое объявление</p>
+		<%= link_to new_annonce_path, class:'btn btn-info sozdatannonce' do%>
+		<p><i class="glyphicon glyphicon-pencil"></i> Создать объявление </p>
+		<%end%>
+		</br></br>
+		<%end%>
+	</div>
+	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
 </div>

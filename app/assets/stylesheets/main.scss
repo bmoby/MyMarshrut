@@ -48,66 +48,29 @@ textarea:focus, input:focus{
 	border-top:solid 1px #B8B89F;
 }
 
-//NAVBAR GENERAL DESIGN
-
-.dropdown-toggle{
-	margin:0;
-	padding:0;
-	font-size:25px;
-}
-
-.menudroite:hover{
-	color:white;
-}
-
-
-.menudroite{
-	list-style-type:none;
-	text-decoration:none;
-	margin-top:15px;
-}
-
-.navbar-right a{
-	text-decoration:none;
-	color:#B8B89F;
-}
-
-.navbar-right a:hover{
-	text-decoration:none;
-	color:white;
-}
-
+//NAVBAR GENERAL DESIGN`
 .navbar{
-	background-color:#2F3738;
-	width:100%;
-	height:70px;
-	margin:0;
-	padding:0;
-	border:none;
+	border-radius:0;
+	background-color: rgba(255,255,255,0.90);
 }
 
-.navbar-brand{
-	margin-top:10px;
-	font-size:15px;
-	color:#B8B89F;
+.notconnectedlinks li a{
+	color:#3E454C;
+}
+.notconnectedlinks li a:hover{
+	background-color:transparent;
+	color:#333333;
 }
 
-.navbar-brand:hover{
-	color:white;
+.navbar-brand .fa{
+	font-size:30px;
 }
 
-.notifCount{
-	position: relative;
-	text-align:center;
-	text-decoration:none;
-	font-size:10px;
-	width:15px;
-	height:15px;
-	background: red;
-	border-radius: 50%;
-	color: #f2f2f2;
-	right: -15px;
-	top: -15px;
+.navbar-brand a{
+	color:#7690CD;
+}
+.navbar-brand a:hover{
+	color:#333333;
 }
 
 // DESIGN ANNONCE DISPLAY ALL --------->
@@ -120,17 +83,6 @@ textarea:focus, input:focus{
 	padding-right:0;
 	border-bottom: solid 1px #B8B89F;
 	border-radius: 5px;
-}
-
-
-.lienslog{
-	list-style-type:none;
-	margin-top:15px;
-	color:#B8B89F;
-}
-
-.lienslog a{
-	color:white;
 }
 
 .photo img{
@@ -397,99 +349,116 @@ select:focus {
 }
 
 //HOMEPAGE DESIGN 
-.inputfieldhomexs{
-	margin-top:150px;
-	margin-bottom:20px;
-	
+
+.cont_1part { 
+	height:100vh;
+  background: url(montagnes.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.searchform{
+	margin-top:20%;
 }
 
 .container{
 	margin:0;
 	padding:0;
 }
-.mobileback{
-	background-image: image-url('mobbackground.png') ;
-	width:auto;
-	height:400px;
-	background-size:100%;
-	background-repeat: no-repeat;
-}
-
-.xsintercaler{
-	border-bottom:solid 1px #A7A37E;
-	margin:0;
-	padding:0;
-}
-
-.xsintercaler h3{
-	color:#3498DB;
-	font-size:18px;
-	padding:0;
-}
 
 .nowyoucan{
 	color:green;
 }
-
-.registrationkletka:hover{
-	text-decoration:none;
-	
+.agir{
+	height:250px;
+	background-color:#5E7C88;
+}
+.agir .fa{
+	margin-top:25px;
+	margin-bottom:15px;
+	font-size:50px;
+	color:#F0788C;
 }
 
+.agir p .fa{
+	margin:0;
+	padding:0;
+	font-size:14px;
+	color:white;
+}
+.agir h3{
+	color:#ECEBF0;
+	border-top:solid 1px #698a97;
+}
+.agir p{
+	color:#ECEBF0;
+}
+
+.agir a{
+	color:#F0788C;
+}
+
+
+.tuto{
+	height:250px;
+	background-color:#BAB293;
+}
+.tuto .fa{
+	margin-top:20px;
+	font-size:50px;
+	color:#5E7C88;
+}
+
+.tuto p .fa{
+	margin:0;
+	padding:0;
+	font-size:14px;
+	color:white;
+}
+.tuto h3{
+	color:#ECEBF0;
+	border-top:solid 1px #c4bda3;
+}
+.tuto p{
+	color:#ECEBF0;
+}
+
+
+.info{
+	height:250px;
+	background-color:#D96459;
+}
+.iconinfo .fa{
+	margin-top:20px;
+	font-size:50px;
+	color:#EFE4BD;
+}
+.info h3{
+	color:#ECEBF0;
+	border-top:solid 1px #de776e;
+}
+.info p{
+	color:#ECEBF0;
+}
 .iconjaune{
 	color:#F28D00;
 }
 
-.iconjaune:hover{
-	color:red;
-}
-
-.couleurnouveaumessage .glyphicon{
-	color:#EB7878;
-}
-
-.couleurnouveaumessage p{
-	display:inline;
-	color:#EB7878;
-}
-
-.backgourndimagehome{
-	background-color:#2C3E50;
-	width:auto;
-	min-height: 300px;
-	background-image: image-url('montagnes.jpg') ;
-	background-size:100%;
-	background-repeat: no-repeat;
-}
-
-.howitworks{
-	border-top:solid 1px gray;
-	margin:0;
-	padding:0;
-}
-
-.description h1{
-	color:white;
-}
-
-.inputfieldhome{
-	margin-top:270px;
-	margin-bottom:30px;
-}
-
 .poisk{
-	width:40%;
+	width:30%;
 	height:40px;
 	padding-left:15px;
 	padding-right:15px;
 	color:none;
 	border:none;
 	border-radius:5px;
-	background-color:#E85A5A;
+	background-color:#718BC8;
 }
 
 .poisk:hover{
-	width:40%;
+	width:30%;
 	height:40px;
 	padding-left:15px;
 	padding-right:15px;
@@ -497,19 +466,6 @@ select:focus {
 	border:none;
 	border-radius:5px;
 	background-color:#D93636;
-}
-
-.poiskxs{
-	
-	width:60%;
-	height:40px;
-	padding-left:15px;
-	padding-right:15px;
-	color:none;
-	border:none;
-	border-radius:5px;
-	background-color:#3498DB;
-	
 }
 
 .sozdatannonce{
@@ -550,6 +506,15 @@ select:focus {
 }
 
 //MAIL INBOX
+
+.couleurnouveaumessage .glyphicon{
+	color:#EB7878;
+}
+
+.couleurnouveaumessage p{
+	display:inline;
+	color:#EB7878;
+}
 .messagelien{
 	padding-top:20px;
 	border-bottom:solid 1px #B8B89F;
