@@ -48,7 +48,25 @@ textarea:focus, input:focus{
 	border-top:solid 1px #B8B89F;
 }
 
-//NAVBAR GENERAL DESIGN`
+//NAVBAR GENERAL DESIGN
+
+.notibtn{
+	width:auto;
+	height:40px;
+	border-radius:5px;
+}
+
+.notif .fa{
+	margin-top:3px;
+	color:#F2594B;
+	
+}
+
+.notif{
+	font-family: 'Passion One', cursive;
+	color:#F2594B;
+	
+}
 .navbar{
 	border-radius:0;
 	background-color: rgba(255,255,255,0.90);
@@ -356,7 +374,7 @@ select:focus {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size:100% auto;
 }
 
 .searchform{
@@ -475,13 +493,13 @@ select:focus {
 	padding-right:15px;
 	background-color: rgba(255, 255, 255, 0.1);
 	border-radius:5px;
-	border:2px solid #2C3E50;
+	border:2px solid white;
 	
 }
 
 .sozdatannonce p{
 	font-size:16px;
-	color:#2C3E50;
+	color:white;
 	margin-top:8px;
 	
 }
@@ -492,7 +510,7 @@ select:focus {
 	height:50px;
 	padding-left:15px;
 	padding-right:15px;
-	background-color:#C44C51;
+	background-color:#F0788C;
 	border:none;
 	border-radius:5px;
 	
