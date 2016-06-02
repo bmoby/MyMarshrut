@@ -47,6 +47,5 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
-gem 'rename'
 
 ruby "2.3.0"
