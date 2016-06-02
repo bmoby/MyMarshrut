@@ -3,23 +3,24 @@
 		<%= render 'shared/navbar' %>
 <div class='container text-center'>
 	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
-	<div class='row searchform'>
-		<div class='col-lg-12 col-md-12 col-sm-12 text-center'>
+	<div class='searchform'>
 		<%= form_for @search, class:'gaga' do |s| %>
 		  <div class="field">  
 		    <%= s.text_field :ville_d, class:'inputter', placeholder: 'Откуда?', id:'villesd'%>
 			<%= s.text_field :ville_a, class:'inputter', placeholder: 'Куда?', id:'villesa'%></br>
 			
 			<%= button_tag(type: "submit", class: "poisk larg-btn btn-info") do %>
-			    <i class="glyphicon glyphicon-search"></i> Поиск
+			   <i class="glyphicon glyphicon-search"></i> Поиск
 			<% end %>
 	  		</div>
 		<% end %>
-		</div>
 	</div>
 	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
 </div>
 </div>
+
+
+
 <div class='row cont_2part hidden-xs'>
 	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
 	<div class='col-sm-4 info'>
