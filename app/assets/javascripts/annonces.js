@@ -14,13 +14,13 @@ $(document).ready(function() {
     event.stopPropagation();
     event.preventDefault();
     $(this).closest('.droite').find('.contact').hide('slide');
-    $(this).closest('.droite').find('.info').show('slide');
+    $(this).closest('.droite').find('.infoa').show('slide');
   });
 
   $('.contactbtn').on('click', function(event) {
     event.stopPropagation();
     event.preventDefault();
-    $(this).closest('.droite').find('.info').hide('slide');
+    $(this).closest('.droite').find('.infoa').hide('slide');
     $(this).closest('.droite').find('.contact').show('slide');
   });
   

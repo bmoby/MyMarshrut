@@ -1,22 +1,21 @@
 
 <div class='cont_1part hidden-xs'>
 		<%= render 'shared/navbar' %>
-<div class='container text-center'>
+	<div class='container-fluid text-center'>
 	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
-	<div class='searchform'>
-		<%= form_for @search, class:'gaga' do |s| %>
-		  <div class="field">  
-		    <%= s.text_field :ville_d, class:'inputter', placeholder: 'Откуда?', id:'villesd'%>
-			<%= s.text_field :ville_a, class:'inputter', placeholder: 'Куда?', id:'villesa'%></br>
-			
-			<%= button_tag(type: "submit", class: "poisk larg-btn btn-info") do %>
-			   <i class="glyphicon glyphicon-search"></i> Поиск
-			<% end %>
+		<div class='searchform'>
+			<%= form_for @search, class:'gaga' do |s| %>
+		 	<div class="field">  
+		   	  <%= s.text_field :ville_d, class:'inputter', placeholder: 'Откуда?', id:'villesd'%>
+			  <%= s.text_field :ville_a, class:'inputter', placeholder: 'Куда?', id:'villesa'%></br>
+			  <%= button_tag(type: "submit", class: "poisk larg-btn btn-info") do %>
+			  	<i class="glyphicon glyphicon-search"></i> Поиск
+				<% end %>
 	  		</div>
-		<% end %>
-	</div>
+				<% end %>
+		</div>
 	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
-</div>
+	</div>
 </div>
 
 
@@ -73,7 +72,70 @@
 
 <div class='cont_mob_1part visible-xs'>
 	<%= render 'shared/navbar' %>
-	<div class='container text-center'>
-		
+	<div class='container-fluid text-center'>
+		<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
+			<div class='searchform'>
+				<%= form_for @search, class:'gaga' do |s| %>
+			 	<div class="field">  
+			   	  <%= s.text_field :ville_d, class:'inputter', placeholder: 'Откуда?', id:'villesd'%>
+				  <%= s.text_field :ville_a, class:'inputter', placeholder: 'Куда?', id:'villesa'%></br>
+				  <%= button_tag(type: "submit", class: "poisk larg-btn btn-info") do %>
+				  	<i class="glyphicon glyphicon-search"></i> Поиск
+					<% end %>
+		  		</div>
+					<% end %>
+			</div>
+		<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
 	</div>
+</div>
+
+
+
+
+<div class='row cont_mob_2part visible-xs'>
+	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
+	<div class='row info'>
+		<div class='row iconinfo text-center'>
+		<i class="fa fa-tag" aria-hidden="true"></i>
+		</div>
+	</br>
+		<h3>Поиск маршрута</h3>
+		<p>На сайте указанно "Куда", "Откуда", вам всего лишь нужно ввести название городов, чтобы найти нужный маршрут.</p>
+	</br>
+	</div>
+	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
+	<div class='row tuto'>
+		<div class='row icontuto text-center'>
+		<i class="fa fa-thumbs-up" aria-hidden="true"></i>
+		</div>
+	</br>
+	<h3>Зарегистрироваться </h3>
+	<p>Чтобы связаться с водителем вам необходимо зарегистрироваться, для этого нажмите <%=link_to 'сюда', new_user_registration_path%> <i class="fa fa-reply"></i></p>
+	</br>
+	</div>
+	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
+	<div class='row agir'>
+		<%unless user_signed_in?%>
+		<div class='row icontuto text-center'>
+		<i class="fa fa-user-plus" aria-hidden="true"></i>
+		</div>
+		<h3>Создать объявление</h3>
+		<p>Чтоб создать объявление нужно регистрироватсья</br>
+		для этого нажмите <%=link_to 'сюда', new_user_registration_path, class:'syudavert'%> <i class="fa fa-reply" aria-hidden="true"></i>
+</p>
+		</br></br>
+		<%else%>
+		<div class='row icontuto text-center'>
+		<i class="fa fa-check-square-o" aria-hidden="true"></i>
+		
+		</div>
+		<h3>Создать объявление</h3>
+		<p> Теперь вы можете создать свое объявление</p>
+		<%= link_to new_annonce_path, class:'btn btn-info sozdatannonce' do%>
+		<p><i class="glyphicon glyphicon-pencil"></i> Создать объявление </p>
+		<%end%>
+		</br></br>
+		<%end%>
+	</div>
+	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
 </div>

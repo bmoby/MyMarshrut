@@ -51,6 +51,20 @@ textarea:focus, input:focus{
 
 //NAVBAR GENERAL DESIGN
 
+.notconnectedlinksmobile{
+	margin-top:15px;
+}
+
+.notconnectedlinksmobile li{
+	list-style-type:none;
+	display:inline;
+	margin-left:10px;
+}
+
+.notconnectedlinksmobile li a{
+	color:#3E454C;
+}
+
 .notibtn{
 	width:auto;
 	height:40px;
@@ -96,6 +110,7 @@ textarea:focus, input:focus{
 
 .annonce{
 	background-color:white;
+	width:80%;
 	margin-bottom:10px;
 	margin-top:10px;
 	padding-left:0;
@@ -105,10 +120,16 @@ textarea:focus, input:focus{
 }
 
 .photo img{
+	margin-left:0;
+	padding-left:0;
 	border-radius: 5px;
 	border: solid 1px #B8B89F;
 }
 
+.photo{
+	margin-left:0;
+	padding-left:0;
+}
 .prixcontact{
 	border-left:solid 1px #C3C4BC;
 }
@@ -124,7 +145,7 @@ textarea:focus, input:focus{
 
 
 .datedirection h4{
-	font-size:25px;
+	font-size:21px;
 	font-family: 'Quicksand', sans-serif;
 }
 
@@ -139,21 +160,24 @@ textarea:focus, input:focus{
 
 // DESIGN ANNONCE DISPLAY INDIVIDUAL --------->
 
+.vehiculeinfo{
+	text-align:left;
+}
 
 .tabulation{
 	margin-right:15px;
 }
 
 .enteteannonce{
-	background-color:#34393E;
+	width:80%;
+	background-color:#DAAF94;
 	margin-top:15px;
 	border-radius:5px;
-	border-top:solid 1px gray;
 }
 
 .enteteannonce h4{
 	font-family: 'Exo 2', sans-serif;
-	color:#D1B882;
+	color:white;
 }
 
 p{
@@ -336,6 +360,7 @@ select:focus {
 }
 
 .annonceindividuel{
+	width:80%;
 	border-bottom:solid 1px gray;
 	margin-top:10px;
 	background-color:white;
@@ -368,6 +393,16 @@ select:focus {
 }
 
 //HOMEPAGE DESIGN 
+
+.cont_mob_1part{
+	height:100vh;
+  background: asset-data-url("covermob.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	
+}
 
 .cont_1part { 
 	height:100vh;

@@ -1,4 +1,5 @@
-<div class='container enteteannonce '>
+		<%= render 'shared/navbar' %>
+<div class='container-fluid enteteannonce '>
 	<div class='col-md-10'>
 	<h4><%= @annonce.ville_depart%> <i class='fa fa-long-arrow-right'></i> <%=@annonce.ville_arrive%></h4>
 	</div>
@@ -6,7 +7,7 @@
 	<h4><%= @annonce.date_depart.strftime("%d/%m/%Y")%></h4>
 	</div>
 </div>
-<div class='container annonceindividuel'>
+<div class='container-fluid annonceindividuel'>
 	<div class='col-md-6 gauche'>
 		<%# ICI LA PHOTO%>
 		</br></br>
@@ -38,7 +39,7 @@
 		</br>
 		<div class='row infocontact'>
 			<%# ICI LES INFO UNIQUEMENT%>
-			<div class='info'>
+			<div class='infoa'>
 				<%#LES INFO ICI%>
 					
 				<div class='col-md-6 infoGauche'>

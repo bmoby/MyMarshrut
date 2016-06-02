@@ -1,9 +1,9 @@
 
-
-	<div class=' container text-center inboxtitle'>
+		<%= render 'shared/navbar' %>
+	<div class=' container-fluid text-center inboxtitle'>
 		<h3 class='moisoobshenie'>Мои сообщения</h3>
 	</div>
-<div class='container messagerie text-center'>
+<div class='container-fluid messagerie text-center'>
 		<%@conversations.each do |conversation|%>
 		
 		<% if conversation.messages.last.is_unread?(current_user)%>

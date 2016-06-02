@@ -1,5 +1,6 @@
+		<%= render 'shared/navbar' %>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <div class='container text-center'>
+  <div class='container-fluid text-center'>
 	  <% if resource.errors.any? %>
 	    <div id="error_explanation">
 	      <h2>Пожалуйста, заполните следующие поля и нажмите на «Подтвердить» </h2>

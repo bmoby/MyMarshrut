@@ -1,9 +1,10 @@
+		<%= render 'shared/navbar' %>
 <%- model_class = Annonce -%>
 
 <%= will_paginate @annonces%>
 <% @annonces.each do |annonce| %>
 
-<div class='container annonce'>
+<div class='container-fluid annonce'>
 <%# container * %>
 	
 	<div class='row ligne text-left'>

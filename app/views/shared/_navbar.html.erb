@@ -7,9 +7,19 @@
 		<div class='navbar-brand'>
 			<a href='<%=root_path%>'><i class="fa fa-bus" aria-hidden="true"></i></a>
 		</div>
-	<ul class='notconnectedlinks nav navbar-nav navbar-right'>
+	<ul class='notconnectedlinks nav navbar-nav navbar-right hidden-xs'>
 	<li><a href='<%= new_user_session_path%>'><i class="iconsignin fa fa-sign-in"></i>  </br>вход </a></li>
 	<li><a href='<%= new_user_registration_path%>'><i class="fa fa-pencil" aria-hidden="true"></i></br>Регистрация</a></li>
+	</ul>
+	<ul class='notconnectedlinksmobile visible-xs'>
+	<li><%= link_to new_user_session_path, class:'newusersessionclass' do%>
+		<i class="iconsignin fa fa-sign-in"></i> вход
+		<%end%>
+	</li>
+	<li><%= link_to new_user_registration_path, class:'newusersessionclass' do%>
+		<i class="fa fa-pencil" aria-hidden="true"></i> Регистрация
+		<%end%>
+	</li>
 	</ul>
 	</div>
 </nav>
