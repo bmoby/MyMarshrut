@@ -108,6 +108,16 @@ textarea:focus, input:focus{
 
 // DESIGN ANNONCE DISPLAY ALL --------->
 
+.annoncexs{
+	background-color:white;
+	margin-bottom:10px;
+}
+
+.xspodrobneebtn{
+	width:80%;
+	margin-bottom:10px;
+}
+
 .contactbtn .glyphicon{
 	font-size:20px;
 }
@@ -146,7 +156,16 @@ textarea:focus, input:focus{
 .prix .fa{
 	color:#67AA36;
 }
+.datedirectionxs h4{
+	font-size:21px;
+	font-family: 'Quicksand', sans-serif;
+}
 
+.datedirectionxs p{
+	font-size:25px;
+	margin-top:10px;
+	font-family: 'Crimson Text', serif;
+}
 
 .datedirection h4{
 	font-size:21px;
@@ -309,6 +328,10 @@ input, textarea{
 	margin-bottom:10px;
 }
 
+.imageputxs {
+	margin-bottom:10px;
+}
+
 select {
   border: 1px solid #cccccc;
   background-color: #ffffff;
@@ -413,6 +436,14 @@ select:focus {
 	height:150px;
 	padding-left:20px;
 	padding-right:20px;
+}
+
+.messageboxxs{
+	word-wrap: break-word;
+	width:90%;
+	height:100px;
+	padding-left:10px;
+	padding-right:10px;
 }
 
 .listcontact .glyphicon{

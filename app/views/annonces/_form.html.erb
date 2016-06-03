@@ -45,9 +45,14 @@
       <%= f.text_field :annee_vehicule, class: 'inputter', :placeholder => 'какого года выпуска ? '  %>
 	  <%= f.number_field :nombre_place, class:'inputter', :placeholder => 'Сколько мест в автомобиле?'%>
     </div>
-    <div class="field">
+    <div class="field hidden-xs">
 		<%= f.label :image, 'Нажмите на кнопку чтобы добавить фото автомобиля' %>
       <%= f.file_field :image, class:'imageput'%>
+    </div>
+	
+    <div class="field visible-xs">
+		<%= f.label :image, 'Нажмите на кнопку чтобы добавить фото автомобиля' %>
+      <%= f.file_field :image, class:'imageputxs'%>
     </div>
 	
 	<div class='row intercalere'>

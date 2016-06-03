@@ -9,7 +9,7 @@
 <%else%>
 
 <% @lespages.each do |annonce| %>
-<div class='container-fluid annonce text-center'>
+<div class='container-fluid annonce text-center hidden-xs'>
 <%# container * %>
 	<div class='row ligne text-left'>
 	<%# general row * * %>
@@ -92,6 +92,95 @@
 	</div>
 <%# container %>
 </div>
+
+
+<div class='annoncexs text-center visible-xs'>
+	<%# general row * * %>
+			<div class= 'row text-center datedirectionxs'>
+			<h4> <%= annonce.ville_depart.truncate_words(2, omission: ' ') %> -> <%= annonce.ville_arrive.truncate_words(2, omission: ' ')%></h4>
+			</div>
+			<div class='row photo'>
+			<%# first col in the general row IMAGE * * * * # %>
+				<%= image_tag annonce.image.thumb('300x250#').url if annonce.image_stored?%>
+			<%# first col in the general row IMAGE * * * * # %>
+			</div>
+			
+			<div class='row text-center'>
+			<%# second col in general row CONTENU * * * * #%>
+				<div class='row'>
+				<%# first rov in  CONTENU  ENTENTE* * * * # ¥%>
+					<div class= 'row text-center prix'>
+						<div class='col-xs-5 text-center'>
+					<h3 ><%= annonce.prix_passager%><i class='fa fa-eur'> </i> </h3>
+						</div>
+						<div class='datedirectionxs col-xs-7'>
+					<p>  <%= annonce.date_depart.strftime("%d/%m/%Y") %> </p>
+						</div>
+					</div>
+				<%# first rov in  CONTENU ENTETE * * * * # ¥%>
+				</div>
+			</br>
+					
+				<div class='row'>
+				<%# second rov in  CONTENU  INFO* * * * # ¥%>
+					<div class='col-xs-6'>
+						<% if annonce.nombre_chauffeurs == 1%>
+						<p><i class='fa fa-male'> </i>   <%= annonce.nombre_chauffeurs %> Водитель</p>
+						<%else%>
+						<p><i class='fa fa-users'> </i>   <%= annonce.nombre_chauffeurs %> Водителя</p>
+						<%end%>
+						<p><i class='fa fa-suitcase'></i>   <%= annonce.poid_max_passager %> кг/макс</p> 
+						<% if annonce.arrets_chaque == 1%>
+						<p><i class='fa fa-coffee'></i> Остановка каждый час</p>
+						<%elsif annonce.arrets_chaque == 2%>
+						<p><i class='fa fa-coffee'></i> Остановка каждые <%= annonce.arrets_chaque %> часа</p>
+						<%elsif annonce.arrets_chaque == 3%>
+						<p><i class='fa fa-coffee'></i> Остановка каждые <%= annonce.arrets_chaque %> часа</p>
+						<%elsif annonce.arrets_chaque == 4%>
+						<p><i class='fa fa-coffee'></i> остановка каждые <%= annonce.arrets_chaque %> часа</p>
+						<%elsif annonce.arrets_chaque > 4%>
+						<p><i class='fa fa-coffee'></i> Остановка каждые <%= annonce.arrets_chaque %> часов</p>
+						<%end%>
+						
+						
+					</div>
+					<div class='col-xs-6 annonce_info2'>
+						<% if annonce.accept_colis == true%>
+						<p><i class='fa fa-check-circle'> </i> Перевозка груза:</p>
+						<p> <%= annonce.prix_kg_colis%> <i class='fa fa-eur'> </i> кг. мин вес  <%= annonce.poid_min_colis%> кг</p>
+						<%else%>
+						<p><i class='fa fa-times-circle'> </i> Перевозка посылок</p>
+						<%end%>
+						<% if annonce.accept_colis_valeur == true%>
+						<p><i class='fa fa-check-circle'> </i> Перевозка ценных бумаг</p>
+						<%else%>
+						<p><i class='fa fa-times-circle'> </i> Перевозка ценных бумаг</p>
+						<%end%>
+					</div>
+					<div class='row text-center'>
+						
+						<%if user_signed_in?%>
+							<p><i class='fa fa-phone'> </i> <%= annonce.user.telephone_personnel%></p>
+							<% if annonce.telephones? %>
+							<p> <i class='fa fa-phone'> </i>  <%= annonce.telephones%></p>
+							<%end%>
+							<%= link_to 'Podrobnee', annonce_path(annonce), :class => "xspodrobneebtn btn btn-info" %>
+						<%else%>
+							<p>Чтобы связаться с водителем, необходимо  <%= link_to "зарегистрироваться", new_user_registration_path%>.</p>
+						<%end%>
+						
+						
+					</div>
+				<%# second rov in  CONTENU  INFO* * * * # ¥%>
+				</div>
+			<%# second col in general row CONTENU * * * * #%>
+			</div>
+
+	<%# general row %>
+	</div>
+<%# container %>
+
+
 	<%end%>
 	<div class='container-fluid text-center'>
 	<%= will_paginate @lespages, previous_label:'<', next_label:'>', renderer: BootstrapPagination::Rails %>

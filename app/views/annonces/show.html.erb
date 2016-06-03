@@ -138,7 +138,7 @@
 	<div class='row'>
 		<%# ICI LA PHOTO%>
 		</br></br>
-		<div class='row photo text-center'>
+		<div class='row photo'>
 		<%= image_tag @annonce.image.thumb('400x250#').url, class:'img-responsive' if @annonce.image_stored?%>
 		</div>
 		<div class='row editButtons'>
@@ -236,23 +236,27 @@
 					</p>
 				</div>
 				<div class='row telephonesChauffeurs text-center'>
-					<div class='row text-left'>
+					<div class='row text-center'>
 						<p>Лучший способ связаться с водителем это отправить ему сообщение через наш сайт.</p>
 					</div>
 					<div class='row text-center'>
 						<p><i class='fa fa-phone'> </i> <%= @annonce.user.telephone_personnel%> 
-						 <i class='fa fa-phone'> </i>  <%= @annonce.telephones%></p>
+							<%if @annonce.telephones?%>
+						</br>
+						 <i class='fa fa-phone'> </i>  <%= @annonce.telephones %></p>
+						 <%end%>
 					</div>
 				</div>
 				<div class='row contactinputs'>
 					<%= form_tag conversations_path, method: :post do%>
 				 	<%= hidden_field_tag :user_id, @annonce.user_id %>
 					<%= hidden_field_tag :subject, current_user.prenom + 'прислал вам сообщение'  %>
-					<%= text_area_tag :body, nil, class: 'messagebox', placeholder: 'Задайте все свои вопросы и нажмите на "Отправить"'%>
-					<div class='text-right'>
+					<%= text_area_tag :body, nil, class: 'messageboxxs', placeholder: 'Задайте все свои вопросы и нажмите на "Отправить"'%>
+					<div class='text-center'>
 					<%= submit_tag 'Отправить', class: 'btn btn-info '%>
 					<%end%>
 					</div>
+				</br></br>
 				</div>
 			</div>
 		</div>
