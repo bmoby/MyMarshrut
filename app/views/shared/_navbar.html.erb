@@ -9,7 +9,7 @@
 		</div>
 	<ul class='notconnectedlinks nav navbar-nav navbar-right hidden-xs'>
 	<li><a href='<%= new_user_session_path%>'><i class="iconsignin fa fa-sign-in"></i>  </br>вход </a></li>
-	<li><a href='<%= new_user_registration_path%>'><i class="fa fa-pencil" aria-hidden="true"></i></br>Регистрация</a></li>
+	<li><a href='<%= new_user_registration_path%>'><i class="fa fa-pencil" aria-hidden="true"></i></br>регистрация</a></li>
 	</ul>
 	<ul class='notconnectedlinksmobile visible-xs'>
 	<li><%= link_to new_user_session_path, class:'newusersessionclass' do%>
@@ -17,7 +17,7 @@
 		<%end%>
 	</li>
 	<li><%= link_to new_user_registration_path, class:'newusersessionclass' do%>
-		<i class="fa fa-pencil" aria-hidden="true"></i> Регистрация
+		<i class="fa fa-pencil" aria-hidden="true"></i> регистрация
 		<%end%>
 	</li>
 	</ul>
@@ -66,7 +66,7 @@
 			</li>
 			<%if current_user.voditel?%>
             <li> <%= link_to  annonces_moiobyavlenie_path do%>
-				<i class="glyphicon glyphicon-tasks"></i> - Мои обявление
+				<i class="glyphicon glyphicon-tasks"></i> - Мои объявление
 				<%end%>
 			</li>
 			<%else%>

@@ -460,14 +460,14 @@ select:focus {
 .cont_mob_1part{
 	height:100vh;
   background: asset-data-url("covermob.jpg") no-repeat center center fixed; 
-  -webkit-background-size: 100vh;
-  -moz-background-size: 100vh;
-  -o-background-size: 100vh;
-  background-size: 100vh;
-	
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .cont_1part { 
+	width:100vw;
 	height:100vh;
   background: asset-data-url("cover.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
