@@ -100,13 +100,17 @@ textarea:focus, input:focus{
 }
 
 .navbar-brand a{
-	color:#7690CD;
+	color:#3E454C;
 }
 .navbar-brand a:hover{
 	color:#333333;
 }
 
 // DESIGN ANNONCE DISPLAY ALL --------->
+
+.contactbtn .glyphicon{
+	font-size:20px;
+}
 
 .annonce{
 	background-color:white;
@@ -160,9 +164,6 @@ textarea:focus, input:focus{
 
 // DESIGN ANNONCE DISPLAY INDIVIDUAL --------->
 
-.vehiculeinfo{
-	text-align:left;
-}
 
 .tabulation{
 	margin-right:15px;
@@ -176,9 +177,12 @@ textarea:focus, input:focus{
 }
 
 .enteteannoncexs{
-	background-color:#DAAF94;
-	margin-top:15px;
-	border-radius:5px;
+	background-color:#778691;
+}
+
+.enteteannoncexs h4{
+	font-family: 'Exo 2', sans-serif;
+	color:white;
 }
 
 .enteteannonce h4{
@@ -194,9 +198,13 @@ p{
 }
 
 .menuhaut{
-	list-style:none;
+	list-style-type:none;
 }
 
+.menuhautxs{
+	list-style-type:none;
+	margin-top:-10px;
+}
 .menuhaut li{
 	display:inline;
 	margin-left:20px;
@@ -204,6 +212,14 @@ p{
 
 .menuhaut li a {
 	color:#5BC0DE;
+}
+
+.menuhautxs li a {
+	color:#334D5C;
+}
+
+.menuhautxs a .glyphicon{
+	font-size:35px;
 }
 .menuhaut li a:active {
     color:#B8B89F;
@@ -250,6 +266,7 @@ h4{
 .conseil p{
 	color:gray;
 }
+
 input, textarea{
 	word-wrap: break-word;
        -webkit-border-radius: 30px; 
@@ -361,7 +378,6 @@ select:focus {
 }
 
 .vehiculeinfo{
-	word-wrap: break-word;
 	border-bottom:solid 1px #B8B89F;
 }
 
@@ -376,7 +392,6 @@ select:focus {
 
 .annonceindividuelxs{
 	border-bottom:solid 1px gray;
-	margin-top:10px;
 	background-color:white;
 	border-radius:5px;
 }
@@ -403,6 +418,10 @@ select:focus {
 .listcontact .glyphicon{
 	margin-top:15px;
 	font-size:25px;
+}
+
+.infoDroitexs{
+	border-bottom:solid 1px gray;
 }
 
 //HOMEPAGE DESIGN 

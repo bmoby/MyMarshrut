@@ -126,20 +126,20 @@
 	
 </div>
 
-<div class='container-fluid enteteannoncexs visible-xs '>
-	<div class='col-md-10'>
-	<h4><%= @annonce.ville_depart%> <i class='fa fa-long-arrow-right'></i> <%=@annonce.ville_arrive%></h4>
+<div class='enteteannoncexs visible-xs '>
+	<div class='row'>
+	<h4><%= @annonce.ville_depart.split.first + ' ' + @annonce.ville_depart.split.second%> <i class='fa fa-long-arrow-right'></i> <%=@annonce.ville_arrive.split.first + ' ' + @annonce.ville_arrive.split.second%></h4>
 	</div>
-	<div class='col-md-2 text-right'>
+	<div class='row text-center'>
 	<h4><%= @annonce.date_depart.strftime("%d/%m/%Y")%></h4>
 	</div>
 </div>
-<div class='container-fluid annonceindividuelxs visible-xs'>
-	<div class='col-md-6 gauche'>
+<div class='annonceindividuelxs text-center visible-xs'>
+	<div class='row'>
 		<%# ICI LA PHOTO%>
 		</br></br>
-		<div class='row photo'>
-		<%= image_tag @annonce.image.thumb('550x400#').url, class:'img-responsive' if @annonce.image_stored?%>
+		<div class='row photo text-center'>
+		<%= image_tag @annonce.image.thumb('400x250#').url, class:'img-responsive' if @annonce.image_stored?%>
 		</div>
 		<div class='row editButtons'>
 				<%if user_signed_in?%>
@@ -152,16 +152,21 @@
 				</br></br>
 		</div>
 	</div>
-	<div class='col-md-6 droite'>
+	<div class='row text-center droite'>
 		<%#ICI TOUTES LES INFO ET CONTACT DIV GENERAL INFO ET CONTACT NE RIEN INSCRIRE DIRECTEMENT%>
-		<div class='row menurow text-right'>
+		<div class='row text-center menurow'>
 			<%#ICI LE MENU%>
-			<ul class='menuhaut'>
-				</br>
-				<li><%= link_to 'Вернуться назад', :back%></li>
-				<li><a href=' ' class='infobtn'>Информация</a></li>
-				<li><a href=' ' class='contactbtn'>Связаться</a></li>
-			</ul>
+			<div class='menuhautxs'>
+				<div class='col-xs-4 text-center'>
+				<li><%= link_to :back do%> <i class='glyphicon glyphicon-circle-arrow-left'></i><%end%></li>
+				</div>
+				<div class='col-xs-4 text-center'>
+				<li><a href=' ' class='infobtn'><i class='glyphicon glyphicon-list-alt'></i> </a></li>
+				</div>
+				<div class='col-xs-4 text-center'>
+				<li><a href=' ' class='contactbtn'><i class='glyphicon glyphicon-envelope'></i></a></li>
+				</div>
+			</div>
 		</div>
 		</br>
 		<div class='row infocontact'>
@@ -169,9 +174,9 @@
 			<div class='infoa'>
 				<%#LES INFO ICI%>
 					
-				<div class='col-md-6 infoGauche'>
+				<div class='row infoGauche'>
 					<%#INFO PARTIE GAUCHE%>
-						<div class='vehiculeinfo'>
+						<div class='vehiculeinfo row text-center'>
 							<h3>Данные </h3>
 						<p>Едет  <%= @annonce.user.prenom%></p>
 						<p>На <%= @annonce.marque_vehicule %></p>
@@ -196,11 +201,11 @@
 						<p><i class='fa fa-coffee'></i> Остановка каждые <%= @annonce.arrets_chaque %> часов</p>
 						<%end%>
 					</div>
-				<div class='col-md-6 infoDroite'>
+				<div class='row text-center infoDroitexs'>
 					<%#INFO PARTIE DROITE%>
 						<p><div class='mapinfo'>Уезжает <%= @annonce.date_depart.strftime("%d/%m/%Y") %> ого числа </p>
 						<p>Из  <%= @annonce.ville_depart %> в <%= @annonce.ville_arrive%></p> </br></div></br>
-						<h5 class='cenazaproezd'>Цена за проезд <%= @annonce.prix_passager%><i class='fa fa-eur'> </i> </h5>
+						<h3 class='cenazaproezd'>Цена за проезд <%= @annonce.prix_passager%><i class='fa fa-eur'> </i> </h3>
 						<% if @annonce.accept_colis == true%>
 						<p>Перевозит груз: </p>
 						<p> <%= @annonce.prix_kg_colis%> евро за килограм, минимум <%= @annonce.poid_min_colis%> килограм</p>
@@ -216,6 +221,9 @@
 							<h3>Подробности</h3>
 						<p><%= @annonce.description%> </p></br>
 						</div></br>
+						<div class='row text-center menuhautxs'>
+						<a href=' ' class='contactbtn'><i class='glyphicon glyphicon-envelope'></i></a></br></br>
+					</div>
 				</div>
 				</div>
 			</div>
@@ -227,13 +235,13 @@
 						Водитель наверняка уже ответил на ваш вопрос.
 					</p>
 				</div>
-				<div class='row telephonesChauffeurs text-right'>
-					<div class='col-md-8 text-left'>
+				<div class='row telephonesChauffeurs text-center'>
+					<div class='row text-left'>
 						<p>Лучший способ связаться с водителем это отправить ему сообщение через наш сайт.</p>
 					</div>
-					<div class='col-md-4 text-right'>
-						<p><i class='fa fa-phone'> </i> <%= @annonce.user.telephone_personnel%></p>
-						<p><i class='fa fa-phone'> </i>  <%= @annonce.telephones%></p>
+					<div class='row text-center'>
+						<p><i class='fa fa-phone'> </i> <%= @annonce.user.telephone_personnel%> 
+						 <i class='fa fa-phone'> </i>  <%= @annonce.telephones%></p>
 					</div>
 				</div>
 				<div class='row contactinputs'>
