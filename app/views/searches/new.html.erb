@@ -75,14 +75,18 @@
 	<div class='container-fluid text-center'>
 		<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
 			<div class='searchform'>
-				</br></br></br></br></br></br></br>
 				<%= form_for @search, class:'gaga' do |s| %>
+				  <%= button_tag(type: "submit", class: "poiskxs larg-btn btn-info") do %>
+				  	<i class="glyphicon glyphicon-search"></i> Dostupnie marshruti
+					<% end %>
+					</br></br></br></br></br></br></br>
 			 	<div class="field">  
 			   	  <%= s.text_field :ville_d, class:'inputter', placeholder: 'Откуда?', id:'villesd'%>
 				  <%= s.text_field :ville_a, class:'inputter', placeholder: 'Куда?', id:'villesa'%></br>
 				  <%= button_tag(type: "submit", class: "poiskxs larg-btn btn-info") do %>
 				  	<i class="glyphicon glyphicon-search"></i> Поиск
 					<% end %>
+				</br>
 		  		</div>
 			</br></br></br></br>
 					<% end %>

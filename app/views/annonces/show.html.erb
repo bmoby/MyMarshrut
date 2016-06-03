@@ -106,7 +106,11 @@
 					</div>
 					<div class='col-md-4 text-right'>
 						<p><i class='fa fa-phone'> </i> <%= @annonce.user.telephone_personnel%></p>
+						<% if @annonce.telephones? %>
+							<% if @annonce.telephones != @annonce.user.telephone_personnel%>
 						<p><i class='fa fa-phone'> </i>  <%= @annonce.telephones%></p>
+							<%end%>
+						<%end%>
 					</div>
 				</div>
 				<div class='row contactinputs'>
@@ -117,6 +121,7 @@
 					<div class='text-right'>
 					<%= submit_tag 'Отправить', class: 'btn btn-info '%>
 					<%end%>
+					</br></br>
 					</div>
 				</div>
 			</div>

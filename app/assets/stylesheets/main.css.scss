@@ -78,7 +78,6 @@ textarea:focus, input:focus{
 }
 
 .notif{
-	font-family: 'Passion One', cursive;
 	color:#F2594B;
 	
 }
@@ -114,7 +113,7 @@ textarea:focus, input:focus{
 }
 
 .xspodrobneebtn{
-	width:80%;
+	width:40%;
 	margin-bottom:10px;
 }
 
@@ -157,8 +156,8 @@ textarea:focus, input:focus{
 	color:#67AA36;
 }
 .datedirectionxs h4{
-	font-size:21px;
-	font-family: 'Quicksand', sans-serif;
+	color:#687D77;
+	font-size:20px;
 }
 
 .datedirectionxs p{
@@ -168,8 +167,8 @@ textarea:focus, input:focus{
 }
 
 .datedirection h4{
+	color:#687D77;
 	font-size:21px;
-	font-family: 'Quicksand', sans-serif;
 }
 
 .datedirection p{
@@ -181,6 +180,11 @@ textarea:focus, input:focus{
 	border-bottom:solid 1px #C3C4BC;
 }
 
+.datedirectionxs{
+	margin:0;
+	padding:0;
+}
+
 // DESIGN ANNONCE DISPLAY INDIVIDUAL --------->
 
 
@@ -190,9 +194,9 @@ textarea:focus, input:focus{
 
 .enteteannonce{
 	width:80%;
-	background-color:#DAAF94;
+	background-color:gray;
 	margin-top:15px;
-	border-radius:5px;
+	border-radius:5px 5px 0px 0px
 }
 
 .enteteannoncexs{
@@ -200,12 +204,11 @@ textarea:focus, input:focus{
 }
 
 .enteteannoncexs h4{
-	font-family: 'Exo 2', sans-serif;
 	color:white;
 }
 
 .enteteannonce h4{
-	font-family: 'Exo 2', sans-serif;
+	font-size:16px;
 	color:white;
 }
 
@@ -406,10 +409,10 @@ select:focus {
 
 .annonceindividuel{
 	width:80%;
+	border:solid 1px #D8CAA8;
 	border-bottom:solid 1px gray;
-	margin-top:10px;
 	background-color:white;
-	border-radius:5px;
+	border-radius: 0px 0px 5px 5px;
 }
 
 
