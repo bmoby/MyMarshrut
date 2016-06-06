@@ -5,9 +5,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable 
   has_many :annonces
   
-  validates_presence_of :nom, :message => "Пожалуйста введите свою Фамилию!"
-  validates_presence_of :prenom, :message => "Пожалуйста введите своё Имя!"
-  validates_presence_of :telephone_personnel, :message => "Пожалуйста введите Телефон!"
+  validates_presence_of :nom, :message => "Пожалуйста введите свою Фамилию."
+  validates_presence_of :ville, :message => "Пожалуйста введите название города где вы проживаете."
+  validates_presence_of :pays, :message => "Пожалуйста введите страну где вы прожываете."
+  validates_presence_of :prenom, :message => "Пожалуйста введите своё Имя."
+  validates_presence_of :telephone_personnel, :message => "Пожалуйста введите Телефон."
   
 
   def voditel?
