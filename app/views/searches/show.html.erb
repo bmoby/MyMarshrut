@@ -101,7 +101,10 @@
 			</div>
 			<div class='row photo'>
 			<%# first col in the general row IMAGE * * * * # %>
-				<%= image_tag annonce.image.thumb('300x250#').url if annonce.image_stored?%>
+				<%if annonce.image_stored?%>					  
+								  <%= image_tag(annonce.image.thumb('300x250#').url, class: 'img-thumbnail')
+								                    annonce.image.remote_url %>
+				<%end%>
 			<%# first col in the general row IMAGE * * * * # %>
 			</div>
 			
