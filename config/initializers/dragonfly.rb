@@ -10,19 +10,16 @@ Dragonfly.app.configure do
   url_format "/media/:job/:name"
   if Rails.env.development? || Rails.env.test?
     datastore :file,
-              root_path: Rails.root.join('public/system/dragonfly', Rails.env),
-              server_root: Rails.root.join('public')
+      root_path: Rails.root.join('public/system/dragonfly', Rails.env),
+      server_root: Rails.root.join('public')
   else
     datastore :s3,
-              bucket_name: mymarshrutimages,
-              access_key_id: AKIAIGJ3FKUDUF6TCLZQ,
-              secret_access_key: 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,
+              bucket_name: 'mymarshrutimages',
+              access_key_id: 'AKIAIGJ3FKUDUF6TCLZQ',
+              secret_access_key: '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',
               url_scheme: 'https'
   end
 
-  datastore :file,
-    root_path: Rails.root.join('public/system/dragonfly', Rails.env),
-    server_root: Rails.root.join('public')
 end
 
 # Logger
