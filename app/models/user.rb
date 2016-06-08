@@ -3,14 +3,24 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, 
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :annonces
+  has_many :annonces, :dependent => :destroy, :validate => false
+  validates_length_of :annonces, maximum: 4
   
   validates_presence_of :nom, :message => "Пожалуйста введите свою Фамилию."
   validates_presence_of :ville, :message => "Пожалуйста введите название города где вы проживаете."
   validates_presence_of :pays, :message => "Пожалуйста введите страну где вы прожываете."
   validates_presence_of :prenom, :message => "Пожалуйста введите своё Имя."
-  validates_presence_of :telephone_personnel, :message => "Пожалуйста введите Телефон."
-  
+  validates_presence_of :mobile_number, :message => "Пожалуйста введите Телефон."
+  validates_uniqueness_of :mobile_number, :message => "Вы уже исползовали этот номер на нашем сайте."
+    def needs_mobile_number_verifying?
+        if is_verified
+          return false
+        end
+        unless mobile_number?
+          return false
+        end
+        return true
+      end
 
   def voditel?
     self.annonces.count != 0

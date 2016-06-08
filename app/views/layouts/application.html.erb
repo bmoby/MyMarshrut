@@ -16,9 +16,25 @@
 </head>
 	
 <body>
-	<% unless alert.nil? %>
-	<p class="alert"><%= alert %></p>
-	<%end%>
+	<%# Rails flash messages styled for Bootstrap 3.0 %>
+	<% flash.each do |name, msg| %>
+	  <% if msg.is_a?(String) %>
+	    <div class="alert alert-<%= name.to_s == 'notice' ? 'success' : 'danger' %>" id="successMessage">
+	      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+	    </div>
+	  <% end %>
+	<% end %>
+	<script type="text/javascript">
+	$(function() {
+	    // setTimeout() function will be fired after page is loaded
+	    // it will wait for 5 sec. and then will fire
+	    // $("#successMessage").hide() function
+	    setTimeout(function() {
+	        $("#successMessage").hide('blind', {}, 400)
+	    }, 7000);
+	});
+	    </script>
 	<%= yield %>
 </body>
 </html>

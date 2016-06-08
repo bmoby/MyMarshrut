@@ -2,11 +2,25 @@
 <div class='container-fluid text-center'>
 	<div class='row vxodline'>
 <h2><i class='glyphicon glyphicon-cog'></i> Настройки профиля </h2>
-	</div>
-</br></br></br>
 
+	</div>
+	</br>
+	<div class='container-fluid notverified'>
+		<br>
+	 	<%= mobile_verification_button %>
+		<%= verify_mobile_number_form %>
+		<br>
+	</div>
+	</br>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
+  
+  <div class='field'>
+	  <%= f.text_field :mobile_number, class:'inputter', placeholder:'Ваш телефон'%>
+	  <%= f.submit "Изменить номер телефона", class:'btn btn-info' do%>
+	  <% redirect_to edit_user_registration_path%>
+	  <%end%>
+  </div>
 
   <div class="field">
     <%= f.email_field :email, autofocus: true, class:'inputter', placeholder:'E-mail' %>
@@ -22,10 +36,6 @@
   
   <div class='field'>
 	  <%= f.text_field :prenom, class:'inputter', placeholder: 'Имя'%>
-  </div>
-  
-  <div class='field'>
-	  <%= f.text_field :telephone_personnel, class:'inputter', placeholder:'Ваш телефон'%>
   </div>
 
    <div class='field'>

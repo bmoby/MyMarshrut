@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   
   #devise_for :users
-    devise_for :users do
-    get '/users/sign_out' => 'devise/sessions#destroy'
-    end
+    devise_for :users, :controllers => { :registrations => "acme/registrations"}
     get '/annonces/moiobyavlenie' => 'annonces#mesannonces'
   resources :searches
   resources :annonces
@@ -11,6 +9,8 @@ Rails.application.routes.draw do
     resources :messages
   end
   root to: 'searches#new'
+  post 'verifications' => 'verifications#create'
+  patch 'verifications' => 'verifications#verify'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

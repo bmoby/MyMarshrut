@@ -105,9 +105,9 @@
 						<p>Лучший способ связаться с водителем это отправить ему сообщение через наш сайт.</p>
 					</div>
 					<div class='col-md-4 text-right'>
-						<p><i class='fa fa-phone'> </i> <%= @annonce.user.telephone_personnel%></p>
+						<p><i class='fa fa-phone'> </i> <%= @annonce.user.mobile_number%></p>
 						<% if @annonce.telephones? %>
-							<% if @annonce.telephones != @annonce.user.telephone_personnel%>
+							<% if @annonce.telephones != @annonce.user.mobile_number%>
 						<p><i class='fa fa-phone'> </i>  <%= @annonce.telephones%></p>
 							<%end%>
 						<%end%>
@@ -245,7 +245,7 @@
 						<p>Лучший способ связаться с водителем это отправить ему сообщение через наш сайт.</p>
 					</div>
 					<div class='row text-center'>
-						<p><i class='fa fa-phone'> </i> <%= @annonce.user.telephone_personnel%> 
+						<p><i class='fa fa-phone'> </i> <%= @annonce.user.mobile_number%> 
 							<%if @annonce.telephones?%>
 						</br>
 						 <i class='fa fa-phone'> </i>  <%= @annonce.telephones %></p>

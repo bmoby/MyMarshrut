@@ -48,5 +48,7 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
-
+gem 'phonelib'
+gem 'twilio-ruby', '~> 4.0.0'
+gem 'dotenv-rails'
 ruby "2.3.0"

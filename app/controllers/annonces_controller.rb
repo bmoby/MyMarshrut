@@ -15,7 +15,16 @@ class AnnoncesController < ApplicationController
   # GET /annonces/new
   def new
       if user_signed_in?
+        if current_user.verifiednumber == current_user.mobile_number
+          if current_user.is_verified?
         @annonce = current_user.annonces.build
+          end
+        else
+          current_user.is_verified = false
+          current_user.save
+        redirect_to edit_user_registration_path,  :flash => { :errors => "Вам нужно подтвердить свои новый номер телефона прежде чем создать обявление" }
+    
+        end
     else
       redirect_to new_user_session_path, notice: 'Для того чтобы создать объявление необходимо зарегистрироваться'
     end
@@ -32,7 +41,7 @@ class AnnoncesController < ApplicationController
 
     respond_to do |format|
       if @annonce.save
-        format.html { redirect_to @annonce, notice: 'объявление создан' }
+        format.html { redirect_to @annonce, :flash => { :success => "объявление создан" }}
         format.json { render :show, status: :created, location: @annonce }
       else
         format.html { render :new }
@@ -49,7 +58,7 @@ class AnnoncesController < ApplicationController
   def update
     respond_to do |format|
       if @annonce.update(annonce_params)
-        format.html { redirect_to @annonce, notice: 'объявление обновлен.' }
+        format.html { redirect_to @annonce,:flash => { :success => "объявление обновлен" } }
         format.json { render :show, status: :ok, location: @annonce }
       else
         format.html { render :edit }

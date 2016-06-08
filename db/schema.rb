@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160528095717) do
+ActiveRecord::Schema.define(version: 20160607210443) do
 
   create_table "annonces", force: :cascade do |t|
     t.string   "ville_depart"
@@ -125,12 +125,15 @@ ActiveRecord::Schema.define(version: 20160528095717) do
     t.date     "date_naissance"
     t.string   "pays"
     t.string   "ville"
-    t.string   "telephone_personnel"
+    t.string   "mobile_number"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.boolean  "condition"
+    t.string   "verification_code"
+    t.boolean  "is_verified"
+    t.string   "verifiednumber"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

@@ -65,7 +65,7 @@
 					<div class='col-md-3 text-left prixcontact'>
 						
 						<%if user_signed_in?%>
-							<p><i class='fa fa-phone'> </i> <%= annonce.user.telephone_personnel%></p>
+							<p><i class='fa fa-phone'> </i> <%= annonce.user.mobile_number%></p>
 							<% if annonce.telephones? %>
 							<p> <i class='fa fa-phone'> </i>  <%= annonce.telephones%></p>
 							<%end%>
@@ -153,7 +153,7 @@
 					<div class='row text-center'>
 						
 						<%if user_signed_in?%>
-							<p><i class='fa fa-phone'> </i> <%= annonce.user.telephone_personnel%></p>
+							<p><i class='fa fa-phone'> </i> <%= annonce.user.mobile_number%></p>
 							<% if annonce.telephones? %>
 							<p> <i class='fa fa-phone'> </i>  <%= annonce.telephones%></p>
 							<%end%>
