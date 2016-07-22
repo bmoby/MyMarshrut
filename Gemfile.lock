@@ -163,7 +163,6 @@ GEM
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
     pg (0.18.4)
-    phonelib (0.6.1)
     puma (3.5.0)
     rack (1.6.4)
     rack-protection (1.5.3)
@@ -289,7 +288,6 @@ DEPENDENCIES
   mailboxer (~> 0.13.0)
   multi_json
   pg
-  phonelib
   puma
   rails (= 4.2.6)
   rails_12factor
