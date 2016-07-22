@@ -14,9 +14,6 @@ gem 'less-rails'
 gem 'sys-uname'
 gem 'therubyracer'
 gem 'tilt'
-group :development, :test do
-  gem 'byebug'
-end
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'autoprefixer-rails'
@@ -34,13 +31,16 @@ gem 'jquery-ui-rails'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'rubygems-update', '~> 2.6', '>= 2.6.4'
+gem 'twilio-ruby', '~> 4.0.0'
+gem 'dotenv-rails'
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'sqlite3'
 end
 
-group :development do 
-  gem 'sqlite3'
+group :development, :test do
+  gem 'byebug'
 end
 
 group :production do
@@ -49,7 +49,4 @@ group :production do
   	gem 'pg'
   	gem 'rails_12factor'
 end
-gem 'phonelib'
-gem 'twilio-ruby', '~> 4.0.0'
-gem 'dotenv-rails'
 ruby "2.3.0"
