@@ -1,0 +1,2 @@
+module VseuseriHelper
+end

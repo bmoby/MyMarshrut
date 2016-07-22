@@ -1,0 +1,8 @@
+	<body class='annoncesindex'>	
+		<%= render 'shared/navbar' %>
+
+<ul>
+<% @annonces.each do |annonce| %>
+<li><h3>annonce id: <%= annonce.id %>, user mobile: <%= annonce.user.mobile_number%>, annonce telephone:<%= annonce.telephones%>.</h3></li>
+<%end%>
+</ul>

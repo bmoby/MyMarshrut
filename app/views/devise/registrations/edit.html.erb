@@ -1,0 +1,58 @@
+		<%= render 'shared/navbar' %>
+<div class='container-fluid text-center'>
+	<div class='row vxodline'>
+<h2><i class='glyphicon glyphicon-cog'></i> Настройки</h2>
+
+	</div>
+
+	</br>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+	  <% if resource.errors.any? %>
+	    <div id="error_explanation">
+		  <ul class='listerreurs'>
+		      <% resource.errors.each do |attribute, message| -%>
+		          <% if message.is_a?(String)%>
+		              <li><p><%= message %></p></li>
+		          <% end %>
+		      <% end -%>
+		  </ul>
+	    </div>
+	  <% end %>
+ 
+  <div class='field'>
+</br></br>
+	  <%= f.text_field :mobile_number, class:'inputter', placeholder:'Ваш телефон С КОДОМ СТРАНЫ'%>
+  </div>
+
+  <div class="field">
+  </br>
+    <%= f.email_field :email, autofocus: true, class:'inputter', placeholder:'E-mail' %>
+  </div>
+  
+  <div class='field'>
+	  <%= f.text_field :prenom, class:'inputter', placeholder: 'Имя'%>
+  </div>
+	
+  <div class="field">
+    <i>(Если не меняете пароль, оставьте клетки пустыми)</i><br/>
+    <%= f.password_field :password, autocomplete: "off", class:'inputter', placeholder:'Новый пароль', autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "off", class:'inputter', placeholder:'Повторить ввод нового пароля', autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :current_password, autocomplete: "off", class:'inputter', placeholder:'Старый пароль', autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Изменить", class:'btn btn-info' %>
+  </div>
+<% end %>
+</br>
+<%= link_to "Удалить свой профиль", registration_path(resource_name), data: { confirm: "Вы уверены?" }, method: :delete %></br>
+<%= link_to "Вернуться назад", :back %>
+</br>
+</div>
+</br></br>

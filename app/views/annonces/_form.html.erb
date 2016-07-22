@@ -1,0 +1,211 @@
+<% if @annonce.errors.any? %>
+  <div id="error_explanation">
+    <h2>Пожалуйста заполните следующие поля:</h2>
+	  <ul class='listerreurs'>
+	   <% @annonce.errors.each do |attribute, message| -%>
+	     <% if message.is_a?(String)%>
+	       <li><p><%= message %></p></li>
+	     <% end %>
+      <% end -%>
+	  </ul></br>
+  </div>
+<% end %>
+
+<%= form_for(@annonce) do |f| %>
+
+  <div class='row intercalere'>
+  	<h4>Информация о поездке</h4></br>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :ville_depart, class: 'inputter villesd obligatoir', id:'villedep', :placeholder => 'откуда ?' %>
+    <%= f.text_field :ville_arrive, class: 'inputter villesd obligatoir', id: 'villearr', :placeholder => 'куда ?'  %>
+  </div>
+
+  <div class="field villeinter1 <%= 'villeinterhide' unless @annonce.villeinter1?%> <%= 'villecount' if @annonce.villeinter1?%>">
+    <%= f.text_field :villeinter1, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
+  </div>
+
+  <div class="field villeinter2 <%= 'villeinterhide' unless @annonce.villeinter2?%> <%= 'villecount' if @annonce.villeinter2?%>">
+    <%= f.text_field :villeinter2, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
+  </div>
+
+  <div class="field villeinter3 <%= 'villeinterhide' unless @annonce.villeinter3?%> <%= 'villecount' if @annonce.villeinter3?%>">
+    <%= f.text_field :villeinter3, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
+  </div>
+
+  <div class="field villeinter4 <%= 'villeinterhide' unless @annonce.villeinter4?%> <%= 'villecount' if @annonce.villeinter4?%>">
+    <%= f.text_field :villeinter4, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
+  </div>
+
+  <div class="field villeinter5 <%= 'villeinterhide' unless @annonce.villeinter5?%> <%= 'villecount' if @annonce.villeinter5?%>">
+    <%= f.text_field :villeinter5, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
+  </div>
+
+  <div class="field villeinter6 <%= 'villeinterhide' unless @annonce.villeinter6?%> <%= 'villecount' if @annonce.villeinter6?%>">
+    <%= f.text_field :villeinter6, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
+  </div>
+
+  <div class="field villeinter7 <%= 'villeinterhide' unless @annonce.villeinter7?%> <%= 'villecount' if @annonce.villeinter7?%>">
+    <%= f.text_field :villeinter7, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
+  </div>
+
+  <div class="field villeinter8 <%= 'villeinterhide' unless @annonce.villeinter8?%> <%= 'villecount' if @annonce.villeinter8?%>">
+    <%= f.text_field :villeinter8, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
+  </div>
+
+  <div class="field villeinter9 <%= 'villeinterhide' unless @annonce.villeinter9?%> <%= 'villecount' if @annonce.villeinter9?%>">
+    <%= f.text_field :villeinter9, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
+  </div>
+
+  <div class="field villeinter10 <%= 'villeinterhide' unless @annonce.villeinter10?%> <%= 'villecount' if @annonce.villeinter10?%>">
+    <%= f.text_field :villeinter10, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
+  </div>
+
+  <div class="field villesdisplay">
+    <span class='ajout'>Добавить город</span> <span class='enlev'>Убрать город</span>
+  </div>
+
+  <div class="field">
+    <%= f.label "когда ? ", class:'nazvanie' %> 
+    <%= f.date_select :date_depart, order: [ :day, :month, :year], prompt: { day: 'день', month: 'месяц', year: 'год' }, start_year: Date.today.year, use_month_names: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь','Декабрь'] %>	</br>
+	  <%=  f.number_field :nombre_chauffeurs, class: 'inputter', :placeholder => 'сколько водителей ?'%>
+	  <%= f.number_field :arrets_chaque, :class => 'inputter', :placeholder => " остановка каждые / часа " %>
+  </div>
+
+	<div class='row intercalere'>
+		<h4>Информация об транспортном средстве</h4></br>
+	</div>
+
+  <div class="field text-center">
+    <%= f.text_field :marque_vehicule, class: 'inputter', :placeholder => 'на какой машине ? ' %>
+    <%= f.text_field :annee_vehicule, class: 'inputter', :placeholder => 'какого года выпуска ? '  %></br>
+	  <%= f.number_field :nombre_place, class:'inputter', :placeholder => 'сколько мест в автомобиле?' %>
+  </div>
+
+  <div class="field hidden-xs">
+		<%= f.label :image, 'Нажмите на кнопку чтобы добавить фото автомобиля' %>
+    <%= f.file_field :image, class:'imageput'%>
+  </div>
+
+  <div class="field visible-xs">
+	   <%= f.label :image, 'Нажмите на кнопку чтобы добавить фото автомобиля' %>
+	   <%= f.file_field :image, class:'imageputxs'%>
+  </div>
+	
+	<div class='row intercalere'>
+		<h4>Информация о ценах</h4></br>
+	</div>
+
+  <div class="field">
+    <%= f.text_field :prix_passager, class: 'inputter', :placeholder => 'сколько стоит проезд ?' %>
+    <%= f.text_field :poid_max_passager, class: 'inputter', :placeholder => 'сколько килограмм можно взять ? '  %>
+  </div>
+
+  <div class="field">
+		<%= f.label "Перевозите ли вы посылки/груз?", class: 'perevoziti' %>
+		<%if @annonce.prix_kg_colis == nil%>
+      <%= f.check_box :accept_colis, class: 'perevoziti posilkiperevoz', checked: false %></br>
+	  <%else%>
+      <%= f.check_box :accept_colis, class: 'perevoziti posilkiperevoz', checked: true %></br>
+	  <%end%>
+	  <%= f.label "Перевозите ли вы важные бумаги?", class: 'perevoziti' %> 
+	  <% if @annonce.accept_colis_valeur? %>
+      <%= f.check_box :accept_colis_valeur, class: 'perevoziti', checked: true %></br>
+	  <%else%>
+      <%= f.check_box :accept_colis_valeur, class: 'perevoziti', checked: false %></br>
+	  <%end%>
+  </div>
+
+	 <div class='perevozka'>
+    <%= f.text_field :prix_kg_colis, class: 'inputter', :placeholder => 'стоимость доставки за кг' %>
+    <%= f.text_field :poid_min_colis, class: 'inputter', :placeholder => 'минимальный вес посылки/груза'%>
+	 </div>
+	
+	<div class='row intercalere'>
+		<h4>Контакт и подробности</h4></br>
+	</div>
+
+  <div class="field">
+    <%= f.telephone_field :telephones , :class => 'inputter', :placeholder => "номер телефона1" %>
+    <div class='visible-xs brdiv'></div>
+    <%if @annonce.telephone_type1?%>
+      <%= f.check_box :telephone_type1, checked: true %> <p class="pinline">Телефон</p>
+    <%else%>
+      <%= f.check_box :telephone_type1, checked: false %> <p class="pinline">Телефон</p>
+    <%end%>
+    <%if @annonce.telephones_type1?%>
+    <%= f.check_box :telephones_type1, checked: true %> <p class="pinline">Ватсап</p>
+    <%else%>
+    <%= f.check_box :telephones_type1, checked: false %> <p class="pinline">Ватсап</p>
+    <%end%>
+    <div class='visible-xs brdiv'></br></div>
+  </div>
+
+  <div class="field  num1 <%= 'villeinterhide' unless @annonce.telephones2?%> <%= 'numcount' if @annonce.telephones2?%>">
+    <%= f.telephone_field :telephones2, :class => 'inputter', :placeholder => "номер телефона2" %>
+    <div class='visible-xs brdiv'></div>
+    <%if @annonce.telephone_type2?%>
+      <%= f.check_box :telephone_type2, checked: true %> <p class="pinline">Телефон</p>
+    <%else%>
+      <%= f.check_box :telephone_type2, checked: false %> <p class="pinline">Телефон</p>
+    <%end%>
+    <%if @annonce.telephones_type2?%>
+    <%= f.check_box :telephones_type2, checked: true %> <p class="pinline">Ватсап</p>
+    <%else%>
+    <%= f.check_box :telephones_type2, checked: false %> <p class="pinline">Ватсап</p>
+    <%end%>
+    <div class='visible-xs brdiv'></br></div>
+  </div>
+
+  <div class="field num2 <%= 'villeinterhide' unless @annonce.telephones3? %> <%= 'numcount' if @annonce.telephones2?%>">
+    <%= f.telephone_field :telephones3, :class => 'inputter', :placeholder => "номер телефона3" %>
+    <div class='visible-xs brdiv'></div>
+    <%if @annonce.telephone_type3?%>
+      <%= f.check_box :telephone_type3, checked: true %> <p class="pinline">Телефон</p>
+    <%else%>
+      <%= f.check_box :telephone_type3, checked: false %> <p class="pinline">Телефон</p>
+    <%end%>
+    <%if @annonce.telephones_type3?%>
+    <%= f.check_box :telephones_type3, checked: true %> <p class="pinline">Ватсап</p>
+    <%else%>
+    <%= f.check_box :telephones_type3, checked: false %> <p class="pinline">Ватсап</p>
+    <%end%>
+    <div class='visible-xs brdiv'></br></div>
+  </div>
+
+  <div class="field num3 <%= 'villeinterhide' unless @annonce.telephones4?%> <%= 'numcount' if @annonce.telephones2?%>">
+    <%= f.telephone_field :telephones4, :class => 'inputter', :placeholder => "номер телефона4" %>
+    <div class='visible-xs brdiv'></div>
+    <%if @annonce.telephone_type4?%>
+      <%= f.check_box :telephone_type4, checked: true %> <p class="pinline">Телефон</p>
+    <%else%>
+      <%= f.check_box :telephone_type4, checked: false %> <p class="pinline">Телефон</p>
+    <%end%>
+    <%if @annonce.telephones_type4?%>
+    <%= f.check_box :telephones_type4, checked: true %> <p class="pinline">Ватсап</p>
+    <%else%>
+    <%= f.check_box :telephones_type4, checked: false %> <p class="pinline">Ватсап</p>
+    <%end%>
+    <div class='visible-xs brdiv'></br></div>
+  </div>
+
+  <div class="field numdisplay">
+    <span class='ajoutnum'>Добавить номер</span> <span class='enlevnum'>Убрать номер</span>
+  </div>
+
+  <div class="field">
+		  <div class='row'>
+			   <div class='col-md-6 col-md-offset-3'>
+          </br>
+      		  <%= f.text_area :description, class: ' podrobnosti', :placeholder =>"Напишите все подробности. Место встречи, время встречи и т.д." %>
+	  		 </div>
+	  	</div>
+  </div>
+	
+  <div class="actions">
+    </br>
+    <%= f.submit 'Создать объявление', class:'btn btn-info'%>
+  </div>
+<% end %>
+

@@ -1,0 +1,301 @@
+	<%= render 'shared/navbar' %>
+
+		<%@mesannonces.each do |annonce|%>
+			<div class='container-fluid annonce text-center hidden-xs'>
+				<div class='row ligne text-left'>
+					<div class=' col-md-4 photo'>
+						<%= content_tag(:div, content_tag(:p, "ВОДИТЕЛЬ УЕХАЛ"), class: "expired") if annonce.date_depart < Date.today %>
+				
+						<%if annonce.image_stored?%>
+							<%= image_tag annonce.image.thumb('300x250#').url%>
+						<%else%>
+							<div class='fotonotfound'>
+							</div>
+						<%end%>
+					</div>
+				
+					<div class='col-md-8 text-left'>
+						<div class='row'>		
+							<div class= 'col-md-8 text-center datedirection'>
+								<p> <%= annonce.ville_depart.truncate_words(1, omission: ' ') %>
+								<%if annonce.villeinter1?%>
+								<i class="fa fa-angle-right"aria-hidden="true"></i>
+								<%=annonce.villeinter1.truncate_words(1, omission: ' ') %>
+								<%end%>
+						
+								<%if annonce.villeinter2?%>
+								<i class="fa fa-angle-right"aria-hidden="true"></i>
+								<%=annonce.villeinter2.truncate_words(1, omission: ' ') %>
+								<%end%>
+						
+								<% if annonce.villeinter3?%>
+								<i class="fa fa-angle-right"aria-hidden="true"></i>
+								<%=annonce.villeinter3.truncate_words(1, omission: ' ') %>
+								<%end%>
+								
+								<% if annonce.villeinter4?%>
+								<i class="fa fa-angle-right"aria-hidden="true"></i>
+								<%=annonce.villeinter4.truncate_words(1, omission: ' ') %>
+								<%end%>
+								
+								<% if annonce.villeinter5?%>
+								<i class="fa fa-angle-right"aria-hidden="true"></i>
+								<%=annonce.villeinter5.truncate_words(1, omission: ' ') %>
+								<%end%>
+								
+								<% if annonce.villeinter6?%>
+								<i class="fa fa-angle-right"aria-hidden="true"></i>
+								<%=annonce.villeinter6.truncate_words(1, omission: ' ') %>
+								<%end%>
+								
+								<% if annonce.villeinter7?%>
+								<i class="fa fa-angle-right"aria-hidden="true"></i>
+								<%=annonce.villeinter7.truncate_words(1, omission: ' ') %>
+								<%end%>
+								
+								<% if annonce.villeinter8?%>
+								<i class="fa fa-angle-right"aria-hidden="true"></i>
+								<%=annonce.villeinter8.truncate_words(1, omission: ' ') %>
+								<%end%>
+								
+								<% if annonce.villeinter9?%>
+								<i class="fa fa-angle-right"aria-hidden="true"></i>
+								<%=annonce.villeinter9.truncate_words(1, omission: ' ') %>
+								<%end%>
+								
+								<% if annonce.villeinter10?%>
+								<i class="fa fa-angle-right"aria-hidden="true"></i>
+								<%=annonce.villeinter10.truncate_words(1, omission: ' ') %>
+								<%end%>
+								<i class="fa fa-angle-right"aria-hidden="true"></i>
+								<%= annonce.ville_arrive.truncate_words(1, omission: ' ')%></p>
+								</div>
+						
+								<div class= 'col-md-4 text-center prix'>
+									<h3><%= annonce.prix_passager%><i class='fa fa-eur'></i></h3>
+									<h5 class='ladate'><%= annonce.date_depart.strftime("%d/%m/%Y") %></h5>
+								</div>
+								</br>
+							</div>
+						<div class='row'>
+							<div class='col-md-4'>
+								<%if annonce.nombre_chauffeurs?%>
+									<% if annonce.nombre_chauffeurs == 1%>
+										<p><i class='fa fa-male'> </i>   <%= annonce.nombre_chauffeurs %> Водитель</p>
+									<%else%>
+										<p><i class='fa fa-users'> </i>   <%= annonce.nombre_chauffeurs %> Водителя</p>
+									<%end%>
+								<%end%>
+								<p><i class='fa fa-suitcase'></i>   <%= annonce.poid_max_passager %> кг/макс</p> 
+								<%if annonce.arrets_chaque?%>
+									<% if annonce.arrets_chaque == 1%>
+										<p><i class='fa fa-coffee'></i> Остановка каждый час</p>
+									<%elsif annonce.arrets_chaque == 2%>
+										<p><i class='fa fa-coffee'></i> Остановка каждые <%= annonce.arrets_chaque %> часа</p>
+									<%elsif annonce.arrets_chaque == 3%>
+										<p><i class='fa fa-coffee'></i> Остановка каждые <%= annonce.arrets_chaque %> часа</p>
+									<%elsif annonce.arrets_chaque == 4%>
+										<p><i class='fa fa-coffee'></i> остановка каждые <%= annonce.arrets_chaque %> часа</p>
+									<%elsif annonce.arrets_chaque > 4%>
+										<p><i class='fa fa-coffee'></i> Остановка каждые <%= annonce.arrets_chaque %> часов</p>
+									<%end%>	
+								<%end%>
+							</div>
+							<div class='col-md-4 annonce_info2'>
+								<% if annonce.accept_colis == true%>
+									<p><i class='fa fa-check-circle'> </i> Перевозка груза:</p>
+									<p> <%= annonce.prix_kg_colis%> <i class='fa fa-eur'> </i> кг. мин вес  <%= annonce.poid_min_colis%> кг</p>
+								<%else%>
+									<p><i class='fa fa-times-circle'> </i> Перевозка посылок</p>
+								<%end%>
+								<% if annonce.accept_colis_valeur == true%>
+									<p><i class='fa fa-check-circle'> </i> Перевозка ценных бумаг</p>
+								<%else%>
+									<p><i class='fa fa-times-circle'> </i> Перевозка ценных бумаг</p>
+								<%end%>
+							</div>
+
+							<div class='col-md-4 text-left prixcontact'>
+								<%if annonce.telephones?%>
+									<%if annonce.telephones_type1?%>
+										<p class='pinline'><i class="fa fa-whatsapp" aria-hidden="true"></i> </p>
+									<%end%>
+									<%if annonce.telephone_type1?%>
+										<p class='pinline'><i class="fa fa-mobile" aria-hidden="true"></i> </p>
+									<%end%>
+									<%=annonce.telephones%></br>
+								<%end%>
+
+								<%if annonce.telephones2?%>
+									<%if annonce.telephones_type2?%>
+										<p class='pinline'><i class="fa fa-whatsapp" aria-hidden="true"></i> </p>
+									<%end%>
+									<%if annonce.telephone_type2?%>
+										<p class='pinline'><i class="fa fa-mobile" aria-hidden="true"></i> </p>
+									<%end%>
+									<%=annonce.telephones2%></br>
+								<%end%>
+
+								<%if annonce.telephones3?%>
+									<%if annonce.telephones_type3?%>
+										<p class='pinline'><i class="fa fa-whatsapp" aria-hidden="true"></i> </p>
+									<%end%>
+									<%if annonce.telephone_type3?%>
+										<p class='pinline'><i class="fa fa-mobile" aria-hidden="true"></i> </p>
+									<%end%>
+									<%=annonce.telephones3%></br>
+								<%end%>
+
+								<%if annonce.telephones4?%>
+									<%if annonce.telephones_type4?%>
+										<p class='pinline'><i class="fa fa-whatsapp" aria-hidden="true"></i> </p>
+									<%end%>
+									<%if annonce.telephone_type4?%>
+										<p class='pinline'><i class="fa fa-mobile" aria-hidden="true"></i> </p>
+									<%end%>
+									<%=annonce.telephones4%>
+								<%end%>
+								<div></br>
+									<%= link_to 'Подробнее', annonce_path(annonce), :class => "btn btn-info leboutonpodrobnee" %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class='annoncexs text-center visible-xs'>
+				<div class="datedirectionbackground">
+					<div class='row text-center datedirectionxs'>
+						<p> <%= annonce.ville_depart.truncate_words(1, omission: ' ') %>
+						<% if annonce.villeinter1?%>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+							<%=annonce.villeinter1.truncate_words(1, omission: ' ') %>
+						<%end%>
+										
+						<% if annonce.villeinter2?%>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+							<%=annonce.villeinter2.truncate_words(1, omission: ' ') %>
+						<%end%>
+										
+						<% if annonce.villeinter3?%>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+							<%=annonce.villeinter3.truncate_words(1, omission: ' ') %>
+						<%end%>
+										
+						<% if annonce.villeinter4?%>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+							<%=annonce.villeinter4.truncate_words(1, omission: ' ') %>
+						<%end%>
+										
+						<% if annonce.villeinter5?%>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+							<%=annonce.villeinter5.truncate_words(1, omission: ' ') %>
+						<%end%>
+										
+						<% if annonce.villeinter6?%>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+							<%=annonce.villeinter6.truncate_words(1, omission: ' ') %>
+						<%end%>
+										
+						<% if annonce.villeinter7?%>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+							<%=annonce.villeinter7.truncate_words(1, omission: ' ') %>
+						<%end%>
+										
+						<% if annonce.villeinter8?%>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+							<%=annonce.villeinter8.truncate_words(1, omission: ' ') %>
+						<%end%>
+										
+						<% if annonce.villeinter9?%>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+							<%=annonce.villeinter9.truncate_words(1, omission: ' ') %>
+						<%end%>
+										
+						<% if annonce.villeinter10?%>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+							<%=annonce.villeinter10.truncate_words(1, omission: ' ') %>
+						<%end%>
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+						<%= annonce.ville_arrive.truncate_words(1, omission: ' ')%>
+						</p>
+					</div>
+				</div>
+				<div class='row text-center photo'>
+					<%= content_tag(:div, content_tag(:p, "ВОДИТЕЛЬ УЕХАЛ"), class: "expiredxs") if annonce.date_depart < Date.today %>
+					<%if annonce.image_stored?%>
+						<div>
+							<%= image_tag annonce.image.thumb('300x250#').url%>
+						</div>
+					<%else%>
+						<div class='fotonotfoundxs'>
+						</div>
+					<%end%>
+				</div>
+				<div class='row text-left'>
+					<div class='row prixxs'>
+						<div class= 'prix'>
+							<div class='col-xs-5 text-center'>
+								<h3 ><%= annonce.prix_passager%><i class='fa fa-eur'> </i> </h3>
+							</div>
+							<div class='datedirectionxs col-xs-7'>
+								<p>  <%= annonce.date_depart.strftime("%d/%m/%Y")%> </p>
+							</div>
+						</div>
+						</br>
+					</div>
+
+					<div class='row'>
+						<div class='col-xs-5'>
+							<%if annonce.nombre_chauffeurs?%>
+								<% if annonce.nombre_chauffeurs == 1%>
+									<p><i class='fa fa-male'> </i>   <%= annonce.nombre_chauffeurs %> Водитель</p>
+								<%else%>
+									<p><i class='fa fa-users'> </i>   <%= annonce.nombre_chauffeurs %> Водителя</p>
+								<%end%>
+							<%end%>
+							<p><i class='fa fa-suitcase'></i>   <%= annonce.poid_max_passager %> кг/макс</p> 
+							<%if annonce.arrets_chaque?%>
+								<% if annonce.arrets_chaque == 1%>
+									<p><i class='fa fa-coffee'></i> Остановка каждый час</p>
+								<%elsif annonce.arrets_chaque == 2%>
+									<p><i class='fa fa-coffee'></i> Остановка каждые <%= annonce.arrets_chaque %> часа</p>
+								<%elsif annonce.arrets_chaque == 3%>
+									<p><i class='fa fa-coffee'></i> Остановка каждые <%= annonce.arrets_chaque %> часа</p>
+								<%elsif annonce.arrets_chaque == 4%>
+									<p><i class='fa fa-coffee'></i> остановка каждые <%= annonce.arrets_chaque %> часа</p>
+								<%elsif annonce.arrets_chaque > 4%>
+									<p><i class='fa fa-coffee'></i> Остановка каждые <%= annonce.arrets_chaque %> часов</p>
+								<%end%>
+							
+							<%end%>
+						</div>
+						<div class='col-xs-7 annonce_info2'>
+							<% if annonce.accept_colis == true%>
+								<p><i class='fa fa-check-circle'> </i> Перевозка груза:</p>
+								<p> <%= annonce.prix_kg_colis%> <i class='fa fa-eur'> </i> кг. мин вес  <%= annonce.poid_min_colis%> кг</p>
+							<%else%>
+								<p><i class='fa fa-times-circle'> </i> Перевозка посылок</p>
+							<%end%>
+							<% if annonce.accept_colis_valeur == true%>
+								<p><i class='fa fa-check-circle'> </i> Перевозка бумаг</p>
+							<%else%>
+								<p><i class='fa fa-times-circle'> </i> Перевозка бумаг</p>
+							<%end%>
+						</div>
+					</div>
+					<div class='row text-center'>
+						<%if annonce.user.mobile_number?%>
+							<p><i class='fa fa-phone'> </i> <%= annonce.user.mobile_number%></p>
+						<%end%>
+						<p> <i class="fa fa-whatsapp" aria-hidden="true"></i>  <%= annonce.telephones%></p>
+						<%= link_to 'Подробнее', annonce_path(annonce), :class => "btn btn-info" %>
+					</div>
+				</div>
+			</div>
+		<%end%>
+
+	<div class='container-fluid text-center'>
+		<%= paginate @mesannonces%>
+	</div>

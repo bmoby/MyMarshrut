@@ -1,0 +1,1287 @@
+// DESIGN BODY LAYOUT --------->
+
+.obligatoir{
+	background-color:#DFECF0;
+	
+}
+
+.map{
+	padding-top: 25px;
+}
+
+
+
+
+
+.gorod{
+	width:57px;
+	padding-right: 3px;
+	text-align: left;
+	color:#8a8a8a;
+}
+
+.gorod p{
+	color:#8a8a8a;
+}
+.gorod h4{
+
+	color:#a6a6a6;
+}
+
+.gorod h3{
+	color:#E69595
+}
+
+.entourp{
+	display:block;
+	text-align: left;
+	transform: rotate(-30deg);
+}
+
+.marshrut{
+	border-top: solid 1px #D1CBD6;
+}
+
+.marshrut{
+	background-color: #f1ece4;
+}
+.pinline{
+	display:inline;
+}
+
+.maplinespec{
+	position:absolute;
+	width: 45px;
+	height: 2px;
+	background-color: #a6a6a6;
+	margin-top: 12px;
+
+}
+
+.mapline{
+	position:absolute;
+	width: 45px;
+	height: 2px;
+	background-color: #a6a6a6;
+	margin-top: 7px;
+}
+
+.pinlineblock{
+	display:inline-block;
+}
+
+.ploho p{
+	margin-top:5px;
+	color:#DC574E;
+}
+
+.xorosho{
+	border-left:solid 1px #D1CBD6;
+}
+
+.xorosho p{
+	margin-top:5px;
+	color:#A7BD5B;
+}
+
+.notverifiedxs{
+	width:100%;
+	height:auto;
+}
+
+.notverified{
+	width:50%;
+	height:auto;
+}
+
+.verify .fa{
+	font-size:20px;
+	color:green;
+}
+
+.inputterkod{
+
+    background-position: 5px -7px !important;
+    padding: 10px 10px 10px 25px;
+    width: 150px;
+	height:40px;
+    border: 1px solid #CCC;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 5px;
+    border-radius: 8px;
+    -moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+    -webkit-box-shadow: 0 1px 1px #CCC inset, 0 1px 0 #FFF;
+    box-shadow: 0 1px 1px #CCC inset, 0 1px 0 #FFF;
+	margin-bottom:10px;
+}
+
+.inputter:focus {
+    background-color: #FFF;
+    border-color: #E8C291;
+    outline: none;
+    -moz-box-shadow: 0 0 0 1px #e8c291 inset;
+    -webkit-box-shadow: 0 0 0 1px #E8C291 inset;
+    box-shadow: 0 0 0 1px #E8C291 inset;
+}
+
+.verification{
+	width:50%;
+	height:auto;
+	background-color:#DAEAEF;
+	border-radius:10px;
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+.verificationxs{
+	width:100%;
+	height:auto;
+	background-color:#DAEAEF;
+	border-radius:10px;
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+.verification .fa{
+	font-size:18px;
+	color:#E74C3C;
+}
+
+.verificationxs .fa{
+	font-size:18px;
+	color:#E74C3C;
+}
+
+
+.verification h5{
+	color:#2A2C2B;
+	display:inline;
+}
+
+.verificationxs h5{
+	color:#2A2C2B;
+	display:inline;
+}
+
+.verification h6{
+	color:gray;
+}
+
+.verificationxs h6{
+	color:gray;
+}
+
+.alert{
+	margin:0;
+	width:100%;
+	height:60px;
+}
+
+.alert-{
+	margin:0;
+	width:100%;
+	height:60px;
+}
+
+.textverif{
+	width:50%;
+	height:auto;
+}
+
+
+body{
+	text-align:center;
+	background-size:100%;
+	background-color: #EBF2F0;
+	overflow:auto;
+	font-family: 'Comfort', sans-serif;
+	margin:0;
+	padding:0;
+}
+body.homepage{
+	text-align:center;
+	background: asset-data-url("cover.jpg") no-repeat center center fixed;
+	background-size:100%;
+	overflow:auto;
+	font-family: 'Comfort', sans-serif;
+	margin:0;
+	padding:0;
+}
+
+body.searches{
+	text-align:center;
+	background: asset-data-url("cover.jpg") no-repeat center center fixed;
+	background-size:100%;
+	overflow:auto;
+	font-family: 'Comfort', sans-serif;
+	margin:0;
+	padding:0;
+}
+
+
+
+
+a:focus { outline: 0; }
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.row{
+	margin:0;
+	padding:0;
+}
+
+// LOGIN DESIGN 
+
+.vxodline{
+	border-bottom:solid 1px gray;
+}
+
+
+// CREATE ANNONCE DESIGN 
+
+.podrobnosti{
+	padding-left:15px;
+	padding-right:15px;
+	word-wrap: break-word;
+	width:100%;
+	height:150px;
+}
+
+.listerreurs li{
+	list-style-type:none;
+}
+
+.listerreurs li p {
+	color:red;
+}
+
+.perevozka{
+	display:none;
+}
+
+.intercalere{
+	border-top:solid 1px #B8B89F;
+}
+
+//NAVBAR GENERAL DESIGN
+
+.notconnectedlinksmobile{
+	margin-top:15px;
+}
+
+.notconnectedlinksmobile li{
+	list-style-type:none;
+	display:inline;
+	margin-left:10px;
+}
+
+.notconnectedlinksmobile li a{
+	color:#3E454C;
+}
+
+.notibtn{
+	width:auto;
+	height:40px;
+	border-radius:5px;
+}
+
+.notif .fa{
+	margin-top:3px;
+	color:#F2594B;
+	
+}
+
+.notif{
+	color:#F2594B;
+	
+}
+.navbar{
+	border-radius:0;
+	margin:0;
+	padding:0;
+	background-color: rgba(255,255,255,0.90);
+}
+
+.notconnectedlinks li a{
+	color:#3E454C;
+}
+.notconnectedlinks li a:hover{
+	background-color:transparent; 
+	color:#333333;
+}
+
+.navbar-brand .fa{
+	font-size:30px;
+}
+
+.navbar-brand a{
+	color:#3E454C;
+}
+.navbar-brand a:hover{
+	color:#333333;
+}
+
+// DESIGN ANNONCE DISPLAY ALL --------->
+
+.leboutonpodrobnee{
+	background-color: #9cbbc9;
+	border:none;
+}
+
+.expired{
+	
+	position: absolute;
+	margin-top:60px;
+	font-size:17px;
+	font-family: 'Russo One', sans-serif;
+	
+}
+
+.expired p{
+	border: dotted 2px #E69595;
+	padding:6px;
+	color:#E69595;
+	transform: rotate(-40deg);
+	
+}
+
+.expiredxs{
+	
+	position: absolute;
+	margin-top:60px;
+	margin-left:20px;
+	font-size:17px;
+	font-family: 'Russo One', sans-serif;
+	
+}
+
+.expiredxs p{
+	border: dotted 2px #E69595;
+	padding:6px;
+	color:#E69595;
+	transform: rotate(-40deg);
+	
+}
+
+.cont_2part{
+	margin:0;
+	padding:0;
+}
+
+.searchbackground{
+	padding:10px;
+}
+
+.image-size {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.fotonotfound{
+	margin:5px;
+	border-radius:5px;
+	background: asset-data-url("marshrutka.jpg") no-repeat center center;
+	background-size:100%;
+	width:300px;
+	height:300px;
+}
+
+.showstyle{
+	display:block;
+}
+
+.fotonotfoundxs{
+	margin:auto;
+	border-radius:5px;
+	background: asset-data-url("marshrutka.jpg") no-repeat center center;
+	background-size:100%;
+	width:330px;
+	height:260px;
+}
+
+.annoncexs{
+	background-color:#F6F3EE;
+	margin-bottom:10px;
+	padding:10px;
+	border:solid 1px #dbcfbd;
+	padding-left:0;
+	padding-right: 0;
+	padding-top: 0;
+}
+
+.xspodrobneebtn{
+	width:40%;
+	margin-bottom:10px;
+}
+
+.contactbtn .glyphicon{
+	font-size:20px;
+}
+
+.annonce{
+	cursor: pointer; cursor: hand;
+	background-color:#F6F3EE;
+	width:80%;
+	margin-bottom:10px;
+	margin-top:10px;
+	padding:10px;
+	border-bottom: solid 1px #B8B89F;
+	border-radius: 5px;
+}
+
+.photo img{
+	margin:0px;
+}
+
+.marges{
+	padding-top:5px;
+}
+
+.photo{
+	margin-left:0;
+	padding-left:0;
+}
+.prixcontact{
+	border-left:solid 1px #C3C4BC;
+}
+
+.prixxs{
+background-color: #ede7de;
+width:100%;
+
+}
+
+.prix h3{
+	font-size:21px;
+	color:#E69595;
+	font-family: 'Russo One', sans-serif;
+	
+}
+
+.prix .fa{
+	color:#E69595;
+}
+.datedirectionxs h4{
+	color:black;
+	font-family: 'Russo One', sans-serif;
+	font-size:20px;
+	
+}
+
+.datedirectionxs p{
+	font-size:17px;
+	font-family: 'Russo One', sans-serif;
+	margin-top:19px;
+	
+}
+
+.datedirection h4{
+	font-size:21px;
+	
+
+}
+
+.datedirection p{
+	font-size:18px;
+	font-family: 'Russo One', sans-serif;
+	
+}
+
+.ladate{
+	color:gray;
+	font-family: 'Russo One', sans-serif;
+	font-size:18px;
+	padding-bottom: 15px;
+}
+
+.datedirection{
+	border-bottom:solid 1px #C3C4BC;
+}
+
+.datedirectionbackground{
+	width:100%;
+	background-color:#ede7de; 
+	margin:0;
+}
+
+
+
+// DESIGN ANNONCE DISPLAY INDIVIDUAL --------->
+
+.villeinterhide {
+	display: none;
+	
+}
+
+.villesdisplay{
+	
+	margin-bottom:15px;
+}
+
+.villesdisplay .ajout{
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	padding:6px;
+	background-color:#9DD7EB;
+	color:white;
+}
+
+.villesdisplay .enlev{
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	padding:6px;
+	background-color:#EBA69D;
+	color:white;
+}
+
+.numdisplay .ajoutnum{
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	padding:6px;
+	background-color:#9DD7EB;
+	color:white;
+}
+
+.numdisplay .enlevnum{
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	padding:6px;
+	background-color:#EBA69D;
+	color:white;
+}
+
+.ajouterbtn{
+	background-color:yellow;
+}
+
+.imagenotfound{
+	background: asset-data-url("marshrutka.jpg") no-repeat center center;
+	background-size:100%;
+	width:300px;
+	height:300px;
+}
+
+.menubasxs .glyphicon{
+	color:#8B9698;
+	font-size:25px;
+}
+
+.tabulation{
+	margin-right:15px;
+}
+
+.enteteannonce{
+	width:80%;
+	background-color:gray;
+	margin-top:15px;
+	border-radius:5px 5px 0px 0px
+}
+
+.enteteannoncexs{
+	background-color:#778691;
+	margin:0;
+	padding:0;
+}
+
+.enteteannoncexs h4{
+	color:white;
+}
+
+.enteteannonce h4{
+	font-size:16px;
+	color:white;
+}
+
+p{
+	color:gray;
+}
+.contact{
+	display:none;
+}
+.menurowxs{
+	background-color:#8B9698;
+}
+
+.menuhaut{
+	list-style-type:none;
+}
+
+.menuhautxs{
+	list-style-type:none;
+}
+.menuhaut li{
+	display:inline;
+	margin-left:20px;
+}
+
+.menuhaut li a {
+	color:#5BC0DE;
+}
+
+.menuhautxs li a {
+	margin-top:0;
+}
+
+.menuhautxs a .glyphicon{
+		margin-top:0;
+	font-size:25px;
+	color:white;
+}
+.menuhaut li a:active {
+    color:#B8B89F;
+}
+
+
+.descriptionannonce{
+	word-wrap: break-word;
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:5px;
+	padding-bottom:5px;
+	width:100%;
+	height:auto;
+}
+
+.cenazaproezd{
+	word-wrap: break-word;
+	color:#5FBA7D;
+}
+
+.conseil{
+	word-wrap: break-word;
+	border-bottom:solid 1px #B8B89F;
+	margin-bottom:15px;
+}
+
+.telephonesChauffeurs p{
+	color:gray;
+}
+
+h4{
+	color:#B8B89F;
+}
+
+
+.conseil h3{
+	color:#B8B89F;
+}
+
+.conseil p{
+	color:gray;
+}
+
+input, textarea{
+	word-wrap: break-word;
+       -webkit-border-radius: 30px; 
+       -moz-border-radius: 30px; 
+       border-radius: 30px; 
+
+}
+
+.inputter {
+    background-position: 5px -7px !important;
+    padding-left: 10px;
+    width: 270px;
+	height:30px;
+    border: 1px solid #CCC;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+    -webkit-box-shadow: 0 1px 1px #CCC inset, 0 1px 0 #FFF;
+    box-shadow: 0 1px 1px #CCC inset, 0 1px 0 #FFF;
+	margin-bottom:10px;
+}
+
+.inputter:focus {
+    background-color: #FFF;
+    border-color: #E8C291;
+    outline: none;
+    -moz-box-shadow: 0 0 0 1px #e8c291 inset;
+    -webkit-box-shadow: 0 0 0 1px #E8C291 inset;
+    box-shadow: 0 0 0 1px #E8C291 inset;
+}
+
+.perevoziti{
+	
+	color:gray ;
+}
+
+.imageput {
+	margin-left:30%;
+	margin-bottom:10px;
+}
+
+.imageputxs {
+	margin-bottom:10px;
+}
+
+select {
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  border-radius: 5px;
+  color:gray;
+  text-align:center;
+  margin-bottom:10px;
+}
+
+select.date-select {
+    width:auto;
+    border: 1px solid #cccccc;
+    background-color: gray;
+}
+
+select:focus {
+	outline: 0;
+	border:solid 2px #E8C291;
+}
+
+.voditelphoto{
+
+	text-align:center;
+}
+
+.zapis{
+	border-radius:10px;
+	margin-top:20px;
+	margin-bottom:20px;
+	text-align:center;
+	width:auto;
+	height:auto;
+	background-color:white;
+}
+
+.parol{
+	margin-bottom:10px;
+}
+
+.parol em{
+	color:#919191;
+}
+
+.nazvanie{
+	color:#919191;
+}
+
+.registraciya-title{
+	border-bottom:solid 1px #F2F2F2;
+}
+
+.registraciya-title h2 {
+	color:#74C0CF;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.allinfo{
+	word-wrap: break-word;
+	background-color:white;
+	radius:5px;
+}
+
+.mapinfo{
+	word-wrap: break-word;
+	border-bottom:solid 1px #B8B89F;
+}
+
+.vehiculeinfo{
+	border-bottom:solid 1px #B8B89F;
+}
+
+.annonceindividuel{
+	width:80%;
+	border-left:solid 1px #D8CAA8;
+	border-right:solid 1px #D8CAA8;
+	border-bottom:solid 1px #D8CAA8;
+	background-color:white;
+	border-radius: 0px 0px 5px 5px;
+}
+
+
+.annonceindividuelxs{
+	margin:0;
+	padding:0;
+	border-bottom:solid 1px #D8CAA8;
+	background-color:white;
+	border-radius:5px;
+}
+.check{
+	width:20px;
+	height:20px;
+	margin-left:0;
+}
+
+.check-label{
+	margin-left:2px;
+	margin-right:2px;
+	
+}
+
+.messagebox{
+	word-wrap: break-word;
+	width:100%;
+	height:150px;
+	padding-left:20px;
+	padding-right:20px;
+}
+
+.messageboxxs{
+	word-wrap: break-word;
+	border-radius:7px;
+	border:solid 1px gray;
+	width:80%;
+	height:100px;
+	padding-left:15px;
+	padding-right:15px;
+}
+
+.listcontact .glyphicon{
+	margin-top:15px;
+	font-size:25px;
+}
+
+.infoDroitexs{
+	border-bottom:solid 1px gray;
+}
+
+//HOMEPAGE DESIGN 
+
+.strelki .glyphicon{
+	
+	font-size:30px;
+	color:white;
+}
+
+.homeinstructions{
+	color:#BDC9D5;
+	padding-bottom:2px;
+	border-bottom:solid 1px #7E96AE;
+}
+
+
+.searchformmd{
+	background-color: rgba(0, 0, 42, 0.3);
+	border-radius:15px;
+	padding:10px;
+	width:80%;
+	margin:auto;
+	margin-top:5%;
+}
+
+.cont_mob_1part{
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background: asset-data-url("cover.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.cont_1part { 
+	width:100vw;
+	height:100vh;
+  background: asset-data-url("cover.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.searchform{
+	margin-top:5%;
+}
+
+.container{
+	margin:0;
+	padding:0;
+}
+
+.nowyoucan{
+	color:green;
+}
+.agir{
+	height:250px;
+	background-color:#5E7C88;
+}
+.agir .fa{
+	margin-top:25px;
+	margin-bottom:15px;
+	font-size:50px;
+	color:#F0788C;
+}
+
+.agir p .fa{
+	margin:0;
+	padding:0;
+	font-size:14px;
+	color:white;
+}
+.agir h3{
+	color:#ECEBF0;
+	border-top:solid 1px #698a97;
+}
+.agir p{
+	color:#ECEBF0;
+}
+
+.agir a{
+	color:#F0788C;
+}
+
+
+.tuto{
+	height:250px;
+	background-color:#BAB293;
+}
+.tuto .fa{
+	margin-top:20px;
+	font-size:50px;
+	color:#5E7C88;
+}
+
+.tuto p .fa{
+	margin:0;
+	padding:0;
+	font-size:14px;
+	color:white;
+}
+.tuto h3{
+	color:#ECEBF0;
+	border-top:solid 1px #c4bda3;
+}
+.tuto p{
+	color:#ECEBF0;
+}
+
+
+.info{
+	height:250px;
+	background-color:#D96459;
+}
+.iconinfo .fa{
+	margin-top:20px;
+	font-size:50px;
+	color:#EFE4BD;
+}
+.info h3{
+	color:#ECEBF0;
+	border-top:solid 1px #de776e;
+}
+.info p{
+	color:#ECEBF0;
+}
+.iconjaune{
+	color:#F28D00;
+}
+
+.poisk{
+	width:100px;
+	height:28px;
+	padding-left:15px;
+	padding-right:15px;
+	color:none;
+	border:none;
+	border-radius:5px;
+	background-color:#718BC8;
+}
+
+.poiskxss{
+	width:100px;
+	height:28px;
+	padding-left:15px;
+	padding-right:15px;
+	color:none;
+	border:none;
+	border-radius:5px;
+	background-color:#718BC8;
+}
+
+.poiskallxs { 
+	width:90%;
+	height:50px;
+	padding-left:15px;
+	padding-right:15px;
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius:5px;
+	border:2px solid white;
+}
+
+.poiskallxs:hover{ 
+	width:90%;
+	height:50px;
+	padding-left:15px;
+	padding-right:15px;
+	background-color:rgba(0,0,0,0.2) ;
+	border-radius:5px;
+	border:2px solid white;
+}
+
+.poiskall:hover{ 
+	width:30%;
+	height:50px;
+	padding-left:15px;
+	padding-right:15px;
+	background-color:rgba(0,0,0,0.2) ;
+	border-radius:5px;
+	border:2px solid white;
+}
+
+.searchform .btn-info:active{ 
+	background-color:rgba(0,0,0,0.2);
+	border-radius:none;
+	border:none;
+}
+
+
+.poiskall { 
+	width:30%;
+	height:50px;
+	padding-left:15px;
+	padding-right:15px;
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius:5px;
+	border:2px solid white;
+}
+
+
+.poiskxs { 
+	width:90%;
+	height:50px;
+	padding-left:15px;
+	padding-right:15px;
+	background-color: #718BC8;
+	border-radius:5px;
+	border:none;
+}
+
+.poiskall strong { 
+	color:white;
+}
+
+.poiskallxs strong { 
+	color:white;
+}
+
+.poisk:hover{
+	width:100px;
+	height:28px;
+	padding-left:15px;
+	padding-right:15px;
+	color:none;
+	border:none;
+	border-radius:5px;
+	background-color:#D93636;
+}
+
+.sozdatannonce{
+	width:90%;
+	height:50px;
+	padding-left:15px;
+	padding-right:15px;
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius:5px;
+	border:2px solid white;
+	
+}
+
+.sozdatannonce p{
+	font-size:16px;
+	color:white;
+	margin-top:8px;
+	
+}
+
+
+.sozdatannonce:hover{
+	width:90%;
+	height:50px;
+	padding-left:15px;
+	padding-right:15px;
+	background-color:#F0788C;
+	border:none;
+	border-radius:5px;
+	
+}
+
+.sozdatannonce:hover p{
+	color:white;
+	margin-top:10px;
+	
+	
+}
+
+//MAIL INBOX
+
+.messageinputxs{
+	width:90%;
+	height:40px;
+	border-radius:5px;
+	padding-left:5px;
+	padding-right:5px;
+}
+.corpsmessagexs{
+	width:100%;
+	min-height:30vh;
+	max-height:65vh;
+	overflow:auto;
+	padding:15px;
+}
+
+.tapetextxs{
+	background-color:#F2F2F2;
+	position: fixed;
+	height: 15vh;
+	bottom: 0;
+	width: 100%;
+}
+
+.couleurnouveaumessage .glyphicon{
+	color:#EB7878;
+}
+
+.couleurnouveaumessage p{
+	display:inline;
+	color:#EB7878;
+}
+.messagelien{
+	padding-top:20px;
+	border-bottom:solid 1px #B8B89F;
+	border-radius:25px;
+}
+
+.messagelien .glyphicon{
+	color:#28BE9B;
+}
+
+.messagelien:hover{
+	background-color:#F0F1EE;
+	border-radius:25px;
+}
+
+.messagelienNonlu{
+	background-color:#F5F6D4;
+	padding-top:20px;
+	border-bottom:solid 1px #B8B89F;
+	border-radius:25px;
+}
+
+.messagelienNonlu:hover{
+	background-color:#F0F1EE;
+	border-radius:25px;
+}
+
+.messagelienNonlu .glyphicon{
+	color:#E94C6F;
+}
+
+.messagerie{
+	background-color:white;
+	border-radius:25px;
+	margin-top:15px;
+}
+
+.subject{
+	margin-bottom:20px;
+	border-radius:25px;
+}
+
+.subjecttextxs p{
+	color:gray;
+	margin-left:15px;
+}
+
+.subjecttext a{
+	color:#67727A;
+}
+
+.subjecttext a:hover{
+	text-decoration: none;
+	color:#6991AC;
+}
+
+.created_at{
+	color:#5A6A62;
+}
+
+.deletemessage .fa {
+	color:#D96459;
+}
+
+.nomdemessage{
+	
+	color:#B8B89F;
+}
+
+.moisoobshenie{
+	border-bottom:solid 1px #B8B89F;
+	margin-bottom:0;
+}
+
+// MESSAGE AREA DESIGN
+
+.messengerarea{
+	word-wrap: break-word;
+	border-radius: 15px;
+	margin-bottom:15px;
+}
+
+.messagemoi{
+	display:inline-block;
+	margin:0;
+	padding-right:10px;
+	padding-left:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	background-color:#4E7AC7;
+	border-radius:20px 20px 20px 0;
+}
+
+.messagelui{
+	display:inline-block;
+	margin:0;
+	padding-right:10px;
+	padding-left:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	background-color:#D7DADB;
+	border-radius:20px 20px 0px 20px;
+}
+
+.msgmoi{
+	margin:0;
+	padding:0;
+	color:white;
+}
+
+.msglui{
+	margin:0;
+	padding:0;
+	color:gray;
+}
+
+.messageinput{
+	word-wrap: break-word;
+	padding-left:15px;
+	padding-right:15px;
+	border-radius:5px;
+	width:80%;
+	height:40px;
+}

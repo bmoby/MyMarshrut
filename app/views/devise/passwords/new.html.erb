@@ -1,0 +1,25 @@
+		<%= render 'shared/navbar' %>
+<div class='container-fluid text-center'>
+<div class='row vxodline'>
+
+<h2><i class='glyphicon glyphicon-send'></i> Забыли пароль?</h2>
+</div>
+</br></br></br>
+<p>Введите свой E-mail с помошью которого вы зарегистрировались и нажмите на "Получить инструкцию для восстановления пароля". Вы сразу же получите писмо на указонный вами E-mail через которого сможите изменить свой пароль.</p></br>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email, 'E-mail' %><br />
+	
+    <%= f.email_field :email, autofocus: true, class:'inputter' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Получить инструкцию для восстановления пароля", class:'btn btn-primary' %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+</div>

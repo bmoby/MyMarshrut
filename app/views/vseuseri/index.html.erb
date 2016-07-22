@@ -1,0 +1,23 @@
+<body class='usersindex'>	
+<%= render 'shared/navbar' %>
+
+
+	<% @vseuseri.each do |user| %>
+	
+	<div class='row user'>
+		
+		<div class='col-md-4'>
+		<%=user.prenom%>
+		</div>
+		<div class='col-md-4'>
+		<%=user.email%>
+		</div>
+		<div class='col-md-4'>
+		<%=user.mobile_number%>
+		</div>
+		
+	</div>
+	
+	<%end%>
+
+</div>

@@ -1,0 +1,75 @@
+		<%= render 'shared/navbar' %>
+<div class='container-fluid text-center hidden-xs'>
+	</br>
+	<div class='row headermessenger text-left fixed-top'>
+		<%= link_to '<- Все сообщения ', conversations_path(current_user), class: 'btn btn-info'%>
+	</div>
+	<div class='row'>
+	<div class='col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3 myrow'>
+	<% @messages.each do |msg| %>
+	<%msg.mark_as_read(current_user)%>
+	<div class='row messengerarea '>
+	
+		<%if msg.sender == current_user%>
+		<div class= 'row messagemoi text-right'>
+			<p class='msgmoi'><%= msg.body%></p>
+		</div>
+		<%else%>
+		<div class='row messagelui text-left'>
+			<p class='msglui'><%= msg.body%></p>
+		</div>
+		<%end%>
+
+	</div>
+	<%end%>
+	</div>
+	</div>
+	<%= form_tag conversation_messages_path(@conversation), method: :post do%>
+	<div class='row meesageinputplace'>
+	<div class='col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3 myrow'>
+		<%= text_area_tag :body, nil, class: 'messageinput tracking', id:'soobshenie'%>
+		<%= submit_tag 'Отправить', class:'btn btn-info', id:'envoyermsg'%>
+		</div>
+	</div>
+	<%end%>
+	 
+</br></br></br></br></br></br>
+	
+</div>
+
+
+<div class='container-fluid messengerxs text-center visible-xs'>
+	</br>
+	<div class='row headermessenger text-left fixed-top'>
+		<%= link_to '<- Все сообщения ', conversations_path(current_user), class: 'btn btn-info'%>
+	</div>
+	</br>
+	<div class='row corpsmessagexs text-left' id='corpsmessagexsid'>
+	<div class='myrow'>
+	<% @messages.each do |msg| %>
+	<%msg.mark_as_read(current_user)%>
+	<div class='row messengerarea' id='messengerareaid'>
+	
+		<%if msg.sender == current_user%>
+		<div class= 'row messagemoi text-right'>
+			<p class='msgmoi'><%= msg.body%></p>
+		</div>
+		<%else%>
+		<div class='row messagelui text-left'>
+			<p class='msglui'><%= msg.body%></p>
+		</div>
+		<%end%>
+
+	</div>
+	<%end%>
+	</div>
+	</div>
+	<div class='row tapetextxs text-left'>
+		<%= form_tag conversation_messages_path(@conversation), method: :post do%>
+		<%= text_area_tag :body, nil, class: 'messageinputxs tracking'%>
+		<div class='text-center'>
+		<%= submit_tag 'Отправить', class:'btn btn-info'%>
+		</div>
+		<%end%>
+	</div>
+</div>
