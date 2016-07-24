@@ -7,9 +7,12 @@
 
 .map{
 	padding-top: 25px;
+	margin-bottom: 0px;
 }
 
-
+.podrobnexs{
+	padding-right: 25px;
+}
 
 
 
@@ -32,6 +35,41 @@
 	color:#E69595
 }
 
+.gorodxs{
+	margin:0;
+	width:25px;
+	padding-right: 2px;
+	text-align: left;
+	color:#8a8a8a;
+}
+
+.gorodxs p{
+	font-size: 12px;
+	color:#8a8a8a;
+}
+.gorodxs h4{
+	font-size: 14px;
+	color:#a6a6a6;
+}
+
+.gorodxs h3{
+	font-size: 14px;
+	color:#E69595
+}
+
+.maplinexs{
+	position:absolute;
+	width: 15px;
+	height: 1px;
+	background-color: #a6a6a6;
+	margin-top: 8px;
+}
+
+.mobiletel{
+	background-color: #F6F3EE;
+
+}
+
 .entourp{
 	display:block;
 	text-align: left;
@@ -40,10 +78,14 @@
 
 .marshrut{
 	border-top: solid 1px #D1CBD6;
+	background-color: #f1ece4;
 }
 
-.marshrut{
+.marshrutxs{
 	background-color: #f1ece4;
+	padding: 6px;
+	padding-bottom: 10px;
+
 }
 .pinline{
 	display:inline;
@@ -228,7 +270,6 @@ textarea:focus, input:focus{
 
 .row{
 	margin:0;
-	padding:0;
 }
 
 // LOGIN DESIGN 
@@ -370,7 +411,39 @@ textarea:focus, input:focus{
 }
 
 .searchbackground{
-	padding:10px;
+	padding:5px;
+	margin:0;
+	width: 100%;
+	height: auto;
+	background-color: white;
+
+}
+
+.home{
+	width: 200px;
+  height: 30px;
+  background: #ededed;
+  border: none;
+  font-size: 10pt;
+  color: #63717f;
+  padding-left: 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.homexs{
+	width: 200px;
+  height: 30px;
+  background: #ededed;
+  border: none;
+  font-size: 10pt;
+  color: #63717f;
+  padding-left: 20px;
+  padding-bottom: 7px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
 .image-size {
@@ -384,7 +457,7 @@ textarea:focus, input:focus{
 	background: asset-data-url("marshrutka.jpg") no-repeat center center;
 	background-size:100%;
 	width:300px;
-	height:300px;
+	height:250px;
 }
 
 .showstyle{
@@ -430,9 +503,6 @@ textarea:focus, input:focus{
 	border-radius: 5px;
 }
 
-.photo img{
-	margin:0px;
-}
 
 .marges{
 	padding-top:5px;
@@ -994,14 +1064,26 @@ select:focus {
 
 .poisk{
 	width:100px;
-	height:28px;
+	height:30px;
 	padding-left:15px;
 	padding-right:15px;
 	color:none;
 	border:none;
 	border-radius:5px;
-	background-color:#718BC8;
+	background:none;
 }
+
+
+.poisk p{
+	margin-top: 5px;
+	color:#a3a3a3;
+}
+
+.poisk:hover p{
+	margin-top: 5px;
+	color:#8a9cad;
+}
+
 
 .poiskxss{
 	width:100px;
@@ -1078,17 +1160,6 @@ select:focus {
 
 .poiskallxs strong { 
 	color:white;
-}
-
-.poisk:hover{
-	width:100px;
-	height:28px;
-	padding-left:15px;
-	padding-right:15px;
-	color:none;
-	border:none;
-	border-radius:5px;
-	background-color:#D93636;
 }
 
 .sozdatannonce{
