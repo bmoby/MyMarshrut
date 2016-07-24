@@ -317,7 +317,7 @@
 					<%= content_tag(:div, content_tag(:p, "ВОДИТЕЛЬ УЕХАЛ"), class: "expiredxs") if annonce.date_depart < Date.today %>
 					<%if annonce.image_stored?%>
 						<div>
-							<%= image_tag annonce.image.thumb('330x260#').url%>
+							<%= image_tag annonce.image.thumb('300x240#').url%>
 						</div>
 					<%else%>
 						<div class='fotonotfoundxs'>
@@ -454,17 +454,13 @@
 									</div>
 									</br>
 									<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
-										</h4>
+										<%if annonce.villeinter8?%>
+										<div class='absolut pinline'>....</div>
+										<%else%>
+										<div class='maplinexs pinline'></div>
+										<%end%></h4>
 								</div> 
 							<%end%>
-							<% if annonce.villeinter8?%>
-								<div class='pinlineblock gorodxs'>
-									</br>
-									<h4 class='pinline'>...</h4>
-								</div>
-							<%end%>
-							
-
 							<div class='pinlineblock gorodxs'>
 								<div class='entourp'>
 										<p class='pinline'><%=annonce.ville_arrive.truncate_words(1, omission: ' ') %></p>
