@@ -195,5 +195,8 @@ $(document).ready(function() {
     i;
   };
   });
+
+
+  $('.sizescreen').text($(window).height() + 'x150');
   
 });

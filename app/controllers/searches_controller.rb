@@ -9,7 +9,7 @@ class SearchesController < ApplicationController
   
   def show
     @search = Search.find(params[:id])
-    @page1 = @search.search_annonces.where(["date_depart > ?", Date.today]).order(date_depart: :asc)
+    @page1 = @search.search_annonces.where(["date_depart >= ?", Date.today]).order(date_depart: :asc)
     @page2 = @search.search_annonces.where(["date_depart < ?", Date.today]).order(date_depart: :desc)
     @pages = @page1 + @page2
     @lespagesall = Kaminari.paginate_array(@pages).page(params[:page]).per(6)
@@ -22,7 +22,7 @@ class SearchesController < ApplicationController
   
   def searchall
     @search = Search.create(nil)
-    @page1 = @search.search_annonces.where(["date_depart > ?", Date.today]).order(date_depart: :asc)
+    @page1 = @search.search_annonces.where(["date_depart >= ?", Date.today]).order(date_depart: :asc)
     @page2 = @search.search_annonces.where(["date_depart < ?", Date.today]).order(date_depart: :desc)
     @pages = @page1 + @page2
     @lespagesall = Kaminari.paginate_array(@pages).page(params[:page]).per(6)

@@ -1,350 +1,136 @@
 <%= render 'shared/navbar' %>
-<div class='container-fluid enteteannonce hidden-xs'>
-	<div class='col-md-10'>
-	<h4><%= @annonce.ville_depart%> <i class='fa fa-long-arrow-right'></i> <%=@annonce.ville_arrive%></h4>
-	</div>
-	<div class='col-md-2 text-right'>
-	<h4><%= @annonce.date_depart.strftime("%d/%m/%Y")%></h4>
-	</div>
-</div>
-<div class='container-fluid annonceindividuel hidden-xs'>
-	<div class='col-md-6 gauche'>
-		<%# ICI LA PHOTO%>
-		</br></br>
-		<div class='row photo'>
-		<%if @annonce.image_stored?%>
-		<%= image_tag @annonce.image.thumb('550x400#').url, class:'img-responsive'%>
-		<%else%>
-		<div class='imagenotfound'>
-		</div>
-		<%end%>
-		</div>
-		<div class='row editButtons'>
-				<%if user_signed_in?%>
-				</br></br>
-					<%if current_user.id == @annonce.user_id%>
-				<%= link_to 'Обновить', edit_annonce_path(@annonce), class:'tabulation' %>
-				<%= link_to 'Удалить ', @annonce, :method => :delete, confirm: "Вы уверены что хотите удалить объявление?"%>
-					<%end%>
-				<%end%>
-				</br></br>
-		</div>
-	</div>
-	<div class='col-md-6 droite'>
-		<%#ICI TOUTES LES INFO ET CONTACT DIV GENERAL INFO ET CONTACT NE RIEN INSCRIRE DIRECTEMENT%>
-		<div class='row menurow text-right'>
-			<%#ICI LE MENU%>
-			<ul class='menuhaut'>
-				</br>
-				<li><%= link_to 'Вернуться назад', :back%></li>
-				<li><a href=' ' class='infobtn'>Информация</a></li>
-				<li><a href=' ' class='contactbtn'>Связаться</a></li>
-			</ul>
-		</div>
-		</br>
-		<div class='row infocontact'>
-			<%# ICI LES INFO UNIQUEMENT%>
-			<div class='infoa'>
-				<%#LES INFO ICI%>
-					
-				<div class='col-md-6 infoGauche'>
-					<%#INFO PARTIE GAUCHE%>
-						<div class='vehiculeinfo'>
-							<h3>Данные </h3>
-						<p>Едет  <%= @annonce.user.prenom%></p>
-						<%if @annonce.marque_vehicule?%>
-						<p>На <%= @annonce.marque_vehicule %></p>
-						<%else%>
-						<p>Водитель не указал марку автомобиля</p>
-						<%end%>
-						<%if @annonce.annee_vehicule?%>
-						<p><%= @annonce.annee_vehicule%> года выпуска</p>
-						<%end%>
-						<%if @annonce.nombre_place?%>
-						<p><%= @annonce.nombre_place%> местный автомобиль</p>
-						<%else%>
-						<p>Водитель не указал сколько мест в автомобиле</p>
-						<%end%>
-						</br></div></br>
-					<%if @annonce.nombre_chauffeurs?%>
-						<% if @annonce.nombre_chauffeurs == 1%>
-						<p><i class='fa fa-male'> </i>   <%= @annonce.nombre_chauffeurs %> водитель</p>
-						<%else%>
-						<p><i class='fa fa-users'> </i>   <%= @annonce.nombre_chauffeurs %> водителя</p>
-						<%end%>
-					<%else%>
-						<p>Водитель не указал сколько шоферов</p>
-					<%end%>
-						<p>Багаж с пассажира не должен превышать <%= @annonce.poid_max_passager %> килограм </p> 
-					<%if @annonce.arrets_chaque?%>
-						<% if @annonce.arrets_chaque == 1%>
-						<p><i class='fa fa-coffee'></i> Остановка каждый час</p>
-						<%elsif @annonce.arrets_chaque == 2%>
-						<p><i class='fa fa-coffee'></i> Остановка каждые <%= @annonce.arrets_chaque %> часа</p>
-						<%elsif @annonce.arrets_chaque == 3%>
-						<p><i class='fa fa-coffee'></i> Остановка каждые <%= @annonce.arrets_chaque %> часа</p>
-						<%elsif @annonce.arrets_chaque == 4%>
-						<p><i class='fa fa-coffee'></i> остановка каждые <%= @annonce.arrets_chaque %> часа</p>
-						<%else%>
-						<p><i class='fa fa-coffee'></i> Остановка каждые <%= @annonce.arrets_chaque %> часов</p>
-						<%end%>
-					<%end%>
-					</div>
-				<div class='col-md-6 infoDroite'>
-					<%#INFO PARTIE DROITE%>
-						<p><div class='mapinfo'>Уезжает <%= @annonce.date_depart.strftime("%d/%m/%Y") %> ого числа </p>
-						<p>Из  <%= @annonce.ville_depart %> в <%= @annonce.ville_arrive%></p> </br></div></br>
-						<h5 class='cenazaproezd'>Цена за проезд <%= @annonce.prix_passager%><i class='fa fa-eur'> </i> </h5>
-						<% if @annonce.accept_colis == true%>
-						<p>Перевозит груз: </p>
-						<p> <%= @annonce.prix_kg_colis%> евро за килограм, минимум <%= @annonce.poid_min_colis%> килограм</p>
-						<%else%>
-						<p>Не перевозит груз.</p>
-						<%end%>
-						<% if @annonce.accept_colis_valeur == true%>
-						<p>Перевозит важные бумаги</p>
-						<%else%>
-						<p>Не перевозит важные бумаги</p>
-						<%end%></br>
-						<%if @annonce.description?%>
-						<div class='mapinfo1 descriptionannonce'>
-							<h3>Подробности</h3>
-						<p><%= @annonce.description%> </p></br>
-						</div></br>
-						<%end%>
-				</div>
-				</div>
-			</div>
-			<div class='contact'>
-				<%#PAGE CONTACT%>
-				<div class='conseil text-center'>
-					<h3>Связаться с водителем</h3>
-					<p>Прежде чем связаться с водителям, просьба прочитать внимательно объявление.
-						Водитель наверняка уже ответил на ваш вопрос.
-					</p>
-				</div>
-				<div class='row telephonesChauffeurs text-right'>
-					<div class='col-md-8 text-left'>
-						<p>Лучший способ связаться с водителем это отправить ему сообщение через наш сайт.</p>
-					</div>
-					<div class='col-md-4 text-right'>
-						<%if @annonce.user.mobile_number?%>
-						<p><i class='fa fa-phone'> </i> <%= @annonce.user.mobile_number%></p>
-						<%end%>
-						<% if @annonce.telephones != @annonce.user.mobile_number%>
-						<p><i class='fa fa-phone'> </i>  <%= @annonce.telephones%></p>
-						<%end%>
-					</div>
-				</div>
-			<%if user_signed_in?%>
-				<%if current_user != @annonce.user%>
-				<div class='row contactinputs'>
-					<%= form_tag conversations_path, method: :post do%>
-				 	<%= hidden_field_tag :user_id, @annonce.user_id %>
-					<%= hidden_field_tag :subject, current_user.prenom + 'прислал вам сообщение'  %>
-					<%= text_area_tag :body, nil, class: 'messagebox', id:'messagevoditelyu', placeholder: 'Задайте все свои вопросы и нажмите на "Отправить"'%>
-					<div class='text-right'>
-					<%= submit_tag 'Отправить', class: 'btn btn-info', id:'otpravitmessagevoditelyu'%>
-					<%end%>
-					</br></br>
-					</div>
-					<%else%>
-					<div class='row'>
-					</br></br></br></br>
-					</div>
-					<%end%>
-				<%else%>
-					<div class='row'>
-					</br></br>Чтобы написать водителю сообшение через mymarshrut, необходимо <%= link_to 'зарегистрироватся', new_user_registration_path %>.</br></br>
-					</div>
-				<%end%>
-				</div>
-			</div>
-		</div>
-	</div>	
-</div>
-
-
-<div class='enteteannoncexs visible-xs '>
-	<div class='row'>
-		<h4>
-		<%if @annonce.ville_depart.split.second == '-' %>
-		<%= @annonce.ville_depart.split[0...3].join(' ')%>
-		<%else%>
-		<%= @annonce.ville_depart.split[0...2].join(' ')%>
-		<%end%>
-		<i class='fa fa-long-arrow-right'></i> 
-		<%if @annonce.ville_arrive.split.second == '-' %>
-		<%= @annonce.ville_arrive.split[0...3].join(' ')%>
-		<%else%>
-		<%= @annonce.ville_arrive.split[0...2].join(' ')%>
-		<%end%>
+<div class='containercustom text-center'>
 	
-		</h4>
-	</div>
-	<div class='row text-center'>
-		<h4><%= @annonce.date_depart.strftime("%d/%m/%Y")%></h4>
-	</div>
-</div>
+	<div class='row text-center headershow'>
 
-<div class='annonceindividuelxs text-center visible-xs'>
-	<div class='row'>
-		<%# ICI LA PHOTO%>
-		
-		<div class='row photoxs'>
-		<%= image_tag @annonce.image.thumb('400x250#').url, class:'img-responsive' if @annonce.image_stored?%>
-		</div>
-		<%if user_signed_in?%>
-		<%if current_user.id == @annonce.user_id%>
-		<div class='row editButtons'>
-				</br></br>
-				<%= link_to 'Обновить', edit_annonce_path(@annonce), class:'tabulation' %>
-				<%= link_to 'Удалить ', @annonce, :method => :delete, confirm: "Вы уверены что хотите удалить объявление?"%>
-				</br></br>
-		</div>
-		<%end%>
-		<%end%>
-	</div>
-	<div class='row text-center droite'>
-		<%#ICI TOUTES LES INFO ET CONTACT DIV GENERAL INFO ET CONTACT NE RIEN INSCRIRE DIRECTEMENT%>
-		<div class='row text-center menurowxs'>
-			<%#ICI LE MENU%>
-			<div class='menuhautxs'>
-			</br>
-				<div class='col-xs-4 text-center'>
-				<li><%= link_to :back do%> <i class='glyphicon glyphicon-circle-arrow-left'></i><%end%></li>
-				</div>
-				<div class='col-xs-4 text-center'>
-				<li><a href=' ' class='infobtn'><i class='glyphicon glyphicon-list-alt'></i> </a></li>
-				</div>
-				<div class='col-xs-4 text-center'>
-				<li><a href=' ' class='contactbtn'><i class='glyphicon glyphicon-envelope'></i></a></li></br>
-				</div>
-			</div>
-		</div></br>
-		<div class='row infocontact'>
-			<%# ICI LES INFO UNIQUEMENT%>
-			<div class='col-xs-10 col-xs-offset-1 text-left'>
-				<div class='infoa'>
-				<%#LES INFO ICI%>
-				<div class='row infoGauche'>
-					<%#INFO PARTIE GAUCHE%>
-					<div class='vehiculeinfo row text-left'>
-							<h3>Данные </h3>
-							<p>Едет  <%= @annonce.user.prenom%></p>
-							<%if @annonce.marque_vehicule?%>
-							<p>На <%= @annonce.marque_vehicule %></p>
-							<%else%>
-							<p>Водитель не указал марку автомобиля</p>
-							<%end%>
-							<%if @annonce.annee_vehicule?%>
-							<p><%= @annonce.annee_vehicule%> года выпуска</p>
-							<%end%>
-							<%if @annonce.nombre_place?%>
-							<p><%= @annonce.nombre_place%> местный автомобиль</p>
-							<%else%>
-							<p>Водитель не указал сколько мест в автомобиле</p>
-							<%end%>
-							</br></div></br>
-						<%if @annonce.nombre_chauffeurs?%>
-							<% if @annonce.nombre_chauffeurs == 1%>
-							<p><i class='fa fa-male'> </i>   <%= @annonce.nombre_chauffeurs %> водитель</p>
-							<%else%>
-							<p><i class='fa fa-users'> </i>   <%= @annonce.nombre_chauffeurs %> водителя</p>
-							<%end%>
-						<%else%>
-							<p>Водитель не указал сколько шоферов</p>
-						<%end%>
-							<p>Багаж с пассажира не должен превышать <%= @annonce.poid_max_passager %> килограм </p> 
-						<%if @annonce.arrets_chaque?%>
-							<% if @annonce.arrets_chaque == 1%>
-							<p><i class='fa fa-coffee'></i> Остановка каждый час</p>
-							<%elsif @annonce.arrets_chaque == 2%>
-							<p><i class='fa fa-coffee'></i> Остановка каждые <%= @annonce.arrets_chaque %> часа</p>
-							<%elsif @annonce.arrets_chaque == 3%>
-							<p><i class='fa fa-coffee'></i> Остановка каждые <%= @annonce.arrets_chaque %> часа</p>
-							<%elsif @annonce.arrets_chaque == 4%>
-							<p><i class='fa fa-coffee'></i> остановка каждые <%= @annonce.arrets_chaque %> часа</p>
-							<%else%>
-							<p><i class='fa fa-coffee'></i> Остановка каждые <%= @annonce.arrets_chaque %> часов</p>
-							<%end%>
-						<%end%>
-					</div>
-					<div class='row text-left infoDroitexs'>
-					<%#INFO PARTIE DROITE%>
-						<div class='mapinfo'><p>Уезжает <%= @annonce.date_depart.strftime("%d/%m/%Y") %> ого числа </p>
-							<p>Из  <%= @annonce.ville_depart %> в <%= @annonce.ville_arrive%></p> </br>
-						</div></br>
-						<h3 class='cenazaproezd'>Цена за проезд <%= @annonce.prix_passager%><i class='fa fa-eur'> </i> </h3>
-						<% if @annonce.accept_colis == true%>
-						<p>Перевозит груз: </br>
-						 <%= @annonce.prix_kg_colis%> евро за килограм, минимум <%= @annonce.poid_min_colis%> килограм</p>
-						<%else%>
-						<p>Не перевозит груз.</p>
-						<%end%>
-						<% if @annonce.accept_colis_valeur == true%>
-						<p>Перевозит важные бумаги</p>
-						<%else%>
-						<p>Не перевозит важные бумаги</p>
-						<%end%></br>
-						<%if @annonce.description?%>
-						<div class='mapinfo1 descriptionannonce'>
-							<h3>Подробности</h3>
-							<p><%= @annonce.description%> </p></br>
-						</div></br>
-						<%end%>
-						<div class='row text-center menubasxs'>
-						<a href=' ' class='contactbtn'><i class='glyphicon glyphicon-envelope'></i><p>Задать водителю вопрос</p></a></br></br>
-						</div>
-				</div>
-			</div>
-			</div>
-		</div>
-		<div class='contact'>
-				<%#PAGE CONTACT%>
-				<div class='conseil text-center'>
-					<h3>Связаться с водителем</h3>
-					<p>Прежде чем связаться с водителям, просьба прочитать внимательно объявление.
-						Водитель наверняка уже ответил на ваш вопрос.
-					</p>
-				</div>
-				<div class='row telephonesChauffeurs text-center'>
-					<div class='row text-center'>
-						<p>Лучший способ связаться с водителем это отправить ему сообщение через наш сайт.</p>
-					</div>
-					<div class='row text-center'>
-						<%if @annonce.user.mobile_number?%>
-						<p><i class='fa fa-phone'> </i> <%= @annonce.user.mobile_number%> 
-						</br>
-						<%end%>
-						 <i class='fa fa-phone'> </i>  <%= @annonce.telephones %></p>
-					</div>
-				</div>
-			<%if user_signed_in?%>
-				<%if current_user != @annonce.user%>
-				<div class='row contactinputs'>
-					<%= form_tag conversations_path, method: :post do%>
-				 	<%= hidden_field_tag :user_id, @annonce.user_id %>
-					<%= hidden_field_tag :subject, current_user.prenom + 'прислал вам сообщение'  %>
-					<%= text_area_tag :body, nil, class: 'messageboxxs', placeholder: 'Задайте все свои вопросы и нажмите на "Отправить"'%>
-					<div class='text-center'>
-					<%= submit_tag 'Отправить', class: 'btn btn-info '%>
-					<%end%>
-					</div>
-				</br></br>
-				</div>
-				<%else%>
-				<div class='row'>
-				</br></br></br>
-				</div>
-				<%end%>
+		<div class='col-md-6 text-left fotka'>
+			<%if @annonce.image_stored?%>
+				<%= image_tag @annonce.image.thumb('600x450#').url%>
 			<%else%>
-			<div class='row'>
-			</br></br>Чтобы написать водителю сообшение через mymarshrut, необходимо <%= link_to 'зарегистрироватся', new_user_registration_path %>.</br></br>
-			</div>
+				<div class='fotonotfound'>
+				</div>
 			<%end%>
+		</div>
+
+		<div class='col-md-6 vajnoe'>
+
+
+			<div class='row tuda text-center'>
+				<h4><%= @annonce.ville_depart.truncate_words(1, omission: ' ') %> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ') %> </h4>
 			</div>
-			
+
+			<div class='row voditeletmashina text-left'>
+				<div class='col-md-1 text-left'>
+					<i class="fa fa-user" aria-hidden="true"></i>
+				</div>
+				<div class='col-md-3 text-left'>
+					<h3 class='pinline'><%= @annonce.user.prenom.truncate_words(1, omission: ' ')%></h3>
+				</div>
+				<div class='col-md-1 text-left'>
+					<i class="fa fa-car" aria-hidden="true"></i> 
+				</div>
+				<div class='col-md-7 text-left'>
+					<h3 class='pinline'><%= @annonce.marque_vehicule.truncate_words(2, omission: ' ') %> <%= @annonce.annee_vehicule %>, <%= @annonce.nombre_place%> местный автомобил></h3>
+				</div>
+
+			</div>
+
+
+			<div class='row voditeletmashina text-left'>
+				<div class='col-md-1 text-left'>
+					<i class="fa fa-user" aria-hidden="true"></i>
+				</div>
+				<div class='col-md-3 text-left'>
+					<h3 class='pinline'><%= @annonce.user.prenom.truncate_words(1, omission: ' ')%></h3>
+				</div>
+				<div class='col-md-1 text-left'>
+					<i class="fa fa-car" aria-hidden="true"></i> 
+
+				</div>
+				<div class='col-md-7 text-left'>
+					<h3 class='pinline'><%= @annonce.marque_vehicule.truncate_words(2, omission: ' ') %> <%= @annonce.annee_vehicule%>, <%= @annonce.nombre_place%> местный автомобиль</h3>
+				</div>
+
+			</div>
+
+
+			<div class='row voditeletmashina text-left'>
+				<div class='col-md-1 text-left'>
+					<i class='pinline fa fa-users'></i>
+				</div>
+				<div class='col-md-3 text-left'>
+						<% if @annonce.nombre_chauffeurs == 1%>
+						<h3 class='pinline'><%= @annonce.nombre_chauffeurs %> водитель</h3>
+						<%else%>
+						<h3 class='pinline'><%= @annonce.nombre_chauffeurs %> водителя</h3>
+						<%end%>
+				</div>
+				<div class='col-md-1 text-left'>
+					<i class='fa fa-coffee'></i>
+
+				</div>
+				<div class='col-md-7 text-left'>
+					<% if @annonce.arrets_chaque == 1%>
+						<h3 class='pinline'>Остановка каждый час</h3>
+						<%elsif @annonce.arrets_chaque == 2%>
+						<h3 class='pinline'>Остановка каждые <%= @annonce.arrets_chaque %> часа</h3>
+						<%elsif @annonce.arrets_chaque == 3%>
+						<h3 class='pinline'>Остановка каждые <%= @annonce.arrets_chaque %> часа</h3>
+						<%elsif @annonce.arrets_chaque == 4%>
+						<h3 class='pinline'>остановка каждые <%= @annonce.arrets_chaque %> часа</h3>
+						<%else%>
+						<h3 class='pinline'>Остановка каждые <%= @annonce.arrets_chaque %> часов</h3>
+					<%end%>
+				</div>
+			</div>
+
+
+			<div class='row voditeletmashina text-left'>
+				<div class='col-md-1 text-left'>
+					<i class="fa fa-user" aria-hidden="true"></i>
+				</div>
+				<div class='col-md-3 text-left'>
+					<h3 class='pinline'><%= @annonce.user.prenom.truncate_words(1, omission: ' ')%></h3>
+				</div>
+				<div class='col-md-1 text-left'>
+					<i class="fa fa-suitcase" aria-hidden="true"></i>
+				</div>
+				<div class='col-md-7 text-left'>
+					<h3 class='pinline'>Багаж с пассажира не должен превышать <%= @annonce.poid_max_passager %> килограм </h3>
+				</div>
+
+			</div>
+
+		</div>
+
+
 	</div>
-		
+
 </div>
+<div class='row text-center photobaniere'>
+		<div class='col-md-4 text-left'>
+			<%= link_to  :back do%>
+				<h4 class='pinline'><i class=" fa fa-chevron-left" aria-hidden="true"></i></h4>
+			<%end%>
+		</div>
+		<div class='col-md-4 text-center'>
+			<h4><%= @annonce.ville_depart.truncate_words(1, omission: ' ') %> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ') %> </h4>
+		</div>
+		<div class='col-md-4 text-right'>
+			<h4><%=@annonce.date_depart%></h4>
+		</div>
+	</div>
+</br></br></br>
+
+			<div class='row  lerow text-center'>
+				<div class='col-md-3 col-md-offset-5'>
+					<div class='licone col-md-3'>
+						<i class="iconabsolute fa fa-suitcase" aria-hidden="true"></i>
+					</div>
+					<div class='labare col-md-8'>
+						<%= form_for(@annonce) do |f| %>
+					 	<%= f.text_field :villeinter1, class: 'notreclass',  :placeholder => 'Napishite syuda!' %>
+						<%end%>
+					</div>
+				</div>
+			</div>

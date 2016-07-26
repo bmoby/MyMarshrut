@@ -1,12 +1,92 @@
 // DESIGN BODY LAYOUT --------->
 
+input::-webkit-input-placeholder {
+color: white;
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+color: white;  
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: white;  
+}
+ 
+input:-ms-input-placeholder {  
+color: white;  
+}
+
+.headershow{
+	border-radius: 15px 0 0 0;
+}
+
+.voditeletmashina .fa{
+	padding:0;
+	margin: 0;
+	font-size: 31px;
+	color:gray;
+
+}
+
+.voditeletmashina h3{
+	font-family: 'Russo One', sans-serif;
+	padding: 0;
+	font-size: 17px;
+	color:gray;
+
+}
+
+.voditeletmashina{
+	border-bottom: 2px dashed #0096A4;
+	padding-top: 15px;
+	width:100%;
+	height: auto;
+	padding-bottom: 15px;
+}
+.fotka img{
+	filter: saturate(50%);
+	filter: grayscale(100%);
+}
+
+.fotka{
+	padding: 0;
+	margin: 0;
+}
+.photobaniere{
+	font-family: 'Russo One', sans-serif;
+	background-color: #bac5cf;
+	padding:20px;
+}
+
+.tuda{
+	font-family: 'Russo One', sans-serif;
+}
+
+.tuda h4{
+	padding-bottom: 10px;
+	font-size:38px;
+	color:#ac686e;
+	border-bottom: dashed 3px #dec4c6;
+}
+
+.photobaniere h4{
+	font-size:21px;
+	color:#8a8a8a;
+
+}
+
+.containercustom{
+	background-color: #f2e7de;
+	margin-left: 0;
+	padding-left: 0;
+}
+
 .obligatoir{
 	background-color:#DFECF0;
 	
 }
 
 .map{
-	padding-top: 25px;
 	margin-bottom: 0px;
 }
 
@@ -65,6 +145,11 @@
 	margin-top: 10px;
 }
 
+.mailinfo{
+	font-family: 'Marck Script', cursive;
+	color:#dcd0bc;
+}
+
 .absolut{
 	position:absolute;
 }
@@ -83,6 +168,7 @@
 .marshrut{
 	border-top: solid 1px #D1CBD6;
 	background-color: #f1ece4;
+	padding-top: 20px;
 }
 
 .marshrutxs{
@@ -236,10 +322,8 @@
 
 
 body{
-	text-align:center;
-	background-size:100%;
-	background-color: #EBF2F0;
 	overflow:auto;
+	background-color: #FDFAE9;
 	font-family: 'Comfort', sans-serif;
 	margin:0;
 	padding:0;
@@ -256,7 +340,7 @@ body.homepage{
 
 body.searches{
 	text-align:center;
-	background: asset-data-url("cover.jpg") no-repeat center center fixed;
+	background: asset-data-url("cover.jpg") center center fixed;
 	background-size:100%;
 	overflow:auto;
 	font-family: 'Comfort', sans-serif;
@@ -284,6 +368,23 @@ textarea:focus, input:focus{
 
 
 // CREATE ANNONCE DESIGN 
+
+.showcontainer{
+	padding:15px;
+	width: 80%;
+	height: auto;
+}
+
+.enteteshow{
+	background-color: #c0baaf;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-radius: 5px 5px 0 0;
+}
+
+.enteteshow h4{
+	color:white;
+}
 
 .podrobnosti{
 	padding-left:15px;
@@ -419,14 +520,15 @@ textarea:focus, input:focus{
 	margin:0;
 	width: 100%;
 	height: auto;
-	background-color: white;
+	background-color: rgba(51, 61, 71, 0.68);
 
 }
+
 
 .home{
 	width: 200px;
   height: 30px;
-  background: #ededed;
+  background-color: rgba(51, 61, 71, 0.86);
   border: none;
   font-size: 10pt;
   color: #63717f;
@@ -434,6 +536,10 @@ textarea:focus, input:focus{
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+}
+
+.home p{
+	color:white;
 }
 
 .homexs{
@@ -468,6 +574,7 @@ textarea:focus, input:focus{
 	display:block;
 }
 
+
 .fotonotfoundxs{
 	margin:auto;
 	border-radius:5px;
@@ -477,6 +584,20 @@ textarea:focus, input:focus{
 	height:240px;
 }
 
+.editmenu{
+	background-color: #9cbbc9;
+	border-radius: 5px 5px 0 0;
+	border-left: solid 1px #B8B89F;
+	color:white;
+}
+
+.editmenu a {
+	color:white;
+}
+
+.editmenu p {
+	color:white;
+}
 .annoncexs{
 	background-color:#F6F3EE;
 	margin-bottom:10px;
@@ -487,9 +608,17 @@ textarea:focus, input:focus{
 	padding-top: 0;
 }
 
+.thebackground{
+	background-color:#F6F3EE;
+	padding:10px;
+	border-bottom: solid 1px #B8B89F;
+	border-left: solid 1px #B8B89F;
+}
+
 .xspodrobneebtn{
 	width:40%;
 	margin-bottom:10px;
+
 }
 
 .contactbtn .glyphicon{
@@ -497,16 +626,23 @@ textarea:focus, input:focus{
 }
 
 .annonce{
-	cursor: pointer; cursor: hand;
 	background-color:#F6F3EE;
+	padding:10px;
+	border-bottom: solid 1px #B8B89F;
+	cursor: pointer; cursor: hand;
 	width:80%;
 	margin-bottom:10px;
 	margin-top:10px;
-	padding:10px;
-	border-bottom: solid 1px #B8B89F;
 	border-radius: 5px;
 }
 
+.mesannoncesback{
+	cursor: pointer; cursor: hand;
+	width:80%;
+	margin-bottom:10px;
+	margin-top:10px;
+	border-radius: 5px;
+}
 
 .marges{
 	padding-top:5px;
@@ -528,13 +664,13 @@ width:100%;
 
 .prix h3{
 	font-size:21px;
-	color:#E69595;
+	color:#E34F5B;
 	font-family: 'Russo One', sans-serif;
 	
 }
 
 .prix .fa{
-	color:#E69595;
+	color:#E34F5B;
 }
 .datedirectionxs h4{
 	color:black;
@@ -544,6 +680,7 @@ width:100%;
 }
 
 .datedirectionxs p{
+	color:#2797A3;
 	font-size:17px;
 	font-family: 'Russo One', sans-serif;
 	margin-top:19px;
@@ -552,17 +689,19 @@ width:100%;
 
 .datedirection h4{
 	font-size:21px;
-	
+
 
 }
 
 .datedirection p{
+	color:#4EA88C;
 	font-size:18px;
 	font-family: 'Russo One', sans-serif;
 	
 }
 
 .ladate{
+
 	color:gray;
 	font-family: 'Russo One', sans-serif;
 	font-size:18px;
@@ -570,7 +709,7 @@ width:100%;
 }
 
 .datedirection{
-	border-bottom:solid 1px #C3C4BC;
+	border-bottom:dashed 2px #C3C4BC;
 }
 
 .datedirectionbackground{
@@ -1071,7 +1210,7 @@ select:focus {
 	height:30px;
 	padding-left:15px;
 	padding-right:15px;
-	color:none;
+	color:white;
 	border:none;
 	border-radius:5px;
 	background:none;
@@ -1080,12 +1219,12 @@ select:focus {
 
 .poisk p{
 	margin-top: 5px;
-	color:#a3a3a3;
+	color:white;
 }
 
 .poisk:hover p{
 	margin-top: 5px;
-	color:#8a9cad;
+	color:white;
 }
 
 
