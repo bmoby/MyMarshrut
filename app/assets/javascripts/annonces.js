@@ -196,7 +196,19 @@ $(document).ready(function() {
   };
   });
 
+  $('.lastvoditelmashina .fa').on('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    $('.vajnoe').stop(true, true).hide('slide', {direction: 'down'}, 1400)
+    $('.vajnoe2').stop(true, true).show('slide', {direction: 'up'}, 1400);
+    
+  })
 
-  $('.sizescreen').text($(window).height() + 'x150');
+  $('.lastvoditelmashina2 .fa').on('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    $('.vajnoe2').stop(true, true).hide('slide', {direction: 'up'}, 1400);
+    $('.vajnoe').stop(true, true).show('slide', {direction: 'down'}, 1400);
+  })
   
 });

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160720094004) do
+ActiveRecord::Schema.define(version: 20160727174345) do
 
   create_table "annonces", force: :cascade do |t|
     t.string   "ville_depart"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 20160720094004) do
     t.boolean  "telephone_type3",     default: true
     t.boolean  "telephone_type4",     default: true
     t.boolean  "telephone_type5",     default: true
+    t.boolean  "wifi"
+    t.boolean  "chay"
   end
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
