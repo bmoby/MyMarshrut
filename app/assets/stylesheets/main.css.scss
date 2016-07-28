@@ -1,8 +1,35 @@
 // DESIGN BODY LAYOUT --------->
 
+.datedepartrowxs h4{
+	margin-top: 0;
+	padding-top: 0;
+}
+
+.vajnoexs{
+	padding-left: 5px;
+	padding-right: 5px;
+	background-color: #FDFAE9;
+
+}
+
+.vajnoexs h4{
+	color:#a1bfb1;
+	font-family: 'Russo One', sans-serif;
+}
+
+.tudadateprixxs{
+	border-bottom: dashed 3px #a1bfb1;
+}
+
 .photo-responsive{
 	width: 100%;
 	height: 70vh;
+}
+
+
+.photo-responsivemini{
+	width: 100%;
+	height: 40vh;
 }
 
 .paragraphone{
@@ -63,6 +90,11 @@
 	padding-top: 30px;
 }
 
+.podrobnemarshrutxs{
+	padding-top: 45px;
+	padding-bottom: 20px;
+}
+
 .maplinepodrobnee{
 	position:absolute;
 	width: 25px;
@@ -85,7 +117,7 @@
 .vajnoe{
 	width: 100%;
 	margin: 0;
-	padding: 0;
+	padding: 15px;
 	height: 70vh;
 	background-color: #FDFAE9;
 }
@@ -95,14 +127,35 @@
 	width: 100%;
 	background-color: #E69894;
 	margin: 0;
-	padding: 0;
 	height: 70vh;
+}
+
+.vajnoe2xs{
+	width: 100%;
+	background-color: #E69894;
+	margin: 0;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 .containercustom2{
 	background-color: #78A38F;
 	width: 100%;
-	padding-bottom: 12%;
+	padding-bottom: 5%;
+}
+
+.cartexs2{
+	padding-top: 15px;
+}
+
+.containercustom2xs{
+	background-color: #78A38F;
+	width: 100%;
+	overflow: hidden;
+	padding-left: 5px;
+	padding-right: 15px;
+	padding-bottom: 0px;
+	margin:0;
 }
 .tuda .datedeparture h4{
 	margin-top: 14px;
@@ -124,6 +177,13 @@
 	padding-bottom: 5px;
 }
 
+.lastvoditelmashinaxs{
+	padding-top: 5px;
+	width:100%;
+	height: auto;
+	padding-bottom: 5px;
+}
+
 .lastvoditelmashina2{
 	padding-top: 15px;
 	width:100%;
@@ -132,7 +192,7 @@
 }
 
 .lastvoditelmashina2 .fa{
-	padding:15px;
+	padding:0;
 	margin: 0;
 	font-size: 55px;
 	color:#FDFAE9;
@@ -145,13 +205,41 @@
 	color:#E69894;
 }
 
+.lastvoditelmashinaxs .fa{
+	padding:0;
+	margin: 0;
+	font-size: 31px;
+	color:#E69894;
+}
+
+.colmd4{
+	margin:0;
+	padding:0;
+}
+
+
+.lastvoditelmashinaxs h3{
+	padding: 0;
+	margin-top:5px;
+	font-size: 17px;
+	color:gray;
+}
 
 .lastvoditelmashina h3{
 	padding: 0;
+	margin-top:5px;
 	font-size: 17px;
 	color:gray;
 }
 .voditeletmashina .fa{
+	padding:0;
+	margin: 0;
+	font-size: 31px;
+	color:#E69894;
+
+}
+
+.voditeletmashinaxs .fa{
 	padding:0;
 	margin: 0;
 	font-size: 31px;
@@ -169,12 +257,23 @@
 
 .voditeletmashina2 h3{
 	padding: 0;
+	margin-top: 5px;
+	margin-left: 0px;
 	font-size: 17px;
 	color:white;
 
 }
 
 .voditeletmashina h3{
+	margin-top:5px;
+	padding: 0;
+	font-size: 17px;
+	color:gray;
+
+}
+
+.voditeletmashinaxs h3{
+	margin-top:5px;
 	padding: 0;
 	font-size: 17px;
 	color:gray;
@@ -184,6 +283,7 @@
 .paragraphone2{
 	padding-left: 10%;
 	padding-right: 10%;
+	padding-bottom: 0px;
 	text-align: justify;
 }
 
@@ -214,6 +314,13 @@
 	padding-bottom: 15px;
 }
 
+
+.voditeletmashinaxs{
+	border-bottom: 2px dashed rgba(220, 210, 173, 0.82);
+	padding-top: 10px;
+	width:100%;
+	padding-bottom: 5px;
+}
 
 .fotka img{
 	filter: saturate(50%);
@@ -483,33 +590,23 @@
 	height:auto;
 }
 
+ht.clear{
+	height: 1px;
+}
 
 body{
-	overflow:auto;
 	background-color: #FDFAE9;
 	font-family: 'Comfort', sans-serif;
-	margin:0px;
-	padding:0px;
+	padding-bottom: 0px;
+
 }
 
-body.homepage{
-	text-align:center;
-	background: asset-data-url("cover.jpg") no-repeat center center fixed;
-	background-size:100%;
-	overflow:auto;
-	font-family: 'Comfort', sans-serif;
-	margin:0px;
-	padding:0px;
-}
 
 body.searches{
-	text-align:center;
 	background: asset-data-url("cover.jpg") center center fixed;
 	background-size:100%;
-	overflow:auto;
 	font-family: 'Comfort', sans-serif;
-	margin:0px;
-	padding:0px;
+	padding-bottom: 0px;
 }
 
 
@@ -1211,6 +1308,7 @@ select:focus {
 }
 
 .messagebox{
+	resize: none;
 	word-wrap: break-word;
 	width: 80%;
 	padding: 10px 20px 20px 20px;
@@ -1220,12 +1318,34 @@ select:focus {
 	border-radius: 0;
 }
 
+.messageboxxs{
+	resize: none;
+	word-wrap: break-word;
+	width: 80%;
+	height:150px;
+	background-color:#FDFAE9;
+	border:none;
+	border-radius: 0;
+}
 .podrobneeotpravit{
 	padding-right: 10%;
 	background: none;
 	border: none;
 	border-radius: 0;
 }
+
+.podrobneeotpravitxs{
+	padding-right: 5px;
+	background: none;
+	border: none;
+	border-radius: 0;
+	color:white;
+}
+
+.podrobneeotpravitxs p{
+	color:white;
+}
+
 
 .podrobneeotpravit p{
 	color:white;
@@ -1236,10 +1356,9 @@ select:focus {
 	word-wrap: break-word;
 	border-radius:7px;
 	border:solid 1px gray;
-	width:80%;
+	width: 100%;
 	height:100px;
-	padding-left:15px;
-	padding-right:15px;
+	padding: 15px;
 }
 
 .listcontact .glyphicon{
