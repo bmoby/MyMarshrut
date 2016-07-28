@@ -191,7 +191,7 @@
 
 		<div class='col-md-6 text-left fotka'>
 			<%if @annonce.image_stored?%>
-				<%= image_tag @annonce.image.thumb('640x480#').url%>
+				<img src='<%= @annonce.image.thumb('800x700#').url%>' class='photo-responsive'>
 			<%else%>
 				<div class='fotonotfound'>
 				</div>
@@ -421,6 +421,8 @@
 		</div>
 </div>
 
+
+
 <div class='text-center containercustom2'>
 	<div class='row'>
 	<div class='col-md-6 text-left'>
@@ -553,7 +555,7 @@
 			<%if @annonce.description? %>
 				<h5><%= @annonce.description%></h5>
 			<%else%>
-			<h5>Едет <%= @annonce.user.prenom%> на <%=@annonce.marque_vehicule%>, по маршруту <%= @annonce.ville_depart%> - <%= @annonce.ville_arrive%> <%= @annonce.date_depart%> числа. 
+			<h5>Едет <%= @annonce.user.prenom%> на <%=@annonce.marque_vehicule%>, по маршруту <%= @annonce.ville_depart.truncate_words(1, omission: ' ')%> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ')%> <%= @annonce.date_depart%> числа. 
 				<%if @annonce.poid_max_passager?%>Дозволенный вес багажа 20 килограммов.
 				<%end%> 
 				<%if @annonce.accept_colis?%>Также перевозит посылки <%= @annonce.prix_kg_colis%>€ за килограмм 
@@ -572,4 +574,6 @@
 	</div>
 </div>
 </div>
+
+
 

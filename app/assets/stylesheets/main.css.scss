@@ -1,5 +1,9 @@
 // DESIGN BODY LAYOUT --------->
 
+.photo-responsive{
+	width: 100%;
+	height: 70vh;
+}
 
 .paragraphone{
 	padding: 10px 5px 5px 10px;
@@ -75,13 +79,14 @@
 	height: 480px;
 	margin: 0;
 	padding:0;
+	height: 70vh;
 }
 
 .vajnoe{
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	height: 480px;
+	height: 70vh;
 	background-color: #FDFAE9;
 }
 
@@ -91,7 +96,7 @@
 	background-color: #E69894;
 	margin: 0;
 	padding: 0;
-	height: 480px;
+	height: 70vh;
 }
 
 .containercustom2{
@@ -102,12 +107,14 @@
 .tuda .datedeparture h4{
 	margin-top: 14px;
 	font-size: 21px;
-	color:#6e7181;
+	color:#a1bfb1;
 
 }
 
 .headershow{
 	border-radius: 15px 0 0 0;
+	height: 70vh;
+	overflow: hidden;
 }
 
 .lastvoditelmashina{
@@ -221,19 +228,18 @@
 
 .tuda{
 	font-family: 'Russo One', sans-serif;
-	border-bottom: dashed 3px #6e7181;
+	border-bottom: dashed 3px #a1bfb1;
 }
 
 .tuda h4{
 	padding-bottom: 10px;
 	font-size:23px;
-	color:#6e7181;
+	color:#a1bfb1;
 }
 
 
 .containercustom{
 	display: hidden;
-	background-color: #EDE8D5;
 	margin-left: 0;
 	padding-left: 0;
 }
