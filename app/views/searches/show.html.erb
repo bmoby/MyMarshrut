@@ -1,6 +1,6 @@
 <%= render 'shared/navbar' %>
 
-	<div class='row searchbackground hidden-xs text-center'>
+	<div class='row searchbackground text-center'>
 		<%= form_for @search, class:'gaga' do |s| %>
 			<div class="field">  
 				<%= s.text_field :ville_d, class:'home', placeholder: 'Откуда?', id:'villesdsearch'%>
@@ -8,18 +8,6 @@
 				<p class='pinline'><%= button_tag(type: "submit", class: "poisk") do %></p>
 			 		<i class="glyphicon glyphicon-search"></i> Поиск
 				<%end%></br>
-	  		</div>
-		<% end %>
-	</div>
-
-	<div class='searchbackground visible-xs '>
-		<%= form_for @search, class:'gaga' do |s| %>
-			<div class="row text-left field ">  
-		   		<%= s.text_field :ville_d, class:'homexs', placeholder: 'Откуда?', id:'villesdxssearch'%></br>
-				<%= s.text_field :ville_a, class:'homexs', placeholder: 'Куда?', id:'villesaxssearch'%>
-				<%= button_tag(type: "submit", class: "poisk") do %>
-					<i class="glyphicon glyphicon-search"></i> Поиск
-				<%end%>
 	  		</div>
 		<% end %>
 	</div>
@@ -33,7 +21,8 @@
 		</div>
 	<%else%>
 		<%@lespagesall.each do |annonce|%>
-			<div class='container-fluid annonce text-center hidden-xs'>
+		<%= link_to annonce_path(annonce) do%>
+			<div class='container-fluid annonce text-center'>
 				<div class='row ligne text-left'>
 					<div class=' col-md-4 photo'>
 						<%= content_tag(:div, content_tag(:p, "ВОДИТЕЛЬ УЕХАЛ"), class: "expired") if annonce.date_depart < Date.today %>
@@ -41,7 +30,8 @@
 						<%if annonce.image_stored?%>
 							<%= image_tag annonce.image.thumb('300x250#').url%>
 						<%else%>
-							<div class='fotonotfound'>
+							<div class='fotopardefaultxs'>
+								<%= image_tag("marshrutka.jpg")%>
 							</div>
 						<%end%>
 					</div>
@@ -84,17 +74,17 @@
 								<%end%>
 								<%if annonce.arrets_chaque?%>
 									<% if annonce.arrets_chaque == 1%>
-										<p><i class='fa fa-coffee'></i> Остановка каждый час</p>
+										<p><i class="fa fa-pause" aria-hidden="true"></i> Остановка каждый час</p>
 									<%elsif annonce.arrets_chaque == 2 || 3%>
-										<p><i class='fa fa-coffee'></i> Остановка каждые <%= annonce.arrets_chaque %> часа</p>
+										<p><i class="fa fa-pause" aria-hidden="true"></i> Остановка каждые <%= annonce.arrets_chaque %> часа</p>
 									<%elsif annonce.arrets_chaque == 4%>
-										<p><i class='fa fa-coffee'></i> остановка каждые <%= annonce.arrets_chaque %> часа</p>
+										<p><i class="fa fa-pause" aria-hidden="true"></i> остановка каждые <%= annonce.arrets_chaque %> часа</p>
 									<%elsif annonce.arrets_chaque > 4%>
-										<p><i class='fa fa-coffee'></i> Остановка каждые <%= annonce.arrets_chaque %> часов</p>
+										<p><i class="fa fa-pause" aria-hidden="true"></i> Остановка каждые <%= annonce.arrets_chaque %> часов</p>
 									<%end%>	
 
 								<%else%>
-									<p><i class='fa fa-coffee'></i> Остановки по усмотрению водителя</p>
+									<p><i class="fa fa-pause" aria-hidden="true"></i> Остановки по усмотрению водителя</p>
 								<%end%>
 							</div>
 							<div class='col-md-4 annonce_info2'>
@@ -157,7 +147,9 @@
 							<div class='row text-right map'></br>
 								
 								
-								<%= link_to 'Подробнее', annonce_path(annonce), :class => "btn btn-info leboutonpodrobnee" %>
+								<%= link_to annonce_path(annonce), :class => "leboutonpodrobnee" do%>
+								<h3 class='pinlineblock'>ПОДРОБНЕЕ</h3>
+								<%end%>
 
 							</div>
 							<%end%>
@@ -285,248 +277,14 @@
 					</div>
 
 					<div class='col-md-2 text-right map'></br>
-						<%= link_to 'Подробнее', annonce_path(annonce), :class => "btn btn-info leboutonpodrobnee" %>
+						<%= link_to annonce_path(annonce), :class => "leboutonpodrobnee" do%>
+							<h3 class='pinlineblock'>ПОДРОБНЕЕ</h3>
+						<%end%>
 					</div>
 				</div>
 				<%end%>
 			</div>
-
-
-
-
-
-
-
-
-
-
-			<div class='annoncexs text-center visible-xs'>
-				<div class="datedirectionbackground">
-					<div class='row text-center datedirectionxs'>
-						<p> <%= annonce.ville_depart.truncate_words(1, omission: ' ') %>
-						<% if annonce.villeinter1?%>
-							<% unless annonce.villeinter2?%>
-							<i class="fa fa-angle-right" aria-hidden="true"></i>
-							<%=annonce.villeinter1.truncate_words(1, omission: ' ') %>
-							<%end%>
-						<%end%>
-										
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-						<%= annonce.ville_arrive.truncate_words(1, omission: ' ')%>
-						</p>
-					</div>
-				</div>
-				<div class='row text-center photo'>
-					<%= content_tag(:div, content_tag(:p, "ВОДИТЕЛЬ УЕХАЛ"), class: "expiredxs") if annonce.date_depart < Date.today %>
-					<%if annonce.image_stored?%>
-						<div>
-							<%= image_tag annonce.image.thumb('300x240#').url%>
-						</div>
-					<%else%>
-						<div class='fotonotfoundxs'>
-						</div>
-					<%end%>
-				</div>
-
-					<div class='row prixxs'>
-						<div class= 'prix'>
-							<div class='col-xs-5 text-center'>
-								<h3 ><%= annonce.prix_passager%><i class='fa fa-eur'> </i> </h3>
-							</div>
-							<div class='datedirectionxs col-xs-7'>
-								<p>  <%= annonce.date_depart.strftime("%d/%m/%Y")%> </p>
-							</div>
-						</div>
-						</br>
-					</div>
-
-					<div class='row marges'>
-						<div class='col-xs-6 text-left'>
-							<%if annonce.nombre_chauffeurs?%>
-								<% if annonce.nombre_chauffeurs == 1%>
-									<p><i class='fa fa-male'> </i>   <%= annonce.nombre_chauffeurs %> Водитель</p>
-								<%else%>
-									<p><i class='fa fa-users'> </i>   <%= annonce.nombre_chauffeurs %> Водителя</p>
-								<%end%>
-							<%end%>
-							<p><i class='fa fa-suitcase'></i>   <%= annonce.poid_max_passager %> кг/макс</p> 
-							<%if annonce.arrets_chaque?%>
-									<% if annonce.arrets_chaque == 1%>
-										<p><i class='fa fa-coffee'></i> Остановка каждый час</p>
-									<%elsif annonce.arrets_chaque == 2 || 3%>
-										<p><i class='fa fa-coffee'></i> Остановка каждые <%= annonce.arrets_chaque %> часа</p>
-									<%elsif annonce.arrets_chaque == 4%>
-										<p><i class='fa fa-coffee'></i> остановка каждые <%= annonce.arrets_chaque %> часа</p>
-									<%elsif annonce.arrets_chaque > 4%>
-										<p><i class='fa fa-coffee'></i> Остановка каждые <%= annonce.arrets_chaque %> часов</p>
-									<%end%>	
-
-								<%else%>
-									<p><i class='fa fa-coffee'></i> По усмотрению водителя</p>
-								<%end%>
-						</div>
-						<div class='col-xs-6 text-left annonce_info2'>
-							<% if annonce.accept_colis == true%>
-								<p><i class='fa fa-check-circle'> </i> Перевозка груза:</p>
-								<p> <%= annonce.prix_kg_colis%> <i class='fa fa-eur'> </i> кг. мин вес  <%= annonce.poid_min_colis%> кг</p>
-							<%else%>
-								<p><i class='fa fa-times-circle'> </i> Перевозка посылок</p>
-							<%end%>
-							<% if annonce.accept_colis_valeur == true%>
-								<p><i class='fa fa-check-circle'> </i> Перевозка бумаг</p>
-							<%else%>
-								<p><i class='fa fa-times-circle'> </i> Перевозка бумаг</p>
-							<%end%>
-						</div>
-					</div>
-					<%if annonce.villeinter2?%>
-					<div class='row marshrutxs'>
-						<div class='col-md-10 text-center map'>
-							<div class='pinlineblock gorodxs'>
-								<div class='entourp'>
-								<p class='pinline'><%= annonce.ville_depart.truncate_words(1, omission: ' ') %></p>
-								</div>
-								</br>
-								<h3 class='pinline spec'><i class="fa fa-circle-o" aria-hidden="true"></i><div class='maplinexs pinline'></div>
-								</h3>
-							</div>
-							<%if annonce.villeinter1?%>
-								<div class='pinlineblock gorodxs'>
-									<div class='entourp'>
-										<p class='pinline'><%=annonce.villeinter1.truncate_words(1, omission: ' ') %></p>
-									</div>
-									</br>
-									<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
-									<div class='maplinexs pinline'></div></h4>
-								</div>
-							<%end%>
-							<%if annonce.villeinter2?%>
-								<div class='pinlineblock gorodxs'>
-									<div class='entourp'>
-										<p class='pinline'><%=annonce.villeinter2.truncate_words(1, omission: ' ') %></p>
-									</div>
-									</br>
-									<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
-									<div class='maplinexs pinline'></div></h4>
-								</div>
-							<%end%>
-							<% if annonce.villeinter3?%>
-								<div class='pinlineblock gorodxs'>
-									<div class='entourp'>
-										<p class='pinline'><%=annonce.villeinter3.truncate_words(1, omission: ' ') %></p>
-									</div>
-									</br>
-									<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
-									<div class='maplinexs pinline'></div></h4>
-								</div>
-							<%end%>
-							<% if annonce.villeinter4?%>
-								<div class='pinlineblock gorodxs'>
-									<div class='entourp'>
-										<p class='pinline'><%=annonce.villeinter4.truncate_words(1, omission: ' ') %></p>
-									</div>
-									</br>
-									<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
-										<div class='maplinexs pinline'></div></h4>
-								</div>
-							<%end%>
-							<% if annonce.villeinter5?%>
-								<div class='pinlineblock gorodxs'>
-									<div class='entourp'>
-										<p class='pinline'><%=annonce.villeinter5.truncate_words(1, omission: ' ') %></p>
-									</div>
-									</br>
-									<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
-									<div class='maplinexs pinline'></div></h4>
-								</div>
-							<%end%>
-							<% if annonce.villeinter6?%>
-								<div class='pinlineblock gorodxs'>
-									<div class='entourp'>
-										<p class='pinline'><%=annonce.villeinter6.truncate_words(1, omission: ' ') %></p>
-									</div>
-									</br>
-									<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
-										<div class='maplinexs pinline'></div></h4>
-								</div>
-							<%end%>
-							<% if annonce.villeinter7?%>
-								<div class='pinlineblock gorodxs'>
-									<div class='entourp'>
-										<p class='pinline'><%=annonce.villeinter7.truncate_words(1, omission: ' ') %></p>
-									</div>
-									</br>
-									<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
-										<%if annonce.villeinter8?%>
-										<div class='absolut pinline'>....</div>
-										<%else%>
-										<div class='maplinexs pinline'></div>
-										<%end%></h4>
-								</div> 
-							<%end%>
-							<div class='pinlineblock gorodxs'>
-								<div class='entourp'>
-										<p class='pinline'><%=annonce.ville_arrive.truncate_words(1, omission: ' ') %></p>
-									</div>
-								</br>
-								<h3 class='pinline spec'><i class="fa fa-circle-o" aria-hidden="true"></i></h3>
-							</div>
-						</div>
-					</div>
-					<%end%>
-					<div class='row mobiletel'>
-					</br>
-						<div class="col-xs-6 text-left">
-								<%if annonce.telephones?%>
-									<%if annonce.telephones_type1?%>
-										<p class='pinline'><i class="fa fa-whatsapp" aria-hidden="true"></i> </p>
-									<%end%>
-									<%if annonce.telephone_type1?%>
-										<p class='pinline'><i class="fa fa-mobile" aria-hidden="true"></i> </p>
-									<%end%>
-									<p class='pinline'><%=annonce.telephones%></p></br>
-								<%end%>
-
-								<%if annonce.telephones2?%>
-									<%if annonce.telephones_type2?%>
-										<p class='pinline'><i class="fa fa-whatsapp" aria-hidden="true"></i> </p>
-									<%end%>
-									<%if annonce.telephone_type2?%>
-										<p class='pinline'><i class="fa fa-mobile" aria-hidden="true"></i> </p>
-									<%end%>
-									<p class='pinline'><%=annonce.telephones2%></p></br>
-								<%end%>
-						</div>
-						<div class="col-xs-6 text-left">
-								<%if annonce.telephones3?%>
-									<%if annonce.telephones_type3?%>
-										<p class='pinline'><i class="fa fa-whatsapp" aria-hidden="true"></i> </p>
-									<%end%>
-									<%if annonce.telephone_type3?%>
-										<p class='pinline'><i class="fa fa-mobile" aria-hidden="true"></i> </p>
-									<%end%>
-									<p class='pinline'><%=annonce.telephones3%></p></br>
-								<%end%>
-
-								<%if annonce.telephones4?%>
-									<%if annonce.telephones_type4?%>
-										<p class='pinline'><i class="fa fa-whatsapp" aria-hidden="true"></i> </p>
-									<%end%>
-									<%if annonce.telephone_type4?%>
-										<p class='pinline'><i class="fa fa-mobile" aria-hidden="true"></i> </p>
-									<%end%>
-									<p class='pinline'><%=annonce.telephones4%></p>
-								<%end%>
-						</div>
-					</div>
-					
-				
-					<div class='row podrobnexs text-right'>
-					</br>
-						<%= link_to 'Подробнее', annonce_path(annonce), :class => "btn btn-info leboutonpodrobnee" %>
-					</div>
-				
-			</div>
+		<%end%>
 		<%end%>
 
 		<div class='container-fluid text-center'>
@@ -534,89 +292,4 @@
 		</div>
 	<%end%>
 
-<div class='row cont_2part hidden-xs'>
-	<div class='col-sm-4 info'>
-		<div class='row iconinfo text-center'>
-			<i class="fa fa-tag" aria-hidden="true"></i>
-		</div>
-		</br>
-		<h3>Поиск маршрута</h3>
-		<p>На сайте указано "Куда", "Откуда", вам всего лишь нужно ввести название городов, чтобы найти нужный маршрут.</p>
-		</br>
-	</div>
-	<div class='col-sm-4 tuto'>
-		<div class='row icontuto text-center'>
-			<i class="fa fa-thumbs-up" aria-hidden="true"></i>
-		</div>
-		</br>
-		<h3>Зарегистрироваться </h3>
-		<p>Чтобы связаться с водителем вам необходимо зарегистрироваться, для этого нажмите <%=link_to 'сюда', new_user_registration_path%> <i class="fa fa-reply"></i></p>
-		</br>
-	</div>
-	<div class='col-sm-4 agir'>
-		<%unless user_signed_in?%>
-			<div class='row icontuto text-center'>
-				<i class="fa fa-user-plus" aria-hidden="true"></i>
-			</div>
-			<h3>Создать объявление</h3>
-			<p>Чтобы создать объявление необходимо зарегистрироваться</br> для этого нажмите <%=link_to 'сюда', new_user_registration_path, class:'syudavert'%> <i class="fa fa-reply" aria-hidden="true"></i>
-			</p>
-		<%else%>
-			<div class='row icontuto text-center'>
-				<i class="fa fa-check-square-o" aria-hidden="true"></i>
-		
-			</div>
-			<h3>Создать объявление</h3>
-			<p> Теперь вы можете создать свое объявление</p>
-			<%= link_to new_annonce_path, class:'btn btn-info sozdatannonce' do%>
-				<p><i class="glyphicon glyphicon-pencil"></i> Создать объявление </p>
-			<%end%>
-		<%end%>
-	</div>
-</div>
-
-<div class='row cont_mob_2part visible-xs'>
-	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
-	<div class='row info'>
-		<div class='row iconinfo text-center'>
-			<i class="fa fa-tag" aria-hidden="true"></i>
-		</div>
-		</br>
-		<h3>Поиск маршрута</h3>
-		<p>На сайте указано "Куда", "Откуда", вам всего лишь нужно ввести название городов, чтобы найти нужный маршрут.</p>
-		</br>
-	</div>
-	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
-	<div class='row tuto'>
-		<div class='row icontuto text-center'>
-			<i class="fa fa-thumbs-up" aria-hidden="true"></i>
-		</div>
-		</br>
-		<h3>Зарегистрироваться </h3>
-		<p>Чтобы связаться с водителем вам необходимо регистрироваться, для этого нажмите <%=link_to 'сюда', new_user_registration_path%> <i class="fa fa-reply"></i></p>
-		</br>
-	</div>
-	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
-	<div class='row agir'>
-		<%unless user_signed_in?%>
-			<div class='row icontuto text-center'>
-				<i class="fa fa-user-plus" aria-hidden="true"></i>
-			</div>
-			<h3>Создать объявление</h3>
-			<p>Чтоб создать объявление нужно регистрироваться</br> для этого нажмите <%=link_to 'сюда', new_user_registration_path, class:'syudavert'%> <i class="fa fa-reply" aria-hidden="true"></i>
-			</p>
-		<%else%>
-			<div class='row icontuto text-center'>
-				<i class="fa fa-check-square-o" aria-hidden="true"></i>
-		
-			</div>
-			<h3>Создать объявление</h3>
-			<p> Теперь вы можете создать свое объявление</p>
-			<%= link_to new_annonce_path, class:'btn btn-info sozdatannonce' do%>
-				<p><i class="glyphicon glyphicon-pencil"></i> Создать объявление </p>
-			<%end%>
-		
-		<%end%>
-	</div>
-	<%# separator * * * * * * * * * * * * * * * * * * * * * * *£££ * * * * * %>
-</div>
+<%= render 'shared/footer'%>

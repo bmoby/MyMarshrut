@@ -1,5 +1,6 @@
 class AnnoncesController < ApplicationController
   before_action :set_annonce, only: [:show, :edit, :update, :destroy]
+  before_filter :check_for_mobile
 
   # GET /annonces
   # GET /annonces.json

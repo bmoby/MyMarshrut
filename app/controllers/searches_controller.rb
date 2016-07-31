@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
-  
+  before_filter :check_for_mobile
   
   
   def create
@@ -26,7 +26,7 @@ class SearchesController < ApplicationController
     @page2 = @search.search_annonces.where(["date_depart < ?", Date.today]).order(date_depart: :desc)
     @pages = @page1 + @page2
     @lespagesall = Kaminari.paginate_array(@pages).page(params[:page]).per(6)
-    render "show"
+    render 'show'
   end
   
   

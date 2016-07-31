@@ -1,0 +1,79 @@
+<div class='row count_mob_2partxs'>
+
+	<div class='row footer-blocks-xs'>
+		<div class='row text-center'>
+			<div class='col-xs-3 text-center'>
+				<i class="fa fa-tag" aria-hidden="true"></i>
+			</div>
+			<div class='col-xs-9 text-left'>
+				<h5>Поиск маршрута</h5>
+			</div>
+		</div>
+		<div class='row text-left'>
+			<p>На сайте указано "Куда", "Откуда", вам всего лишь нужно ввести название городов, чтобы найти нужный маршрут.</p>
+		</div>
+	</div>
+
+
+	<div class='row footer-blocks-xs'>
+		<div class='row text-center'>
+			<div class='col-xs-3 text-center'>
+				<i class="fa fa-thumbs-up" aria-hidden="true"></i>
+			</div>
+			<div class='col-xs-9 text-left'>
+				<h5>Создать объявление</h5>
+			</div>
+		</div>
+		<div class='row text-left'>
+			<%if user_signed_in?%>
+				<p> Вы можете создать свое объявление нажав на  </p>
+			<%= link_to new_annonce_path  do%>
+				<p><i class="glyphicon glyphicon-pencil"></i> Эту кнопку </p></br>
+			<%end%>
+			<%else%>
+				<p>Чтоб создать объявление нужно регистрироваться</br> для этого нажмите <%=link_to 'сюда', new_user_registration_path, class:'syudavert'%> <i class="fa fa-reply" aria-hidden="true"></i>
+				</p>
+			<%end%>
+		</div>
+	</div>
+
+
+	<div class='row footer-blocks-xs'>
+		<div class='row text-center'>
+			<div class='col-xs-3 text-center'>
+				<i class="fa fa-check-square-o" aria-hidden="true"></i>
+			</div>
+			<div class='col-xs-9 text-left'>
+				<h5>Зарегистрироваться</h5>
+			</div>
+		</div>
+		<div class='row text-left'>
+			<%if user_signed_in?%>
+				<p> Вы можите отправить сообшение через наш сайт любому водителю. Для этого вам нужно нажать на кнопку "подробнее" которая находится на каждом обявление, написать сообшение и нажать на отправить.  </p></br>
+			<%else%>
+				<p>Чтобы связаться с водителем вам необходимо регистрироваться, для этого нажмите <%=link_to 'сюда', new_user_registration_path%> <i class="fa fa-reply"></i></p>
+			<%end%>
+		</div>
+	</div>
+
+	<div class='row footer-lists-xs'>
+		<div class='col-xs-6'>
+			<ul>
+				<h5>Про сайт</h5>
+				<li><a href='#'>Кто мы?</a></li>
+				<li><a href='#'>Что такое mymarshrut?</a></li>
+				<li><a href='#'>Как им ползоватся?</a></li>
+				<li><a href='#'>Правела</a></li>
+				<li><a href='#'>Нашы советы</a></li>
+			<ul>
+		</div>
+		<div class='col-xs-6'>
+			<ul>
+				<h5>Контакт</h5>
+				<li><a href='#'>Что мы могли бы улучшить?</a></li>
+				<li><a href='#'>Сообщить нам о какой то дисфункции</a></li>
+				<li><a href='#'>Связаться с нами</a></li>
+			<ul>
+		</div>
+	</div>
+</div>

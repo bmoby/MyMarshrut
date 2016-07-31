@@ -1,9 +1,109 @@
 // DESIGN BODY LAYOUT --------->
 
-.datedepartrowxs h4{
-	margin-top: 0;
-	padding-top: 0;
+.count_mob_2partxs{
+	border-top: dashed 3px #4d5051;
+	border-bottom: dashed 3px #4d5051;
+	padding-top: 20px;
+	background-color: #2B2D2E;
+	padding-left: 5px;
 }
+
+
+.footer-md{
+	border-top: dashed 3px #4d5051;
+	border-bottom: dashed 3px #4d5051;
+	padding-top: 20px;
+	background-color: #2B2D2E;
+	padding-left: 5px;
+}
+
+.footer-md h5{
+	font-size: 18px;
+	color: #635545;
+	font-family: 'Russo One', sans-serif;
+}
+
+.footer-md .fa{
+	font-size: 35px;
+	color: #635545;
+}
+
+.footer-md ul{
+	list-style-type: none;
+	padding:0;
+	margin:0;
+}
+
+.footer-md ul li a{
+	font-style: italic;
+	font-weight: lighter;
+	color: #525557;
+	padding-bottom: 5px;
+}
+
+.footer-md ul li a:hover{
+	font-style: italic;
+	font-weight: lighter;
+	color: #a49960;
+}
+
+.footer-md ul li{
+
+	padding-bottom: 8px;
+}
+
+.footer-lists-xs{
+	border-top: dashed 1px #4d5051;
+	padding-bottom: 15px;
+}
+
+.footer-blocks-xs{
+	padding-top: 15px;
+}
+
+.footer-blocks-xs {
+	padding: 8px;
+}
+
+.count_mob_2partxs h5{
+	font-size: 18px;
+	color: #635545;
+	font-family: 'Russo One', sans-serif;
+}
+
+.count_mob_2partxs .fa{
+	font-size: 35px;
+	color: #635545;
+}
+
+.count_mob_2partxs ul{
+	list-style-type: none;
+	padding:0;
+	margin:0;
+}
+
+.count_mob_2partxs ul li a{
+	font-style: italic;
+	font-weight: lighter;
+	color: #525557;
+	padding-bottom: 5px;
+}
+
+.count_mob_2partxs ul li a:hover{
+	font-style: italic;
+	font-weight: lighter;
+	color: #a49960;
+}
+
+.count_mob_2partxs ul li{
+
+	padding-bottom: 8px;
+}
+.datedepartrowxs h4{
+	font-family: 'Russo One', sans-serif;
+	color: black;
+}
+
 
 .vajnoexs{
 	padding-left: 5px;
@@ -18,6 +118,8 @@
 }
 
 .tudadateprixxs{
+	padding-left: 5px;
+	padding-right: 5px;
 	border-bottom: dashed 3px #a1bfb1;
 }
 
@@ -95,6 +197,11 @@
 	padding-bottom: 20px;
 }
 
+.mapxs{
+	padding-top: 30px;
+	height:70px;
+}
+
 .maplinepodrobnee{
 	position:absolute;
 	width: 25px;
@@ -120,6 +227,10 @@
 	padding: 15px;
 	height: 70vh;
 	background-color: #FDFAE9;
+}
+
+.fotopardefaultxs img{
+	width:100%;
 }
 
 .vajnoe2{
@@ -159,7 +270,7 @@
 }
 .tuda .datedeparture h4{
 	margin-top: 14px;
-	font-size: 21px;
+	font-size: 19px;
 	color:#a1bfb1;
 
 }
@@ -281,10 +392,9 @@
 }
 
 .paragraphone2{
-	padding-left: 10%;
-	padding-right: 10%;
+	padding-left: 10px;
+	padding-right: 10px;
 	padding-bottom: 0px;
-	text-align: justify;
 }
 
 .voditeletmashinaspec2 h5{
@@ -335,7 +445,7 @@
 
 .tuda{
 	font-family: 'Russo One', sans-serif;
-	border-bottom: dashed 3px #a1bfb1;
+	border-bottom: dashed 3px #c2c2c2;
 }
 
 .tuda h4{
@@ -356,9 +466,6 @@
 	
 }
 
-.map{
-	margin-bottom: 0px;
-}
 
 .podrobnexs{
 	padding-right: 25px;
@@ -386,10 +493,8 @@
 }
 
 .gorodxs{
-	margin:0;
 	width:25px;
 	padding-right: 2px;
-	text-align: left;
 	color:#8a8a8a;
 }
 
@@ -430,8 +535,6 @@
 }
 
 .entourp{
-	display:block;
-	text-align: left;
 	transform: rotate(-30deg);
 }
 
@@ -590,10 +693,6 @@
 	height:auto;
 }
 
-ht.clear{
-	height: 1px;
-}
-
 body{
 	background-color: #FDFAE9;
 	font-family: 'Comfort', sans-serif;
@@ -604,6 +703,7 @@ body{
 
 body.searches{
 	background: asset-data-url("cover.jpg") center center fixed;
+	background-color: #cb95a8;
 	background-size:100%;
 	font-family: 'Comfort', sans-serif;
 	padding-bottom: 0px;
@@ -731,9 +831,32 @@ textarea:focus, input:focus{
 
 // DESIGN ANNONCE DISPLAY ALL --------->
 
+.leboutonpodrobnee h3{
+	font-family: 'PROPAGAN';
+	font-style: bold;
+	color:#725756;
+	font-size: 20px;
+	padding:5px;
+	border: solid 1px #725756;
+	
+}
+
+.leboutonpodrobnee h3:hover{
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-style: normal;
+	background-color:#725756;
+	color: white;
+	font-size: 20px;
+	padding:5px;
+	border: dashed 1px #725756;
+	
+}
+
 .leboutonpodrobnee{
-	background-color: #9cbbc9;
 	border:none;
+	background-color: none;
+	border-radius: none;
+	color:none;
 }
 
 .expired{
@@ -923,6 +1046,12 @@ width:100%;
 
 }
 
+.prixpassagerxs h4{
+	font-size:21px;
+	color:#cb676f;
+	font-family: 'Russo One', sans-serif;
+}
+
 .prix h3{
 	font-size:21px;
 	color:#cb676f;
@@ -934,18 +1063,23 @@ width:100%;
 	color:#cb676f;
 }
 .datedirectionxs h4{
-	color:black;
+	color:#639c8a;
 	font-family: 'Russo One', sans-serif;
 	font-size:20px;
 	
 }
 
 .datedirectionxs p{
-	color:#2797A3;
+	color:gray;
 	font-size:17px;
 	font-family: 'Russo One', sans-serif;
 	margin-top:19px;
 	
+}
+
+.tudasyudaxs h4{
+	font-family: 'Russo One', sans-serif;
+	color:#639c8a;
 }
 
 .datedirection h4{
@@ -1516,7 +1650,7 @@ select:focus {
 
 .poisk p{
 	margin-top: 5px;
-	color:white;
+	color:gray;
 }
 
 .poisk:hover p{
