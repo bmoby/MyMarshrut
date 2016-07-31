@@ -1,48 +1,327 @@
 // DESIGN BODY LAYOUT --------->
 
-input::-webkit-input-placeholder {
-color: white;
+.datedepartrowxs h4{
+	margin-top: 0;
+	padding-top: 0;
 }
- 
-input:-moz-placeholder { /* Firefox 18- */
-color: white;  
+
+.vajnoexs{
+	padding-left: 5px;
+	padding-right: 5px;
+	background-color: #FDFAE9;
+
 }
- 
-input::-moz-placeholder {  /* Firefox 19+ */
-color: white;  
+
+.vajnoexs h4{
+	color:#a1bfb1;
+	font-family: 'Russo One', sans-serif;
 }
- 
-input:-ms-input-placeholder {  
-color: white;  
+
+.tudadateprixxs{
+	border-bottom: dashed 3px #a1bfb1;
+}
+
+.photo-responsive{
+	width: 100%;
+	height: 70vh;
+}
+
+
+.photo-responsivemini{
+	width: 100%;
+	height: 40vh;
+}
+
+.paragraphone{
+	padding: 10px 5px 5px 10px;
+	border-radius: 20px 20px 20px 0;
+	border: 4px solid #a1bfb1;
+	margin-top: 20px;
+	text-align: justify;
+}
+
+.paragraphone h5{
+	font-size: 15px;
+	color:#FDFAE9;
+}
+
+.speech{
+	border: dashed 4px #83A37A;
+	border-radius: 0 25px 25px 25px;
+	padding: 5px;
+}
+
+.speechcontainer{
+	padding: 2px;
+	margin-top:40px;
+	background-color: #E69894;
+	border-radius: 0 25px 25px 25px;
+}
+
+.chauffeuriconk{
+	margin-top:45px;
+	color:white;
+}
+
+
+
+
+.gorodpodrobnee{
+	width:45px;
+	padding-right: 8px;
+	text-align: left;
+	color:#8a8a8a;
+}
+
+.gorodpodrobnee p{
+	color:#EDE8D5;
+}
+
+.gorodpodrobnee h4{
+	font-size: 29px;
+}
+
+.gorodpodrobnee h3{
+	color:#E69894;
+	font-size: 29px;
+}
+
+.podrobnemarshrut{
+	padding-top: 30px;
+}
+
+.podrobnemarshrutxs{
+	padding-top: 45px;
+	padding-bottom: 20px;
+}
+
+.maplinepodrobnee{
+	position:absolute;
+	width: 25px;
+	border-top:solid 3px #a1bfb1;
+	margin-top: 12px;
+}
+
+.podrobnemarshrut h4{
+	color:#a1bfb1;
+}
+
+.vajnoeoba{
+	overflow: hidden;
+	height: 480px;
+	margin: 0;
+	padding:0;
+	height: 70vh;
+}
+
+.vajnoe{
+	width: 100%;
+	margin: 0;
+	padding: 15px;
+	height: 70vh;
+	background-color: #FDFAE9;
+}
+
+.vajnoe2{
+	display:none;
+	width: 100%;
+	background-color: #E69894;
+	margin: 0;
+	height: 70vh;
+}
+
+.vajnoe2xs{
+	width: 100%;
+	background-color: #E69894;
+	margin: 0;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.containercustom2{
+	background-color: #78A38F;
+	width: 100%;
+	padding-bottom: 5%;
+}
+
+.cartexs2{
+	padding-top: 15px;
+}
+
+.containercustom2xs{
+	background-color: #78A38F;
+	width: 100%;
+	overflow: hidden;
+	padding-left: 5px;
+	padding-right: 15px;
+	padding-bottom: 0px;
+	margin:0;
+}
+.tuda .datedeparture h4{
+	margin-top: 14px;
+	font-size: 21px;
+	color:#a1bfb1;
+
 }
 
 .headershow{
 	border-radius: 15px 0 0 0;
+	height: 70vh;
+	overflow: hidden;
 }
 
+.lastvoditelmashina{
+	padding-top: 5px;
+	width:100%;
+	height: auto;
+	padding-bottom: 5px;
+}
+
+.lastvoditelmashinaxs{
+	padding-top: 5px;
+	width:100%;
+	height: auto;
+	padding-bottom: 5px;
+}
+
+.lastvoditelmashina2{
+	padding-top: 15px;
+	width:100%;
+	height: auto;
+	padding-bottom: 5px;
+}
+
+.lastvoditelmashina2 .fa{
+	padding:0;
+	margin: 0;
+	font-size: 55px;
+	color:#FDFAE9;
+}
+
+.lastvoditelmashina .fa{
+	padding:15px;
+	margin: 0;
+	font-size: 55px;
+	color:#E69894;
+}
+
+.lastvoditelmashinaxs .fa{
+	padding:0;
+	margin: 0;
+	font-size: 31px;
+	color:#E69894;
+}
+
+.colmd4{
+	margin:0;
+	padding:0;
+}
+
+
+.lastvoditelmashinaxs h3{
+	padding: 0;
+	margin-top:5px;
+	font-size: 17px;
+	color:gray;
+}
+
+.lastvoditelmashina h3{
+	padding: 0;
+	margin-top:5px;
+	font-size: 17px;
+	color:gray;
+}
 .voditeletmashina .fa{
 	padding:0;
 	margin: 0;
 	font-size: 31px;
-	color:gray;
+	color:#E69894;
+
+}
+
+.voditeletmashinaxs .fa{
+	padding:0;
+	margin: 0;
+	font-size: 31px;
+	color:#E69894;
+
+}
+
+.voditeletmashina2 .fa{
+	padding:0;
+	margin: 0;
+	font-size: 31px;
+	color:#FDFAE9;
+
+}
+
+.voditeletmashina2 h3{
+	padding: 0;
+	margin-top: 5px;
+	margin-left: 0px;
+	font-size: 17px;
+	color:white;
 
 }
 
 .voditeletmashina h3{
-	font-family: 'Russo One', sans-serif;
+	margin-top:5px;
 	padding: 0;
 	font-size: 17px;
 	color:gray;
 
 }
 
-.voditeletmashina{
-	border-bottom: 2px dashed #0096A4;
+.voditeletmashinaxs h3{
+	margin-top:5px;
+	padding: 0;
+	font-size: 17px;
+	color:gray;
+
+}
+
+.paragraphone2{
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-bottom: 0px;
+	text-align: justify;
+}
+
+.voditeletmashinaspec2 h5{
+	color:white;
+}
+
+.voditeletmashina2{
+	border-bottom: 2px dashed rgba(220, 210, 173, 0.82);
 	padding-top: 15px;
 	width:100%;
 	height: auto;
 	padding-bottom: 15px;
 }
+
+.voditeletmashina2{
+	padding-top: 15px;
+	width:100%;
+	height: auto;
+	padding-bottom: 15px;
+}
+
+.voditeletmashina{
+	border-bottom: 2px dashed rgba(220, 210, 173, 0.82);
+	padding-top: 15px;
+	width:100%;
+	height: auto;
+	padding-bottom: 15px;
+}
+
+
+.voditeletmashinaxs{
+	border-bottom: 2px dashed rgba(220, 210, 173, 0.82);
+	padding-top: 10px;
+	width:100%;
+	padding-bottom: 5px;
+}
+
 .fotka img{
 	filter: saturate(50%);
 	filter: grayscale(100%);
@@ -52,31 +331,22 @@ color: white;
 	padding: 0;
 	margin: 0;
 }
-.photobaniere{
-	font-family: 'Russo One', sans-serif;
-	background-color: #bac5cf;
-	padding:20px;
-}
+
 
 .tuda{
 	font-family: 'Russo One', sans-serif;
+	border-bottom: dashed 3px #a1bfb1;
 }
 
 .tuda h4{
 	padding-bottom: 10px;
-	font-size:38px;
-	color:#ac686e;
-	border-bottom: dashed 3px #dec4c6;
+	font-size:23px;
+	color:#a1bfb1;
 }
 
-.photobaniere h4{
-	font-size:21px;
-	color:#8a8a8a;
-
-}
 
 .containercustom{
-	background-color: #f2e7de;
+	display: hidden;
 	margin-left: 0;
 	padding-left: 0;
 }
@@ -107,7 +377,7 @@ color: white;
 }
 
 .gorod h3{
-	color:#E69595
+	color:#E69595;
 }
 
 .gorodxs{
@@ -129,7 +399,7 @@ color: white;
 
 .gorodxs h3{
 	font-size: 14px;
-	color:#E69595
+	color:#E69595;
 }
 
 .maplinexs{
@@ -315,32 +585,23 @@ color: white;
 	height:auto;
 }
 
+ht.clear{
+	height: 1px;
+}
 
 body{
-	overflow:auto;
 	background-color: #FDFAE9;
 	font-family: 'Comfort', sans-serif;
-	margin:0;
-	padding:0;
-}
-body.homepage{
-	text-align:center;
-	background: asset-data-url("cover.jpg") no-repeat center center fixed;
-	background-size:100%;
-	overflow:auto;
-	font-family: 'Comfort', sans-serif;
-	margin:0;
-	padding:0;
+	padding-bottom: 0px;
+
 }
 
+
 body.searches{
-	text-align:center;
 	background: asset-data-url("cover.jpg") center center fixed;
 	background-size:100%;
-	overflow:auto;
 	font-family: 'Comfort', sans-serif;
-	margin:0;
-	padding:0;
+	padding-bottom: 0px;
 }
 
 
@@ -507,7 +768,7 @@ textarea:focus, input:focus{
 	margin:0;
 	width: 100%;
 	height: auto;
-	background-color: rgba(51, 61, 71, 0.68);
+	background-color: white;
 
 }
 
@@ -515,7 +776,7 @@ textarea:focus, input:focus{
 .home{
 	width: 200px;
   height: 30px;
-  background-color: rgba(51, 61, 71, 0.86);
+  background-color: #F6F3EE;
   border: none;
   font-size: 10pt;
   color: #63717f;
@@ -526,7 +787,7 @@ textarea:focus, input:focus{
 }
 
 .home p{
-	color:white;
+	color:#3B444F;
 }
 
 .homexs{
@@ -651,13 +912,13 @@ width:100%;
 
 .prix h3{
 	font-size:21px;
-	color:#E34F5B;
+	color:#cb676f;
 	font-family: 'Russo One', sans-serif;
 	
 }
 
 .prix .fa{
-	color:#E34F5B;
+	color:#cb676f;
 }
 .datedirectionxs h4{
 	color:black;
@@ -681,7 +942,7 @@ width:100%;
 }
 
 .datedirection p{
-	color:#4EA88C;
+	color:#639c8a;
 	font-size:18px;
 	font-family: 'Russo One', sans-serif;
 	
@@ -1368,21 +1629,57 @@ input:-ms-input-placeholder {
 }
 
 .messagebox{
+	resize: none;
 	word-wrap: break-word;
-	width:100%;
+	width: 80%;
+	padding: 10px 20px 20px 20px;
 	height:150px;
-	padding-left:20px;
-	padding-right:20px;
+	background-color:#FDFAE9;
+	border:none;
+	border-radius: 0;
 }
 
 .messageboxxs{
+	resize: none;
+	word-wrap: break-word;
+	width: 80%;
+	height:150px;
+	background-color:#FDFAE9;
+	border:none;
+	border-radius: 0;
+}
+.podrobneeotpravit{
+	padding-right: 10%;
+	background: none;
+	border: none;
+	border-radius: 0;
+}
+
+.podrobneeotpravitxs{
+	padding-right: 5px;
+	background: none;
+	border: none;
+	border-radius: 0;
+	color:white;
+}
+
+.podrobneeotpravitxs p{
+	color:white;
+}
+
+
+.podrobneeotpravit p{
+	color:white;
+}
+
+.messageboxxs{
+	background-color: white;
 	word-wrap: break-word;
 	border-radius:7px;
 	border:solid 1px gray;
-	width:80%;
+	width: 100%;
 	height:100px;
-	padding-left:15px;
-	padding-right:15px;
+	padding: 15px;
 }
 
 .listcontact .glyphicon{
@@ -1531,7 +1828,7 @@ input:-ms-input-placeholder {
 	height:30px;
 	padding-left:15px;
 	padding-right:15px;
-	color:white;
+	color:gray;
 	border:none;
 	border-radius:5px;
 	background:none;

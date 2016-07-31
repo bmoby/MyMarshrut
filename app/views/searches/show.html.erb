@@ -1,6 +1,6 @@
 <%= render 'shared/navbar' %>
 
-	<div class='row searchbackground hidden-xs'>
+	<div class='row searchbackground hidden-xs text-center'>
 		<%= form_for @search, class:'gaga' do |s| %>
 			<div class="field">  
 				<%= s.text_field :ville_d, class:'home', placeholder: 'Откуда?', id:'villesdsearch'%>
@@ -12,7 +12,7 @@
 		<% end %>
 	</div>
 
-	<div class='searchbackground visible-xs'>
+	<div class='searchbackground visible-xs '>
 		<%= form_for @search, class:'gaga' do |s| %>
 			<div class="row text-left field ">  
 		   		<%= s.text_field :ville_d, class:'homexs', placeholder: 'Откуда?', id:'villesdxssearch'%></br>

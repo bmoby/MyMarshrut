@@ -1,36 +1,638 @@
 <%= render 'shared/navbar' %>
+
+
+<div class='mobilshow visible-xs'>
+	<div class='row photomini'>
+		<%if @annonce.image_stored?%>
+				<img src='<%= @annonce.image.thumb('400x250#').url%>' class='photo-responsivemini'>
+			<%else%>
+				<div class='fotonotfound'>
+				</div>
+			<%end%>
+	</div>
+	<div class='row vajnoexs'>
+		<div class='row tudadateprixxs'>
+			<div class='col-xs-8 text-left tudasyudaxs'>
+				<h4><%= @annonce.ville_depart.truncate_words(1, omission: ' ') %> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ') %></h4>
+			</div>
+			<div class='col-xs-4 text-right'>
+				<div class='row'>
+					<h4 class='pinlineblock'> <%= @annonce.prix_passager%>€</h4>
+				</div>
+				<div class='row datedepartrowxs'>
+					<h4 class='pinlineblock'><%= @annonce.date_depart%></h4>
+				</div>
+			</div>
+
+		</div>
+
+		<div class='row voditeletmashinaxs'>
+			<div class='col-xs-3 text-left'>
+				<i class="fa fa-cube" aria-hidden="true"></i>
+			</div>
+			<div class='col-xs-9 text-left'>
+				<h3 class='pinlineblock'>
+					<% if @annonce.accept_colis == true%> 
+						Посилки <%= @annonce.prix_kg_colis%>€ /кг 
+					<%else%>
+						Посилки не принемает
+					<%end%>
+				</h3>
+			</div>
+		</div>
+
+
+		<div class='row voditeletmashinaxs'>
+			<div class='col-xs-3 text-left'>
+				<i class="fa fa-envelope-o" aria-hidden="true"></i>
+			</div>
+			<div class='col-xs-9 text-left'>
+				<h3 class='pinlineblock'>
+					<% if @annonce.accept_colis_valeur == true%>
+						Перевозит важные бумаги
+					<%else%>
+						Не перевозит важные бумаги
+					<%end%>
+				</h3>
+			</div>
+		</div>
+
+		<div class='row voditeletmashinaxs'>
+			<div class='col-xs-3 text-left'>
+				<i class="fa fa-wifi" aria-hidden="true"></i>
+			</div>
+			<div class='col-xs-9 text-left'>
+				<%if @annonce.wifi?%>
+					<h3 class='pinlineblock'> Есть вифи</h3>
+				<%else%>
+					<h3 class='pinlineblock'> Вифи нет</h3>
+				<%end%>
+			</div>
+		</div>
+
+		<div class='row voditeletmashinaxs'>
+			<div class='col-xs-3 text-left'>
+				<i class="fa fa-suitcase" aria-hidden="true"></i>
+			</div>
+			<div class='col-xs-9 text-left'>
+				<h3 class='pinlineblock'>Дозволенный багаж <%= @annonce.poid_max_passager %> килограм </h3>
+			</div>
+		</div>
+
+		<div class='row voditeletmashinaxs'>
+			<div class='col-xs-3 text-left'>
+				<i class='fa fa-coffee'></i>
+			</div>
+			<div class='col-xs-9 text-left'>
+				<%if @annonce.chay?%>
+					<h3 class='pinlineblock'>Кофе безплатно</h3>
+				<%else%>
+					<h3 class='pinlineblock'>Не указано</h3>
+				<%end%>
+			</div>
+		</div>
+
+		<div class='row voditeletmashinaxs'>
+			<div class='col-xs-3 text-left'>
+				<i class="fa fa-car" aria-hidden="true"></i> 
+			</div>
+			<div class='col-xs-9 text-left'>
+				<%if @annonce.marque_vehicule? || @annonce.nombre_place? %>
+					<h3 class='pinlineblock'><%= @annonce.marque_vehicule.truncate_words(2, omission: ' ') %> <%= @annonce.annee_vehicule%>, <%= @annonce.nombre_place%> местный автомобиль</h3>
+				<%else%>
+					<h3 class='pinlineblock'>Водитель не указал сколько мест в автомобиле</h3>
+				<%end%>
+			</div>
+		</div>
+
+		<div class='row voditeletmashinaxs'>
+			<div class='col-xs-3 text-left'>
+				<i class="fa fa-pause" aria-hidden="true"></i>
+			</div>
+			<div class='col-xs-9 text-left'>
+				<% if @annonce.arrets_chaque == 1%>
+					<h3 class='pinlineblock'>Остоновки каждый час</h3>
+				<%elsif @annonce.arrets_chaque == 2%>
+					<h3 class='pinlineblock'>Остоновки каждые <%= @annonce.arrets_chaque %> часа</h3>
+				<%elsif @annonce.arrets_chaque == 3%>
+					<h3 class='pinlineblock'>Остоновки каждые <%= @annonce.arrets_chaque %> часа</h3>
+				<%elsif @annonce.arrets_chaque == 4%>
+					<h3 class='pinlineblock'>Остоновки каждые <%= @annonce.arrets_chaque %> часа</h3>
+				<%else%>
+					<h3 class='pinlineblock'>Остоновки каждые <%= @annonce.arrets_chaque %> часов</h3>
+				<%end%>
+			</div>
+		</div>
+
+		<div class='row lastvoditelmashinaxs'>
+			<div class='col-xs-3 text-left'>
+				<i class='pinline fa fa-users'></i>
+			</div>
+			<div class='col-xs-9 text-left'>
+					<% if @annonce.nombre_chauffeurs == 1%>
+						<h3 class='pinlineblock'><%= @annonce.nombre_chauffeurs %> водитель</h3>
+					<%else%>
+						<h3 class='pinlineblock'><%= @annonce.nombre_chauffeurs %> водителя</h3>
+					<%end%>
+			</div>
+		</div>
+	</div>
+	<div class='text-center containercustom2xs'>
+		<div class='row'>
+			<div class='row text-left'>
+			<%if @annonce.villeinter2?%>
+				<div class='row podrobnemarshrutxs text-center'>
+					
+					<div class='pinlineblock gorodpodrobnee'>
+						<div class='entourp'>
+							<p class='pinline'><%= @annonce.ville_depart.truncate_words(1, omission: ' ') %></p>
+						</div>
+						</br>
+						<h3 class='pinline gorodpodrobnee'><i class="fa fa-circle-o" aria-hidden="true"></i><div class='maplinepodrobnee pinline'></div>
+						</h3>
+					</div>
+					<%if @annonce.villeinter1?%>
+						<div class='pinlineblock gorodpodrobnee'>
+							<div class='entourp'>
+								<p class='pinline'><%=@annonce.villeinter1.truncate_words(1, omission: ' ') %></p>
+							</div>
+							</br>
+							<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+								<div class='maplinepodrobnee pinline'></div></h4>
+						</div>
+					<%end%>
+					<%if @annonce.villeinter2?%>
+						<div class='pinlineblock gorodpodrobnee'>
+							<div class='entourp'>
+								<p class='pinline'><%=@annonce.villeinter2.truncate_words(1, omission: ' ') %></p>
+							</div>
+							</br>
+							<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+							<div class='maplinepodrobnee pinline'></div></h4>
+						</div>
+					<%end%>
+					<% if @annonce.villeinter3?%>
+						<div class='pinlineblock gorodpodrobnee'>
+							<div class='entourp'>
+								<p class='pinline'><%=@annonce.villeinter3.truncate_words(1, omission: ' ') %></p>
+							</div>
+							</br>
+							<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+							<div class='maplinepodrobnee pinline'></div></h4>
+						</div>
+					<%end%>
+					<% if @annonce.villeinter4?%>
+						<div class='pinlineblock gorodpodrobnee'>
+							<div class='entourp'>
+								<p class='pinline'><%=@annonce.villeinter4.truncate_words(1, omission: ' ') %></p>
+							</div>
+							</br>
+							<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+							<div class='maplinepodrobnee pinline'></div></h4>
+						</div>
+					<%end%>
+					<% if @annonce.villeinter5?%>
+						<div class='pinlineblock gorodpodrobnee'>
+							<div class='entourp'>
+								<p class='pinline'><%=@annonce.villeinter5.truncate_words(1, omission: ' ') %></p>
+							</div>
+							</br>
+							<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+							
+						</div>
+					<%end%>
+					<div class='row cartexs2'>
+					<% if @annonce.villeinter6?%>
+						<div class='pinlineblock gorodpodrobnee'>
+							<div class='entourp'>
+								<p class='pinline'><%=@annonce.villeinter6.truncate_words(1, omission: ' ') %></p>
+							</div>
+							</br>
+							<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+								<div class='maplinepodrobnee pinline'></div></h4>
+						</div>
+					<%end%>
+					<% if @annonce.villeinter7?%>
+						<div class='pinlineblock gorodpodrobnee'>
+							<div class='entourp'>
+								<p class='pinline'><%=@annonce.villeinter7.truncate_words(1, omission: ' ') %></p>
+							</div>
+							</br>
+							<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+							<div class='maplinepodrobnee pinline'></div></h4>
+						</div> 
+					<%end%>
+					<% if @annonce.villeinter8?%>
+						<div class='pinlineblock gorodpodrobnee'>
+							<div class='entourp'>
+								<p class='pinline'><%=@annonce.villeinter8.truncate_words(1, omission: ' ') %></p>
+							</div>
+							</br>
+							<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+							<div class='maplinepodrobnee pinline'></div></h4>
+						</div>
+					<%end%>
+					<% if @annonce.villeinter9?%>
+						<div class='pinlineblock gorodpodrobnee'>
+							<div class='entourp'>
+								<p class='pinline'><%=@annonce.villeinter9.truncate_words(1, omission: ' ') %></p>
+							</div>
+							</br>
+							<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+							<div class='maplinepodrobnee pinline'></div></h4>
+						</div>
+					<%end%>
+					<% if @annonce.villeinter10?%>
+						<div class='pinlineblock gorodpodrobnee'>
+							<div class='entourp'>
+								<p class='pinline'><%=@annonce.villeinter10.truncate_words(1, omission: ' ') %></p>
+							</div>
+							</br>
+							<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+							<div class='maplinepodrobnee pinline'></div></h4>
+						</div>
+					<%end%>
+
+					<div class='pinlineblock gorodpodrobnee'>
+						<div class='entourp'>
+							<p class='pinline'><%=@annonce.ville_arrive.truncate_words(1, omission: ' ') %></p>
+						</div>
+						</br>
+						<h3 class='pinline gorodpodrobnee'><i class="fa fa-circle-o" aria-hidden="true"></i></h3>
+					</div>
+					</div>
+					
+				</div>
+			<%end%>
+			</div>
+
+			<div class='row text-left'>
+		<div class='paragraphone'>
+			<%if @annonce.description? %>
+				<h5><%= @annonce.description%></h5>
+			<%else%>
+			<h5>Едет <%= @annonce.user.prenom%> на <%=@annonce.marque_vehicule%>, по маршруту <%= @annonce.ville_depart.truncate_words(1, omission: ' ')%> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ')%> <%= @annonce.date_depart%> числа. 
+				<%if @annonce.poid_max_passager?%>Дозволенный вес багажа 20 килограммов.
+				<%end%> 
+				<%if @annonce.accept_colis?%>Также перевозит посылки <%= @annonce.prix_kg_colis%>€ за килограмм 
+					<%if @annonce.accept_colis_valeur?%>и другие ценные посылки
+					<%end%>
+				<%end%>. 
+				<%if @annonce.chay? || @annonce.wifi?%>Дополнительные бесплатные услуги: 
+					<%if @annonce.wifi?%>интернет-вифи,
+					<%end%> 
+					<%if @annonce.chay?%>чай/кофе
+					<%end%>.
+				<%end%></h5>
+			<%end%>
+		</div></br></br>
+			</div>
+		</div>
+	</div>
+
+	<div class='vajnoe2xs'>
+		<%if @annonce.telephones? || @annonce.telephones2?%>
+		<div class='row voditeletmashina2 text-left'>
+				<%if @annonce.telephones?%>
+					<div class='col-xs-3 text-left'>
+						<%if @annonce.telephones_type1?%>
+							<i class="fa fa-mobile" aria-hidden="true"></i>
+						<%end%>
+						<%if @annonce.telephone_type1?%>
+							<i class="fa fa-whatsapp" aria-hidden="true"></i>
+						<%end%>
+					</div>
+					<div class='col-xs-9 text-left colmd4'>
+						<h3 class='pinlineblock'><%=@annonce.telephones%></h3></br>
+					</div>
+				<%end%>
+				<%if @annonce.telephones2?%>
+					<div class='col-xs-3 text-left'>
+						<%if @annonce.telephones_type2?%>
+							<i class="fa fa-mobile" aria-hidden="true"></i>
+						<%end%>
+						<%if @annonce.telephone_type2?%>
+							<i class="fa fa-whatsapp" aria-hidden="true"></i>
+						<%end%>
+					</div>
+					<div class='col-xs-9 text-left colmd4'>
+						<h3 class='pinlineblock'><%=@annonce.telephones2%></h3></br>
+					</div>
+				<%end%>
+		</div>
+		<%end%>
+		<%if @annonce.telephones3? || @annonce.telephones4?%>
+		<div class='row voditeletmashina2 text-left'>
+				<%if @annonce.telephones3?%>
+					<div class='col-xs-3 text-left'>
+						<%if @annonce.telephones_type3?%>
+							<i class="fa fa-mobile" aria-hidden="true"></i>
+						<%end%>
+						<%if @annonce.telephone_type3?%>
+							<i class="fa fa-whatsapp" aria-hidden="true"></i>
+						<%end%>
+					</div>
+					<div class='col-xs-9 text-left colmd4'>
+						<h3 class='pinlineblock'><%=@annonce.telephones3%></h3></br>
+					</div>
+				<%end%>
+				<%if @annonce.telephones4?%>
+					<div class='col-xs-3 text-left'>
+						<%if @annonce.telephones_type4?%>
+							<i class="fa fa-mobile" aria-hidden="true"></i>
+						<%end%>
+						<%if @annonce.telephone_type4?%>
+							<i class="fa fa-whatsapp" aria-hidden="true"></i>
+						<%end%>
+					</div>
+					<div class='col-xs-9 text-left colmd4'>
+						<h3 class='pinlineblock'><%=@annonce.telephones4%></h3></br>
+					</div>
+				<%end%>
+		</div>
+		<%end%>
+
+		<div class='row voditeletmashinaspec2'>
+
+				<%if user_signed_in?%>
+						<div class='paragraphone2'>
+							<h5>Перед тем как связатсься с водителям, просьба прочитать все информации. Проевим увожение водителям!</h5>
+						</div>
+						<div class='row contactinputs'>
+							<%= form_tag conversations_path, method: :post do%>
+				 			<%= hidden_field_tag :user_id, @annonce.user_id %>
+							<%= hidden_field_tag :subject, current_user.prenom + 'прислал вам сообщение'  %>
+							<%= text_area_tag :body, nil, class: 'messageboxxs', id:'messagevoditelyu', placeholder: 'Задайте все свои вопросы и нажмите на "Отправить"'%>
+							<div class='text-right'>
+								<%= button_tag(type:"submit", class: 'podrobneeotpravitxs') do%>
+									<p>ОТПРАВИТЬ</p>
+								<%end%>
+								</br></br>
+							</div>
+							<%end%>
+						</div>
+				<%else%>
+					<div class='row'>
+						<h5>Чтобы написать водителю сообшение через mymarshrut, необходимо <%= link_to 'зарегистрироватся', new_user_registration_path %>.</h5></br>
+					</div>
+					<div class='row contactinputs'>
+							
+							<%= text_area_tag :body, nil, class: 'messageboxxs', id:'messagevoditelyu', placeholder: 'Задайте все свои вопросы и нажмите на "Отправить"', readonly: true%>
+							<div class='text-right'>
+								<%= button_tag( class: 'podrobneeotpravitxs') do%>
+									<p>ОТПРАВИТЬ</p>
+								
+								</br></br>
+							</div>
+							<%end%>
+						</div>
+				<%end%>
+
+			</div>
+	</div>
+</div>
+
+<div class='row cont_mob_2part visible-xs'>
+	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
+	<div class='row info text-center'>
+		<div class='row iconinfo text-center'>
+			<i class="fa fa-tag" aria-hidden="true"></i>
+		</div>
+		</br>
+		<h3>Поиск маршрута</h3>
+		<p>На сайте указано "Куда", "Откуда", вам всего лишь нужно ввести название городов, чтобы найти нужный маршрут.</p>
+		</br>
+	</div>
+	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
+	<div class='row tuto text-center'>
+		<div class='row icontuto text-center'>
+			<i class="fa fa-thumbs-up" aria-hidden="true"></i>
+		</div>
+		</br>
+		<h3>Зарегистрироваться </h3>
+		<p>Чтобы связаться с водителем вам необходимо регистрироваться, для этого нажмите <%=link_to 'сюда', new_user_registration_path%> <i class="fa fa-reply"></i></p>
+		</br>
+	</div>
+	<%# separator * * * * * * * * * * * * * * * * * * * * * * * * * * * * %>
+	<div class='row agir text-center'>
+		<%unless user_signed_in?%>
+			<div class='row icontuto text-center'>
+				<i class="fa fa-user-plus" aria-hidden="true"></i>
+			</div>
+			<h3>Создать объявление</h3>
+			<p>Чтоб создать объявление нужно регистрироваться</br> для этого нажмите <%=link_to 'сюда', new_user_registration_path, class:'syudavert'%> <i class="fa fa-reply" aria-hidden="true"></i>
+			</p>
+		<%else%>
+			<div class='row icontuto text-center'>
+				<i class="fa fa-check-square-o" aria-hidden="true"></i>
+		
+			</div>
+			<h3>Создать объявление</h3>
+			<p> Теперь вы можете создать свое объявление</p>
+			<%= link_to new_annonce_path, class:'btn btn-info sozdatannonce' do%>
+				<p><i class="glyphicon glyphicon-pencil"></i> Создать объявление </p>
+			<%end%>
+		
+		<%end%>
+	</div>
+	<%# separator * * * * * * * * * * * * * * * * * * * * * * *£££ * * * * * %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class='visibilite hidden-xs hidden-sm'>
 <div class='containercustom text-center'>
 	
 	<div class='row text-center headershow'>
 
 		<div class='col-md-6 text-left fotka'>
 			<%if @annonce.image_stored?%>
-				<%= image_tag @annonce.image.thumb('600x450#').url%>
+				<img src='<%= @annonce.image.thumb('800x700#').url%>' class='photo-responsive'>
 			<%else%>
 				<div class='fotonotfound'>
 				</div>
 			<%end%>
 		</div>
+		<div class='col-md-6 vajnoeoba'>
 
-		<div class='col-md-6 vajnoe'>
+		<div class='row vajnoe2'>
 
+			<div class='row lastvoditelmashina2 text-center'>
+				<i class="pinlineblock fa fa-arrow-up" aria-hidden="true"></i>
+			</div>
+			<%if @annonce.telephones? || @annonce.telephones2?%>
+			<div class='row voditeletmashina2 text-left'>
+				<%if @annonce.telephones?%>
+					<div class='col-md-2 text-right'>
+						<%if @annonce.telephones_type1?%>
+							<i class="fa fa-mobile" aria-hidden="true"></i>
+						<%end%>
+						<%if @annonce.telephone_type1?%>
+							<i class="fa fa-whatsapp" aria-hidden="true"></i>
+						<%end%>
+					</div>
+					<div class='col-md-4 text-left colmd4'>
+						<h3 class='pinlineblock'><%=@annonce.telephones%></h3></br>
+					</div>
+				<%end%>
+				<%if @annonce.telephones2?%>
+					<div class='col-md-2 text-right'>
+						<%if @annonce.telephones_type2?%>
+							<i class="fa fa-mobile" aria-hidden="true"></i>
+						<%end%>
+						<%if @annonce.telephone_type2?%>
+							<i class="fa fa-whatsapp" aria-hidden="true"></i>
+						<%end%>
+					</div>
+					<div class='col-md-4 text-left colmd4'>
+						<h3 class='pinlineblock'><%=@annonce.telephones2%></h3></br>
+					</div>
+				<%end%>
+
+			</div>
+			<%end%>
+			<%if @annonce.telephones3? || @annonce.telephones4?%>
+			<div class='row voditeletmashina2 text-left'>
+				<%if @annonce.telephones3?%>
+					<div class='col-md-2 text-right'>
+						<%if @annonce.telephones_type3?%>
+							<i class="fa fa-mobile" aria-hidden="true"></i>
+						<%end%>
+						<%if @annonce.telephone_type3?%>
+							<i class="fa fa-whatsapp" aria-hidden="true"></i>
+						<%end%>
+					</div>
+					<div class='col-md-4 text-left colmd4'>
+						<h3 class='pinlineblock'><%=@annonce.telephones3%></h3></br>
+					</div>
+				<%end%>
+				<%if @annonce.telephones4?%>
+					<div class='col-md-2 text-right'>
+						<%if @annonce.telephones_type4?%>
+							<i class="fa fa-mobile" aria-hidden="true"></i>
+						<%end%>
+						<%if @annonce.telephone_type4?%>
+							<i class="fa fa-whatsapp" aria-hidden="true"></i>
+						<%end%>
+					</div>
+					<div class='col-md-4 text-left colmd4'>
+						<h3 class='pinlineblock'><%=@annonce.telephones4%></h3></br>
+					</div>
+				<%end%>
+
+			</div>
+			<%end%>
+
+			
+			<div class='row voditeletmashinaspec2'>
+
+				<%if user_signed_in?%>
+						<div class='paragraphone2'>
+							<h5>Перед тем как связатсься с водителям, просьба прочитать все информации. Проевим увожение водителям!</h5>
+						</div>
+						<div class='row contactinputs'>
+							<%= form_tag conversations_path, method: :post do%>
+				 			<%= hidden_field_tag :user_id, @annonce.user_id %>
+							<%= hidden_field_tag :subject, current_user.prenom + 'прислал вам сообщение'  %>
+							<%= text_area_tag :body, nil, class: 'messagebox', id:'messagevoditelyu', placeholder: 'Задайте все свои вопросы и нажмите на "Отправить"'%>
+							<div class='text-right'>
+								<%= button_tag(type:"submit", class: 'podrobneeotpravit') do%>
+									<p>ОТПРАВИТЬ</p>
+								<%end%>
+								</br></br>
+							</div>
+							<%end%>
+						</div>
+				<%else%>
+					<div class='row'>
+						<h5>Чтобы написать водителю сообшение через mymarshrut, необходимо <%= link_to 'зарегистрироватся', new_user_registration_path %>.</h5></br>
+					</div>
+					<div class='row contactinputs'>
+							
+							<%= text_area_tag :body, nil, class: 'messagebox', id:'messagevoditelyu', placeholder: 'Задайте все свои вопросы и нажмите на "Отправить"', readonly: true%>
+							<div class='text-right'>
+								<%= button_tag( class: 'podrobneeotpravit') do%>
+									<p>ОТПРАВИТЬ</p>
+								
+								</br></br>
+							</div>
+							<%end%>
+						</div>
+				<%end%>
+
+			</div>
+		</div>
+
+		<div class='row vajnoe'>
 
 			<div class='row tuda text-center'>
-				<h4><%= @annonce.ville_depart.truncate_words(1, omission: ' ') %> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ') %> </h4>
+				<div class='col-md-3 text-left datedeparture'>
+					<h4 class='pinlineblock'><%= @annonce.date_depart%></h4>
+				</div>
+				<div class='col-md-6 text-center'>
+					<h4><%= @annonce.ville_depart.truncate_words(1, omission: ' ') %> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ') %></h4>
+				</div>
+				<div class='col-md-3 text-right datedeparture'>
+					<h4 class='pinlineblock'> <%= @annonce.prix_passager%>€</h4>
+				</div>
 			</div>
 
 			<div class='row voditeletmashina text-left'>
 				<div class='col-md-1 text-left'>
-					<i class="fa fa-user" aria-hidden="true"></i>
+					<i class="fa fa-cube" aria-hidden="true"></i>
 				</div>
-				<div class='col-md-3 text-left'>
-					<h3 class='pinline'><%= @annonce.user.prenom.truncate_words(1, omission: ' ')%></h3>
+				<div class='col-md-4 text-left'>
+					<h3 class='pinlineblock'><% if @annonce.accept_colis == true%> 
+						Посилки </br><%= @annonce.prix_kg_colis%>€ /кг 
+						<%else%>
+						Посилки не принемает
+						<%end%>
+					</h3>
 				</div>
 				<div class='col-md-1 text-left'>
-					<i class="fa fa-car" aria-hidden="true"></i> 
+					<i class="fa fa-envelope-o" aria-hidden="true"></i>
 				</div>
-				<div class='col-md-7 text-left'>
-					<h3 class='pinline'><%= @annonce.marque_vehicule.truncate_words(2, omission: ' ') %> <%= @annonce.annee_vehicule %>, <%= @annonce.nombre_place%> местный автомобил></h3>
+				<div class='col-md-6 text-left'>
+					<h3 class='pinlineblock'><% if @annonce.accept_colis_valeur == true%>
+						Перевозит важные бумаги
+						<%else%>
+						Не перевозит важные бумаги
+						<%end%></h3>
+				</div>
+
+			</div>
+
+			<div class='row voditeletmashina text-left'>
+				<div class='col-md-1 text-left'>
+					<i class="fa fa-wifi" aria-hidden="true"></i>
+				</div>
+				<div class='col-md-4 text-left'>
+					<%if @annonce.wifi?%>
+					<h3 class='pinlineblock'> Есть вифи</h3>
+					<%else%>
+					<h3 class='pinlineblock'> Вифи нет</h3>
+					<%end%>
+				</div>
+				<div class='col-md-1 text-left'>
+					<i class="fa fa-suitcase" aria-hidden="true"></i>
+				</div>
+				<div class='col-md-6 text-left'>
+					<h3 class='pinlineblock'>Багаж с пассажира не должен превышать <%= @annonce.poid_max_passager %> килограм </h3>
 				</div>
 
 			</div>
@@ -38,17 +640,25 @@
 
 			<div class='row voditeletmashina text-left'>
 				<div class='col-md-1 text-left'>
-					<i class="fa fa-user" aria-hidden="true"></i>
+					<i class='fa fa-coffee'></i>
 				</div>
-				<div class='col-md-3 text-left'>
-					<h3 class='pinline'><%= @annonce.user.prenom.truncate_words(1, omission: ' ')%></h3>
+				<div class='col-md-4 text-left'>
+					<%if @annonce.chay?%>
+					<h3 class='pinlineblock'>Кофе безплатно</h3>
+					<%else%>
+					<h3 class='pinlineblock'>Не указано</h3>
+					<%end%>
 				</div>
 				<div class='col-md-1 text-left'>
 					<i class="fa fa-car" aria-hidden="true"></i> 
 
 				</div>
-				<div class='col-md-7 text-left'>
-					<h3 class='pinline'><%= @annonce.marque_vehicule.truncate_words(2, omission: ' ') %> <%= @annonce.annee_vehicule%>, <%= @annonce.nombre_place%> местный автомобиль</h3>
+				<div class='col-md-6 text-left'>
+					<%if @annonce.marque_vehicule? || @annonce.nombre_place? %>
+					<h3 class='pinlineblock'><%= @annonce.marque_vehicule.truncate_words(2, omission: ' ') %> <%= @annonce.annee_vehicule%>, <%= @annonce.nombre_place%> местный автомобиль</h3>
+					<%else%>
+					<h3 class='pinlineblock'>Водитель не указал сколько мест в автомобиле</h3>
+					<%end%>
 				</div>
 
 			</div>
@@ -58,65 +668,234 @@
 				<div class='col-md-1 text-left'>
 					<i class='pinline fa fa-users'></i>
 				</div>
-				<div class='col-md-3 text-left'>
+				<div class='col-md-4 text-left'>
 						<% if @annonce.nombre_chauffeurs == 1%>
-						<h3 class='pinline'><%= @annonce.nombre_chauffeurs %> водитель</h3>
+						<h3 class='pinlineblock'><%= @annonce.nombre_chauffeurs %> водитель</h3>
 						<%else%>
-						<h3 class='pinline'><%= @annonce.nombre_chauffeurs %> водителя</h3>
+						<h3 class='pinlineblock'><%= @annonce.nombre_chauffeurs %> водителя</h3>
 						<%end%>
 				</div>
 				<div class='col-md-1 text-left'>
-					<i class='fa fa-coffee'></i>
+					<i class="fa fa-pause" aria-hidden="true"></i>
 
 				</div>
-				<div class='col-md-7 text-left'>
+				<div class='col-md-6 text-left'>
 					<% if @annonce.arrets_chaque == 1%>
-						<h3 class='pinline'>Остановка каждый час</h3>
+						<h3 class='pinlineblock'>Маршрутка будет останавливается каждый час</h3>
 						<%elsif @annonce.arrets_chaque == 2%>
-						<h3 class='pinline'>Остановка каждые <%= @annonce.arrets_chaque %> часа</h3>
+						<h3 class='pinlineblock'>Маршрутка будет останавливается каждые <%= @annonce.arrets_chaque %> часа</h3>
 						<%elsif @annonce.arrets_chaque == 3%>
-						<h3 class='pinline'>Остановка каждые <%= @annonce.arrets_chaque %> часа</h3>
+						<h3 class='pinlineblock'>Маршрутка будет останавливается каждые <%= @annonce.arrets_chaque %> часа</h3>
 						<%elsif @annonce.arrets_chaque == 4%>
-						<h3 class='pinline'>остановка каждые <%= @annonce.arrets_chaque %> часа</h3>
+						<h3 class='pinlineblock'>Маршрутка будет останавливается каждые <%= @annonce.arrets_chaque %> часа</h3>
 						<%else%>
-						<h3 class='pinline'>Остановка каждые <%= @annonce.arrets_chaque %> часов</h3>
+						<h3 class='pinlineblock'>Маршрутка будет останавливается каждые <%= @annonce.arrets_chaque %> часов</h3>
 					<%end%>
 				</div>
 			</div>
 
-
-			<div class='row voditeletmashina text-left'>
-				<div class='col-md-1 text-left'>
-					<i class="fa fa-user" aria-hidden="true"></i>
-				</div>
-				<div class='col-md-3 text-left'>
-					<h3 class='pinline'><%= @annonce.user.prenom.truncate_words(1, omission: ' ')%></h3>
-				</div>
-				<div class='col-md-1 text-left'>
-					<i class="fa fa-suitcase" aria-hidden="true"></i>
-				</div>
-				<div class='col-md-7 text-left'>
-					<h3 class='pinline'>Багаж с пассажира не должен превышать <%= @annonce.poid_max_passager %> килограм </h3>
-				</div>
-
+			
+			<div class='row lastvoditelmashina text-center'>
+				<i class="pinlineblock fa fa-arrow-down" aria-hidden="true"></i>
 			</div>
 
 		</div>
 
+		
+		</div>
+</div>
+<div class='text-center containercustom2'>
+	<div class='row'>
+	<div class='col-md-6 text-left'>
+			<%if @annonce.villeinter2?%>
+				<div class='row podrobnemarshrut text-center'>
+					
+							<div class='pinlineblock gorodpodrobnee'>
+								<div class='entourp'>
+								<p class='pinline'><%= @annonce.ville_depart.truncate_words(1, omission: ' ') %></p>
+								</div>
+								</br>
+								<h3 class='pinline gorodpodrobnee'><i class="fa fa-circle-o" aria-hidden="true"></i><div class='maplinepodrobnee pinline'></div>
+								</h3>
+							</div>
+							<%if @annonce.villeinter1?%>
+								<div class='pinlineblock gorodpodrobnee'>
+									<div class='entourp'>
+										<p class='pinline'><%=@annonce.villeinter1.truncate_words(1, omission: ' ') %></p>
+									</div>
+									</br>
+									<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+									<div class='maplinepodrobnee pinline'></div></h4>
+								</div>
+							<%end%>
+							<%if @annonce.villeinter2?%>
+								<div class='pinlineblock gorodpodrobnee'>
+									<div class='entourp'>
+										<p class='pinline'><%=@annonce.villeinter2.truncate_words(1, omission: ' ') %></p>
+									</div>
+									</br>
+									<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+									<div class='maplinepodrobnee pinline'></div></h4>
+								</div>
+							<%end%>
+							<% if @annonce.villeinter3?%>
+								<div class='pinlineblock gorodpodrobnee'>
+									<div class='entourp'>
+										<p class='pinline'><%=@annonce.villeinter3.truncate_words(1, omission: ' ') %></p>
+									</div>
+									</br>
+									<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+									<div class='maplinepodrobnee pinline'></div></h4>
+								</div>
+							<%end%>
+							<% if @annonce.villeinter4?%>
+								<div class='pinlineblock gorodpodrobnee'>
+									<div class='entourp'>
+										<p class='pinline'><%=@annonce.villeinter4.truncate_words(1, omission: ' ') %></p>
+									</div>
+									</br>
+									<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+										<div class='maplinepodrobnee pinline'></div></h4>
+								</div>
+							<%end%>
+							<% if @annonce.villeinter5?%>
+								<div class='pinlineblock gorodpodrobnee'>
+									<div class='entourp'>
+										<p class='pinline'><%=@annonce.villeinter5.truncate_words(1, omission: ' ') %></p>
+									</div>
+									</br>
+									<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+									<div class='maplinepodrobnee pinline'></div></h4>
+								</div>
+							<%end%>
+							<% if @annonce.villeinter6?%>
+								<div class='pinlineblock gorodpodrobnee'>
+									<div class='entourp'>
+										<p class='pinline'><%=@annonce.villeinter6.truncate_words(1, omission: ' ') %></p>
+									</div>
+									</br>
+									<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+										<div class='maplinepodrobnee pinline'></div></h4>
+								</div>
+							<%end%>
+							<% if @annonce.villeinter7?%>
+								<div class='pinlineblock gorodpodrobnee'>
+									<div class='entourp'>
+										<p class='pinline'><%=@annonce.villeinter7.truncate_words(1, omission: ' ') %></p>
+									</div>
+									</br>
+									<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+										<div class='maplinepodrobnee pinline'></div></h4>
+								</div> 
+							<%end%>
+							<% if @annonce.villeinter8?%>
+								<div class='pinlineblock gorodpodrobnee'>
+									<div class='entourp'>
+										<p class='pinline'><%=@annonce.villeinter8.truncate_words(1, omission: ' ') %></p>
+									</div>
+									</br>
+									<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+										<div class='maplinepodrobnee pinline'></div></h4>
+								</div>
+							<%end%>
+							<% if @annonce.villeinter9?%>
+								<div class='pinlineblock gorodpodrobnee'>
+									<div class='entourp'>
+										<p class='pinline'><%=@annonce.villeinter9.truncate_words(1, omission: ' ') %></p>
+									</div>
+									</br>
+									<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+										<div class='maplinepodrobnee pinline'></div></h4>
+								</div>
+							<%end%>
+							<% if @annonce.villeinter10?%>
+								<div class='pinlineblock gorodpodrobnee'>
+									<div class='entourp'>
+										<p class='pinline'><%=@annonce.villeinter10.truncate_words(1, omission: ' ') %></p>
+									</div>
+									</br>
+									<h4 class='pinline'><i class="fa fa-circle" aria-hidden="true"></i>
+									<div class='maplinepodrobnee pinline'></div></h4>
+								</div>
+							<%end%>
 
+							<div class='pinlineblock gorodpodrobnee'>
+								<div class='entourp'>
+									<p class='pinline'><%=@annonce.ville_arrive.truncate_words(1, omission: ' ') %></p>
+								</div>
+								</br>
+								<h3 class='pinline gorodpodrobnee'><i class="fa fa-circle-o" aria-hidden="true"></i></h3>
+							</div>
+					
+				</div>
+			<%end%>
 	</div>
 
-</div>
-<div class='row text-center photobaniere'>
-		<div class='col-md-4 text-left'>
-			<%= link_to  :back do%>
-				<h4 class='pinline'><i class=" fa fa-chevron-left" aria-hidden="true"></i></h4>
+	<div class='col-md-6 text-left'>
+		<div class='paragraphone'>
+			<%if @annonce.description? %>
+				<h5><%= @annonce.description%></h5>
+			<%else%>
+			<h5>Едет <%= @annonce.user.prenom%> на <%=@annonce.marque_vehicule%>, по маршруту <%= @annonce.ville_depart.truncate_words(1, omission: ' ')%> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ')%> <%= @annonce.date_depart%> числа. 
+				<%if @annonce.poid_max_passager?%>Дозволенный вес багажа 20 килограммов.
+				<%end%> 
+				<%if @annonce.accept_colis?%>Также перевозит посылки <%= @annonce.prix_kg_colis%>€ за килограмм 
+					<%if @annonce.accept_colis_valeur?%>и другие ценные посылки
+					<%end%>
+				<%end%>. 
+				<%if @annonce.chay? || @annonce.wifi?%>Дополнительные бесплатные услуги: 
+					<%if @annonce.wifi?%>интернет-вифи,
+					<%end%> 
+					<%if @annonce.chay?%>чай/кофе
+					<%end%>.
+				<%end%></h5>
 			<%end%>
 		</div>
-		<div class='col-md-4 text-center'>
-			<h4><%= @annonce.ville_depart.truncate_words(1, omission: ' ') %> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ') %> </h4>
-		</div>
-		<div class='col-md-4 text-right'>
-			<h4><%=@annonce.date_depart%></h4>
-		</div>
 	</div>
+	</div>
+</div>
+</div>
+
+<div class='row cont_2part hidden-xs'>
+	<div class='col-sm-4 info'>
+		<div class='row iconinfo text-center'>
+			<i class="fa fa-tag" aria-hidden="true"></i>
+		</div>
+		</br>
+		<h3>Поиск маршрута</h3>
+		<p>На сайте указано "Куда", "Откуда", вам всего лишь нужно ввести название городов, чтобы найти нужный маршрут.</p>
+		</br>
+	</div>
+	<div class='col-sm-4 tuto'>
+		<div class='row icontuto text-center'>
+			<i class="fa fa-thumbs-up" aria-hidden="true"></i>
+		</div>
+		</br>
+		<h3>Зарегистрироваться </h3>
+		<p>Чтобы связаться с водителем вам необходимо зарегистрироваться, для этого нажмите <%=link_to 'сюда', new_user_registration_path%> <i class="fa fa-reply"></i></p>
+		</br>
+	</div>
+	<div class='col-sm-4 agir'>
+		<%unless user_signed_in?%>
+			<div class='row icontuto text-center'>
+				<i class="fa fa-user-plus" aria-hidden="true"></i>
+			</div>
+			<h3>Создать объявление</h3>
+			<p>Чтобы создать объявление необходимо зарегистрироваться</br> для этого нажмите <%=link_to 'сюда', new_user_registration_path, class:'syudavert'%> <i class="fa fa-reply" aria-hidden="true"></i>
+			</p>
+		<%else%>
+			<div class='row icontuto text-center'>
+				<i class="fa fa-check-square-o" aria-hidden="true"></i>
+		
+			</div>
+			<h3>Создать объявление</h3>
+			<p> Теперь вы можете создать свое объявление</p>
+			<%= link_to new_annonce_path, class:'btn btn-info sozdatannonce' do%>
+				<p><i class="glyphicon glyphicon-pencil"></i> Создать объявление </p>
+			<%end%>
+		<%end%>
+	</div>
+</div>
+
+
+
