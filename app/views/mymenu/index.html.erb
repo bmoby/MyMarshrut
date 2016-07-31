@@ -1,0 +1,97 @@
+<%= render 'shared/navbar'%>
+
+<div class='container-fluid moyoffice'>
+	<div class='row tekushiyprofil'>
+		<div class='row text-center'>
+			<p class='titlep'>Здраствуйте <%= current_user.prenom %> добро пожаловать в свой офис</p></br>
+		</div>
+		<div class='col-md-2'>
+			<%= image_tag("no-profile.gif", class:'profile-picture')%>
+		</div>
+		<div class='col-md-3'>
+			<p>Имя: <%= current_user.prenom%><p>
+			<%if current_user.voditel?%>
+			<p>Обявление: <%= current_user.annonces.count%></p>
+			<%end%>
+		</div>
+		<div class='col-md-4'>
+			<p>Майл: <%= current_user.email%></p>
+		</div>
+	</div>
+	<div class='row firstmenurow'>
+		<%= link_to  edit_user_registration_path do%>
+			<div class='col-md-6 text-left higlighted'>
+				<div class='col-md-4'>
+					<i class="fa fa-cogs" aria-hidden="true"></i>
+				</div>
+				<div class='col-md-8'>
+					<h3>Настойки профиля</h3>
+					<p>В настойках профиля можно добавит свою фотографию профиля, изменит или добавить свои данные. </p>
+				</div>
+			</div>
+		<%end%>
+
+		<%if current_user.voditel?%>
+           <%= link_to  annonces_moiobyavlenie_path do%>
+				<div class='col-md-6 text-left higlighted mesannoncesbtn'>
+					<div class='col-md-4 text-left'>
+						<i class="fa fa-upload" aria-hidden="true"></i>
+					</div>
+					<div class='col-md-8'>
+						<h3>Мои объявления</h3>
+						<p>Нажав сюда, вы сможить просмотреть, удалит или обновить свои объявление.</p>
+					</div>
+				</div>
+			<%end%>
+		<%else%>
+			<div class='col-md-6 text-left higlighted mesannoncesbtn'>
+				<div class='col-md-4 text-left'>
+					<i class="fa fa-upload" aria-hidden="true"></i>
+				</div>
+				<div class='col-md-8'>
+					<h3>Мои объявления</h3>
+					<p>У вас на данный момент нет не одного объявления, нажмите на "создать объявления" чтоб апубликовать свое первое объявления.</p>
+				</div>
+			</div>
+		<%end%>
+
+	</div>
+	<div class='row firstmenurow'>
+		<%= link_to conversations_path(current_user) do%>
+			<div class='col-md-6 text-left higlighted'>
+				<div class='col-md-4 text-left'>
+					<i class="fa fa-retweet" aria-hidden="true"></i>
+				</div>
+				<div class='col-md-8'>
+					<h3>мои сообщения</h3>
+					<p>Все вашы переписки с водителями или с пасажирами сохранены в вашом почтовом яшике. Нажав сюда вы сможите перечитать свои сообшение..</p>
+				</div>
+			</div>
+		<%end%>
+       <% if current_user.annonces.count < 4%>
+        	<%= link_to  new_annonce_path do%>
+				<div class='col-md-6 text-left higlighted'>
+					<div class='col-md-4 text-left'>
+						<i class="fa fa-plus" aria-hidden="true"></i>
+					</div>
+					<div class='col-md-8'>
+						<h3>Создать объявления </h3>
+						<p>На mymarshrut.com можно создать максимум 4 объявление, если вы не достигли максимально дозволенного чесла, вы можите создать новое объявление нажав сюда.</p>
+					</div>
+				</div>
+			<%end%>
+		<%else%>
+			<div class='col-md-6 text-left higlighted'>
+				<div class='col-md-4 text-left'>
+					<i class="fa fa-plus" aria-hidden="true"></i>
+				</div>
+				<div class='col-md-8'>
+					<h3>Создать объявления </h3>
+					<p>Вы достигли максимального дозволенного чесла объявлений, Пожалуста обновите сушествуюшие или удалите чтоб создать новое.</p>
+				</div>
+			</div>
+		<%end%>
+	</div>
+</div>
+
+<%= render 'shared/footer'%>

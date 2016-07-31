@@ -461,19 +461,13 @@
 	padding-left: 0;
 }
 
-
-
-
 .map{
 	margin-bottom: 0px;
 }
 
-
 .podrobnexs{
 	padding-right: 25px;
 }
-
-
 
 .gorod{
 	width:57px;
@@ -829,20 +823,20 @@ textarea:focus, input:focus{
 	font-family: 'PROPAGAN';
 	font-style: bold;
 	color:#725756;
-	font-size: 20px;
+	font-size: 18px;
 	padding:5px;
-	border: solid 1px #725756;
+	border: dashed 1px #6d5756;
 	
 }
 
 .leboutonpodrobnee h3:hover{
-	font-family: 'PT Sans Narrow', sans-serif;
+	font-family: 'PROPAGAN';
 	font-style: normal;
-	background-color:#725756;
+	background-color:#6d5756;
 	color: white;
-	font-size: 20px;
+	font-size: 18px;
 	padding:5px;
-	border: dashed 1px #725756;
+	border: dashed 1px #6d5756;
 	
 }
 
