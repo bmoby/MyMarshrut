@@ -1292,7 +1292,7 @@ h4{
 input, textarea{
 	word-wrap: break-word;
        -webkit-border-radius: 30px; 
-       -moz-border-radius: 30px; 
+       -moz-aborder-radius: 30px; 
        border-radius: 30px; 
 
 }
@@ -1492,6 +1492,12 @@ select:focus {
 	padding-top:20vh;
 }
 
+.settings-sm{
+	padding-top:10vh;
+	padding-bottom:10vh;
+	width:510px;
+}
+
 
 								//SM//
 
@@ -1520,6 +1526,7 @@ select:focus {
 .reg-log{
 	padding-top:10vh;
 	padding-bottom:10vh;
+	width:auto;
 }
 
 .reg-log-block{
@@ -1538,6 +1545,11 @@ select:focus {
 	border-bottom:dashed 2px #D3D5C0;
 }
 
+.reg-title h2 {
+	color:#FDFAE9;
+	font-family: 'Quicksand', sans-serif;
+}
+
 .log-title{
 	border-bottom:dashed 2px #D3D5C0;
 }
@@ -1550,10 +1562,7 @@ select:focus {
 	margin-bottom:20px;
 }
 
-.reg-title h2 {
-	color:#FDFAE9;
-	font-family: 'Quicksand', sans-serif;
-}
+
 
 
 
@@ -1679,6 +1688,19 @@ input:-ms-input-placeholder {
 	font-weight:bold;
 }
 
+.settings-submitbox {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #FDFAE9;
+    border-radius: 2px;
+    background-color: #E69894;
+    height: 38px;
+    border-color: none;
+    border: solid 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .remreg{
 	padding:0;
 	margin-top:4px;
@@ -1708,9 +1730,22 @@ input:-ms-input-placeholder {
 }
 
 .regcol{
-	margin-bottom:20px;
+	margin-bottom:10px;
+	padding:0;
+	margin-top:0;
 }
 .regcol a{
+	color:#D3D5C0;
+	font-size:21;
+}
+
+.settings-delete-profile-and-goback {
+	padding:0;
+	margin-top:0;
+}
+
+.settings-delete-profile-and-goback a{
+	font-size:21;
 	color:#D3D5C0;
 }
 
