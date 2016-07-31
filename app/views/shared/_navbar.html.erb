@@ -65,12 +65,10 @@
 				<i class="glyphicon glyphicon-cog"></i> Настройки
 				<%end%>
 			</li>
-			<%if current_user.voditel?%>
-            <li> <%= link_to  annonces_moiobyavlenie_path do%>
-				<i class="glyphicon glyphicon-tasks"></i> Мои объявление
+            <li> <%= link_to mymenu_path_url do%>
+				<i class="glyphicon glyphicon-tasks"></i> Мой офис
 				<%end%>
 			</li>
-			<%end%>
 			<% if current_user.annonces.count < 4%>
             <li> <%= link_to  new_annonce_path do%>
 				<i class="fa fa-plus-circle" aria-hidden="true"></i>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :annonces
   get '/vseuseri', to: 'vseuseri#index', as: 'vseuseri_path'
   get '/test', to: 'searches#searchall', as: 'searchall_path'
+    get '/office', to: 'mymenu#index', as: 'mymenu_path'
   resources :conversations do
     resources :messages
   end

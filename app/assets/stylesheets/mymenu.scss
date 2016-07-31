@@ -1,0 +1,77 @@
+//MyMenu css file
+
+.moyoffice{
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-right: 0;
+	padding-left: 0;
+	width:60%;
+}
+
+.welcometooffice{
+	width: 100%;
+	background-color: #dacab5;
+	border: 3px dashed #6d5655;
+	color:#4e372c;
+}
+
+
+.higlighted:hover {
+	cursor: pointer; cursor: hand;
+	background-color: #f7f2dc;
+}
+
+.higlighted{
+	height: 250px;
+}
+
+.higlighted .fa{
+	padding: 30px;
+	font-size: 30px;
+	color:#5c3e3b;
+}
+
+.profile-picture{
+	width: 70px;
+	height: 70px;
+	border-radius: 150px;
+}
+
+.tekushiyprofil{
+	border-bottom:3px dashed gray;
+	padding: 15px;
+
+}
+
+.titlep{
+	font-size: 30px;
+	color:#4e372c;
+	font-family: 'Marck Script', cursive;
+}
+
+
+.higlighted:hover .fa{
+	color:#cb676f;
+}
+
+.higlighted h3{
+	color:#5c3e3b;
+}
+
+.higlighted:hover h3{
+	color:#cb676f;
+}
+
+.higlighted:hover p{
+	color:#a5b385;
+}
+
+
+
+
+
+
+
+
+
+
