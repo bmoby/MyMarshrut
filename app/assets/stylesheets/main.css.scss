@@ -1365,6 +1365,8 @@ select:focus {
   align-items: center;
 }
 
+.reg-log-xs
+
 .user-xs {
 	padding:0;
 	color:white;
@@ -1449,6 +1451,18 @@ select:focus {
 	margin-bottom:20px;
 }
 
+.settings-title-xs{
+	border-bottom:dashed 2px #D3D5C0;
+}
+
+.settings-title-xs h2 {
+	color:#FDFAE9;
+	font-family: 'Quicksand', sans-serif;
+	padding-right:40px;
+	padding-left:40px;
+	margin-bottom:20px;
+}
+
 .log-title-col-xs{
 	padding:0;
 }
@@ -1459,6 +1473,11 @@ select:focus {
 
 .title-text-xs{
 	padding:0;
+}
+
+.remember-xs {
+	color:#D3D5C0;
+	font-weight:normal;
 }
 
 .passforgot-xs {
@@ -1472,6 +1491,20 @@ select:focus {
 
 .check-xs{
 	font-size:20px;
+}
+
+.settings-block{
+	border-radius:3px;
+	background-color:#78A38F;
+	padding:0;
+	margin:0;
+}
+
+
+.settings-options-xs{
+	margin-bottom:10px;
+	margin-left:6px;
+	margin-right:6px;
 }
 
 
@@ -1707,11 +1740,12 @@ input:-ms-input-placeholder {
 .remember-md{
 	color:#D3D5C0;
 	font-weight:normal;
+	margin-top:3px;
 }
 
 .passforgot{
 	padding:0;
-	margin-top:0;
+	margin-top:3px;
 
 }
 
