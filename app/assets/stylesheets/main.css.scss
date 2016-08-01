@@ -276,7 +276,6 @@
 }
 
 .headershow{
-	border-radius: 15px 0 0 0;
 	height: 70vh;
 	overflow: hidden;
 }
@@ -689,13 +688,6 @@
 	height:auto;
 }
 
-body{
-	background-color: #FDFAE9;
-	font-family: 'Comfort', sans-serif;
-	padding-bottom: 0px;
-
-}
-
 
 body.searches{
 	background: asset-data-url("cover.jpg") center center fixed;
@@ -705,7 +697,12 @@ body.searches{
 	padding-bottom: 0px;
 }
 
+body{
+	background-color: #FDFAE9;
+	font-family: 'Comfort', sans-serif;
+	padding-bottom: 0px;
 
+}
 
 
 a:focus { outline: 0; }

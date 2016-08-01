@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, 
          :recoverable, :rememberable, :trackable, :validatable
   has_many :annonces, :dependent => :destroy, :validate => false
+  has_many :avatars, :dependent => :destroy
   validates_length_of :annonces, maximum: 4
   
   validates_presence_of :prenom, :message => "Пожалуйста введите своё Имя."

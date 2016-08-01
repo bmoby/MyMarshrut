@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  resources :avatars
   #devise_for :users
     devise_for :users, :controllers => { :registrations => "acme/registrations"}
     get '/annonces/moiobyavlenie' => 'annonces#mesannonces'
@@ -8,13 +8,11 @@ Rails.application.routes.draw do
   resources :annonces
   get '/vseuseri', to: 'vseuseri#index', as: 'vseuseri_path'
   get '/test', to: 'searches#searchall', as: 'searchall_path'
-    get '/office', to: 'mymenu#index', as: 'mymenu_path'
+  get '/office', to: 'mymenu#index', as: 'mymenu_path'
   resources :conversations do
     resources :messages
   end
   root to: 'searches#searchall'
-  post 'verifications' => 'verifications#create'
-  patch 'verifications' => 'verifications#verify'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
