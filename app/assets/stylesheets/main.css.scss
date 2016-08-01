@@ -1478,6 +1478,11 @@ select:focus {
 	padding:0;
 }
 
+.remember-xs {
+	color:#D3D5C0;
+	font-weight:normal;
+}
+
 .passforgot-xs {
     padding: 0;
 }
@@ -1738,11 +1743,12 @@ input:-ms-input-placeholder {
 .remember-md{
 	color:#D3D5C0;
 	font-weight:normal;
+	margin-top:3px;
 }
 
 .passforgot{
 	padding:0;
-	margin-top:0;
+	margin-top:3px;
 
 }
 
