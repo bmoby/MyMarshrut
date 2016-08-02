@@ -26,9 +26,9 @@
 		</div>
 		<div class='row text-left'>
 			<%if user_signed_in?%>
-				<p> Вы можете создать свое объявление нажав на  </p>
+				<p class='pinline' > Вы можете создать свое объявление нажав на  </p>
 			<%= link_to new_annonce_path  do%>
-				<p><i class="glyphicon glyphicon-pencil"></i> Эту кнопку </p></br>
+				<p class='pinline'><i class="pinline glyphicon glyphicon-pencil"></i> Эту кнопку </p></br>
 			<%end%>
 			<%else%>
 				<p>Чтоб создать объявление нужно регистрироваться</br> для этого нажмите <%=link_to 'сюда', new_user_registration_path, class:'syudavert'%> <i class="fa fa-reply" aria-hidden="true"></i>

@@ -14,7 +14,7 @@
   <%= csrf_meta_tags %>
 </head>
 	
-<body class="<%= params[:controller]%> data-no-turbolink="true"">
+<body class="<%= params[:controller]%> data-no-turbolink="true" ">
 	<%# Rails flash messages styled for Bootstrap 3.0 %>
 	<% flash.each do |name, msg| %>
 	  <% if msg.is_a?(String) %>

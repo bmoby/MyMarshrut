@@ -1,0 +1,9 @@
+<%= form_for(@avatar) do |f| %>
+  <div class="field hidden-xs">
+    <%= f.label :image, 'Нажмите на кнопку чтобы добавить фото автомобиля' %>
+    <%= f.file_field :image, class:'imageput'%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
