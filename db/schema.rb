@@ -35,11 +35,12 @@ ActiveRecord::Schema.define(version: 20160801140038) do
     t.integer  "arrets_chaque"
     t.integer  "notes"
     t.string   "commentaires"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.integer  "user_id"
     t.string   "image_uid"
     t.string   "image_name"
+    t.string   "transit",             default: "--- []\n"
     t.string   "villeinter1"
     t.string   "villeinter2"
     t.string   "villeinter3"
@@ -156,9 +157,11 @@ ActiveRecord::Schema.define(version: 20160801140038) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "pol"
     t.string   "prenom"
     t.string   "ville"
     t.string   "mobile_number"
+    t.text     "photo"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"

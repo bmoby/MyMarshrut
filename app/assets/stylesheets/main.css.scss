@@ -841,18 +841,6 @@ textarea:focus, input:focus{
 	color:white;
 }
 
-.podrobnosti{
-	padding-left:15px;
-	padding-right:15px;
-	word-wrap: break-word;
-	width:100%;
-	height:150px;
-}
-
-.perevozka{
-	display:none;
-}
-
 .intercalere{
 	border-top:solid 1px #B8B89F;
 }
@@ -1241,58 +1229,7 @@ width:100%;
 	
 }
 
-.villesdisplay{
-	
-	margin-bottom:15px;
-}
 
-.villesdisplay .ajout{
-	-moz-user-select: none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	cursor: pointer;
-	padding:6px;
-	background-color:#9DD7EB;
-	color:white;
-}
-
-.villesdisplay .enlev{
-	-moz-user-select: none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	cursor: pointer;
-	padding:6px;
-	background-color:#EBA69D;
-	color:white;
-}
-
-.numdisplay .ajoutnum{
-	-moz-user-select: none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	cursor: pointer;
-	padding:6px;
-	background-color:#9DD7EB;
-	color:white;
-}
-
-.numdisplay .enlevnum{
-	-moz-user-select: none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	cursor: pointer;
-	padding:6px;
-	background-color:#EBA69D;
-	color:white;
-}
 
 .ajouterbtn{
 	background-color:yellow;
@@ -1446,7 +1383,7 @@ input, textarea{
     box-shadow: 0 0 0 1px #E8C291 inset;
 }
 
-.perevoziti{
+.icone{
 	
 	color:gray ;
 }
@@ -1460,25 +1397,7 @@ input, textarea{
 	margin-bottom:10px;
 }
 
-select {
-  border: 1px solid #cccccc;
-  background-color: #ffffff;
-  border-radius: 5px;
-  color:gray;
-  text-align:center;
-  margin-bottom:10px;
-}
 
-select.date-select {
-    width:auto;
-    border: 1px solid #cccccc;
-    background-color: gray;
-}
-
-select:focus {
-	outline: 0;
-	border:solid 2px #E8C291;
-}
 
 .voditelphoto{
 
@@ -1523,7 +1442,6 @@ select:focus {
 	padding-left:5px;
 	width:100%;
 	height:50px;
-	font-style:italic;
 	font-size:12px;
 }
 
@@ -1769,7 +1687,6 @@ input:-ms-input-placeholder {
 	padding-left:5px;
 	width:100%;
 	height:55px;
-	font-style:italic;
 	font-size:15px;
 }
 
@@ -1911,6 +1828,8 @@ input:-ms-input-placeholder {
 
 
 										//registration and login pages//
+
+										
 
 .nazvanie{
 	color:#919191;

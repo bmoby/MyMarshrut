@@ -1,211 +1,1331 @@
-<% if @annonce.errors.any? %>
-  <div id="error_explanation">
-    <h2>Пожалуйста заполните следующие поля:</h2>
-	  <ul class='listerreurs'>
-	   <% @annonce.errors.each do |attribute, message| -%>
-	     <% if message.is_a?(String)%>
-	       <li><p><%= message %></p></li>
-	     <% end %>
-      <% end -%>
-	  </ul></br>
-  </div>
-<% end %>
+<div class='hidden-xs visible-sm'>
+  <% if @annonce.errors.any? %>
+    <div class="row">
+    <div class='col-sm-6 col-sm-offset-1 error-listing'>
+    <div id="error_explanation">
+      <h5>Внимание:</h5>
+      <ul class='listerreurs-listing'>
+       <% @annonce.errors.each do |attribute, message| -%>
+         <% if message.is_a?(String)%>
+           <li><p><%= message %></p></li>
+         <% end %>
+        <% end -%>
+      </ul></br>
+    </div>
+    </div>
+    </div>
+  <% end %>  
 
-<%= form_for(@annonce) do |f| %>
 
-  <div class='row intercalere'>
-  	<h4>Информация о поездке</h4></br>
-  </div>
+  <%= form_for(@annonce) do |f| %>
 
-  <div class="field">
-    <%= f.text_field :ville_depart, class: 'inputter villesd obligatoir', id:'villedep', :placeholder => 'откуда ?' %>
-    <%= f.text_field :ville_arrive, class: 'inputter villesd obligatoir', id: 'villearr', :placeholder => 'куда ?'  %>
-  </div>
+                            <%# ROAD %>
+    <div class='row input'>
+        <div class='row'>
+          <div class='col-sm-1'>
+            <div class='col-sm-1 circle1'>
+            </div>
+          </div>
 
-  <div class="field villeinter1 <%= 'villeinterhide' unless @annonce.villeinter1?%> <%= 'villecount' if @annonce.villeinter1?%>">
-    <%= f.text_field :villeinter1, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
-  </div>
+          <div class='col-sm-4 text-left line1'>
+            <hr></hr>
+          </div>
 
-  <div class="field villeinter2 <%= 'villeinterhide' unless @annonce.villeinter2?%> <%= 'villecount' if @annonce.villeinter2?%>">
-    <%= f.text_field :villeinter2, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
-  </div>
+          <div class='col-sm-2 text-center listing-titles'>
+            <h5> МАРШРУТ </h5>
+          </div>
 
-  <div class="field villeinter3 <%= 'villeinterhide' unless @annonce.villeinter3?%> <%= 'villecount' if @annonce.villeinter3?%>">
-    <%= f.text_field :villeinter3, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
-  </div>
+          <div class='col-sm-4 text-right line2'>
+            <hr></hr>
+          </div>
 
-  <div class="field villeinter4 <%= 'villeinterhide' unless @annonce.villeinter4?%> <%= 'villecount' if @annonce.villeinter4?%>">
-    <%= f.text_field :villeinter4, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
-  </div>
+          <div class='col-sm-1'>
+            <div class="col-sm-1 col-sm-offset-11 circle2">
+            </div>
+          </div>
+        </div>
 
-  <div class="field villeinter5 <%= 'villeinterhide' unless @annonce.villeinter5?%> <%= 'villecount' if @annonce.villeinter5?%>">
-    <%= f.text_field :villeinter5, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
-  </div>
+        <div class='row text-center road-info'>
 
-  <div class="field villeinter6 <%= 'villeinterhide' unless @annonce.villeinter6?%> <%= 'villecount' if @annonce.villeinter6?%>">
-    <%= f.text_field :villeinter6, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
-  </div>
+            <div class="row">
+              <div>
+                <%=image_tag('pushpin.png', class: "pushpin")%>
+              </div>
+              <div class='col-sm-3 floating-paper'>
+                <div class='row notice'>
+                  <div class='notice-paper text-center'>
+                    </br>
+                    <h5> Заметка </h5>
+                    <h6> Если вы заполните все поля, клиенты будут иметь меньше вопросов. Если поисковик вам предлагает нужный город, рекомендуем выбрать его из списка. Так клиентам будет легче найти ваше объявление.</h6>
+                    </br>
+                   </br>
+                  </div>
+                </div>
+              </div>
 
-  <div class="field villeinter7 <%= 'villeinterhide' unless @annonce.villeinter7?%> <%= 'villecount' if @annonce.villeinter7?%>">
-    <%= f.text_field :villeinter7, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
-  </div>
+              <div class='col-sm-1 col-sm-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-sm-4 road-col'>
+                <%= f.text_field :ville_depart, class:'obligatoir-directions', id:'villedep', :placeholder => 'Откуда' %>
+              </div>
 
-  <div class="field villeinter8 <%= 'villeinterhide' unless @annonce.villeinter8?%> <%= 'villecount' if @annonce.villeinter8?%>">
-    <%= f.text_field :villeinter8, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
-  </div>
+            </div>
 
-  <div class="field villeinter9 <%= 'villeinterhide' unless @annonce.villeinter9?%> <%= 'villecount' if @annonce.villeinter9?%>">
-    <%= f.text_field :villeinter9, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
-  </div>
+            <div class="field villeinter2 <%= 'villeinterhide' unless @annonce.villeinter2?%> <%= 'villecount' if @annonce.villeinter2?%>">
+              <div class='col-sm-1 col-sm-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-sm-4 road-col'>
+                <%= f.text_field :villeinter2, class: 'obligatoir-directions blanck',  :placeholder => 'Через' %>
+              </div>
+            </div>
 
-  <div class="field villeinter10 <%= 'villeinterhide' unless @annonce.villeinter10?%> <%= 'villecount' if @annonce.villeinter10?%>">
-    <%= f.text_field :villeinter10, class: 'inputter blanck',  :placeholder => 'cherez ?' %>
-  </div>
+            <div class="field villeinter3 <%= 'villeinterhide' unless @annonce.villeinter3?%> <%= 'villecount' if @annonce.villeinter3?%>">
+              <div class='col-sm-1 col-sm-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-sm-4 road-col'>
+                <%= f.text_field :villeinter3, class: 'obligatoir-directions blanck',  :placeholder => 'Через' %>
+              </div>
+            </div>
 
-  <div class="field villesdisplay">
-    <span class='ajout'>Добавить город</span> <span class='enlev'>Убрать город</span>
-  </div>
 
-  <div class="field">
-    <%= f.label "когда ? ", class:'nazvanie' %> 
-    <%= f.date_select :date_depart, order: [ :day, :month, :year], prompt: { day: 'день', month: 'месяц', year: 'год' }, start_year: Date.today.year, use_month_names: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь','Декабрь'] %>	</br>
-	  <%=  f.number_field :nombre_chauffeurs, class: 'inputter', :placeholder => 'сколько водителей ?'%>
-	  <%= f.number_field :arrets_chaque, :class => 'inputter', :placeholder => " остановка каждые / часа " %>
-  </div>
+            <div class="field villeinter4 <%= 'villeinterhide' unless @annonce.villeinter4?%> <%= 'villecount' if @annonce.villeinter4?%>">
+              <div class='col-sm-1 col-sm-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-sm-4 road-col'>
+                <%= f.text_field :villeinter4, class: 'obligatoir-directions blanck',  :placeholder => 'Через' %>
+              </div>
+            </div>
 
-	<div class='row intercalere'>
-		<h4>Информация об транспортном средстве</h4></br>
-	</div>
+            <div class="field villeinter5 <%= 'villeinterhide' unless @annonce.villeinter5?%> <%= 'villecount' if @annonce.villeinter5?%>">
+              <div class='col-sm-1 col-sm-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-sm-4 road-col'>
+                <%= f.text_field :villeinter5, class: 'obligatoir-directions blanck',  :placeholder => 'Через' %>
+              </div>
+            </div>
 
-  <div class="field text-center">
-    <%= f.text_field :marque_vehicule, class: 'inputter', :placeholder => 'на какой машине ? ' %>
-    <%= f.text_field :annee_vehicule, class: 'inputter', :placeholder => 'какого года выпуска ? '  %></br>
-	  <%= f.number_field :nombre_place, class:'inputter', :placeholder => 'сколько мест в автомобиле?' %>
-  </div>
+            <div class="field villeinter6 <%= 'villeinterhide' unless @annonce.villeinter6?%> <%= 'villecount' if @annonce.villeinter6?%>">
+              <div class='col-sm-1 col-sm-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-sm-4 road-col'>
+                <%= f.text_field :villeinter6, class: 'obligatoir-directions blanck',  :placeholder => 'Через' %>
+              </div>
+            </div>
 
-  <div class="field hidden-xs">
-		<%= f.label :image, 'Нажмите на кнопку чтобы добавить фото автомобиля' %>
-    <%= f.file_field :image, class:'imageput'%>
-  </div>
+            <div class="field villeinter7 <%= 'villeinterhide' unless @annonce.villeinter7?%> <%= 'villecount' if @annonce.villeinter7?%>">
+              <div class='col-sm-1 col-sm-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-sm-4 road-col'>
+                <%= f.text_field :villeinter7, class: 'obligatoir-directions blanck',  :placeholder => 'Через' %>
+              </div>
+            </div>
 
-  <div class="field visible-xs">
-	   <%= f.label :image, 'Нажмите на кнопку чтобы добавить фото автомобиля' %>
-	   <%= f.file_field :image, class:'imageputxs'%>
-  </div>
-	
-	<div class='row intercalere'>
-		<h4>Информация о ценах</h4></br>
-	</div>
+            <div class="field villeinter8 <%= 'villeinterhide' unless @annonce.villeinter8?%> <%= 'villecount' if @annonce.villeinter8?%>">
+              <div class='col-sm-1 col-sm-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-sm-4 road-col'>
+                <%= f.text_field :villeinter8, class: 'obligatoir-directions blanck',  :placeholder => 'Через' %>
+              </div>
+            </div>
 
-  <div class="field">
-    <%= f.text_field :prix_passager, class: 'inputter', :placeholder => 'сколько стоит проезд ?' %>
-    <%= f.text_field :poid_max_passager, class: 'inputter', :placeholder => 'сколько килограмм можно взять ? '  %>
-  </div>
+            <div class="field villeinter9 <%= 'villeinterhide' unless @annonce.villeinter9?%> <%= 'villecount' if @annonce.villeinter9?%>">
+              <div class='col-sm-1 col-sm-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-sm-4 road-col'>
+              <%= f.text_field :villeinter9, class: 'obligatoir-directions blanck',  :placeholder => 'Через' %>
+              </div>
+            </div>
 
-  <div class="field">
-		<%= f.label "Перевозите ли вы посылки/груз?", class: 'perevoziti' %>
-		<%if @annonce.prix_kg_colis == nil%>
-      <%= f.check_box :accept_colis, class: 'perevoziti posilkiperevoz', checked: false %></br>
-	  <%else%>
-      <%= f.check_box :accept_colis, class: 'perevoziti posilkiperevoz', checked: true %></br>
-	  <%end%>
-	  <%= f.label "Перевозите ли вы важные бумаги?", class: 'perevoziti' %> 
-	  <% if @annonce.accept_colis_valeur? %>
-      <%= f.check_box :accept_colis_valeur, class: 'perevoziti', checked: true %></br>
-	  <%else%>
-      <%= f.check_box :accept_colis_valeur, class: 'perevoziti', checked: false %></br>
-	  <%end%>
-  </div>
+            <div class="field villeinter10 <%= 'villeinterhide' unless @annonce.villeinter10?%> <%= 'villecount' if @annonce.villeinter10?%>">
+              <div class='col-sm-1 col-sm-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-sm-4 road-col'>
+                <%= f.text_field :villeinter10, class: 'obligatoir-directions blanck',  :placeholder => 'Через' %>
+              </div>
+            </div>
 
-	 <div class='perevozka'>
-    <%= f.text_field :prix_kg_colis, class: 'inputter', :placeholder => 'стоимость доставки за кг' %>
-    <%= f.text_field :poid_min_colis, class: 'inputter', :placeholder => 'минимальный вес посылки/груза'%>
-	 </div>
-	
-	<div class='row intercalere'>
-		<h4>Контакт и подробности</h4></br>
-	</div>
+            <div class='row'>
+              <div class='col-sm-1 col-sm-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-sm-4 road-col'>
+                <%= f.text_field :ville_arrive, class: 'obligatoir-directions blanck', id: 'villearr', :placeholder => 'Куда'  %>
+              </div>
+            </div>
 
-  <div class="field">
-    <%= f.telephone_field :telephones , :class => 'inputter', :placeholder => "номер телефона1" %>
-    <div class='visible-xs brdiv'></div>
-    <%if @annonce.telephone_type1?%>
-      <%= f.check_box :telephone_type1, checked: true %> <p class="pinline">Телефон</p>
-    <%else%>
-      <%= f.check_box :telephone_type1, checked: false %> <p class="pinline">Телефон</p>
-    <%end%>
-    <%if @annonce.telephones_type1?%>
-    <%= f.check_box :telephones_type1, checked: true %> <p class="pinline">Ватсап</p>
-    <%else%>
-    <%= f.check_box :telephones_type1, checked: false %> <p class="pinline">Ватсап</p>
-    <%end%>
-    <div class='visible-xs brdiv'></br></div>
-  </div>
+            <div class="row villesdisplay">
+              <span class='ajout'>Добавить город</span> <span class='enlev'>Убрать город</span>
+            </div>
+        </div>
+      
 
-  <div class="field  num1 <%= 'villeinterhide' unless @annonce.telephones2?%> <%= 'numcount' if @annonce.telephones2?%>">
-    <%= f.telephone_field :telephones2, :class => 'inputter', :placeholder => "номер телефона2" %>
-    <div class='visible-xs brdiv'></div>
-    <%if @annonce.telephone_type2?%>
-      <%= f.check_box :telephone_type2, checked: true %> <p class="pinline">Телефон</p>
-    <%else%>
-      <%= f.check_box :telephone_type2, checked: false %> <p class="pinline">Телефон</p>
-    <%end%>
-    <%if @annonce.telephones_type2?%>
-    <%= f.check_box :telephones_type2, checked: true %> <p class="pinline">Ватсап</p>
-    <%else%>
-    <%= f.check_box :telephones_type2, checked: false %> <p class="pinline">Ватсап</p>
-    <%end%>
-    <div class='visible-xs brdiv'></br></div>
-  </div>
+                            <%# DAY %>
+        <div class='row'>
+          <div class='col-sm-1'>
+            <div class='col-sm-1 circle1'>
+            </div>
+          </div>
 
-  <div class="field num2 <%= 'villeinterhide' unless @annonce.telephones3? %> <%= 'numcount' if @annonce.telephones2?%>">
-    <%= f.telephone_field :telephones3, :class => 'inputter', :placeholder => "номер телефона3" %>
-    <div class='visible-xs brdiv'></div>
-    <%if @annonce.telephone_type3?%>
-      <%= f.check_box :telephone_type3, checked: true %> <p class="pinline">Телефон</p>
-    <%else%>
-      <%= f.check_box :telephone_type3, checked: false %> <p class="pinline">Телефон</p>
-    <%end%>
-    <%if @annonce.telephones_type3?%>
-    <%= f.check_box :telephones_type3, checked: true %> <p class="pinline">Ватсап</p>
-    <%else%>
-    <%= f.check_box :telephones_type3, checked: false %> <p class="pinline">Ватсап</p>
-    <%end%>
-    <div class='visible-xs brdiv'></br></div>
-  </div>
+          <div class='col-sm-4 text-left line1'>
+            <hr></hr>
+          </div>
 
-  <div class="field num3 <%= 'villeinterhide' unless @annonce.telephones4?%> <%= 'numcount' if @annonce.telephones2?%>">
-    <%= f.telephone_field :telephones4, :class => 'inputter', :placeholder => "номер телефона4" %>
-    <div class='visible-xs brdiv'></div>
-    <%if @annonce.telephone_type4?%>
-      <%= f.check_box :telephone_type4, checked: true %> <p class="pinline">Телефон</p>
-    <%else%>
-      <%= f.check_box :telephone_type4, checked: false %> <p class="pinline">Телефон</p>
-    <%end%>
-    <%if @annonce.telephones_type4?%>
-    <%= f.check_box :telephones_type4, checked: true %> <p class="pinline">Ватсап</p>
-    <%else%>
-    <%= f.check_box :telephones_type4, checked: false %> <p class="pinline">Ватсап</p>
-    <%end%>
-    <div class='visible-xs brdiv'></br></div>
-  </div>
+          <div class='col-sm-2 text-center listing-titles'>
+            <h5> КОГДА </h5>
+          </div>
 
-  <div class="field numdisplay">
-    <span class='ajoutnum'>Добавить номер</span> <span class='enlevnum'>Убрать номер</span>
-  </div>
+          <div class='col-sm-4 text-right line2'>
+            <hr></hr>
+          </div>
 
-  <div class="field">
-		  <div class='row'>
-			   <div class='col-md-6 col-md-offset-3'>
+          <div class='col-sm-1'>
+            <div class="col-sm-1 col-sm-offset-11 circle2">
+            </div>
+          </div>
+        </div>
+
+        <div class='row text-center date-row'>
+          <div class='col-sm-2 col-sm-offset-3 text-right calendar '>
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+          </div>
+          <div class='field col-sm-4 text-left date'>
+          <%= f.date_select :date_depart, order: [ :day, :month, :year], prompt: { day: 'день', month: 'месяц', year: 'год' }, start_year: Date.today.year, use_month_names: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь','Декабрь'] %>
+          </div>
+        </div>
+        
+        
+
+                                <%# OTHER DATA %>
+        <div class='row'>
+          <div class='col-sm-1'>
+            <div class='col-sm-1 circle1'>
+            </div>
+          </div>
+
+          <div class='col-sm-4 text-left line1'>
+            <hr></hr>
+          </div>
+
+          <div class='col-sm-2 text-center listing-titles'>
+            <h5> ДРУГИЕ ДАННЫЕ </h5>
+          </div>
+
+          <div class='col-sm-4 text-right line2'>
+            <hr></hr>
+          </div>
+
+          <div class='col-sm-1'>
+            <div class="col-sm-1 col-sm-offset-11 circle2">
+            </div>
+          </div>
+        </div>
+
+        <div class='row other-info text-center'>
+
+          <div class='row'>
+            <div class='col-sm-1 col-sm-offset-2 icone'>
+              <i class="fa fa-user-plus" aria-hidden="true"></i>
+            </div>
+            <div class='col-sm-3 text-left number-drivers-col'>
+              <%=  f.number_field :nombre_chauffeurs, class: 'obligatoir-drivers', :placeholder => 'Cколько водителей?'%>
+            </div>
+
+
+            <div class='col-sm-1 col-sm-offset-1 icone'>
+              <i class="fa fa-wifi" aria-hidden="true"></i>
+            </div>
+            <div class='col-sm-2 wifi-chay-col'>
+              <div class='col-sm-6 wifi-chay'>
+               <p> WiFi </p>
+              </div>
+              <div class='col-sm-2 wifi-chay'>
+                <%= f.check_box :wifi%>
+              </div>
+            </div>
+          </div>
+
+          <div class='row'>
+
+            <div class='col-sm-1 col-sm-offset-2 icone'>
+              <i class="fa fa-pause" aria-hidden="true"></i>
+            </div>
+
+            <div class='col-sm-3 text-left number-drivers-col'>
+              <%= f.number_field :arrets_chaque, :class => 'obligatoir-drivers', :placeholder => "Oстановка каждые /часа " %>
+            </div>
+
+            <div class='col-sm-1 col-sm-offset-1 icone'>
+              <i class="fa fa-coffee" aria-hidden="true"></i>
+            </div>
+            <div class='col-sm-2 wifi-chay-col'>
+              <div class='col-sm-6 wifi-chay'>
+               <p> Кофе/Чай </p>
+              </div>
+              <div class='col-sm-2 wifi-chay'>
+                <%= f.check_box :chay%>
+              </div>
+            </div>
+                
+          </div>
+
+        </div>
+
+
+
+                                        <%# CAR %>
+        <div class='row'>
+          <div class='col-sm-1'>
+            <div class='col-sm-1 circle1'>
+            </div>
+          </div>
+
+          <div class='col-sm-4 text-left line1'>
+            <hr></hr>
+          </div>
+                                          
+          <div class='col-sm-2 text-center listing-titles'>
+            <h5> АВТОМОБИЛЬ </h5>
+          </div>
+
+          <div class='col-sm-4 text-right line2'>
+            <hr></hr>
+          </div>
+
+          <div class='col-sm-1'>
+            <div class="col-sm-1 col-sm-offset-11 circle2">
+            </div>
+          </div>
+        </div>
+
+        <div class='row text-center other-info'>
+
+          <div class='col-sm-2 col-sm-offset-1 car-col'>
+            <div class='row'>
+              <div class='col-sm-4 icone'>
+                <i class="fa fa-bus" aria-hidden="true"></i>
+              </div>
+              <div class='col-sm-8 text-left number-drivers-col'>
+                <%= f.text_field :marque_vehicule, class: 'obligatoir-car', :placeholder => 'На каком автомобиле?'%>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='col-sm-4 icone'>
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+              </div>
+              <div class='col-sm-4 text-left number-drivers-col'>
+                <%= f.text_field :annee_vehicule, class: 'obligatoir-car', :placeholder => 'Какого года выпуска?'%>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='col-sm-4 icone'>
+                <i class="fa fa-users" aria-hidden="true"></i>
+              </div>
+              <div class='col-sm-8 text-left number-drivers-col'>
+                <%= f.number_field :nombre_place, class:'obligatoir-car', :placeholder => 'Количество мест'%>
+              </div>
+            </div>
+          </div>
+
+          <div class='col-sm-2 col-sm-offset-2 car-pic1'>
+          </div>
+
+          <div class='col-sm-2 car-pic'>
+          </div>
+
+          <div class='col-sm-2 car-pic'>
+          </div>
+
+        </div>
+
+
+   
+
+                                    <%# Traveller %>
+
+        <div class='row'>
+          <div class='col-sm-1'>
+            <div class='col-sm-1 circle1'>
+            </div>
+          </div>
+
+          <div class='col-sm-4 text-left line1'>
+            <hr></hr>
+          </div>
+                                          <%# PASSANGER %>
+          <div class='col-sm-2 text-center listing-titles'>
+            <h5> ПОССАЖИР </h5>
+          </div>
+
+          <div class='col-sm-4 text-right line2'>
+            <hr></hr>
+          </div>
+
+          <div class='col-sm-1'>
+            <div class="col-sm-1 col-sm-offset-11 circle2">
+            </div>
+          </div>
+        </div>
+
+        <div class='row text-center other-info'>
+          <div class='col-sm-1 col-sm-offset-2 icone'>
+            <i class="fa fa-eur" aria-hidden="true"></i>
+          </div>
+          <div class='col-sm-2 text-left number-drivers-col'>
+            <%= f.text_field :prix_passager, class: 'obligatoir-car', :placeholder => 'Стоимость проездa' %>
+          </div>
+
+          <div class='col-sm-1 col-sm-offset-2 icone'>
+            <i class="fa fa-suitcase" aria-hidden="true"></i>
+          </div>
+          <div class='col-sm-2 text-left number-drivers-col'>
+            <%= f.text_field :poid_max_passager, class: 'obligatoir-car', :placeholder => 'Вес багажа'  %>
+          </div>
+        </div>
+
+                                      <%# POSSILKA %>
+      <div class='row'>
+          <div class='col-sm-1'>
+            <div class='col-sm-1 circle1'>
+            </div>
+          </div>
+
+          <div class='col-sm-4 text-left line1'>
+            <hr></hr>
+          </div>
+
+          <div class='col-sm-2 text-center listing-titles'>
+            <h5> ПОСЫЛКА/ГРУЗ </h5>
+          </div>
+
+          <div class='col-sm-4 text-right line2'>
+            <hr></hr>
+          </div>
+
+          <div class='col-sm-1'>
+            <div class="col-sm-1 col-sm-offset-11 circle2">
+            </div>
+          </div>
+      </div>
+
+      <div class='row text-center other-info'>
+        <div class='col-sm-4 col-sm-offset-4 text-center package'>
+          <div class='row pacckage-row-1'>
+            <div class='col-sm-10 package3'>
+              <p>Перевозите ли вы посылки/груз?</p>
+            </div>
+            <div class='col-sm-2 wifi-chay'>
+              <%if @annonce.prix_kg_colis == nil%>
+                <%= f.check_box :accept_colis, class: 'perevoziti posilkiperevoz', checked: false %></br>
+              <%else%>
+                <%= f.check_box :accept_colis, class: 'perevoziti posilkiperevoz', checked: true %></br>
+              <%end%>
+            </div>
+          </div>
+
+          <div class='row perevozka'>
+            <div class='col-sm-3 icone'>
+              <i class="fa fa-eur" aria-hidden="true"></i>
+            </div>
+            <div class='col-sm-9 package-price-input'>
+              <%= f.text_field :prix_kg_colis, class: 'obligatoir-pacckage', :placeholder => 'Cтоимость доставки за кг' %>
+            </div>
+          </div>
+
+          <div class='row'>      
+            <div class='col-sm-10 package3-precious'>
+              <p>Перевозите ли вы ценные посылки/груз?</p>
+            </div>
+            <div class='col-sm-2 wifi-chay'>
+              <% if @annonce.accept_colis_valeur? %>
+                <%= f.check_box :accept_colis_valeur, class: 'perevoziti', checked: true %></br>
+              <%else%>
+               <%= f.check_box :accept_colis_valeur, class: 'perevoziti', checked: false %></br>
+              <%end%>
+            </div>
+          </div>
+        </div>
+      </div>
+
+   
+
+
+                                        <%# CONACT %>
+        <div class='row'>
+          <div class='col-sm-1'>
+            <div class='col-sm-1 circle1'>
+            </div>
+          </div>
+
+          <div class='col-sm-4 text-left line1'>
+            <hr></hr>
+          </div>
+
+          <div class='col-sm-2 text-center listing-titles'>
+            <h5> ТЕЛЕФОН/ВАТСАП </h5>
+          </div>
+
+          <div class='col-sm-4 text-right line2'>
+            <hr></hr>
+          </div>
+
+          <div class='col-sm-1'>
+            <div class="col-sm-1 col-sm-offset-11 circle2">
+            </div>
+          </div>
+        </div>
+
+        <div class='row text-center other-info'>
+          <div class="row">
+            <div class='col-sm-2 col-sm-offset-4 tel-input'>
+              <%= f.telephone_field :telephones , :class => 'obligatoir-pacckage', :placeholder => "Hомер телефона 1" %>
+            </div>
+            <div class='col-sm-1 icone-col'>
+              <div class='col-sm-8 tel-icone'>
+                <i class="fa fa-mobile" aria-hidden="true"></i>
+              </div>
+              <div class='col-sm-4 tel-checkbox'>
+                <%if @annonce.telephone_type1?%>
+                  <%= f.check_box :telephone_type1, checked: true %> 
+                <%else%>
+                  <%= f.check_box :telephone_type1, checked: false %> 
+                <%end%>
+              </div>
+            </div>
+            <div class='col-sm-1 icone-col'>
+              <div class='col-sm-8 tel-icone'>
+                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+              </div>
+              <div class='col-sm-4 tel-checkbox'>
+                <%if @annonce.telephones_type1?%>
+                <%= f.check_box :telephones_type1, checked: true %> 
+                <%else%>
+                <%= f.check_box :telephones_type1, checked: false %> 
+                <%end%>
+              </div>
+            </div>
+          </div>
+
+          <div class="row num1 <%= 'villeinterhide' unless @annonce.telephones2?%> <%= 'numcount' if @annonce.telephones2?%>">
+            <div class='col-sm-2 col-sm-offset-4 tel-input'>
+              <%= f.telephone_field :telephones2 , :class => 'obligatoir-pacckage', :placeholder => "Hомер телефона 2" %>
+            </div>
+            <div class='col-sm-1 icone-col'>
+              <div class='col-sm-8 tel-icone'>
+                <i class="fa fa-mobile" aria-hidden="true"></i>
+              </div>
+              <div class='col-sm-4 tel-checkbox'>
+                <%if @annonce.telephone_type1?%>
+                  <%= f.check_box :telephone_type2, checked: true %> 
+                <%else%>
+                  <%= f.check_box :telephone_type2, checked: false %> 
+                <%end%>
+              </div>
+            </div>
+            <div class='col-sm-1 icone-col'>
+                <div class='col-sm-8 tel-icone'>
+                  <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                </div>
+                <div class='col-sm-4 tel-checkbox'>
+                  <%if @annonce.telephones_type1?%>
+                  <%= f.check_box :telephones_type2, checked: true %> 
+                  <%else%>
+                  <%= f.check_box :telephones_type2, checked: false %> 
+                  <%end%>
+                </div>
+            </div>
+          </div>
+
+          <div class="row num2 <%= 'villeinterhide' unless @annonce.telephones2?%> <%= 'numcount' if @annonce.telephones2?%>">
+            <div class='col-sm-2 col-sm-offset-4 tel-input'>
+              <%= f.telephone_field :telephones3 , :class => 'obligatoir-pacckage', :placeholder => "Hомер телефона 3" %>
+            </div>
+            <div class='col-sm-1 icone-col'>
+              <div class='col-sm-8 tel-icone'>
+                <i class="fa fa-mobile" aria-hidden="true"></i>
+              </div>
+              <div class='col-sm-4 tel-checkbox'>
+                <%if @annonce.telephone_type1?%>
+                  <%= f.check_box :telephone_type3, checked: true %> 
+                <%else%>
+                  <%= f.check_box :telephone_type3, checked: false %> 
+                <%end%>
+              </div>
+            </div>
+            <div class='col-sm-1 icone-col'>
+                <div class='col-sm-8 tel-icone'>
+                  <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                </div>
+                <div class='col-sm-4 tel-checkbox'>
+                  <%if @annonce.telephones_type1?%>
+                  <%= f.check_box :telephones_type3, checked: true %> 
+                  <%else%>
+                  <%= f.check_box :telephones_type3, checked: false %> 
+                  <%end%>
+                </div>
+            </div>
+          </div>
+
+          <div class="row num3 <%= 'villeinterhide' unless @annonce.telephones2?%> <%= 'numcount' if @annonce.telephones2?%>">
+            <div class='col-sm-2 col-sm-offset-4 tel-input'>
+              <%= f.telephone_field :telephones4 , :class => 'obligatoir-pacckage', :placeholder => "Hомер телефона 4" %>
+            </div>
+            <div class='col-sm-1 icone-col'>
+              <div class='col-sm-8 tel-icone'>
+                <i class="fa fa-mobile" aria-hidden="true"></i>
+              </div>
+              <div class='col-sm-4 tel-checkbox'>
+                <%if @annonce.telephone_type1?%>
+                  <%= f.check_box :telephone_type4, checked: true %> 
+                <%else%>
+                  <%= f.check_box :telephone_type4, checked: false %> 
+                <%end%>
+              </div>
+            </div>
+            <div class='col-sm-1 icone-col'>
+                <div class='col-sm-8 tel-icone'>
+                  <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                </div>
+                <div class='col-sm-4 tel-checkbox'>
+                  <%if @annonce.telephones_type1?%>
+                  <%= f.check_box :telephones_type4, checked: true %> 
+                  <%else%>
+                  <%= f.check_box :telephones_type4, checked: false %> 
+                  <%end%>
+                </div>
+            </div>
+          </div>
+
+          <div class="field numdisplay">
+            <span class='ajoutnum'>Добавить номер</span> <span class='enlevnum'>Убрать номер</span>
+          </div>
+
+        </div>
+
+
+
+
+          
+
+                                            <%# MORE INFORMATION %>
+        <div class='row'>
+          <div class='col-sm-1'>
+            <div class='col-sm-1 circle1'>
+            </div>
+          </div>
+
+          <div class='col-sm-4 text-left line1'>
+            <hr></hr>
+          </div>
+
+          <div class='col-sm-2 text-center listing-titles'>
+            <h5> ПОДРОБНОСТИ </h5>
+          </div>
+
+          <div class='col-sm-4 text-right line2'>
+            <hr></hr>
+          </div>
+
+          <div class='col-sm-1'>
+            <div class="col-sm-1 col-sm-offset-11 circle2">
+            </div>
+          </div>
+        </div>
+
+        <div class='row text-center other-info'>
+            <div class='row'>
+               <div class='col-sm-6 col-sm-offset-3'>
+                  <%= f.text_area :description, class: ' podrobnosti', :placeholder =>"Напишите все подробности: место встречи, время встречи и т.д." %>
+               </div>
+            </div>
+        </div>
+
+        <div class="actions text-center">
           </br>
-      		  <%= f.text_area :description, class: ' podrobnosti', :placeholder =>"Напишите все подробности. Место встречи, время встречи и т.д." %>
-	  		 </div>
-	  	</div>
-  </div>
-	
-  <div class="actions">
-    </br>
-    <%= f.submit 'Создать объявление', class:'btn btn-info'%>
-  </div>
-<% end %>
+          <%= f.submit 'Создать объявление', class:'btn create-listing'%>
+        </div>
+        </br>
 
+     </div>
+  <%end%>
+</div>
+
+
+
+
+<div class='hidden-xs hidden-sm'>
+  <% if @annonce.errors.any? %>
+    <div class="row">
+    <div class='col-md-6 col-md-offset-1 error-listing'>
+    <div id="error_explanation">
+      <h5>Внимание:</h5>
+      <ul class='listerreurs-listing'>
+       <% @annonce.errors.each do |attribute, message| -%>
+         <% if message.is_a?(String)%>
+           <li><p><%= message %></p></li>
+         <% end %>
+        <% end -%>
+      </ul></br>
+    </div>
+    </div>
+    </div>
+  <% end %>  
+
+
+  <%= form_for(@annonce) do |f| %>
+
+                            <%# ROAD %>
+    <div class='row input'>
+        <div class='row'>
+          <div class='col-md-1'>
+            <div class='col-md-1 circle1'>
+            </div>
+          </div>
+
+          <div class='col-md-4 text-left line1'>
+            <hr></hr>
+          </div>
+
+          <div class='col-md-2 text-center listing-titles'>
+            <h5> МАРШРУТ </h5>
+          </div>
+
+          <div class='col-md-4 text-right line2'>
+            <hr></hr>
+          </div>
+
+          <div class='col-md-1'>
+            <div class="col-md-1 col-md-offset-11 circle2">
+            </div>
+          </div>
+        </div>
+
+        <div class='row text-center road-info'>
+
+            <div class="row">
+              <div>
+                <%=image_tag('pushpin.png', class: "pushpin")%>
+              </div>
+              <div class='col-md-3 floating-paper'>
+                <div class='row notice'>
+                  <div class='notice-paper text-center'>
+                    </br>
+                    <h5> Заметка </h5>
+                    <h6> Если вы заполните все поля, клиенты будут иметь меньше вопросов. Если поисковик вам предлагает нужный город, рекомендуем выбрать его из списка. Так клиентам будет легче найти ваше объявление.</h6>
+                    </br>
+                   </br>
+                  </div>
+                </div>
+              </div>
+
+              <div class='col-md-1 col-md-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-md-4 road-col'>
+                <%= f.text_field :ville_depart, class:'obligatoir-directions blanck', id:'villedep', :placeholder => 'Откуда' %>
+              </div>
+
+            </div>
+
+            <div class="field villeinter2 <%= 'villeinterhide' unless @annonce.villeinter2?%> <%= 'villecount' if @annonce.villeinter2?%>">
+              <div class='col-md-1 col-md-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-md-4 road-col'>
+                <%= f.text_field :villeinter2, class: 'obligatoir-directions blanck',  :placeholder => 'Через' %>
+              </div>
+            </div>
+
+            <div class="field villeinter3 <%= 'villeinterhide' unless @annonce.villeinter3?%> <%= 'villecount' if @annonce.villeinter3?%>">
+              <div class='col-md-1 col-md-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-md-4 road-col'>
+                <%= f.text_field :villeinter3, class: 'obligatoir-directions blanck',  :placeholder => 'Через' %>
+              </div>
+            </div>
+
+
+            <div class="field villeinter4 <%= 'villeinterhide' unless @annonce.villeinter4?%> <%= 'villecount' if @annonce.villeinter4?%>">
+              <div class='col-md-1 col-md-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-md-4 road-col'>
+                <%= f.text_field :villeinter4, class: 'obligatoir-directions blanck',  :placeholder => 'Через' %>
+              </div>
+            </div>
+
+            <div class="field villeinter5 <%= 'villeinterhide' unless @annonce.villeinter5?%> <%= 'villecount' if @annonce.villeinter5?%>">
+              <div class='col-md-1 col-md-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-md-4 road-col'>
+                <%= f.text_field :villeinter5, class: 'obligatoir-directions blanck',  :placeholder => 'Через' %>
+              </div>
+            </div>
+
+            <div class="field villeinter6 <%= 'villeinterhide' unless @annonce.villeinter6?%> <%= 'villecount' if @annonce.villeinter6?%>">
+              <div class='col-md-1 col-md-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-md-4 road-col'>
+                <%= f.text_field :villeinter6, class: 'obligatoir-directions blanck',  :placeholder => 'Через' %>
+              </div>
+            </div>
+
+            <div class="field villeinter7 <%= 'villeinterhide' unless @annonce.villeinter7?%> <%= 'villecount' if @annonce.villeinter7?%>">
+              <div class='col-md-1 col-md-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-md-4 road-col'>
+                <%= f.text_field :villeinter7, class: 'obligatoir-directions blanck',  :placeholder => 'Через' %>
+              </div>
+            </div>
+
+            <div class="field villeinter8 <%= 'villeinterhide' unless @annonce.villeinter8?%> <%= 'villecount' if @annonce.villeinter8?%>">
+              <div class='col-md-1 col-md-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-md-4 road-col'>
+                <%= f.text_field :villeinter8, class: 'obligatoir-directions blanck',  :placeholder => 'Через' %>
+              </div>
+            </div>
+
+            <div class="field villeinter9 <%= 'villeinterhide' unless @annonce.villeinter9?%> <%= 'villecount' if @annonce.villeinter9?%>">
+              <div class='col-md-1 col-md-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-md-4 road-col'>
+              <%= f.text_field :villeinter9, class: 'obligatoir-directions blanck',  :placeholder => 'Через' %>
+              </div>
+            </div>
+
+            <div class="field villeinter10 <%= 'villeinterhide' unless @annonce.villeinter10?%> <%= 'villecount' if @annonce.villeinter10?%>">
+              <div class='col-md-1 col-md-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-md-4 road-col'>
+                <%= f.text_field :villeinter10, class: 'obligatoir-directions blanck',  :placeholder => 'Через' %>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='col-md-1 col-md-offset-4 icone'>
+                <i class="fa fa-road" aria-hidden="true"></i>
+              </div>
+              <div class='col-md-4 road-col'>
+                <%= f.text_field :ville_arrive, class: 'obligatoir-directions blanck', id: 'villearr', :placeholder => 'Куда'  %>
+              </div>
+            </div>
+
+            <div class="row villesdisplay">
+              <span class='ajout'>Добавить город</span> <span class='enlev'>Убрать город</span>
+            </div>
+        </div>
+      
+
+                            <%# DAY %>
+        <div class='row'>
+          <div class='col-md-1'>
+            <div class='col-md-1 circle1'>
+            </div>
+          </div>
+
+          <div class='col-md-4 text-left line1'>
+            <hr></hr>
+          </div>
+
+          <div class='col-md-2 text-center listing-titles'>
+            <h5> КОГДА </h5>
+          </div>
+
+          <div class='col-md-4 text-right line2'>
+            <hr></hr>
+          </div>
+
+          <div class='col-md-1'>
+            <div class="col-md-1 col-md-offset-11 circle2">
+            </div>
+          </div>
+        </div>
+
+        <div class='row text-center date-row'>
+          <div class='col-md-2 col-md-offset-3 text-right calendar '>
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+          </div>
+          <div class='field col-md-4 text-left date'>
+          <%= f.date_select :date_depart, order: [ :day, :month, :year], prompt: { day: 'день', month: 'месяц', year: 'год' }, start_year: Date.today.year, use_month_names: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь','Декабрь'] %>
+          </div>
+        </div>
+        
+        
+
+                                <%# OTHER DATA %>
+        <div class='row'>
+          <div class='col-md-1'>
+            <div class='col-md-1 circle1'>
+            </div>
+          </div>
+
+          <div class='col-md-4 text-left line1'>
+            <hr></hr>
+          </div>
+
+          <div class='col-md-2 text-center listing-titles'>
+            <h5> ДРУГИЕ ДАННЫЕ </h5>
+          </div>
+
+          <div class='col-md-4 text-right line2'>
+            <hr></hr>
+          </div>
+
+          <div class='col-md-1'>
+            <div class="col-md-1 col-md-offset-11 circle2">
+            </div>
+          </div>
+        </div>
+
+        <div class='row other-info text-center'>
+
+          <div class='row'>
+            <div class='col-md-1 col-md-offset-2 icone'>
+              <i class="fa fa-user-plus" aria-hidden="true"></i>
+            </div>
+            <div class='col-md-3 text-left number-drivers-col'>
+              <%=  f.number_field :nombre_chauffeurs, class: 'obligatoir-drivers', :placeholder => 'Cколько водителей?'%>
+            </div>
+
+
+            <div class='col-md-1 col-md-offset-1 icone'>
+              <i class="fa fa-wifi" aria-hidden="true"></i>
+            </div>
+            <div class='col-md-2 wifi-chay-col'>
+              <div class='col-md-6 wifi-chay'>
+               <p> WiFi </p>
+              </div>
+              <div class='col-md-2 wifi-chay'>
+                <%= f.check_box :wifi%>
+              </div>
+            </div>
+          </div>
+
+          <div class='row'>
+
+            <div class='col-md-1 col-md-offset-2 icone'>
+              <i class="fa fa-pause" aria-hidden="true"></i>
+            </div>
+
+            <div class='col-md-3 text-left number-drivers-col'>
+              <%= f.number_field :arrets_chaque, :class => 'obligatoir-drivers', :placeholder => "Oстановка каждые /часа " %>
+            </div>
+
+            <div class='col-md-1 col-md-offset-1 icone'>
+              <i class="fa fa-coffee" aria-hidden="true"></i>
+            </div>
+            <div class='col-md-2 wifi-chay-col'>
+              <div class='col-md-6 wifi-chay'>
+               <p> Кофе/Чай </p>
+              </div>
+              <div class='col-md-2 wifi-chay'>
+                <%= f.check_box :chay%>
+              </div>
+            </div>
+                
+          </div>
+
+        </div>
+
+
+
+                                        <%# CAR %>
+        <div class='row'>
+          <div class='col-md-1'>
+            <div class='col-md-1 circle1'>
+            </div>
+          </div>
+
+          <div class='col-md-4 text-left line1'>
+            <hr></hr>
+          </div>
+                                          
+          <div class='col-md-2 text-center listing-titles'>
+            <h5> АВТОМОБИЛЬ </h5>
+          </div>
+
+          <div class='col-md-4 text-right line2'>
+            <hr></hr>
+          </div>
+
+          <div class='col-md-1'>
+            <div class="col-md-1 col-md-offset-11 circle2">
+            </div>
+          </div>
+        </div>
+
+        <div class='row text-center other-info'>
+
+          <div class='col-md-2 col-md-offset-1 car-col'>
+            <div class='row'>
+              <div class='col-md-4 icone'>
+                <i class="fa fa-bus" aria-hidden="true"></i>
+              </div>
+              <div class='col-md-8 text-left number-drivers-col'>
+                <%= f.text_field :marque_vehicule, class: 'obligatoir-car', :placeholder => 'На каком автомобиле?'%>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='col-md-4 icone'>
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+              </div>
+              <div class='col-md-4 text-left number-drivers-col'>
+                <%= f.text_field :annee_vehicule, class: 'obligatoir-car', :placeholder => 'Какого года выпуска?'%>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='col-md-4 icone'>
+                <i class="fa fa-users" aria-hidden="true"></i>
+              </div>
+              <div class='col-md-8 text-left number-drivers-col'>
+                <%= f.number_field :nombre_place, class:'obligatoir-car', :placeholder => 'Количество мест'%>
+              </div>
+            </div>
+          </div>
+
+          <div class='col-md-2 col-md-offset-2 car-pic1'>
+          </div>
+
+          <div class='col-md-2 car-pic'>
+          </div>
+
+          <div class='col-md-2 car-pic'>
+          </div>
+
+        </div>
+
+
+   
+
+                                    <%# Traveller %>
+
+        <div class='row'>
+          <div class='col-md-1'>
+            <div class='col-md-1 circle1'>
+            </div>
+          </div>
+
+          <div class='col-md-4 text-left line1'>
+            <hr></hr>
+          </div>
+                                          <%# PASSANGER %>
+          <div class='col-md-2 text-center listing-titles'>
+            <h5> ПОССАЖИР </h5>
+          </div>
+
+          <div class='col-md-4 text-right line2'>
+            <hr></hr>
+          </div>
+
+          <div class='col-md-1'>
+            <div class="col-md-1 col-md-offset-11 circle2">
+            </div>
+          </div>
+        </div>
+
+        <div class='row text-center other-info'>
+          <div class='col-md-1 col-md-offset-2 icone'>
+            <i class="fa fa-eur" aria-hidden="true"></i>
+          </div>
+          <div class='col-md-2 text-left number-drivers-col'>
+            <%= f.text_field :prix_passager, class: 'obligatoir-car', :placeholder => 'Стоимость проездa' %>
+          </div>
+
+          <div class='col-md-1 col-md-offset-2 icone'>
+            <i class="fa fa-suitcase" aria-hidden="true"></i>
+          </div>
+          <div class='col-md-2 text-left number-drivers-col'>
+            <%= f.text_field :poid_max_passager, class: 'obligatoir-car', :placeholder => 'Вес багажа'  %>
+          </div>
+        </div>
+
+                                      <%# POSSILKA %>
+      <div class='row'>
+          <div class='col-md-1'>
+            <div class='col-md-1 circle1'>
+            </div>
+          </div>
+
+          <div class='col-md-4 text-left line1'>
+            <hr></hr>
+          </div>
+
+          <div class='col-md-2 text-center listing-titles'>
+            <h5> ПОСЫЛКА/ГРУЗ </h5>
+          </div>
+
+          <div class='col-md-4 text-right line2'>
+            <hr></hr>
+          </div>
+
+          <div class='col-md-1'>
+            <div class="col-md-1 col-md-offset-11 circle2">
+            </div>
+          </div>
+      </div>
+
+      <div class='row text-center other-info'>
+        <div class='col-md-4 col-md-offset-4 text-center package'>
+          <div class='row pacckage-row-1'>
+            <div class='col-md-10 package3'>
+              <p>Перевозите ли вы посылки/груз?</p>
+            </div>
+            <div class='col-md-2 wifi-chay'>
+              <%if @annonce.prix_kg_colis == nil%>
+                <%= f.check_box :accept_colis, class: 'perevoziti posilkiperevoz', checked: false %></br>
+              <%else%>
+                <%= f.check_box :accept_colis, class: 'perevoziti posilkiperevoz', checked: true %></br>
+              <%end%>
+            </div>
+          </div>
+
+          <div class='row perevozka'>
+            <div class='col-md-3 icone'>
+              <i class="fa fa-eur" aria-hidden="true"></i>
+            </div>
+            <div class='col-md-9 package-price-input'>
+              <%= f.text_field :prix_kg_colis, class: 'obligatoir-pacckage', :placeholder => 'Cтоимость доставки за кг' %>
+            </div>
+          </div>
+
+          <div class='row'>      
+            <div class='col-md-10 package3-precious'>
+              <p>Перевозите ли вы ценные посылки/груз?</p>
+            </div>
+            <div class='col-md-2 wifi-chay'>
+              <% if @annonce.accept_colis_valeur? %>
+                <%= f.check_box :accept_colis_valeur, class: 'perevoziti', checked: true %></br>
+              <%else%>
+               <%= f.check_box :accept_colis_valeur, class: 'perevoziti', checked: false %></br>
+              <%end%>
+            </div>
+          </div>
+        </div>
+      </div>
+
+   
+
+
+                                        <%# CONACT %>
+        <div class='row'>
+          <div class='col-md-1'>
+            <div class='col-md-1 circle1'>
+            </div>
+          </div>
+
+          <div class='col-md-4 text-left line1'>
+            <hr></hr>
+          </div>
+
+          <div class='col-md-2 text-center listing-titles'>
+            <h5> ТЕЛЕФОН/ВАТСАП </h5>
+          </div>
+
+          <div class='col-md-4 text-right line2'>
+            <hr></hr>
+          </div>
+
+          <div class='col-md-1'>
+            <div class="col-md-1 col-md-offset-11 circle2">
+            </div>
+          </div>
+        </div>
+
+        <div class='row text-center other-info'>
+          <div class="row">
+            <div class='col-md-2 col-md-offset-4 tel-input'>
+              <%= f.telephone_field :telephones , :class => 'obligatoir-pacckage', :placeholder => "Hомер телефона 1" %>
+            </div>
+            <div class='col-md-1 icone-col'>
+              <div class='col-md-8 tel-icone'>
+                <i class="fa fa-mobile" aria-hidden="true"></i>
+              </div>
+              <div class='col-md-4 tel-checkbox'>
+                <%if @annonce.telephone_type1?%>
+                  <%= f.check_box :telephone_type1, checked: true %> 
+                <%else%>
+                  <%= f.check_box :telephone_type1, checked: false %> 
+                <%end%>
+              </div>
+            </div>
+            <div class='col-md-1 icone-col'>
+              <div class='col-md-8 tel-icone'>
+                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+              </div>
+              <div class='col-md-4 tel-checkbox'>
+                <%if @annonce.telephones_type1?%>
+                <%= f.check_box :telephones_type1, checked: true %> 
+                <%else%>
+                <%= f.check_box :telephones_type1, checked: false %> 
+                <%end%>
+              </div>
+            </div>
+          </div>
+
+          <div class="row num1 <%= 'villeinterhide' unless @annonce.telephones2?%> <%= 'numcount' if @annonce.telephones2?%>">
+            <div class='col-md-2 col-md-offset-4 tel-input'>
+              <%= f.telephone_field :telephones2 , :class => 'obligatoir-pacckage', :placeholder => "Hомер телефона 2" %>
+            </div>
+            <div class='col-md-1 icone-col'>
+              <div class='col-md-8 tel-icone'>
+                <i class="fa fa-mobile" aria-hidden="true"></i>
+              </div>
+              <div class='col-md-4 tel-checkbox'>
+                <%if @annonce.telephone_type1?%>
+                  <%= f.check_box :telephone_type2, checked: true %> 
+                <%else%>
+                  <%= f.check_box :telephone_type2, checked: false %> 
+                <%end%>
+              </div>
+            </div>
+            <div class='col-md-1 icone-col'>
+                <div class='col-md-8 tel-icone'>
+                  <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                </div>
+                <div class='col-md-4 tel-checkbox'>
+                  <%if @annonce.telephones_type1?%>
+                  <%= f.check_box :telephones_type2, checked: true %> 
+                  <%else%>
+                  <%= f.check_box :telephones_type2, checked: false %> 
+                  <%end%>
+                </div>
+            </div>
+          </div>
+
+          <div class="row num2 <%= 'villeinterhide' unless @annonce.telephones2?%> <%= 'numcount' if @annonce.telephones2?%>">
+            <div class='col-md-2 col-md-offset-4 tel-input'>
+              <%= f.telephone_field :telephones3 , :class => 'obligatoir-pacckage', :placeholder => "Hомер телефона 3" %>
+            </div>
+            <div class='col-md-1 icone-col'>
+              <div class='col-md-8 tel-icone'>
+                <i class="fa fa-mobile" aria-hidden="true"></i>
+              </div>
+              <div class='col-md-4 tel-checkbox'>
+                <%if @annonce.telephone_type1?%>
+                  <%= f.check_box :telephone_type3, checked: true %> 
+                <%else%>
+                  <%= f.check_box :telephone_type3, checked: false %> 
+                <%end%>
+              </div>
+            </div>
+            <div class='col-md-1 icone-col'>
+                <div class='col-md-8 tel-icone'>
+                  <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                </div>
+                <div class='col-md-4 tel-checkbox'>
+                  <%if @annonce.telephones_type1?%>
+                  <%= f.check_box :telephones_type3, checked: true %> 
+                  <%else%>
+                  <%= f.check_box :telephones_type3, checked: false %> 
+                  <%end%>
+                </div>
+            </div>
+          </div>
+
+          <div class="row num3 <%= 'villeinterhide' unless @annonce.telephones2?%> <%= 'numcount' if @annonce.telephones2?%>">
+            <div class='col-md-2 col-md-offset-4 tel-input'>
+              <%= f.telephone_field :telephones4 , :class => 'obligatoir-pacckage', :placeholder => "Hомер телефона 4" %>
+            </div>
+            <div class='col-md-1 icone-col'>
+              <div class='col-md-8 tel-icone'>
+                <i class="fa fa-mobile" aria-hidden="true"></i>
+              </div>
+              <div class='col-md-4 tel-checkbox'>
+                <%if @annonce.telephone_type1?%>
+                  <%= f.check_box :telephone_type4, checked: true %> 
+                <%else%>
+                  <%= f.check_box :telephone_type4, checked: false %> 
+                <%end%>
+              </div>
+            </div>
+            <div class='col-md-1 icone-col'>
+                <div class='col-md-8 tel-icone'>
+                  <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                </div>
+                <div class='col-md-4 tel-checkbox'>
+                  <%if @annonce.telephones_type1?%>
+                  <%= f.check_box :telephones_type4, checked: true %> 
+                  <%else%>
+                  <%= f.check_box :telephones_type4, checked: false %> 
+                  <%end%>
+                </div>
+            </div>
+          </div>
+
+          <div class="field numdisplay">
+            <span class='ajoutnum'>Добавить номер</span> <span class='enlevnum'>Убрать номер</span>
+          </div>
+
+        </div>
+
+
+
+
+          
+
+                                            <%# MORE INFORMATION %>
+        <div class='row'>
+          <div class='col-md-1'>
+            <div class='col-md-1 circle1'>
+            </div>
+          </div>
+
+          <div class='col-md-4 text-left line1'>
+            <hr></hr>
+          </div>
+
+          <div class='col-md-2 text-center listing-titles'>
+            <h5> ПОДРОБНОСТИ </h5>
+          </div>
+
+          <div class='col-md-4 text-right line2'>
+            <hr></hr>
+          </div>
+
+          <div class='col-md-1'>
+            <div class="col-md-1 col-md-offset-11 circle2">
+            </div>
+          </div>
+        </div>
+
+        <div class='row text-center other-info'>
+            <div class='row'>
+               <div class='col-md-6 col-md-offset-3'>
+                  <%= f.text_area :description, class: ' podrobnosti', :placeholder =>"Напишите все подробности: место встречи, время встречи и т.д." %>
+               </div>
+            </div>
+        </div>
+
+        <div class="actions text-center">
+          </br>
+          <%= f.submit 'Создать объявление', class:'btn create-listing'%>
+        </div>
+        </br>
+
+     </div>
+  <%end%>
+</div>
+
+
+ 
