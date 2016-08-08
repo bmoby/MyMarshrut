@@ -1,0 +1,14 @@
+<div class='replaySlide'>
+<%= form_tag replay_path(@conversation), method: :post, remote: true do%>
+	<div class='row meesageinputplace'>
+		<div class='col-md-10 message-area'>
+			<%= text_area_tag :body, nil, class: 'messageinput'%>
+		</div>
+		<div class='col-md-2 send-btn-area text-center'>
+			<%= button_tag(type:"submit", class:"btn-envoyer-message") do%>
+				<i class="fa fa-paper-plane" aria-hidden="true"></i> <p class='pinline'> Отправить</p>
+			<%end%>
+		</div>
+	</div>
+<%end%>
+</div>

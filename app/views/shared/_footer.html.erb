@@ -23,9 +23,9 @@
 		</div>
 		<div class='row text-left'>
 			<%if user_signed_in?%>
-				<p> Вы можете создать свое объявление нажав на  </p>
+				<p class='pinline'> Вы можете создать свое объявление нажав на  </p>
 			<%= link_to new_annonce_path  do%>
-				<p><i class="glyphicon glyphicon-pencil"></i> Эту кнопку </p></br>
+				<p class='pinline'> <i class="glyphicon glyphicon-pencil"></i> Эту кнопку </p></br>
 			<%end%>
 			<%else%>
 				<p>Чтоб создать объявление нужно регистрироваться</br> для этого нажмите <%=link_to 'сюда', new_user_registration_path, class:'syudavert'%></i>
@@ -52,7 +52,7 @@
 		</div>
 	</div>
 	<div class='col-md-3'>
-		<div class='col-xs-6'>
+		<div class='col-md-6'>
 			<ul>
 				<h5>Про сайт</h5>
 				<li><a href='#'>Кто мы?</a></li>
@@ -62,7 +62,7 @@
 				<li><a href='#'>Нашы советы</a></li>
 			<ul>
 		</div>
-		<div class='col-xs-6'>
+		<div class='col-md-6'>
 			<ul>
 				<h5>Контакт</h5>
 				<li><a href='#'>Что мы могли бы улучшить?</a></li>

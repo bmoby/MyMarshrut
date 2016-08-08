@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   get '/vseuseri', to: 'vseuseri#index', as: 'vseuseri_path'
   get '/test', to: 'searches#searchall', as: 'searchall_path'
   get '/office', to: 'mymenu#index', as: 'mymenu_path'
-  resources :conversations do
-    resources :messages
-  end
+  resources :conversations
   root to: 'searches#searchall'
+  get '/conversations/:id/replay', to: 'conversations#replay', as: 'replay'
+  post '/conversations/:id/replay', to: 'conversations#replay'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -143,21 +143,11 @@
 								<%end%>
 							</div>
 						</div>
-						<%unless annonce.villeinter2?%>
-							<div class='row text-right map'></br>
-								
-								
-								<%= link_to annonce_path(annonce), :class => "leboutonpodrobnee" do%>
-								<h3 class='pinlineblock'>ПОДРОБНЕЕ</h3>
-								<%end%>
-
-							</div>
-							<%end%>
 					</div>
 				</div>
 				<%if annonce.villeinter2?%>
 				<div class='row marshrut'>
-					<div class='col-md-10 text-center map'>
+					<div class='row text-center map'>
 							<div class='pinlineblock gorod'>
 								<div class='entourp'>
 								<p class='pinline'><%= annonce.ville_depart.truncate_words(1, omission: ' ') %></p>
@@ -274,12 +264,6 @@
 								</br>
 								<h3 class='pinline spec'><i class="fa fa-circle-o" aria-hidden="true"></i></h3>
 							</div>
-					</div>
-
-					<div class='col-md-2 text-right map'></br>
-						<%= link_to annonce_path(annonce), :class => "leboutonpodrobnee" do%>
-							<h3 class='pinlineblock'>ПОДРОБНЕЕ</h3>
-						<%end%>
 					</div>
 				</div>
 				<%end%>

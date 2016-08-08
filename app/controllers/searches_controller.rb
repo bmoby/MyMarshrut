@@ -1,5 +1,4 @@
 class SearchesController < ApplicationController
-  before_filter :check_for_mobile
   
   
   def create

@@ -10,6 +10,5 @@ $(document).ready(function(){
 		$('.file_upload_btn').click();
 
 	});
-
 	setInterval(freshpage, 5000);
 });

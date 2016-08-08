@@ -33,6 +33,7 @@ gem 'bootstrap-kaminari-views'
 gem 'rubygems-update', '~> 2.6', '>= 2.6.4'
 gem 'twilio-ruby', '~> 4.0.0'
 gem 'dotenv-rails'
+gem 'mobu'
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'

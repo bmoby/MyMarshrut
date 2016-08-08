@@ -18,11 +18,7 @@
 
 .higlighted:hover {
 	cursor: pointer; cursor: hand;
-	background-color: #f7f2dc;
-}
-
-.higlighted{
-	height: 250px;
+	background-color: #f7f6ef;
 }
 
 .higlighted .fa{
@@ -34,13 +30,25 @@
 .profile-picture{
 	width: 90px;
 	height: 90px;
-	border-radius: 150px;
+	border-radius: 50%;
+}
+
+.profile-picturenav{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+}
+
+.profile-picturexs{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
 }
 
 .tekushiyprofil{
 	border-bottom:3px dashed #5c3e3b;
 	padding: 15px;
-	background-color: #f7f3de;
+	background-color: #f7f6ef;
 
 }
 
@@ -50,6 +58,7 @@
 	font-family: 'Marck Script', cursive;
 }
 .higlighted {
+	height: 250px;
 	border-left:dashed 1px #ede9d5;
 	border-right:dashed 1px #ede9d5;
 	border-bottom:dashed 1px #ede9d5;
@@ -91,7 +100,6 @@
 .titlepxs{
 	font-size: 19px;
 	color:#4e372c;
-	font-family: 'Marck Script', cursive;
 }
 
 .higlightedxs{
@@ -110,6 +118,15 @@
 
 .higlightedxs .fa{
 	color:#cb676f;
-	padding: 30px;
+	padding: 20px;
 	font-size: 30px;
+}
+
+.titlepsm {
+	font-size: 24px;
+	color:#4e372c;
+}
+
+.hightsm{
+	height: 220px;
 }

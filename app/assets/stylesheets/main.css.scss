@@ -128,10 +128,17 @@
 	height: 70vh;
 }
 
-
+.obnovitxs{
+	padding-top:20px;
+}
 .photo-responsivemini{
 	width: 100%;
 	height: 40vh;
+}
+
+.photo-responsiveminism{
+	width: 100%;
+	height: 50vh;
 }
 
 .paragraphone{
@@ -142,9 +149,40 @@
 	text-align: justify;
 }
 
+.paragraphonesm {
+	padding: 10px 5px 5px 10px;
+	border-radius: 20px 20px 20px 0;
+	border: 4px solid #a1bfb1;
+	margin-top: 20px;
+	text-align: justify;
+}
+.avatarpodrobneesm{
+	margin-top:40px;
+}
+
+.avatarpodrobneexs{
+	margin-top:60px;
+}
+
 .paragraphone h5{
 	font-size: 15px;
 	color:#FDFAE9;
+}
+
+.paragraphonesm h5{
+	font-size: 15px;
+	color:#a1bfb1;
+}
+
+.paragraphonexs{
+	border-radius: 20px 20px 20px 0;
+	border: 3px solid #a1bfb1;
+	text-align: justify;
+}
+
+.paragraphonexs h5{
+	font-size: 15px;
+	color:#a1bfb1;
 }
 
 .speech{
@@ -160,13 +198,19 @@
 	border-radius: 0 25px 25px 25px;
 }
 
+.contactinputssm .fa{
+	color:white;
+}
+
 .chauffeuriconk{
 	margin-top:45px;
 	color:white;
 }
 
 
-
+.gorodpodrobnee .fa{
+	color:#FDFAE9;
+}
 
 .gorodpodrobnee{
 	width:45px;
@@ -243,12 +287,19 @@
 
 .vajnoe2xs{
 	width: 100%;
-	background-color: #E69894;
+	background-color: #78A38F;
 	margin: 0;
 	padding-left: 5px;
 	padding-right: 5px;
 }
 
+.vajnoe2sm{
+	width: 100%;
+	background-color: #78A38F;
+	margin: 0;
+
+	padding:10px;
+}
 .containercustom2{
 	background-color: #78A38F;
 	width: 100%;
@@ -268,10 +319,20 @@
 	padding-bottom: 0px;
 	margin:0;
 }
+
+.containercustom2sm{
+	background-color: #78A38F;
+	width: 100%;
+	padding-left: 5px;
+	padding-right: 15px;
+	padding-bottom: 0px;
+	margin:0;
+}
+
 .tuda .datedeparture h4{
 	margin-top: 14px;
 	font-size: 19px;
-	color:#a1bfb1;
+	color:#c4b39d;
 
 }
 
@@ -294,6 +355,11 @@
 	padding-bottom: 5px;
 }
 
+.lastvoditelmashinasm{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
 .lastvoditelmashina2{
 	padding-top: 15px;
 	width:100%;
@@ -305,21 +371,21 @@
 	padding:0;
 	margin: 0;
 	font-size: 55px;
-	color:#FDFAE9;
+	color:white;
 }
 
 .lastvoditelmashina .fa{
 	padding:15px;
 	margin: 0;
 	font-size: 55px;
-	color:#E69894;
+	color:#a1bfb1;
 }
 
 .lastvoditelmashinaxs .fa{
 	padding:0;
 	margin: 0;
 	font-size: 31px;
-	color:#E69894;
+	color:#78A38F;
 }
 
 .colmd4{
@@ -345,7 +411,7 @@
 	padding:0;
 	margin: 0;
 	font-size: 31px;
-	color:#E69894;
+	color:#78A38F;
 
 }
 
@@ -353,7 +419,15 @@
 	padding:0;
 	margin: 0;
 	font-size: 31px;
-	color:#E69894;
+	color:#78A38F;
+
+}
+
+.voditeletmashinasm .fa{
+	padding:0;
+	margin: 0;
+	font-size: 31px;
+	color:#78A38F;
 
 }
 
@@ -365,7 +439,24 @@
 
 }
 
+.voditeletmashina2sm .fa{
+	padding:0;
+	margin: 0;
+	font-size: 20px;
+	color:#FDFAE9;
+
+}
+
 .voditeletmashina2 h3{
+	padding: 0;
+	margin-top: 5px;
+	margin-left: 0px;
+	font-size: 17px;
+	color:white;
+
+}
+
+.voditeletmashina2sm h3{
 	padding: 0;
 	margin-top: 5px;
 	margin-left: 0px;
@@ -390,6 +481,20 @@
 
 }
 
+.voditeletmashinasm h3{
+	margin-top:5px;
+	padding: 0;
+	font-size: 17px;
+	color:gray;
+
+}
+
+.voditeletmashinasm{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+
 .paragraphone2{
 	padding-left: 10px;
 	padding-right: 10px;
@@ -408,11 +513,7 @@
 	padding-bottom: 15px;
 }
 
-.voditeletmashina2{
-	padding-top: 15px;
-	width:100%;
-	height: auto;
-	padding-bottom: 15px;
+.voditeletmashina2sm{
 }
 
 .voditeletmashina{
@@ -444,13 +545,13 @@
 
 .tuda{
 	font-family: 'Russo One', sans-serif;
-	border-bottom: dashed 3px #c2c2c2;
+	border-bottom: dashed 3px #c4b39d;
 }
 
 .tuda h4{
 	padding-bottom: 10px;
 	font-size:23px;
-	color:#a1bfb1;
+	color:#c4b39d;
 }
 
 
@@ -698,7 +799,7 @@ body.searches{
 }
 
 body{
-	background-color: #FDFAE9;
+	background-color: #f9f8f2;
 	font-family: 'Comfort', sans-serif;
 	padding-bottom: 0px;
 
@@ -1031,6 +1132,24 @@ width:100%;
 
 }
 
+.infosm{
+	width: 100%;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	background-color: #ede7de;
+	border:dashed 2px gray;
+}
+
+.prixsm{
+width:100%;
+}
+
+.prixsm h3{
+	font-size:21px;
+	color:#cb676f;
+	font-family: 'Russo One', sans-serif;
+}
+
 .prixpassagerxs h4{
 	font-size:21px;
 	color:#cb676f;
@@ -1048,14 +1167,14 @@ width:100%;
 	color:#cb676f;
 }
 .datedirectionxs h4{
-	color:#639c8a;
+	color:#a5b385;
 	font-family: 'Russo One', sans-serif;
 	font-size:20px;
 	
 }
 
 .datedirectionxs p{
-	color:gray;
+	color:#a5b385;
 	font-size:17px;
 	font-family: 'Russo One', sans-serif;
 	margin-top:19px;
@@ -1064,20 +1183,18 @@ width:100%;
 
 .tudasyudaxs h4{
 	font-family: 'Russo One', sans-serif;
-	color:#639c8a;
+	color:gray;
+	font-size: 22px;
 }
 
 .datedirection h4{
 	font-size:21px;
-
-
 }
 
 .datedirection p{
-	color:#639c8a;
-	font-size:18px;
+	color:#a5b385;
+	font-size:19px;
 	font-family: 'Russo One', sans-serif;
-	
 }
 
 .ladate{
@@ -1096,6 +1213,23 @@ width:100%;
 	width:100%;
 	background-color:#ede7de; 
 	margin:0;
+}
+
+.datedirectionbackground a{
+	color:gray; 
+}
+
+.datedirectionbackgroundmesannoncessm{
+	background-color:#ede7de; 
+}
+
+.datedirectionbackgroundmesannoncessm a{
+	color:gray; 
+}
+
+
+.deleteeditmenusm{
+	padding-top: 12px;
 }
 
 
@@ -2258,63 +2392,9 @@ input:-ms-input-placeholder {
 	color:#D96459;
 }
 
-.nomdemessage{
-	
-	color:#B8B89F;
-}
-
 .moisoobshenie{
 	border-bottom:solid 1px #B8B89F;
 	margin-bottom:0;
 }
 
 // MESSAGE AREA DESIGN
-
-.messengerarea{
-	word-wrap: break-word;
-	border-radius: 15px;
-	margin-bottom:15px;
-}
-
-.messagemoi{
-	display:inline-block;
-	margin:0;
-	padding-right:10px;
-	padding-left:10px;
-	padding-top:5px;
-	padding-bottom:5px;
-	background-color:#4E7AC7;
-	border-radius:20px 20px 20px 0;
-}
-
-.messagelui{
-	display:inline-block;
-	margin:0;
-	padding-right:10px;
-	padding-left:10px;
-	padding-top:5px;
-	padding-bottom:5px;
-	background-color:#D7DADB;
-	border-radius:20px 20px 0px 20px;
-}
-
-.msgmoi{
-	margin:0;
-	padding:0;
-	color:white;
-}
-
-.msglui{
-	margin:0;
-	padding:0;
-	color:gray;
-}
-
-.messageinput{
-	word-wrap: break-word;
-	padding-left:15px;
-	padding-right:15px;
-	border-radius:5px;
-	width:80%;
-	height:40px;
-}

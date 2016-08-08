@@ -53,11 +53,11 @@
 
 				<div class='row prixxs'>
 					<div class= 'prix'>
-						<div class='col-xs-5 text-center'>
-							<h3 ><%= annonce.prix_passager%><i class='fa fa-eur'> </i> </h3>
-						</div>
-						<div class='datedirectionxs col-xs-7'>
+						<div class='datedirectionxs col-xs-7 text-left'>
 							<p>  <%= annonce.date_depart.strftime("%d/%m/%Y")%> </p>
+						</div>
+						<div class='col-xs-5 text-right'>
+							<h3 ><%= annonce.prix_passager%><i class='fa fa-eur'> </i> </h3>
 						</div>
 					</div>
 					</br>
@@ -233,12 +233,6 @@
 							<%end%>
 					</div>
 				</div>
-				
-			
-				<div class='row podrobnexs text-right'>
-				</br>
-					<%= link_to 'Подробнее', annonce_path(annonce), :class => "btn btn-info leboutonpodrobnee" %>
-				</div>	
 		</div>
 	<%end%>
 	<%end%>

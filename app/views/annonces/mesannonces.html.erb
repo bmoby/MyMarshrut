@@ -122,16 +122,11 @@
 						<%end%>
 					</div>
 				</div>
-				<%unless annonce.villeinter2?%>
-					<div class='row text-right map'></br>
-						<%= link_to 'Подробнее', annonce_path(annonce), :class => "btn btn-info leboutonpodrobnee" %>
-					</div>
-				<%end%>
 			</div>
 		</div>
 		<%if annonce.villeinter2?%>
 		<div class='row marshrut'>
-			<div class='col-md-10 text-center map'>
+			<div class='row text-center map'>
 					<div class='pinlineblock gorod'>
 						<div class='entourp'>
 						<p class='pinline'><%= annonce.ville_depart.truncate_words(1, omission: ' ') %></p>
@@ -250,9 +245,6 @@
 					</div>
 			</div>
 
-			<div class='col-md-2 text-right map'></br>
-				<%= link_to 'Подробнее', annonce_path(annonce), :class => "btn btn-info leboutonpodrobnee" %>
-			</div>
 		</div>
 		<%end%>
 		</div>

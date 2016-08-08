@@ -2,12 +2,9 @@ class MessagesController < ApplicationController
   before_action :set_conversation
   
   def create
-    if params[:body] != nil
+    @user = current_user
     receipt = current_user.reply_to_conversation(@conversation, params[:body])
-    redirect_to conversation_path(@conversation)
-    else
-      redirect_to(:back)
-    end
+    format.html {redirect_to conversations_path}
   end
   
   private

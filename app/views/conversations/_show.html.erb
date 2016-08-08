@@ -1,0 +1,45 @@
+	<% @messages.each do |msg| %>
+		<%msg.mark_as_read(current_user)%>
+		<div class='row conversation-both text-right'>
+			<div class='col-md-2'>
+				<%if msg.sender == current_user%>
+					<%if current_user.avatars.first.present?%>
+						<img src='<%=current_user.avatars.first.image.thumb('55x55#').url%>' class='message-avatar'>
+					<%else%>
+						<img src='<%=asset_url("no-profile.gif")%>' class='message-avatar'>
+					<%end%>
+				<%else%>
+					<%if msg.sender.avatars.first.present?%>
+						<img src='<%=msg.sender.avatars.first.image.thumb('55x55#').url%>' class='message-avatar'>
+					<%else%>
+						<img src='<%= asset_url("no-profile.gif")%>' class='message-avatar'>
+					<%end%>
+				<%end%>
+			</div>
+			<div class='col-md-7 text-left'>
+				<div class='speech-effect pinlineblock'>
+					<%if msg.sender == current_user%>
+						<div class='message-bubble'>
+							<div class='pinlineblock speechbubble'>
+							</div>
+							<div class='pinlineblock msgmoi'>
+								<p class='pinline'><%= msg.body%></p>
+							</div>
+						</div>
+					<%else%>
+						<div class='message-bubble2'>
+							<div class='pinlineblock speechbubble2'>
+							</div>
+							<div class='pinlineblock msglui'>
+								<p class='pinline'><%= msg.body%></p>
+							</div>
+						</div>
+					<%end%>
+				</div>
+			</div>
+			<div class='col-md-3'>
+
+			</div>
+			
+		</div>
+	<%end%>
