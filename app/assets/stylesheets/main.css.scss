@@ -740,18 +740,6 @@ textarea:focus, input:focus{
 	color:white;
 }
 
-.podrobnosti{
-	padding-left:15px;
-	padding-right:15px;
-	word-wrap: break-word;
-	width:100%;
-	height:150px;
-}
-
-.perevozka{
-	display:none;
-}
-
 .intercalere{
 	border-top:solid 1px #B8B89F;
 }
@@ -1107,58 +1095,7 @@ width:100%;
 	
 }
 
-.villesdisplay{
-	
-	margin-bottom:15px;
-}
 
-.villesdisplay .ajout{
-	-moz-user-select: none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	cursor: pointer;
-	padding:6px;
-	background-color:#9DD7EB;
-	color:white;
-}
-
-.villesdisplay .enlev{
-	-moz-user-select: none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	cursor: pointer;
-	padding:6px;
-	background-color:#EBA69D;
-	color:white;
-}
-
-.numdisplay .ajoutnum{
-	-moz-user-select: none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	cursor: pointer;
-	padding:6px;
-	background-color:#9DD7EB;
-	color:white;
-}
-
-.numdisplay .enlevnum{
-	-moz-user-select: none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	cursor: pointer;
-	padding:6px;
-	background-color:#EBA69D;
-	color:white;
-}
 
 .ajouterbtn{
 	background-color:yellow;
@@ -1312,7 +1249,7 @@ input, textarea{
     box-shadow: 0 0 0 1px #E8C291 inset;
 }
 
-.perevoziti{
+.icone{
 	
 	color:gray ;
 }
@@ -1326,25 +1263,7 @@ input, textarea{
 	margin-bottom:10px;
 }
 
-select {
-  border: 1px solid #cccccc;
-  background-color: #ffffff;
-  border-radius: 5px;
-  color:gray;
-  text-align:center;
-  margin-bottom:10px;
-}
 
-select.date-select {
-    width:auto;
-    border: 1px solid #cccccc;
-    background-color: gray;
-}
-
-select:focus {
-	outline: 0;
-	border:solid 2px #E8C291;
-}
 
 .voditelphoto{
 
@@ -1776,96 +1695,7 @@ input:-ms-input-placeholder {
 
 										//registration and login pages//
 
-										// Annonces //
-										//XS//
-
-										//XS//
-
-										//SM//
-										//SM//
-
-										//MD//
-
-.body{
-	position:fixed;
-    padding:0;
-    margin:0;
-
-    top:0;
-    left:0;
-
-    width: 100%;
-    height: 100%;
-    background:white;
-}
-
-.listing{
-	margin-top:7%;
-	margin-left:5%;
-	margin-right:5%;
-	padding:0;
-	background-color: #ebe7db;
-	background-image: linear-gradient(transparent 50%, rgba(255,255,255,.5) 50%);
-	background-size: 4px 4px;
-}
-
-.listing-title{
-background:
-radial-gradient(black 15%, transparent 16%) 0 0,
-radial-gradient(black 15%, transparent 16%) 8px 8px,
-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-background-color:#282828;
-background-size:16px 16px;
-}
-
-.listing-title h1{
-	font-family: 'Cormorant Infant', serif;
-	color:#d66c5c;
-	margin-bottom:20px;
-}
-
-.notice {
-	margin-top:10px;
-	margin-bottom:10px;
-	background-color:#514b45;
-	padding:5px 70px;
-}
-
-.notice h4 {
-	font-family: 'Cormorant Infant', serif;
-	color:#f7f7f7;
-	margin-bottom:20px; 
-	margin:0;
-}
-
-.notice h5 {
-	font-family: 'Cormorant Infant', serif;
-	color:#f7f7f7;
-	margin-bottom:20px; 
-	margin:0;
-	padding-left:5px;
-	padding-right:5px;
-}
-
-.info-fields h2 {
-	font-family: 'Cormorant Infant', serif;
-	color:#d66c5c;
-	margin-top:5px;
-	margin-bottom:5px;
-}
-
-.info-fields{
-	background-color:#f7f7f3;
-	margin-bottom:10px;
-}
-
-.input{
-	background-color:#f7f7f3;
-	margin-bottom:10px;
-}
-										//MD//
-										//Annonces//
+										
 
 .nazvanie{
 	color:#919191;
