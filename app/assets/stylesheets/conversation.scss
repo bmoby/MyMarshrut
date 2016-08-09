@@ -1,6 +1,22 @@
-.all-individual-messages{
-	padding-bottom: 15px;
-	height: 70vh;
+ .all-individual-messages{
+	height: 75vh;
+	background-color: #edede3;
+	border-bottom: 3px dashed gray;
+	border-radius: 5px;
+	padding: 0;
+}
+
+.all-individual-messages-sm{
+	height: 86vh;
+	background-color: #edede3;
+	border-radius: 5px;
+	padding: 0;
+}
+
+.all-individual-messages-xs{
+	min-height: 90vh;
+	background-color: #edede3;
+	padding: 0;
 }
 
 .messenger{
@@ -15,28 +31,37 @@
 .mailboxheader{
 	width:100%;
 	padding: 15px;
-	background-color: #7199be;
+	background-color: #e2e2e2;
+	border-bottom: 3px dashed gray;
+	border-radius: 5px 5px 0 0;
+}
+
+.mailboxheader-xs{
+	width:100%;
+	padding: 15px;
+	background-color: #e2e2e2;
+	border-bottom: 3px dashed gray;
 }
  
 .mailboxheader p{
-	color:white;
+	color:#969696;
 }
 
 .mailboxheader .fa{
-	color:white;
+	color:#969696;
 	font-size: 25px;
 }
 
 .all-messages{
 	padding:0;
 	height: 100%;
+	overflow: auto;
+	background-color: #f2f2ea;
 }
 
 .liste-conversations{
-	height: 70vh;
-	overflow: auto;
 	padding:0;
-	border-left: 1px solid #e2e0dc;
+
 }
 
 .liste-conversations li{
@@ -51,27 +76,12 @@
 .one-conversation {
 	cursor: pointer; cursor: hand;
 	width: 100%;
-	height: 55px;
 }
 
-.one-conversation:hover {
-	background-color: #f3ecda;
-
-	.message-avatar{
-		padding:3px;
-		width: 55px;
-		height: 55px;
-		border-radius: 50%;
-		opacity: 1.0;
-	}
-}
-
-.even{
-	background-color: #f6f3ee;
-}
-
-.odd{
-	background-color: #efece6;
+.clicked {
+	cursor: pointer; cursor: hand;
+	background-color: #edede3;
+	width: 100%;
 }
 
 
@@ -81,8 +91,8 @@
 
 .nomdemessage{
 	padding-top: 17px;
-	color:white;
-	font-size: 16px;
+	color:gray;
+	font-size: 13px;
 }
 
 .enveloppe-messages{
@@ -97,12 +107,18 @@
 }
 
 .message-avatar{
-	padding:5px;
-	width: 55px;
-	height: 55px;
+	width: 50px;
+	height: 50px;
 	border-radius: 50%;
-	opacity: 0.7;
+}
 
+.message-avatar2{
+	position: relative;
+	top:17px;
+	width: 50px;
+	height: 50px;
+	border-radius: 4px;
+	border: 2px solid #f6f3ee;
 }
 
 .avatar-container{
@@ -113,13 +129,15 @@
 	margin-top: 18px;
 }
 
-
-
-
-
-
-.unique-conversation{
+.lesMessagesDeLui{
+	padding-right: 0;
 }
+
+.lesMessagesDeMoi{
+	padding-left: 0;
+}
+
+
 
 .description-message{
 	padding:15px;
@@ -139,55 +157,60 @@
 }
 
 .conversation-both{
-	width: 100%;
 	padding-top: 18px;
 }
 
 
 .msgmoi{
  	z-index: 2;
- 	min-width: 80px;
+ 	min-width: 50px;
+ 	max-width: 400px;
  	position: relative;
  	background-color: #a1c9bc;
  	padding: 10px 10px 17px 10px;
- 	border-radius: 15px;
+ 	border-radius: 5px;
 }
 
 .msgmoi p{
  	color:#efefef;
 }
 
+.msglui p{
+	color:gray;
+}
+
 .msglui{
  	z-index: 2;
  	min-width: 50px;
+ 	max-width: 400px;
  	position: relative;
- 	background-color: #f7ecda;
+ 	background-color: #f5f5eb;
  	padding: 10px 10px 17px 10px;
- 	border-radius: 15px;
+ 	border-radius: 5px;
 }
 
 
 
 .speechbubble{
-	position: absolute;
+	position: relative;
+	top:35px;
+	right:3px;
 	z-index: 1;
-	width: 40px;
-	height: 35px;
-	transform: skew(-50deg);
+	width: 15px;
+	height: 15px;
+	transform: rotate(45deg);
 	background-color: #a1c9bc;
 }
 
 .speechbubble2{
-	position: absolute;
+	position: relative;
+	top:35px;
+	left:3px;
 	z-index: 1;
-	width: 40px;
-	height: 35px;
-	transform: skew(-50deg);
-	background-color: #f7ecda;
-}
-
-.speech-effect{
-	width: auto;
+	width: 15px;
+	height: 15px;
+	transform: rotate(45deg);
+	background-color: #f5f5eb;
 }
 
 .meesageinputplace{
@@ -203,7 +226,7 @@
 	border-radius:0px;
 	height:40px;
 	border: none;
-	background-color: #e5e5e5;
+	background-color: #e2e2e2;
 }
 
 .btn-envoyer-message{
@@ -224,29 +247,41 @@
 }
 
 .message-area{
-	padding-right: 0;
-	padding-left: 0;
+	padding:0;
 }
 
 
 .send-btn-area{
 	padding-left: 0;
 	height: 40px;
-	background-color:#abc178;
+	background-color:#afafaf;
 }
 
 
-.conv-past{
-
+.messagesboxajax{
+	min-height: 69vh;
 }
 
+.conversation-heightsm{
+	height: 81vh;
+	overflow: auto;
+}
 
 .conversation-height{
 	height: 65vh;
 	overflow: auto;
 }
 
+.msgsbackground{
+	background: transparent;
+}
 
+.conv-past{
+	padding-left: 0;
+	padding-right:0; 
+}
 
-
+.messenger-sm{
+	width: 100%;
+}
 

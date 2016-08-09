@@ -1,0 +1,39 @@
+<body style='background-color:white'>
+<%= render 'shared/navbar'%>
+<div class='messenger-xs'>
+	<div class='row mailboxheader-xs text-center'>
+		<i class="pinline fa fa-inbox" aria-hidden="true"></i> &nbsp; &nbsp;<p class='pinline'> Мои сообщения</p>
+	</div>
+	<div class='row all-individual-messages-xs'>
+		<ul class='liste-conversations'>
+			<%@conversations.each do |conversation|%>
+				<li data-convId = '<%= conversation.id%>' class="one-conversation-xs msgsbackground">
+					<div class='row text-center'>
+						<div class='col-xs-5 text-left avatar-container'>
+							<%conversation.participants.each do |participant| %>
+								<%if participant.prenom != current_user.prenom %>
+									<%if participant.avatars.first.present?%>
+										<img src='<%=participant.avatars.first.image.thumb('55x55#').url%>' class='message-avatar'>
+									<%else%>
+										<img src='<%= asset_url("no-profile.gif")%>' class='message-avatar'>
+									<%end%>
+								<%end%>
+							<%end%> 
+						</div>
+						<div class='col-xs-7 text-center'>
+							<p class='nomdemessage'> 
+								<%conversation.participants.each do |participant| %>
+									<%if participant.prenom != current_user.prenom %>
+									<%= participant.prenom%>
+									<%end%>
+								<%end%> 
+							</p>
+						</div>
+					</div>
+				</li>
+			<%end%>
+		</ul>
+	</div>
+</div>
+
+</body>

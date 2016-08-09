@@ -1,16 +1,16 @@
 <body style='background-color:white'>
 <%= render 'shared/navbar'%>
-<div class='container-fluid messenger'>
+<div class='messenger-sm'>
 	<div class='row mailboxheader text-center'>
 		<i class="pinline fa fa-inbox" aria-hidden="true"></i> &nbsp; &nbsp;<p class='pinline'> Мои сообщения</p>
 	</div>
-	<div class='row all-individual-messages'>
-		<div class='col-md-2 all-messages'>
+	<div class='row all-individual-messages-sm'>
+		<div class='col-sm-2 all-messages'>
 			<ul class='liste-conversations'>
 				<%@conversations.each do |conversation|%>
 					<li data-convId = '<%= conversation.id%>' class="one-conversation msgsbackground">
 						<div class='row enveloppe-messages text-left'>
-							<div class='col-md-5 text-left avatar-container'>
+							<div class='col-sm-5 text-left avatar-container'>
 								<%conversation.participants.each do |participant| %>
 									<%if participant.prenom != current_user.prenom %>
 										<%if participant.avatars.first.present?%>
@@ -21,7 +21,7 @@
 									<%end%>
 								<%end%> 
 							</div>
-							<div class='col-md-7 text-left'>
+							<div class='col-sm-7 text-left'>
 								<p class='nomdemessage'> 
 									<%conversation.participants.each do |participant| %>
 										<%if participant.prenom != current_user.prenom %>
@@ -35,12 +35,10 @@
 				<%end%>
 			</ul>
 		</div>
-		<div class='col-md-10 conv-past'>
+		<div class='col-sm-10 conv-past'>
 			<div class='row messagesboxajax'>
-
 			</div>
 			<div class='row replayboxajax'>
-
 			</div>
 		</div>
 	</div>

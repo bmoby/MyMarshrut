@@ -2,14 +2,14 @@
 		<%msg.mark_as_read(current_user)%>
 		<%if msg.sender == current_user%>
 			<div class='row conversation-both text-right'>
-				<div class='col-md-2 text-right'>
+				<div class='col-sm-2 text-right'>
 					<%if current_user.avatars.first.present?%>
 						<img src='<%=current_user.avatars.first.image.thumb('55x55#').url%>' class='message-avatar2'>
 					<%else%>
 						<img src='<%=asset_url("no-profile.gif")%>' class='message-avatar2'>
 					<%end%>
 				</div>
-				<div class='col-md-7 text-left lesMessagesDeMoi'>
+				<div class='col-sm-7 text-left lesMessagesDeMoi'>
 					<div class='speech-effect'>
 						<div class='message-bubble'>
 							<div class='speechbubble pinlineblock'>
@@ -20,12 +20,12 @@
 						</div>
 					</div>
 				</div>
-				<div class='col-md-3'>
+				<div class='col-sm-3'>
 				</div>
 			</div>
 		<%else%>
 			<div class='row conversation-both text-right'>
-				<div class='col-md-7 col-md-offset-3 text-right lesMessagesDeLui'>
+				<div class='col-sm-7 col-sm-offset-3 text-right lesMessagesDeLui'>
 					<div class='message-bubble2 pinlineblock'>
 						<div class='pinlineblock speechbubble2'>
 						</div></br>
@@ -34,7 +34,7 @@
 						</div>
 					</div>
 				</div>
-				<div class='col-md-2 text-left'>
+				<div class='col-sm-2 text-left'>
 					<%if msg.sender.avatars.first.present?%>
 						<img src='<%=msg.sender.avatars.first.image.thumb('55x55#').url%>' class='message-avatar2'>
 					<%else%>

@@ -1,18 +1,30 @@
 $(document).ready(function(){
 	$('.one-conversation').on('click', function(e){
+		$('.clicked').addClass('msgsbackground').removeClass('clicked');
+		$(this).addClass('clicked').removeClass('msgsbackground');
 		e.preventDefault();
+
 		var conversationId,
 		conversationId = $(this).attr('data-convId');
-		$.ajax('conversations/'+conversationId, {
-			success: function(response){
-				$('.conv-past .messagesboxajax').html(response).slideDown();
-				$('.conversation-height').animate({scrollTop: $('.conversation-height').prop("scrollHeight")}, 1);
-			}
-		});
+			$.ajax('conversations/'+conversationId, {
+				success: function(response){
+					$('.conv-past .messagesboxajax').html(response).slideDown();
+					$('.conversation-height').animate({scrollTop: $('.conversation-height').prop("scrollHeight")}, 0);
+					$('.conversation-heightsm').animate({scrollTop: $('.conversation-heightsm').prop("scrollHeight")}, 0);
+
+				}
+			});
 		$.ajax('conversations/'+conversationId+'/replay', {
 			success: function(response){
 				$('.conv-past .replayboxajax').html(response).slideDown();
+				$('.messageinput').keypress(function(e){
+					var key = e.which;
+					if(key == 13){
+						$('.btn-envoyer-message').click();
+					}
+				});
 			}
 		});
 	});
+$('.one-conversation').first().click();
 });
