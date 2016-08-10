@@ -1,9 +1,220 @@
 // Annonces //
 										//XS//
+.listing-xs{
+	width:100%;
+	padding:0;
+	background:url('listing-background.png');
+	border: 3px dashed #D3D5C0;
+}
+
+.listing-title-xs {
+    background-color: #50aa9e;
+}
+
+.listing-title-xs h3 {
+    font-family: 'Cormorant Infant', serif;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.animation-xs{
+	padding:0;
+}
+
+.floating-paper-xs {
+	padding:0;
+    animation:rotate 2s infinite;
+	-ms-animation: rotate 2s infinite;
+	-webkit-animation: rotate 2s infinite;
+	animation-direction:alternate;
+	-ms-animation-direction:alternate;
+	-webkit-animation-direction:alternate;
+	transform-origin: 50% 5%;
+	-ms-transform-origin: 50% 5%;
+	-webkit-transform-origin: 50% 5%;
+	z-index:1;
+}
+
+.pushpin-xs{
+	position:absolute;
+	background-image:url('push-pin-icon.png');
+	width:30px;
+	background-repeat:no-repeat;
+	margin-top:-10px;
+	margin-left:100px;
+	z-index:2;
+}
+
+.road-title-row-xs{
+	margin-top:5px;
+}
+
+.circle1-col-xs{
+	padding-left:8px;
+}
+
+.circle2-col-xs {
+    padding-right: 13px;
+    padding-left: 0px;
+}
+
+
+
+.obligatoir-directions-xs {
+    font-family: 'Prosto One', cursive;
+    background-color: #f5f5eb;
+    border: none;
+    border-radius: 0px;
+    padding-left: 5px;
+    height: 50px;
+    font-size: 13px;
+    color: #747453;
+    margin-bottom: 5px;
+    width:100%;
+}
+
+.add-remove-city-xs{
+	padding:0;
+}
+
+.calendar-xs {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 28px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-right: 1px;
+    color: #d8d8c9;
+    padding: 0;
+}
+
+.obligatoir-drivers-xs {
+    font-family: 'Prosto One', cursive;
+    background-color: #f5f5eb;
+    border: none;
+    border-radius: 0px;
+    padding-left: 5px;
+    width: 100%;
+    height: 50px;
+    font-size: 13px;
+    color: #747453;
+    margin-bottom: 5px;
+}
+
+.wifi-row-xs {
+	margin-bottom:5px;
+}
+
+.obligatoir-car-xs {
+    font-family: 'Prosto One', cursive;
+    background-color: #f5f5eb;
+    border: none;
+    border-radius: 0px;
+    padding-left: 5px;
+    width: 100%;
+    height: 50px;
+    font-size: 13px;
+    color: #747453;
+    margin-bottom: 5px;
+}
+
+.car-pic-xs {
+    border: 2px solid #d8d8c9;
+    background-color: #f5f5eb;
+    height: 200px;
+    padding: 0;
+    margin-bottom:5px;
+}
+
+.package3-precious-xs {
+    font-family: 'Prosto One', cursive;
+    padding-right: 0;
+    background-color: #d8d8c9;
+    height: 50px;
+    padding-left: 0;
+    color: white;
+    padding-top: 5px;
+}
+
+.package3-precious-xs p{
+	color:white;
+}
+
+
+
+
+
+
+
+
 
 										//XS//
 
 										//SM//
+.listing-sm{
+	margin-top:1%;
+	margin-bottom:2px;
+	width:98%;
+	padding:0;
+	background:url('listing-background.png');
+	border: 3px dashed #D3D5C0;
+}
+
+.floating-paper-sm {
+	position:absolute;
+	margin-left:-37px;
+	margin-top:30px;
+    animation:rotate 2s infinite;
+	-ms-animation: rotate 2s infinite;
+	-webkit-animation: rotate 2s infinite;
+	animation-direction:alternate;
+	-ms-animation-direction:alternate;
+	-webkit-animation-direction:alternate;
+	transform-origin: 50% 5%;
+	-ms-transform-origin: 50% 5%;
+	-webkit-transform-origin: 50% 5%;
+	z-index:3;
+}
+
+.pushpin-sm{
+	position:absolute;
+	background-image:url('push-pin-icon.png');
+	width:30px;
+	background-repeat:no-repeat;
+	margin-left:-37px;
+	margin-top:20px;
+	z-index:4;
+}
+
+.car-col-sm{
+	margin-left:9px;
+	padding:0;
+}
+
+.car-pic1-sm {
+	border: 2px solid #d8d8c9;
+    background-color: #f5f5eb;
+    height: 160px;
+    padding:0;
+    width:21%;
+}
+
+.car-pic-sm {
+	border: 2px solid #d8d8c9;
+    background-color: #f5f5eb;
+    height: 160px;
+    margin-left:5px; 
+    padding:0;
+    width:21%;
+}
+
+.tel-input-col-sm{
+	padding:0;
+}
+
+
+
 										//SM//
 
 										//MD//
@@ -50,35 +261,43 @@
 	margin-bottom:20px;
 }
 
+.animation{
+	position:absolute;
+	z-index:2
+}
+
 .pushpin{
 	position:absolute;
 	background-image:url('push-pin-icon.png');
 	width:30px;
 	background-repeat:no-repeat;
-	margin-left:-470px;
+	margin-left:-80px;
 	margin-top:20px;
-	z-index:3;
+	z-index:4;
 }
 
 .floating-paper {
 	position:absolute;
 	margin-left:-80px;
 	margin-top:30px;
-    animation:shake 3s infinite;
-	-ms-animation: shake 3s infinite;
-	-webkit-animation: shake 3s infinite;
+    animation:rotate 2s infinite;
+	-ms-animation: rotate 2s infinite;
+	-webkit-animation: rotate 2s infinite;
 	animation-direction:alternate;
 	-ms-animation-direction:alternate;
 	-webkit-animation-direction:alternate;
-	z-index:2;
+	transform-origin: 50% 5%;
+	-ms-transform-origin: 50% 5%;
+	-webkit-transform-origin: 50% 5%;
+	z-index:3;
 }
 
-@keyframes shake {
+@keyframes rotate {
   0% {
-    transform: skewX(1deg);
+    transform: rotate(2deg);
   }
   100% {
-    transform: skewX(-1deg);
+    transform: rotate(-2deg);
   }
 }
 
@@ -293,10 +512,11 @@
     -moz-osx-font-smoothing: grayscale;
     padding-right:1px;
     color:#d8d8c9;
+    padding:0
 }
 
 .date {
- padding-left:1px;
+ padding:0;
 }
 
 select {
@@ -344,13 +564,13 @@ select:focus {
 }
 
 .road-col {
-	padding-left: 0;
+	padding: 0;
     text-align: left;
 }
 
 
 .number-drivers-col {
-	padding-left:0;
+	padding:0;
 }
 
 .obligatoir-drivers {
@@ -407,6 +627,7 @@ select:focus {
 	border: 2px solid #d8d8c9;
     background-color: #f5f5eb;
     height: 160px;
+    padding:0;
 }
 
 .car-pic {
@@ -414,6 +635,7 @@ select:focus {
     background-color: #f5f5eb;
     height: 160px;
     margin-left:5px; 
+    padding:0;
 }
 
 .package{
@@ -493,6 +715,7 @@ select:focus {
     background-color: #d8d8c9;
     height: 50px;
     color: white;
+    border-left:solid #f5f5eb 1px;
 }
 
 .tel-icone {

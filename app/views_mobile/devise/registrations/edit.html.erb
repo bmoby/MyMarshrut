@@ -1,8 +1,9 @@
 		<%= render 'shared/navbar' %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <div class='container-fluid reg-log '>
-    <div class='col-md-4 col-md-offset-4 text-center reg-log-block'>
+<div class='vertical-center'>
+  <div class='container-fluid reg-log-xs '>
+    <div class='row text-center reg-log-block'>
       <div class=' row reg-log-block-border'>
         <% if resource.errors.any? %>
           <div id="error_explanation" class='error text-left'>
@@ -18,104 +19,93 @@
         <% end %>
 
 
-        <div class='row text-center log-title'>
+        <div class='row text-left settings-title-xs'>
           <h2><i class='glyphicon glyphicon-cog'></i> Настройки</h2>
         </div>
         </br>
         </br>
         
-        <div class='row usertextfield'>
-          <div class='col-md-2 col-md-offset-1 text-center user'>
+        <div class='row usertextfield-xs'>
+          <div class='col-xs-2 col-xs-offset-1 text-center user-xs'>
             <i class="fa fa-user iconedeuser" aria-hidden="true"></i>
           </div>
           
-          <div class='col-md-8 text-left montextfield'>
+          <div class='col-xs-8 text-left montextfield-xs'>
             <div class="field">
-              <%= f.text_field :prenom, autocomplete: "off", class: 'obligatoir', :placeholder => 'Придумайте себе имя'%>
+              <%= f.text_field :prenom, autocomplete: "off", class: 'obligatoir-xs', :placeholder => 'Придумайте себе имя'%>
             </div>
           </div>
         </div>
 
 
-        <div class='row usertextfield'>
-          <div class='col-md-2 col-md-offset-1 text-right text-center user'>
+        <div class='row usertextfield-xs'>
+          <div class='col-xs-2 col-xs-offset-1 text-right text-center user-xs'>
             <i class="fa fa-at iconedeuser" aria-hidden="true"></i>
           </div>
-          <div class='col-md-8 text-left montextfield'>
+          <div class='col-xs-8 text-left montextfield-xs'>
             <div class="field">
-              <%= f.email_field :email, autocomplete: "off", class: 'obligatoir', 
+              <%= f.email_field :email, autocomplete: "off", class: 'obligatoir-xs', 
               :placeholder => 'Ваш E-mail' %>
             </div>
           </div>
         </div>
 
-        <div class='row usertextfield'>
+        <div class='row usertextfield-xs'>
           <em>Пароль: 8 символов минимум</em>
         </div>
 
-        <div class='row usertextfield'>
-          <div class='col-md-2 col-md-offset-1 text-right text-center user'>
+        <div class='row usertextfield-xs'>
+          <div class='col-xs-2 col-xs-offset-1 text-right text-center user-xs'>
              <i class="fa iconedeuser fa-unlock-alt" aria-hidden="true"></i>
           </div>
-          <div class='col-md-8 text-left montextfield'>
+          <div class='col-xs-8 text-left montextfield-xs'>
             <div class="field">
-              <%= f.password_field :password, autocomplete: "off", value: nil, class:'obligatoir', :placeholder => 'Новый пароль' %>
+              <%= f.password_field :password, autocomplete: "off", value: nil, class:'obligatoir-xs', :placeholder => 'Новый пароль' %>
             </div>
           </div>
         </div>
 
-        <div class='row usertextfield'>
-          <div class='col-md-2 col-md-offset-1 text-right text-center user'>
+        <div class='row usertextfield-xs'>
+          <div class='col-xs-2 col-xs-offset-1 text-right text-center user-xs'>
             <i class="fa iconedeuser fa-lock" aria-hidden="true"></i>
           </div>
           
-          <div class='col-md-8 text-left montextfield'>
+          <div class='col-xs-8 text-left montextfield-xs'>
             <div class="field">
-             <%= f.password_field :password_confirmation, value: nil, autocomplete: "off", class:'obligatoir', :placeholder => 'Повторите' %>
+             <%= f.password_field :password_confirmation, value: nil, autocomplete: "off", class:'obligatoir-xs', :placeholder => 'Повторите' %>
             </div>
           </div>
         </div>
 
-        <div class='row usertextfield'>
-          <div class='col-md-2 col-md-offset-1 text-right text-center user'>
+        <div class='row usertextfield-xs'>
+          <div class='col-xs-2 col-xs-offset-1 text-right text-center user-xs'>
             <i class="fa iconedeuser fa-lock" aria-hidden="true"></i>
           </div>
           
-          <div class='col-md-8 text-left montextfield'>
+          <div class='col-xs-8 text-left montextfield'>
             <div class="field">
-             <%= f.password_field :current_password, autocomplete: "off", class:'obligatoir', placeholder:'Текущий пароль', autocomplete: "off" %>
+             <%= f.password_field :current_password, autocomplete: "off", class:'obligatoir-xs', placeholder:'Текущий пароль', autocomplete: "off" %>
             </div>
-          </div>
-        </div>
-
-
-        <div class='row'>
-          <div class='col-md-5 col-md-offset-1 text-left settings-delete-profile-and-goback'>
-            <%= link_to "Удалить профиль", registration_path(resource_name), data: { confirm: "Вы уверены?" }, method: :delete %>
-          </div>
-
-          <div class='col-md-5 text-right settings-delete-profile-and-goback'>
-            <%= link_to "Вернуться назад", :back %>
           </div>
         </div>
       
-        <div class='row text-center submit-box-row'>
+        <div class='row text-center'>
           <%= f.submit "ИЗМЕНИТЬ", class: "settings-submitbox text-center" %>
+        </div>
+
+        <div class='row settings-options-xs'>
+          <div class='col-xs-6 text-left settings-delete-profile-and-goback'>
+            <%= link_to "Удалить профиль", registration_path(resource_name), data: { confirm: "Вы уверены?" }, method: :delete %>
+          </div>
+
+          <div class='col-6 text-right settings-delete-profile-and-goback'>
+            <%= link_to "Вернуться назад", :back %>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
-  
 <% end %>
 </div>
-
-
-
-
-
-
-
-
-
-
 

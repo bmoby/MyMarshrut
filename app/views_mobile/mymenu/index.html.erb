@@ -6,7 +6,7 @@
 			<p class='titlepxs'>Здраствуйте <%= current_user.prenom %> добро пожаловать в свой офис</p></br>
 		</div>
 		<div class='col-xs-5 text-right user_avatar'>
-			<%if current_user.avatars.first.image_stored?%>
+			<%if current_user.avatars.first.present?%>
 				<%= image_tag current_user.avatars.first.image.thumb('90x90#').url, class:'profile-picture'%>
 			<%else%>
 				<%= image_tag("no-profile.gif", class:'profile-picture')%>

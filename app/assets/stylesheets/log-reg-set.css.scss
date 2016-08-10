@@ -1,0 +1,422 @@
+//registration and login pages//
+
+									// XS  //
+
+.vertical-center {
+  min-height: 90%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 90vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+.reg-log-xs
+
+.user-xs {
+	padding:0;
+	color:white;
+	font-size:35px;
+	border:1px solid #D3D5C0;
+	background-color:#D3D5C0;
+	height:50px;
+}
+
+.montextfield-xs{
+	padding:0;
+	height:50px;
+	color:#747453;
+}
+
+.obligatoir-xs{
+	background-color:#FDFAE9;
+	border:none;
+	border-radius:0px;
+	padding-left:5px;
+	width:100%;
+	height:50px;
+	font-size:12px;
+}
+
+.usertextfield-xs{
+	padding-bottom:5px;
+	color:#747453;
+	font-size:12px;
+}
+
+.usertextfield-xs em{
+	color:#D3D5C0
+}
+
+.confirmation-xs{
+	padding: 5px 0 5px 0;
+	height:50px;
+	font-size:12px;
+}
+
+.confirmation-xs p{
+	color:#D3D5C0;
+}
+
+.submit-box-row-xs{
+	padding-bottom:30px;
+	padding-top:0;
+}
+
+.submitbox-xs{
+	color:#FDFAE9;
+	border-radius:2px;
+	background-color:#E69894;
+	height:38px;
+	width:138px;
+	border-color:none;
+	border:none;
+	font-size:16px;
+	font-weight:bold;
+}
+
+.remreg-xs{
+	padding:0;
+	margin-left:7.5%;
+}
+
+.remcol-xs{
+    padding: 0;
+}
+
+.log-title-xs{
+	border-bottom:dashed 2px #D3D5C0;
+}
+
+.log-title-xs h2 {
+	color:#FDFAE9;
+	font-family: 'Quicksand', sans-serif;
+	padding-right:85px;
+	padding-left:85px;
+	margin-bottom:20px;
+}
+
+.settings-title-xs{
+	border-bottom:dashed 2px #D3D5C0;
+}
+
+.settings-title-xs h2 {
+	color:#FDFAE9;
+	font-family: 'Quicksand', sans-serif;
+	padding-right:40px;
+	padding-left:40px;
+	margin-bottom:20px;
+}
+
+.log-title-col-xs{
+	padding:0;
+}
+
+.title-icone-xs{
+	padding:0;
+}
+
+.title-text-xs{
+	padding:0;
+}
+
+.remember-xs {
+	color:#D3D5C0;
+	font-weight:normal;
+}
+
+.passforgot-xs {
+    padding: 0;
+}
+
+.passforgot-xs a{
+	font-size:21;
+	color:#D3D5C0;
+}
+
+.check-xs{
+	font-size:20px;
+}
+
+.settings-block{
+	border-radius:3px;
+	background-color:#78A38F;
+	padding:0;
+	margin:0;
+}
+
+
+.settings-options-xs{
+	margin-bottom:10px;
+	margin-left:6px;
+	margin-right:6px;
+}
+
+
+									// XS  //
+
+									//SM//
+
+.reg-sm{
+	padding-top:20vh;
+}
+
+.settings-sm{
+	padding-top:10vh;
+	padding-bottom:10vh;
+	width:510px;
+}
+
+
+								//SM//
+
+.error{
+	padding-left:36px;
+	padding-right:36px;
+}
+
+.listerreurs{
+	padding-left:0;
+}
+
+.listerreurs li{
+	list-style-type:none;
+}
+
+.listerreurs li h5 {
+	color:#d65d57;
+}
+
+.error h5{
+	color:#D3D5C0;
+}
+
+
+.reg-log{
+	padding-top:10vh;
+	padding-bottom:10vh;
+	width:auto;
+}
+
+.reg-log-block{
+	border-radius:3px;
+	background-color:#78A38F;
+	padding:0;
+}
+
+.reg-log-block-border{
+	border:dashed 3px #D3D5C0;
+	border-radius:3px;
+	padding:0;
+}
+
+.reg-title{
+	border-bottom:dashed 2px #D3D5C0;
+}
+
+.reg-title h2 {
+	color:#FDFAE9;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.log-title{
+	border-bottom:dashed 2px #D3D5C0;
+}
+
+.log-title h2 {
+	color:#FDFAE9;
+	font-family: 'Quicksand', sans-serif;
+	padding-right:100px;
+	padding-left:100px;
+	margin-bottom:20px;
+}
+
+
+
+
+
+input::-webkit-input-placeholder {
+	color:#D3D5C0;	
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+	color:#D3D5C0; 
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+    color:#D3D5C0;  
+}
+ 
+input:-ms-input-placeholder {  
+	color:#D3D5C0;
+}
+
+.iconedeuser{
+	margin-top:10px;
+}
+.inputter{
+	padding-left:0px;
+}
+
+.user {
+	padding:0;
+	color:white;
+	font-size:35px;
+	border:1px solid #D3D5C0;
+	background-color:#D3D5C0;
+	height:55px;
+}
+
+.montextfield{
+	padding:0;
+	height:55px;
+	color:#747453;
+}
+
+.obligatoir{
+	background-color:#FDFAE9;
+	border:none;
+	border-radius:0px;
+	padding-left:5px;
+	width:100%;
+	height:55px;
+	font-size:15px;
+}
+
+.usertextfield{
+	padding-bottom:10px;
+	color:#747453;
+}
+.usertextfield em{
+	color:#D3D5C0
+}
+
+.passwordblock{
+	padding-left:0px;
+	padding-right:0px;
+	padding-bottom:5px;
+}
+
+.userpassword1{
+	padding-left:0px;
+	padding-right:2px;
+}
+
+.userpassword2{
+	padding-left:2px;
+	padding-right:0px;
+}
+
+.parol{
+	margin-bottom:10px;
+}
+
+.parol em{
+	color:#919191;
+}
+
+.confirmation{
+	padding: 5px 0 5px 0;
+	height:50px;
+}
+
+
+.confirmation p{
+	color:#D3D5C0;
+}
+
+.submitbox{
+	color:#FDFAE9;
+	border-radius:2px;
+	background-color:#E69894;
+	height:38px;
+	width:148px;
+	border-color:none;
+	border:none;
+	font-size:18px;
+	font-weight:bold;
+}
+
+.submit-box-row{
+	padding-bottom:30px;
+	padding-top:5px;
+}
+
+.log-submitbox{
+	margin-top:15px;
+	margin-bottom:15px;
+	color:#FDFAE9;
+	border-radius:2px;
+	background-color:#E69894;
+	height:38px;
+	width:80px;
+	border-color:none;
+	border:solid 0;
+	font-size:18px;
+	font-weight:bold;
+}
+
+.settings-submitbox {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #FDFAE9;
+    border-radius: 2px;
+    background-color: #E69894;
+    height: 38px;
+    border-color: none;
+    border: solid 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.remreg{
+	padding:0;
+	margin-top:4px;
+}
+.checkbox{
+	padding:10px;
+}
+
+.remcol{
+	padding:0;
+}
+
+.remember-md{
+	color:#D3D5C0;
+	font-weight:normal;
+	margin-top:3px;
+}
+
+.passforgot{
+	padding:0;
+	margin-top:3px;
+
+}
+
+.passforgot a{
+	font-size:21;
+	color:#D3D5C0;
+}
+
+.regcol{
+	margin-bottom:10px;
+	padding:0;
+	margin-top:0;
+}
+.regcol a{
+	color:#D3D5C0;
+	font-size:21;
+}
+
+.settings-delete-profile-and-goback {
+	padding:0;
+	margin-top:0;
+}
+
+.settings-delete-profile-and-goback a{
+	font-size:21;
+	color:#D3D5C0;
+}
+
+
+
+										//registration and login pages//

@@ -1,10 +1,8 @@
 		<%= render 'shared/navbar' %>
 
-
-<div class='hidden-xs hiddne-sm'>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class='vertical-center'>
-      <div class='container-fluid text-center reg-log'>
+      <div class='container-fluid text-center log-sm'>
         
         <div class='row reg-log-block text-center'>
           <div class='row reg-log-block-border text-center'>
@@ -16,23 +14,23 @@
             </br>
 
             <div class='row usertextfield'>
-              <div class='col-md-2 col-md-offset-1 text-center user'>
+              <div class='col-sm-2 col-sm-offset-1 text-center user'>
                 <i class="fa fa-at" aria-hidden="true"></i>
               </div>
                 
-              <div class='col-md-8 text-left montextfield'>
+              <div class='col-sm-8 text-left montextfield'>
                 <div class="field">
                   <%= f.email_field :email, autocomplete: "off", class: 'obligatoir', :placeholder => 'Ваш E-mail' %>
                 </div>
               </div>
             </div>
 
-            <div class='row usertextfield-md'>
-              <div class='col-md-2 col-md-offset-1 text-center user'>
-                <i class="fa fa-lock" aria-hidden="true"></i>
+            <div class='row usertextfield'>
+              <div class='col-sm-2 col-sm-offset-1 user'>
+                <i class="fa fa-lock text-center" aria-hidden="true"></i>
               </div>
                 
-              <div class='col-md-8 text-left montextfield'>
+              <div class='col-sm-8 text-left montextfield'>
                 <div class="field">
                   <%= f.password_field :password, autocomplete: "off", class: 'obligatoir', :placeholder => 'Ваш пароль'%>
                 </div>
@@ -41,16 +39,16 @@
 
             <% if devise_mapping.rememberable? -%>
               <div class="row">
-                <div class='col-md-10 col-md-offset-1 remreg'>
-                  <div class='col-md-1 checkcol'>
+                <div class='col-sm-10 col-sm-offset-1 remreg'>
+                  <div class='col-sm-1 checkcol'>
                     <%= f.check_box :remember_me, class: 'check' %>
                   </div>
 
-                  <div class='col-md-2 remcol'>
+                  <div class='col-sm-2 remcol'>
                     <%= f.label :remember_me, 'запомнить?', class: 'remember-md' %>
                   </div>
 
-                  <div class='col-md-6 col-md-offset-3 text-right passforgot'>
+                  <div class='col-sm-6 col-sm-offset-3 text-right passforgot'>
                     <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
                       <%= link_to "Забыли пароль?", new_password_path(resource_name)%>
                     <% end -%>  
@@ -74,8 +72,3 @@
       </div>
     </div>
   <%end%>
-</div>
-
-
-
-  
