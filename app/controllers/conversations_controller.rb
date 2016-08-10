@@ -1,5 +1,5 @@
 class ConversationsController < ApplicationController
-    before_action :set_conversation, only: [:replay]
+    before_action :set_conversation, only: [:replay, :show]
 
   def index
     @conversations = current_user.mailbox.conversations
@@ -29,6 +29,15 @@ class ConversationsController < ApplicationController
   end
 
   def replay
+    @conversation = current_user.mailbox.conversations.find(params[:id])
+    @receipt = current_user.reply_to_conversation(@conversation, params[:body])
+    respond_to do |format|
+      format.html {render :layout => !request.xhr?}
+      format.js
+    end
+  end
+
+  def replayForXs
     @conversation = current_user.mailbox.conversations.find(params[:id])
     @receipt = current_user.reply_to_conversation(@conversation, params[:body])
     respond_to do |format|

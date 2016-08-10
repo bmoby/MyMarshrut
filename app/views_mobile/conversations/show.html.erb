@@ -1,1 +1,25 @@
-show.html.erb
+<div class='containAllOfIt'>
+	<div class='navBarXs'>
+		<%=render 'shared/navbar'%>
+			<%= link_to  conversations_path(current_user), class:'back_to_conversations_xs' do%>
+				<div class='row text-right'>
+					<p class='back-to'><<</p>
+				</div>
+			<%end%>
+	</div>
+<div class='conversation-heightxs' data-convId='<%= @conversation.id%>'>
+	<%= render 'show'%>
+</div>
+<%= form_tag replayForXs_path, method: :post, remote: true do%>
+	<div class='row meesageinputplacexs'>
+		<div class='col-xs-9 message-area'>
+			<%= text_area_tag :body, nil, class: 'messageinput'%>
+		</div>
+		<div class='col-xs-3 send-btn-area text-center'>
+			<%= button_tag(type:"submit", class:"btn-envoyer-message-xs") do%>
+				<p class='pinline'> Отправить</p>
+			<%end%>
+		</div>
+	</div>
+<%end%>
+</div>
