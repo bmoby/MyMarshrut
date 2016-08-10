@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   root to: 'searches#searchall'
   get '/conversations/:id/replay', to: 'conversations#replay', as: 'replay'
   post '/conversations/:id/replay', to: 'conversations#replay'
+
+   get '/conversations/:id/replayForXs', to: 'conversations#replayForXs', as: 'replayForXs'
+  post '/conversations/:id/replayForXs', to: 'conversations#replayForXs'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

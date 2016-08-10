@@ -1,0 +1,9 @@
+$('.messageinput').val('');
+var convId = $('.conversation-heightxs').attr('data-convId');
+
+$.ajax(convId+'/replayForXs', {
+	success: function(response){
+		$('.conversation-heightxs').html(response).slideDown();
+		$('.conversation-heightxs').animate({scrollTop: $('.conversation-heightxs').prop("scrollHeight")}, 0);
+	}
+});

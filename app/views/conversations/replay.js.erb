@@ -1,6 +1,6 @@
 $('.messageinput').val('');
 
-var conversationId,
+var conversationId;
 conversationId = $('.replaySlide').attr('data-convId');
 	$.ajax('conversations/'+conversationId, {
 		success: function(response){

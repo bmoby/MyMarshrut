@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	$('.conversation-heightxs').animate({scrollTop: $('.conversation-heightxs').prop("scrollHeight")}, 0);
 	$('.one-conversation').on('click', function(e){
 		$('.clicked').addClass('msgsbackground').removeClass('clicked');
 		$(this).addClass('clicked').removeClass('msgsbackground');
