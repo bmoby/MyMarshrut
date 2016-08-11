@@ -10,13 +10,13 @@
 				<%@conversations.each do |conversation|%>
 					<li data-convId = '<%= conversation.id%>' class="one-conversation msgsbackground">
 						<div class='row enveloppe-messages text-left'>
-							<div class='col-md-5 text-left avatar-container'>
+							<div class='col-md-5 text-left avatar-container-md'>
 								<%conversation.participants.each do |participant| %>
 									<%if participant.prenom != current_user.prenom %>
 										<%if participant.avatars.first.present?%>
-											<img src='<%=participant.avatars.first.image.thumb('55x55#').url%>' class='message-avatar'>
+											<img src='<%=participant.avatars.first.image.thumb('55x55#').url%>' class='message-avatar-md'>
 										<%else%>
-											<img src='<%= asset_url("no-profile.gif")%>' class='message-avatar'>
+											<img src='<%= asset_url("no-profile.gif")%>' class='message-avatar-md'>
 										<%end%>
 									<%end%>
 								<%end%> 

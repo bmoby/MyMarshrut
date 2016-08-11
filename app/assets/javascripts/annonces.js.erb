@@ -152,49 +152,50 @@ $(document).ready(function() {
        $('#otpravitmessagevoditelyu').attr('disabled', true);   
   });
   
-  var i = $('.villecount').length + 1;
+  var i = $('.villecount').length + 2;
   $('.villesdisplay').on('click', '.ajout', function(){
-	  $('.villeinter'+i).show();
-	 	if(i<=10){
+	  $('.villeinter'+i).addClass('villecount').show();
+	 	if(i<10){
 	  		i++;
 	  	} 
-		else if (i = 10){
+		else if (i = 11){
 			i;
 		};
   });
 
   $('.villesdisplay').on('click', '.enlev', function(){
-	$('.villeinter'+(i-1)).hide();
-	$('.villeinter'+(i-1)).find('.inputter').val('');
-	if(i> 1){
+	$('.villeinter'+(i-1)).removeClass('villecount').hide();
+	$('.villeinter'+(i-1)).find('.blanck').val('');
+	if(i> 0){
 		i--;
 	} 
-	else if (i = 1 ){
+	else if (i = 2 ){
 		i;
 	};
   });
 
-  var x = $('.numcount').length;
+var x = $('.numcount').length;
   $('.numdisplay').on('click', '.ajoutnum', function(){
-    $('.num'+x).show();
+    $('.num'+x).addClass('numcount').show();
     if(x<4){
         x++;
       } 
-    else if (i = 4){
-      i;
+    else if (x = 4){
+      x;
     };
   });
 
   $('.numdisplay').on('click', '.enlevnum', function(){
-  $('.num'+(x-1)).hide();
-  $('.num'+(x-1)).find('.inputter').val('');
+  $('.num'+(x-1)).removeClass('numcount').hide();
+  $('.num'+(x-1)).find('.obligatoir-pacckage').val('');
   if(x> 1){
     x--;
   } 
-  else if (i = 1 ){
-    i;
+  else if (x = 1 ){
+    x;
   };
   });
+
 
   $('.lastvoditelmashina .fa').on('click', function(e){
     e.preventDefault();

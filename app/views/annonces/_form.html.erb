@@ -91,7 +91,7 @@
               </div>
             </div>
 
-
+ 
             <div class="field villeinter4 <%= 'villeinterhide' unless @annonce.villeinter4?%> <%= 'villecount' if @annonce.villeinter4?%>">
               <div class='col-md-1 col-md-offset-4 icone'>
                 <i class="fa fa-road" aria-hidden="true"></i>
@@ -488,7 +488,7 @@
         </div>
 
         <div class='row text-center other-info'>
-          <div class="row">
+          <div class="row numcount">
             <div class='col-md-2 col-md-offset-4 tel-input'>
               <%= f.telephone_field :telephones , :class => 'obligatoir-pacckage', :placeholder => "Hомер телефона 1" %>
             </div>
@@ -527,7 +527,7 @@
                 <i class="fa fa-mobile" aria-hidden="true"></i>
               </div>
               <div class='col-md-4 tel-checkbox'>
-                <%if @annonce.telephone_type1?%>
+                <%if @annonce.telephone_type2?%>
                   <%= f.check_box :telephone_type2, checked: true %> 
                 <%else%>
                   <%= f.check_box :telephone_type2, checked: false %> 
@@ -539,7 +539,7 @@
                   <i class="fa fa-whatsapp" aria-hidden="true"></i>
                 </div>
                 <div class='col-md-4 tel-checkbox'>
-                  <%if @annonce.telephones_type1?%>
+                  <%if @annonce.telephones_type2?%>
                   <%= f.check_box :telephones_type2, checked: true %> 
                   <%else%>
                   <%= f.check_box :telephones_type2, checked: false %> 
@@ -548,7 +548,7 @@
             </div>
           </div>
 
-          <div class="row num2 <%= 'villeinterhide' unless @annonce.telephones2?%> <%= 'numcount' if @annonce.telephones2?%>">
+          <div class="row num2 <%= 'villeinterhide' unless @annonce.telephones3?%> <%= 'numcount' if @annonce.telephones3?%>">
             <div class='col-md-2 col-md-offset-4 tel-input'>
               <%= f.telephone_field :telephones3 , :class => 'obligatoir-pacckage', :placeholder => "Hомер телефона 3" %>
             </div>
@@ -557,7 +557,7 @@
                 <i class="fa fa-mobile" aria-hidden="true"></i>
               </div>
               <div class='col-md-4 tel-checkbox'>
-                <%if @annonce.telephone_type1?%>
+                <%if @annonce.telephone_type3?%>
                   <%= f.check_box :telephone_type3, checked: true %> 
                 <%else%>
                   <%= f.check_box :telephone_type3, checked: false %> 
@@ -569,7 +569,7 @@
                   <i class="fa fa-whatsapp" aria-hidden="true"></i>
                 </div>
                 <div class='col-md-4 tel-checkbox'>
-                  <%if @annonce.telephones_type1?%>
+                  <%if @annonce.telephones_type3?%>
                   <%= f.check_box :telephones_type3, checked: true %> 
                   <%else%>
                   <%= f.check_box :telephones_type3, checked: false %> 
@@ -578,7 +578,7 @@
             </div>
           </div>
 
-          <div class="row num3 <%= 'villeinterhide' unless @annonce.telephones2?%> <%= 'numcount' if @annonce.telephones2?%>">
+          <div class="row num3 <%= 'villeinterhide' unless @annonce.telephones4?%> <%= 'numcount' if @annonce.telephones4?%>">
             <div class='col-md-2 col-md-offset-4 tel-input'>
               <%= f.telephone_field :telephones4 , :class => 'obligatoir-pacckage', :placeholder => "Hомер телефона 4" %>
             </div>
@@ -587,11 +587,13 @@
                 <i class="fa fa-mobile" aria-hidden="true"></i>
               </div>
               <div class='col-md-4 tel-checkbox'>
-                <%if @annonce.telephone_type1?%>
+              
+                <%if @annonce.telephone_type4?%>
                   <%= f.check_box :telephone_type4, checked: true %> 
                 <%else%>
                   <%= f.check_box :telephone_type4, checked: false %> 
                 <%end%>
+              
               </div>
             </div>
             <div class='col-md-1 icone-col'>
@@ -599,7 +601,7 @@
                   <i class="fa fa-whatsapp" aria-hidden="true"></i>
                 </div>
                 <div class='col-md-4 tel-checkbox'>
-                  <%if @annonce.telephones_type1?%>
+                  <%if @annonce.telephones_type4?%>
                   <%= f.check_box :telephones_type4, checked: true %> 
                   <%else%>
                   <%= f.check_box :telephones_type4, checked: false %> 
@@ -609,7 +611,7 @@
           </div>
 
           <div class="field numdisplay">
-            <span class='ajoutnum'>Добавить номер</span> <span class='enlevnum'>Убрать номер</span>
+            <span class='ajoutnum' remote-data=true>Добавить номер</span> <span class='enlevnum'>Убрать номер</span>
           </div>
 
         </div>

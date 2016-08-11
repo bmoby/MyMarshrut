@@ -6,21 +6,35 @@
 			<p class='titlep'>Здраствуйте <%= current_user.prenom %> добро пожаловать в свой офис</p></br>
 		</div>
 		<div class='col-md-2 user_avatar'>
-			<%if current_user.avatars.first != nil %>
-				<%= image_tag current_user.avatars.first.image.thumb('90x90#').url, class:'profile-picture'%>
+			<%if current_user.avatars.first.present?%>
+				<%= image_tag current_user.avatars.first.image.thumb('120x120#').url, class:'profile-picture'%>
 			<%else%>
 				<%= image_tag("no-profile.gif", class:'profile-picture')%>
 			<%end%>
-			<%= form_for current_user.avatars.new do |f| %>
-				  <div class="field">
-				    <%= f.file_field :image, class:'hidden file_upload_btn'%>
-				  </div>
-				  <div class="actions">
-				  	</br>
-				    <%= button_tag(type: "submit", class: "poisk update_img hidden") do %>
-				    	<p>Obnovit'</p>
-				    <%end%>
-				  </div>
+			<%if current_user.avatars.first.present?%>
+				<%= form_for current_user.avatars.first do |f| %>
+					  <div class="field">
+					    <%= f.file_field :image, class:'hidden file_upload_btn'%>
+					  </div>
+					  <div class="actions">
+					  	</br>
+					    <%= button_tag(type: "submit", class: "poisk update_img hidden") do %>
+					    	<p>Obnovit'</p>
+					    <%end%>
+					  </div>
+				<% end %>
+			<%else%>
+				<%= form_for @avatar do |f| %>
+					  <div class="field">
+					    <%= f.file_field :image, class:'hidden file_upload_btn'%>
+					  </div>
+					  <div class="actions">
+					  	</br>
+					    <%= button_tag(type: "submit", class: "poisk update_img hidden") do %>
+					    	<p>Obnovit'</p>
+					    <%end%>
+					  </div>
+				<% end %>
 			<%end%>
 		</div>
 		<div class='col-md-3'>

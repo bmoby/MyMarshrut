@@ -161,6 +161,11 @@
 	height: 50px;
 	border-radius: 50%;
 }
+.message-avatar-md{
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+}
 
 .message-avatar2{
 	position: relative;
@@ -182,6 +187,12 @@
 .avatar-container{
 	position: relative;
 	top:12px;
+	padding-right: 0;
+}
+
+.avatar-container-md{
+	position: relative;
+	top:5px;
 	padding-right: 0;
 }
 
