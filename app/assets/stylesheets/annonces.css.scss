@@ -3,7 +3,7 @@
 .listing-xs{
 	width:100%;
 	padding:0;
-	background:url('listing-background.png');
+	background: asset-data-url('listing-background.png');
 	border-bottom: 3px dashed #D3D5C0;
 	border-left: 3px dashed #D3D5C0;
 	border-right: 3px dashed #D3D5C0;
@@ -39,7 +39,7 @@
 
 .pushpin-xs{
 	position:absolute;
-	background-image:url('push-pin-icon.png');
+	background: asset-data-url('pushpin.png');
 	width:30px;
 	background-repeat:no-repeat;
 	margin-top:-10px;
@@ -158,7 +158,7 @@
 	margin-bottom:2px;
 	width:98%;
 	padding:0;
-	background:url('listing-background.png');
+	background: asset-data-url('listing-background.png');
 	border-bottom: 3px dashed #D3D5C0;
 	border-right: 3px dashed #D3D5C0;
 	border-left: 3px dashed #D3D5C0;
@@ -182,7 +182,7 @@
 
 .pushpin-sm{
 	position:absolute;
-	background-image:url('push-pin-icon.png');
+	background: asset-data-url('pushpin.png');
 	width:30px;
 	background-repeat:no-repeat;
 	margin-left:-37px;
@@ -247,7 +247,7 @@
 	margin-bottom:2px;
 	width:80%;
 	padding:0;
-	background:url('listing-background.png');
+	background: asset-data-url('listing-background.png');
 	border-bottom: 3px dashed #D3D5C0;
 	border-left: 3px dashed #D3D5C0;
 	border-right: 3px dashed #D3D5C0;
@@ -272,7 +272,7 @@
 
 .pushpin{
 	position:absolute;
-	background-image:url('push-pin-icon.png');
+	background: asset-data-url('pushpin.png');
 	width:30px;
 	background-repeat:no-repeat;
 	margin-left:-80px;
@@ -449,11 +449,6 @@
 	margin-bottom:30px;
 }
 
-.direction {
-	background-image:url('directions.png');
-	width:20%;
-	height:50px;
-}
 
 
 .obligatoir-directions {
