@@ -1,8 +1,22 @@
 <%= render 'shared/navbar'%>
-<div class='mobilshow'>
-	<div class='row text-center tudasyudaxs'>
-		<h4><%= @annonce.ville_depart.truncate_words(1, omission: ' ') %> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ') %></h4>
-	</div>
+<div class='mobilshow'></br>
+	<div class='ribbon'>
+		<div class='ribbon-stitches-top'></div>
+		<div class='row ribbon-content'><h1>
+			<div class='row'>
+			<div class='col-sm-3 text-left'>
+				<%= @annonce.date_depart.strftime("%d/%m/%Y")%>
+			</div>
+			<div class='col-sm-6 text-center'>
+				<%= @annonce.ville_depart.truncate_words(1, omission: ' ') %> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ') %>
+			</div>
+			<div class='col-sm-3 text-right'>
+				<%= @annonce.prix_passager%>€
+			</div>
+		</div>
+		</h1></div>
+		<div class='row ribbon-stitches-bottom'></div>
+	</div></br>
 	<div class='row trois-photos-sm'>
 		<div class='row photomini'>
 			<%if @annonce.image_stored?%>
@@ -37,17 +51,7 @@
 			</div>
 		</div>
 	</div>
-	<div class='row vajnoexs'>
-		<div class='row tudadateprixxs'>
-			<div class='row '>
-				<div class='col-sm-6 text-left datedepartrowxs'>
-					<h4 class='pinlineblock'><%= @annonce.date_depart.strftime("%d/%m/%Y")%></h4>
-				</div>
-				<div class='col-sm-6 prixpassagerxs text-right'>
-					<h4 class='pinlineblock'> <%= @annonce.prix_passager%>€</h4>
-				</div>
-			</div>
-		</div>
+	<div class='row vajnoexs'></br>
 		<div class='row voditeletmashinasm'>
 			<div class='col-sm-6 text-left'>
 				<div class='col-sm-3 text-left'>
@@ -158,6 +162,75 @@
 				<%end%>
 			</div>
 			</div>
+		</div>
+
+		<div class='row voditeletmashinasm'>
+			<div class='row'>
+			<%if @annonce.telephones? || @annonce.telephones2?%>
+				<div class='col-sm-6 voditeletmashina2sm text-left'>
+					<%if @annonce.telephones?%>
+						<div class='col-sm-3 text-left'>
+							<%if @annonce.telephones_type1?%>
+								<i class="fa fa-mobile" aria-hidden="true"></i>
+							<%end%>
+							<%if @annonce.telephone_type1?%>
+								<i class="fa fa-whatsapp" aria-hidden="true"></i>
+							<%end%>
+						</div>
+						<div class='col-sm-9 text-left '>
+							<h3 class='pinlineblock'><%=@annonce.telephones%></h3></br>
+						</div>
+					<%end%>
+				</div>
+				<div class='col-sm-6 voditeletmashina2sm text-left'>
+					<%if @annonce.telephones2?%>
+						<div class='col-sm-3 text-left'>
+							<%if @annonce.telephones_type2?%>
+								<i class="fa fa-mobile" aria-hidden="true"></i>
+							<%end%>
+							<%if @annonce.telephone_type2?%>
+								<i class="fa fa-whatsapp" aria-hidden="true"></i>
+							<%end%>
+						</div>
+						<div class='col-sm-9 text-left'>
+							<h3 class='pinlineblock'><%=@annonce.telephones2%></h3></br>
+						</div>
+					<%end%>
+				</div>
+			<%end%>
+			<%if @annonce.telephones3? || @annonce.telephones3?%>
+				<div class='col-sm-6 voditeletmashina2sm text-left'>
+					<%if @annonce.telephones3?%>
+						<div class='col-sm-3 text-left'>
+							<%if @annonce.telephones_type3?%>
+								<i class="fa fa-mobile" aria-hidden="true"></i>
+							<%end%>
+							<%if @annonce.telephone_type3?%>
+								<i class="fa fa-whatsapp" aria-hidden="true"></i>
+							<%end%>
+						</div>
+						<div class='col-sm-9 text-left'>
+							<h3 class='pinlineblock'><%=@annonce.telephones3%></h3></br>
+						</div>
+					<%end%>
+				</div>
+				<div class='col-sm-6 voditeletmashina2sm text-left'>
+					<%if @annonce.telephones4?%>
+						<div class='col-sm-3 text-left'>
+							<%if @annonce.telephones_type4?%>
+								<i class="fa fa-mobile" aria-hidden="true"></i>
+							<%end%>
+							<%if @annonce.telephone_type4?%>
+								<i class="fa fa-whatsapp" aria-hidden="true"></i>
+							<%end%>
+						</div>
+						<div class='col-sm-9 text-left'>
+							<h3 class='pinlineblock'><%=@annonce.telephones4%></h3></br>
+						</div>
+					<%end%>
+				</div>
+			<%end%>
+		</div>
 		</div>
 		<div class='row text-left'>
 				<div class='col-sm-2 text-right'>
@@ -329,73 +402,7 @@
 	</div>
 
 	<div class='row vajnoe2sm'>
-		<div class='col-sm-5'>
-			<%if @annonce.telephones? || @annonce.telephones2?%>
-				<div class='row voditeletmashina2sm text-left'>
-					<%if @annonce.telephones?%>
-						<div class='col-sm-3 text-left'>
-							<%if @annonce.telephones_type1?%>
-								<i class="fa fa-mobile" aria-hidden="true"></i>
-							<%end%>
-							<%if @annonce.telephone_type1?%>
-								<i class="fa fa-whatsapp" aria-hidden="true"></i>
-							<%end%>
-						</div>
-						<div class='col-sm-9 text-left colmd4'>
-							<h3 class='pinlineblock'><%=@annonce.telephones%></h3></br>
-						</div>
-					<%end%>
-				</div>
-				<div class='row voditeletmashina2sm text-left'>
-					<%if @annonce.telephones2?%>
-						<div class='col-sm-3 text-left'>
-							<%if @annonce.telephones_type2?%>
-								<i class="fa fa-mobile" aria-hidden="true"></i>
-							<%end%>
-							<%if @annonce.telephone_type2?%>
-								<i class="fa fa-whatsapp" aria-hidden="true"></i>
-							<%end%>
-						</div>
-						<div class='col-sm-9 text-left colmd4'>
-							<h3 class='pinlineblock'><%=@annonce.telephones2%></h3></br>
-						</div>
-					<%end%>
-				</div>
-			<%end%>
-			<%if @annonce.telephones3? || @annonce.telephones3?%>
-				<div class='row voditeletmashina2sm text-left'>
-					<%if @annonce.telephones3?%>
-						<div class='col-sm-3 text-left'>
-							<%if @annonce.telephones_type3?%>
-								<i class="fa fa-mobile" aria-hidden="true"></i>
-							<%end%>
-							<%if @annonce.telephone_type3?%>
-								<i class="fa fa-whatsapp" aria-hidden="true"></i>
-							<%end%>
-						</div>
-						<div class='col-sm-9 text-left colmd4'>
-							<h3 class='pinlineblock'><%=@annonce.telephones3%></h3></br>
-						</div>
-					<%end%>
-				</div>
-				<div class='row voditeletmashina2sm text-left'>
-					<%if @annonce.telephones4?%>
-						<div class='col-sm-3 text-left'>
-							<%if @annonce.telephones_type4?%>
-								<i class="fa fa-mobile" aria-hidden="true"></i>
-							<%end%>
-							<%if @annonce.telephone_type4?%>
-								<i class="fa fa-whatsapp" aria-hidden="true"></i>
-							<%end%>
-						</div>
-						<div class='col-sm-9 text-left colmd4'>
-							<h3 class='pinlineblock'><%=@annonce.telephones4%></h3></br>
-						</div>
-					<%end%>
-				</div>
-			<%end%>
-		</div>
-		<div class='col-sm-7 voditeletmashinaspec2'>
+		<div class='row voditeletmashinaspec2'>
 			<%if user_signed_in?%>
 				<div class='paragraphone2'>
 					<h5>Перед тем как связатсься с водителям, просьба прочитать все информации. Проевим увожение водителям!</h5>

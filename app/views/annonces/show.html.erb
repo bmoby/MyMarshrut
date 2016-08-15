@@ -7,7 +7,7 @@
 					<img src='<%= @annonce.image.thumb('400x300#').url%>' class='photo-responsive'>
 				<%else%>
 					<div class=''>
-						<%= image_tag("marshrutka.jpg")%>
+						<%= image_tag("marshrutka.jpg", class:'photo-responsive')%>
 					</div>
 				<%end%>
 			</div>
@@ -35,18 +35,24 @@
 		</div>
 		<div class='col-md-6 vajnoeoba'>
 			<div class='row vajnoe'>
-				<div class='row tuda text-center'>
-					<div class='col-md-3 text-left datedeparture'>
-						<h4 class='pinlineblock'><%= @annonce.date_depart.strftime("%d/%m/%Y")%></h4>
+				<div class='ribbon'>
+					<div class='ribbon-stitches-top'></div>
+					<div class='row ribbon-content'><h1>
+						<div class='row'>
+						<div class='col-md-3 text-left'>
+							<%= @annonce.date_depart.strftime("%d/%m/%Y")%>
+						</div>
+						<div class='col-md-6 text-center'>
+							<%= @annonce.ville_depart.truncate_words(1, omission: ' ') %> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ') %>
+						</div>
+						<div class='col-md-3 text-right'>
+							<%= @annonce.prix_passager%>€
+						</div>
 					</div>
-					<div class='col-md-6 text-center'>
-						<h4><%= @annonce.ville_depart.truncate_words(1, omission: ' ') %> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ') %></h4>
-					</div>
-					<div class='col-md-3 text-right datedeparture'>
-						<h4 class='pinlineblock'> <%= @annonce.prix_passager%>€</h4>
-					</div>
-				</div>
-				<div class='row voditeletmashina text-left'>
+					</h1></div>
+					<div class='row ribbon-stitches-bottom'></div>
+				</div></br></br>
+				<div class='row voditeletmashina separation-ribbon text-left'>
 					<div class='col-md-1 text-left'>
 						<i class="fa fa-cube" aria-hidden="true"></i>
 					</div>
@@ -204,10 +210,12 @@
 					<%if user_signed_in?%>
 						<div class='row contactinputs'>
 							<%= form_tag conversations_path, method: :post do%>
-					 			<%= hidden_field_tag :user_id, @annonce.user_id %>
-								<%= hidden_field_tag :subject, current_user.prenom + 'прислал вам сообщение'  %>
-								<%= text_area_tag :body, nil, class: 'messagebox-md', id:'messagevoditelyu', placeholder: 'Задайте все свои вопросы и нажмите на "Отправить"'%>
-								<div class='text-right'>
+								<div class='col-md-10'>
+						 			<%= hidden_field_tag :user_id, @annonce.user_id %>
+									<%= hidden_field_tag :subject, current_user.prenom + 'прислал вам сообщение'  %>
+									<%= text_area_tag :body, nil, class: 'messagebox-md', id:'messagevoditelyu', placeholder: 'Задайте все свои вопросы и нажмите на "Отправить"'%>
+								</div>	
+								<div class='col-md-2 text-left btn-envoyer-md'>
 									<%= button_tag(type:"submit", class: 'podrobneeotpravit-md') do%>
 										<p>ОТПРАВИТЬ</p>
 									<%end%></br></br>
@@ -215,17 +223,8 @@
 							<%end%>
 						</div>
 					<%else%>
-						<div class='row'>
+						<div class='row neobxodimo-zaregistrirovatsya'>
 							<h5>Чтобы написать водителю сообшение через mymarshrut, необходимо <%= link_to 'зарегистрироватся', new_user_registration_path %>.</h5></br>
-						</div>
-						<div class='row contactinputs'>
-								
-							<%= text_area_tag :body, nil, class: 'messagebox', id:'messagevoditelyu', placeholder: 'Задайте все свои вопросы и нажмите на "Отправить"', readonly: true%>
-							<div class='text-right'>
-								<%= button_tag( class: 'podrobneeotpravit') do%>
-									<p>ОТПРАВИТЬ</p>
-								<%end%></br></br>
-							</div>
 						</div>
 					<%end%>
 				</div>
