@@ -5,7 +5,7 @@
 				<a href='<%=root_path%>'><i class="fa fa-bus" aria-hidden="true"></i></a>
 			</div>
 
-			<div class='col-sm-8 col-sm-offset-1 navbar-search'>
+			<div class='col-sm-7 navbar-search'>
 				<%= form_for @search, class:'gaga' do |s| %>
 					<div class='col-sm-5 text-tight search-bar1'>  
 						<%= s.text_field :ville_d, class:'home', placeholder: 'Откуда?', id:'villesdsearch'%>
@@ -21,7 +21,7 @@
 				<% end %>
 			</div>
 
-			<div class='col-sm-3'>
+			<div class='col-sm-4'>
 				<ul class='notconnectedlinks nav navbar-nav navbar-right hidden-xs'>
 					<li><a href='<%= new_user_session_path%>'><i class="iconsignin fa fa-sign-in"></i> Bход </a></li>
 					<li><a href='<%= new_user_registration_path%>'><i class="fa fa-pencil" aria-hidden="true"></i>Pегистрация</a></li>

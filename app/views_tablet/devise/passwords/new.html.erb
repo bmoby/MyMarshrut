@@ -1,7 +1,7 @@
-		<%= render 'shared/navbar' %>
+    <%= render 'shared/navbar' %>
 
 <div class='vertical-center'>
-  <div class='col-md-4 col-md-offset-4 text-center log'>
+  <div class='col-sm-6 col-sm-offset-3 text-center log'>
     <div class='row reg-log-block text-center'>
       <div class='row reg-log-block-border text-center'>
 
@@ -15,11 +15,11 @@
         <%= devise_error_messages! %>
 
           <div class='row usertextfield'>
-            <div class='col-md-2 col-md-offset-1 text-center user'>
+            <div class='col-sm-2 col-sm-offset-1 text-center user'>
               <i class="fa fa-at" aria-hidden="true"></i>
             </div>
                   
-            <div class='col-md-8 text-left montextfield'>
+            <div class='col-sm-8 text-left montextfield'>
               <div class="field">
                <%= f.email_field :email, autofocus: true, class:'obligatoir' %>
               </div>
@@ -34,4 +34,3 @@
     </div>
   </div>
 </div>
-

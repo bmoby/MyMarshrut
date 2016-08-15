@@ -197,6 +197,11 @@
 	width:auto;
 }
 
+.reg-log{
+	padding-top:10vh;
+	padding-bottom:10vh;
+}
+
 .reg-log-block{
 	border-radius:3px;
 	background-color:#78A38F;
@@ -227,6 +232,16 @@
 	font-family: 'Quicksand', sans-serif;
 	padding-right:100px;
 	padding-left:100px;
+	margin-bottom:20px;
+}
+
+.forgot-title{
+	border-bottom:dashed 2px #D3D5C0;
+}
+
+.forgot-title h2 {
+	color:#FDFAE9;
+	font-family: 'Quicksand', sans-serif;
 	margin-bottom:20px;
 }
 
@@ -355,6 +370,22 @@ input:-ms-input-placeholder {
 	font-weight:bold;
 }
 
+.forgot-submitbox{
+	margin-top:15px;
+	margin-bottom:15px;
+	color:#FDFAE9;
+	border-radius:2px;
+	background-color:#E69894;
+	height:38px;
+	width:240px;
+	border-color:none;
+	border:solid 0;
+	font-size:18px;
+	font-weight:bold;
+}
+
+
+
 .settings-submitbox {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -416,6 +447,7 @@ input:-ms-input-placeholder {
 	font-size:21;
 	color:#D3D5C0;
 }
+
 
 
 

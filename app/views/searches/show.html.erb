@@ -27,16 +27,6 @@
 					<li><a href='<%= new_user_registration_path%>'><i class="fa fa-pencil" aria-hidden="true"></i>Pегистрация</a></li>
 				</ul>
 			</div>
-			<ul class='notconnectedlinksmobile visible-xs'>
-				<li><%= link_to new_user_session_path, class:'newusersessionclass' do%>
-					<i class="iconsignin fa fa-sign-in"></i> вход
-					<%end%>
-				</li>
-				<li><%= link_to new_user_registration_path, class:'newusersessionclass' do%>
-					<i class="fa fa-pencil" aria-hidden="true"></i> регистрация
-					<%end%>
-				</li>
-			</ul>
 		</div>
 	</nav>
 	<%else%>
