@@ -37,7 +37,7 @@
 					</div></br>
 				</div>
 				<div class='row infodumilieu'>
-					<div class='col-md-4'>
+					<div class='col-md-4 listing-information'>
 						<%if annonce.nombre_chauffeurs?%>
 							<% if annonce.nombre_chauffeurs == 1%>
 								<p><i class='fa fa-male'> </i>   <%= annonce.nombre_chauffeurs %> Водитель</p>
@@ -67,7 +67,7 @@
 							<p><i class='fa fa-coffee'></i> Остановки по усмотрению водителя</p>
 						<%end%>
 					</div>
-					<div class='col-md-4 annonce_info2'>
+					<div class='col-md-4 annonce_info2 listing-information'>
 						<% if annonce.accept_colis == true%>
 							<p><i class='fa fa-check-circle'> </i> Перевозка груза:</p>
 							<p> <%= annonce.prix_kg_colis%> <i class='fa fa-eur'> </i> кг. мин вес  <%= annonce.poid_min_colis%> кг</p>
@@ -80,7 +80,7 @@
 							<p><i class='fa fa-times-circle'> </i> Перевозка ценных бумаг</p>
 						<%end%>
 					</div>
-					<div class='col-md-4 text-left prixcontact'>
+					<div class='col-md-4 text-left prixcontact listing-information'>
 						<%if annonce.telephones?%>
 							<%if annonce.telephones_type1?%>
 								<p class='pinline'><i class="fa fa-whatsapp" aria-hidden="true"></i> </p>

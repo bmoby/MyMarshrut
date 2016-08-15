@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160811162218) do
 
-  create_table "annimgs", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "image_uid"
-    t.string   "image_name"
-    t.integer  "annonce_id"
-  end
-
   create_table "annonces", force: :cascade do |t|
     t.string   "ville_depart"
     t.string   "ville_arrive"
@@ -43,11 +35,12 @@ ActiveRecord::Schema.define(version: 20160811162218) do
     t.integer  "arrets_chaque"
     t.integer  "notes"
     t.string   "commentaires"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.integer  "user_id"
     t.string   "image_uid"
     t.string   "image_name"
+    t.string   "transit",             default: "--- []\n"
     t.string   "villeinter1"
     t.string   "villeinter2"
     t.string   "villeinter3"
@@ -168,9 +161,11 @@ ActiveRecord::Schema.define(version: 20160811162218) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "pol"
     t.string   "prenom"
     t.string   "ville"
     t.string   "mobile_number"
+    t.text     "photo"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
