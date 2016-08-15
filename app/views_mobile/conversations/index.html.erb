@@ -31,7 +31,7 @@
 								</p>
 							</div>
 							<div class='col-xs-4 text-center created-at-xs-conversation'>
-								<p class='date-message-xs'>  <%= conversation.created_at.to_date%></p>
+								<p class='date-message-xs'>  <%= conversation.created_at.to_date.strftime("%d/%m/%Y")%></p>
 							</div>
 						</div>
 						<div class='row'>

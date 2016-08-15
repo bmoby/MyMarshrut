@@ -45,7 +45,7 @@
 				<%= content_tag(:div, content_tag(:p, "ВОДИТЕЛЬ УЕХАЛ"), class: "expiredxs") if annonce.date_depart < Date.today %>
 				<%if annonce.image_stored?%>
 					<div>
-						<img src='<%=annonce.image.thumb('300x240#').url%>' class='photo-responsivemini'>
+						<img src='<%=annonce.image.thumb('300x240#').url%>' class='photo-responsive-mini'>
 					</div>
 				<%else%>
 					<div class='fotopardefaultxs'>

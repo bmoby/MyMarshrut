@@ -250,7 +250,11 @@
                <p> WiFi </p>
               </div>
               <div class='col-md-2 wifi-chay'>
-                <%= f.check_box :wifi%>
+                <%if @annonce.wifi?%>
+                  <%= f.check_box :wifi, checked: true %> 
+                <%else%>
+                  <%= f.check_box :wifi, checked: false %> 
+                <%end%>
               </div>
             </div>
           </div>
@@ -273,7 +277,11 @@
                <p> Кофе/Чай </p>
               </div>
               <div class='col-md-2 wifi-chay'>
-                <%= f.check_box :chay%>
+                <%if @annonce.chay?%>
+                  <%= f.check_box :chay, checked: true %> 
+                <%else%>
+                  <%= f.check_box :chay, checked: false %> 
+                <%end%>
               </div>
             </div>
                 
@@ -339,13 +347,28 @@
             </div>
           </div>
 
-          <div class='col-md-2 col-md-offset-2 car-pic1'>
+          <div class='col-md-2 col-md-offset-2 car-pic1 annImg1'>
+              <img src='<%= image_url("marshrutka.jpg")%>' class='image-picker'>
+              <img src='<%= image_url("maarshrutkaOk.jpg")%>' class='image-picker-ok hidden'>
+              <div class="field">
+              <%= f.file_field :image, class:'file-pick-image hidden'%>
+            </div>
           </div>
 
-          <div class='col-md-2 car-pic'>
+          <div class='col-md-2 car-pic annImg2'>
+            <img src='<%= image_url("marshrutka.jpg")%>' class='image-picker2'>
+            <img src='<%= image_url("maarshrutkaOk.jpg")%>' class='image-picker-ok2 hidden'>
+            <div class="field">
+              <%= f.file_field :image2, class:'file-pick-image2 hidden'%>
+            </div>
           </div>
 
-          <div class='col-md-2 car-pic'>
+          <div class='col-md-2 car-pic annImg3'>
+             <img src='<%= image_url("marshrutka.jpg")%>' class='image-picker3'>
+             <img src='<%= image_url("maarshrutkaOk.jpg")%>' class='image-picker-ok3 hidden'>
+            <div class="field">
+              <%= f.file_field :image3, class:'file-pick-image3 hidden' %>
+            </div>
           </div>
 
         </div>

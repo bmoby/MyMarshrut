@@ -81,7 +81,7 @@ class AnnoncesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def annonce_params
-      params.require(:annonce).permit(:ville_depart, :ville_arrive, :date_depart, :nombre_chauffeurs, :nombre_place, :telephones, :marque_vehicule, :annee_vehicule, :prix_passager, :poid_max_passager, :accept_colis, :accept_colis_valeur, :prix_kg_colis, :poid_max_colis, :poid_min_colis, :arrets_chaque, :description, :image, :villeinter1, :villeinter2, :villeinter3, :villeinter4, :villeinter5, :villeinter6, :villeinter7, :villeinter8, :villeinter9, :villeinter10, :telephones2, :telephones3, :telephones4, :telephones5, :telephones_type1, :telephones_type2, :telephones_type3, :telephones_type4, :telephones_type5, :telephone_type1, :telephone_type2, :telephone_type3, :telephone_type4,)
+      params.require(:annonce).permit(:ville_depart, :ville_arrive, :date_depart, :nombre_chauffeurs, :nombre_place, :telephones, :marque_vehicule, :annee_vehicule, :prix_passager, :poid_max_passager, :accept_colis, :accept_colis_valeur, :prix_kg_colis, :poid_max_colis, :poid_min_colis, :arrets_chaque, :description, :image, :image2, :image3, :villeinter1, :villeinter2, :villeinter3, :villeinter4, :villeinter5, :villeinter6, :villeinter7, :villeinter8, :villeinter9, :villeinter10, :telephones2, :telephones3, :telephones4, :telephones5, :telephones_type1, :telephones_type2, :telephones_type3, :telephones_type4, :telephones_type5, :telephone_type1, :telephone_type2, :telephone_type3, :telephone_type4, :wifi, :chay)
     end
     
     

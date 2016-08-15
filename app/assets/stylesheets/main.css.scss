@@ -96,49 +96,77 @@
 }
 
 .count_mob_2partxs ul li{
-
 	padding-bottom: 8px;
 }
-.datedepartrowxs h4{
-	font-family: 'Russo One', sans-serif;
-	color: black;
-}
-
 
 .vajnoexs{
 	padding-left: 5px;
 	padding-right: 5px;
-	background-color: #FDFAE9;
+	background-color: #F0DDBF;
 
 }
 
 .vajnoexs h4{
-	color:#a1bfb1;
+	color:#bca37e;
 	font-family: 'Russo One', sans-serif;
 }
 
 .tudadateprixxs{
 	padding-left: 5px;
 	padding-right: 5px;
-	border-bottom: dashed 3px #a1bfb1;
+	border-bottom: solid 1px #d1bb9a;
 }
 
 .photo-responsive{
 	width: 100%;
-	height: 70vh;
+	height: 50vh;
 }
 
+.photo-responsive-mini{
+	width: 100%;
+	height: 100%;
+	padding-bottom: 0;
+}
+
+.photo-mini{
+	padding: 0;
+	height: 20vh;
+
+}
 .obnovitxs{
 	padding-top:20px;
 }
-.photo-responsivemini{
+.photo-responsivemini-xs{
 	width: 100%;
-	height: 40vh;
+	height: 100%;
 }
 
+
+.three-photos-dimension-xs{
+	height: 110px;
+	padding:0;
+}
+.three-photos-dimension-sm{
+	height: 300px;
+	padding:0;
+}
 .photo-responsiveminism{
 	width: 100%;
 	height: 50vh;
+}
+
+.image-picker, .image-picker2, .image-picker3{
+	cursor: pointer; cursor: hand;
+	width: 100%;
+	height: 100%;
+	padding:0;
+}
+
+.image-picker-ok, .image-picker-ok2, .image-picker-ok3{
+	cursor: pointer; cursor: hand;
+	width: 100%;
+	height: 100%;
+	padding:0;
 }
 
 .paragraphone{
@@ -152,9 +180,8 @@
 .paragraphonesm {
 	padding: 10px 5px 5px 10px;
 	border-radius: 20px 20px 20px 0;
-	border: 4px solid #a1bfb1;
+	border: 4px solid #ba9d73;
 	margin-top: 20px;
-	text-align: justify;
 }
 .avatarpodrobneesm{
 	margin-top:40px;
@@ -170,8 +197,8 @@
 }
 
 .paragraphonesm h5{
-	font-size: 15px;
-	color:#a1bfb1;
+	font-size: 17px;
+	color:#ba9d73;
 }
 
 .paragraphonexs{
@@ -214,7 +241,7 @@
 
 .gorodpodrobnee{
 	width:45px;
-	padding-right: 8px;
+	padding-right: 4px;
 	text-align: left;
 	color:#8a8a8a;
 }
@@ -224,12 +251,12 @@
 }
 
 .gorodpodrobnee h4{
-	font-size: 29px;
+	font-size: 20px;
 }
 
 .gorodpodrobnee h3{
 	color:#E69894;
-	font-size: 29px;
+	font-size: 20px;
 }
 
 .podrobnemarshrut{
@@ -248,9 +275,9 @@
 
 .maplinepodrobnee{
 	position:absolute;
-	width: 25px;
+	width: 30px;
 	border-top:solid 3px #a1bfb1;
-	margin-top: 12px;
+	margin-top: 8px;
 }
 
 .podrobnemarshrut h4{
@@ -266,11 +293,12 @@
 }
 
 .vajnoe{
+	position: relative;
 	width: 100%;
 	margin: 0;
 	padding: 15px;
 	height: 70vh;
-	background-color: #FDFAE9;
+	background-color: #F0DDBF;
 }
 
 .fotopardefaultxs img{
@@ -296,9 +324,12 @@
 .vajnoe2sm{
 	width: 100%;
 	background-color: #78A38F;
+	border:none;
 	margin: 0;
-
-	padding:10px;
+	padding-top: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 0;
 }
 .containercustom2{
 	background-color: #78A38F;
@@ -326,14 +357,14 @@
 	padding-left: 5px;
 	padding-right: 15px;
 	padding-bottom: 0px;
+	border:none;
 	margin:0;
 }
 
 .tuda .datedeparture h4{
 	margin-top: 14px;
 	font-size: 19px;
-	color:#c4b39d;
-
+	color: #2E2E2E;
 }
 
 .headershow{
@@ -360,32 +391,17 @@
 	padding-bottom: 5px;
 }
 
-.lastvoditelmashina2{
-	padding-top: 15px;
-	width:100%;
-	height: auto;
-	padding-bottom: 5px;
-}
-
-.lastvoditelmashina2 .fa{
-	padding:0;
-	margin: 0;
-	font-size: 55px;
-	color:white;
-}
-
 .lastvoditelmashina .fa{
-	padding:15px;
 	margin: 0;
-	font-size: 55px;
+	font-size: 15px;
 	color:#a1bfb1;
 }
 
 .lastvoditelmashinaxs .fa{
 	padding:0;
 	margin: 0;
-	font-size: 31px;
-	color:#78A38F;
+	font-size: 25px;
+	color:#c23a3a;
 }
 
 .colmd4{
@@ -405,46 +421,43 @@
 	padding: 0;
 	margin-top:5px;
 	font-size: 17px;
-	color:gray;
+	color:#b2966c;
+	font-family: "Play", sans-serif;
 }
+
 .voditeletmashina .fa{
 	padding:0;
 	margin: 0;
-	font-size: 31px;
-	color:#78A38F;
+	font-size: 15px;
+	color:#c23a3a;
 
 }
 
 .voditeletmashinaxs .fa{
 	padding:0;
 	margin: 0;
-	font-size: 31px;
-	color:#78A38F;
-
+	font-size: 20px;
+	color:#c23a3a;
 }
 
 .voditeletmashinasm .fa{
 	padding:0;
 	margin: 0;
-	font-size: 31px;
-	color:#78A38F;
-
+	font-size: 25px;
+	color:#c23a3a;
 }
 
-.voditeletmashina2 .fa{
-	padding:0;
-	margin: 0;
-	font-size: 31px;
-	color:#FDFAE9;
-
-}
 
 .voditeletmashina2sm .fa{
 	padding:0;
 	margin: 0;
-	font-size: 20px;
-	color:#FDFAE9;
+	font-size: 25px;
+	color:#c23a3a;
+}
 
+.voditeletmashina2 .fa{
+	font-size: 20px;
+	color:white;
 }
 
 .voditeletmashina2 h3{
@@ -452,8 +465,8 @@
 	margin-top: 5px;
 	margin-left: 0px;
 	font-size: 17px;
-	color:white;
-
+	color:#b2966c;
+	font-family: "Play", sans-serif;
 }
 
 .voditeletmashina2sm h3{
@@ -461,32 +474,32 @@
 	margin-top: 5px;
 	margin-left: 0px;
 	font-size: 17px;
-	color:white;
-
+	color:#b2966c;
+	font-family: "Play", sans-serif;
 }
 
 .voditeletmashina h3{
 	margin-top:5px;
 	padding: 0;
-	font-size: 17px;
-	color:gray;
-
+	font-size: 15px;
+	color:#b2966c;
+	font-family: "Play", sans-serif;
 }
 
 .voditeletmashinaxs h3{
 	margin-top:5px;
 	padding: 0;
 	font-size: 17px;
-	color:gray;
-
+	color:#b2966c;
+	font-family: "Play", sans-serif;
 }
 
 .voditeletmashinasm h3{
 	margin-top:5px;
 	padding: 0;
 	font-size: 17px;
-	color:gray;
-
+	color:#b2966c;
+	font-family: "Play", sans-serif;
 }
 
 .voditeletmashinasm{
@@ -513,20 +526,17 @@
 	padding-bottom: 15px;
 }
 
-.voditeletmashina2sm{
-}
-
 .voditeletmashina{
-	border-bottom: 2px dashed rgba(220, 210, 173, 0.82);
-	padding-top: 15px;
+	padding-top: 5px;
 	width:100%;
 	height: auto;
-	padding-bottom: 15px;
 }
 
+.iconphonewhatsapp{
+	padding: 0;
+}
 
 .voditeletmashinaxs{
-	border-bottom: 2px dashed rgba(220, 210, 173, 0.82);
 	padding-top: 10px;
 	width:100%;
 	padding-bottom: 5px;
@@ -534,7 +544,7 @@
 
 .fotka img{
 	filter: saturate(50%);
-	filter: grayscale(100%);
+
 }
 
 .fotka{
@@ -545,13 +555,19 @@
 
 .tuda{
 	font-family: 'Russo One', sans-serif;
-	border-bottom: dashed 3px #c4b39d;
+}
+
+.tuda:before, .tuda:after{
+	position: absolute;
+	font-family: 'Russo One', sans-serif;
+	background-color: #f47d19;
+	position: relative;
 }
 
 .tuda h4{
 	padding-bottom: 10px;
 	font-size:23px;
-	color:#c4b39d;
+	color:#2E2E2E;
 }
 
 
@@ -1662,6 +1678,21 @@ input, textarea{
 	border-radius: 0;
 }
 
+.messagebox-md{
+	resize: none;
+	word-wrap: break-word;
+	width: 100%;
+	padding: 10px 20px 20px 20px;
+	height:70px;
+	background-color:#d1c0a7;
+	border:none;
+	border-radius: 0;
+}
+
+.messagebox-md::-webkit-input-placeholder{
+	color: #f9eddb;
+}
+
 .messageboxxs{
 	resize: none;
 	word-wrap: break-word;
@@ -1676,6 +1707,25 @@ input, textarea{
 	background: none;
 	border: none;
 	border-radius: 0;
+}
+
+.podrobneeotpravit-md{
+	position: absolute;
+	height: 70px;
+	top:20px;
+	background: none;
+	color:gray;
+	border: none;
+	border-radius: 0;
+}
+
+.neobxodimo-zaregistrirovatsya h5{
+	color:#b2966c;
+	font-family: "Play, sans-serif";
+}
+
+.btn-envoyer-md{
+	padding-left: 0;
 }
 
 .podrobneeotpravitxs{
