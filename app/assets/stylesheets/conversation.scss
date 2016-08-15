@@ -40,6 +40,13 @@
 	overflow: hidden;
 }
 
+.back-msgs-xs .fa{
+	font-size: 35px;
+	position: relative;
+	top:5px;
+	color: gray;
+}
+
 .mailboxheader{
 	width:100%;
 	padding: 15px;
@@ -53,7 +60,6 @@
 	height: 100px;
 	padding: 15px;
 	background-color: #50aa9e;
-	border-bottom: 3px dashed #D3D5C0;
 }
 
 .mailboxheader-xs p{

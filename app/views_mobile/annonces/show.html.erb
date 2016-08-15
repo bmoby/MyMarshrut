@@ -12,29 +12,39 @@
 	<div class='row les-photos-mini'>
 		<div class='row photomini'>
 			<%if @annonce.image_stored?%>
-				<img src='<%= @annonce.image.thumb('400x250#').url%>' class='photo-responsive-mini'>
-			<%else%>
-				<div class='fotopardefaultxs'>
-					<%= image_tag("marshrutka.jpg")%>
-				</div>
-			<%end%>
+					<img src='<%= @annonce.image.thumb('400x300#').url%>' class='photo-responsive img1'>
+				<%else%>
+					<div>
+						<%= image_tag("marshrutka.jpg", class:'photo-responsive img1')%>
+					</div>
+				<%end%>
+				<%if @annonce.image2_stored?%>
+					<img src='<%= @annonce.image2.thumb('400x300#').url%>' class='photo-responsive img2 hidden'>
+				<%else%>
+					<%= image_tag("marshrutka.jpg", class:'photo-responsive img2 hidden')%>
+				<%end%>
+				<%if @annonce.image3_stored?%>
+					<img src='<%= @annonce.image3.thumb('400x300#').url%>' class='photo-responsive img3 hidden'>
+				<%else%>
+					<%= image_tag("marshrutka.jpg", class:'photo-responsive img3 hidden')%>
+				<%end%>
 		</div>
 		<div class='row trois-photos-xs'>
-			<div class='col-xs-4 three-photos-dimension-xs'>
+			<div class='col-xs-4 three-photos-dimension-xs press-photo1'>
 				<%if @annonce.image_stored?%>
 					<img src='<%= @annonce.image.thumb('200x125#').url%>' class='photo-responsivemini-xs'>
 				<%else%>
 					<%= image_tag("marshrutka.jpg", class:'photo-responsivemini-xs')%>
 				<%end%>
 			</div>
-			<div class='col-xs-4 three-photos-dimension-xs'>
+			<div class='col-xs-4 three-photos-dimension-xs press-photo2'>
 				<%if @annonce.image2_stored?%>
 				<img src='<%= @annonce.image2.thumb('200x125#').url%>' class='photo-responsivemini-xs'>
 				<%else%>
 					<%= image_tag("marshrutka.jpg", class:'photo-responsivemini-xs')%>
 				<%end%>
 			</div>
-			<div class='col-xs-4 three-photos-dimension-xs'>
+			<div class='col-xs-4 three-photos-dimension-xs press-photo3'>
 				<%if @annonce.image3_stored?%>
 					<img src='<%= @annonce.image3.thumb('200x125#').url%>' class='photo-responsivemini-xs'>
 				<%else%>

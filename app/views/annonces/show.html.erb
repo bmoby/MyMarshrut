@@ -2,32 +2,43 @@
 <div class='containercustom text-center'>
 	<div class='row text-center headershow'>
 		<div class='col-md-6 text-left fotka'>
-			<div class='row'>
+			<div class='row central-img'>
 				<%if @annonce.image_stored?%>
-					<img src='<%= @annonce.image.thumb('400x300#').url%>' class='photo-responsive'>
+					<img src='<%= @annonce.image.thumb('400x300#').url%>' class='photo-responsive img1'>
 				<%else%>
-					<div class=''>
-						<%= image_tag("marshrutka.jpg", class:'photo-responsive')%>
+					<div>
+						<%= image_tag("marshrutka.jpg", class:'photo-responsive img1')%>
 					</div>
 				<%end%>
+				<%if @annonce.image2_stored?%>
+					<img src='<%= @annonce.image2.thumb('400x300#').url%>' class='photo-responsive img2 hidden'>
+				<%else%>
+					<%= image_tag("marshrutka.jpg", class:'photo-responsive img2 hidden')%>
+				<%end%>
+				<%if @annonce.image3_stored?%>
+					<img src='<%= @annonce.image3.thumb('400x300#').url%>' class='photo-responsive img3 hidden'>
+				<%else%>
+					<%= image_tag("marshrutka.jpg", class:'photo-responsive img3 hidden')%>
+				<%end%>
 			</div>
-			<div class='col-md-4 photo-mini'>
+			<div class='col-md-4 photo-mini press-photo1'>
 				<%if @annonce.image_stored?%>
 					<img src='<%= @annonce.image.thumb('250x170#').url%>' class='photo-responsive-mini'>
 				<%else%>
 						<%= image_tag("marshrutka.jpg", class:'photo-responsive-mini')%>
 				<%end%>
 			</div>
-			<div class='col-md-4 photo-mini'>
+			<div class='col-md-4 photo-mini press-photo2'>
 				<%if @annonce.image2_stored?%>
 					<img src='<%= @annonce.image2.thumb('250x170#').url%>' class='photo-responsive-mini'>
 				<%else%>
 					<%= image_tag("marshrutka.jpg", class:'photo-responsive-mini')%>
 			<%end%>
 			</div>
-			<div class='col-md-4 photo-mini'>
+			<div class='col-md-4 photo-mini press-photo3'>
 				<%if @annonce.image3_stored?%>
 					<img src='<%= @annonce.image3.thumb('250x170#').url%>' class='photo-responsive-mini'>
+					<img src='<%= @annonce.image3.thumb('400x300#').url%>' class='photo-responsive-mini hidden'>
 				<%else%>
 					<%= image_tag("marshrutka.jpg", class:'photo-responsive-mini')%>
 			<%end%>

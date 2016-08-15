@@ -808,11 +808,13 @@
 	width:50%;
 	height:auto;
 }
-
+.copyright p{
+	color:#595e60;
+}
 
 body.searches{
 	background: asset-data-url("cover.jpg") center center fixed;
-	background-color: #cb95a8;
+	background-color: #3b4a52;
 	background-size:100%;
 	font-family: 'Comfort', sans-serif;
 	padding-bottom: 0px;
