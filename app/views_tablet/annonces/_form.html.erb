@@ -248,7 +248,11 @@
                <p> WiFi </p>
               </div>
               <div class='col-sm-3 wifi-chay'>
-                <%= f.check_box :wifi%>
+                <%if @annonce.wifi?%>
+                  <%= f.check_box :wifi, checked: true %> 
+                <%else%>
+                  <%= f.check_box :wifi, checked: false %> 
+                <%end%>
               </div>
             </div>
           </div>
@@ -271,7 +275,11 @@
                <p> Кофе/Чай </p>
               </div>
               <div class='col-sm-3 wifi-chay'>
-                <%= f.check_box :chay%>
+                <%if @annonce.chay?%>
+                  <%= f.check_box :chay, checked: true %> 
+                <%else%>
+                  <%= f.check_box :chay, checked: false %> 
+                <%end%>
               </div>
             </div>
                 
@@ -336,13 +344,28 @@
             </div>
           </div>
 
-          <div class='col-sm-2 col-sm-offset-2 car-pic1-sm'>
+          <div class='col-sm-2 col-sm-offset-2 car-pic1-sm annImg1'>
+            <img src='<%= image_url("marshrutka.jpg")%>' class='image-picker'>
+              <img src='<%= image_url("maarshrutkaOk.jpg")%>' class='image-picker-ok hidden'>
+              <div class="field">
+              <%= f.file_field :image, class:'file-pick-image hidden'%>
+            </div>
           </div>
 
-          <div class='col-sm-2 car-pic-sm'>
+          <div class='col-sm-2 car-pic-sm annImg2'>
+            <img src='<%= image_url("marshrutka.jpg")%>' class='image-picker2'>
+              <img src='<%= image_url("maarshrutkaOk.jpg")%>' class='image-picker-ok2 hidden'>
+              <div class="field">
+              <%= f.file_field :image2, class:'file-pick-image2 hidden'%>
+            </div>
           </div>
 
-          <div class='col-sm-2 car-pic-sm'>
+          <div class='col-sm-2 car-pic-sm annImg3'>
+            <img src='<%= image_url("marshrutka.jpg")%>' class='image-picker3'>
+              <img src='<%= image_url("maarshrutkaOk.jpg")%>' class='image-picker-ok3 hidden'>
+              <div class="field">
+              <%= f.file_field :image3, class:'file-pick-image3 hidden'%>
+            </div>
           </div>
         </div>
 
@@ -523,7 +546,7 @@
                 <i class="fa fa-mobile" aria-hidden="true"></i>
               </div>
               <div class='col-sm-4 tel-checkbox'>
-                <%if @annonce.telephone_type1?%>
+                <%if @annonce.telephone_type2?%>
                   <%= f.check_box :telephone_type2, checked: true %> 
                 <%else%>
                   <%= f.check_box :telephone_type2, checked: false %> 
@@ -535,7 +558,7 @@
                   <i class="fa fa-whatsapp" aria-hidden="true"></i>
                 </div>
                 <div class='col-sm-4 tel-checkbox'>
-                  <%if @annonce.telephones_type1?%>
+                  <%if @annonce.telephones_type2?%>
                   <%= f.check_box :telephones_type2, checked: true %> 
                   <%else%>
                   <%= f.check_box :telephones_type2, checked: false %> 
@@ -544,7 +567,7 @@
             </div>
           </div>
 
-          <div class="row num2 <%= 'villeinterhide' unless @annonce.telephones2?%> <%= 'numcount' if @annonce.telephones2?%>">
+          <div class="row num2 <%= 'villeinterhide' unless @annonce.telephones3?%> <%= 'numcount' if @annonce.telephones2?%>">
             <div class='col-sm-4 col-sm-offset-3 tel-input'>
               <%= f.telephone_field :telephones3 , :class => 'obligatoir-pacckage', :placeholder => "Hомер телефона 3" %>
             </div>
@@ -553,7 +576,7 @@
                 <i class="fa fa-mobile" aria-hidden="true"></i>
               </div>
               <div class='col-sm-4 tel-checkbox'>
-                <%if @annonce.telephone_type1?%>
+                <%if @annonce.telephone_type3?%>
                   <%= f.check_box :telephone_type3, checked: true %> 
                 <%else%>
                   <%= f.check_box :telephone_type3, checked: false %> 
@@ -565,7 +588,7 @@
                   <i class="fa fa-whatsapp" aria-hidden="true"></i>
                 </div>
                 <div class='col-sm-4 tel-checkbox'>
-                  <%if @annonce.telephones_type1?%>
+                  <%if @annonce.telephones_type3?%>
                   <%= f.check_box :telephones_type3, checked: true %> 
                   <%else%>
                   <%= f.check_box :telephones_type3, checked: false %> 
@@ -574,7 +597,7 @@
             </div>
           </div>
 
-          <div class="row num3 <%= 'villeinterhide' unless @annonce.telephones2?%> <%= 'numcount' if @annonce.telephones2?%>">
+          <div class="row num3 <%= 'villeinterhide' unless @annonce.telephones4?%> <%= 'numcount' if @annonce.telephones2?%>">
             <div class='col-sm-4 col-sm-offset-3 tel-input'>
               <%= f.telephone_field :telephones4 , :class => 'obligatoir-pacckage', :placeholder => "Hомер телефона 4" %>
             </div>
@@ -583,7 +606,7 @@
                 <i class="fa fa-mobile" aria-hidden="true"></i>
               </div>
               <div class='col-sm-4 tel-checkbox'>
-                <%if @annonce.telephone_type1?%>
+                <%if @annonce.telephone_type4?%>
                   <%= f.check_box :telephone_type4, checked: true %> 
                 <%else%>
                   <%= f.check_box :telephone_type4, checked: false %> 
@@ -595,7 +618,7 @@
                   <i class="fa fa-whatsapp" aria-hidden="true"></i>
                 </div>
                 <div class='col-sm-4 tel-checkbox'>
-                  <%if @annonce.telephones_type1?%>
+                  <%if @annonce.telephones_type4?%>
                   <%= f.check_box :telephones_type4, checked: true %> 
                   <%else%>
                   <%= f.check_box :telephones_type4, checked: false %> 

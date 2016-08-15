@@ -125,20 +125,54 @@
 
 .photo-responsive{
 	width: 100%;
-	height: 70vh;
+	height: 50vh;
 }
 
+.photo-responsive-mini{
+	width: 100%;
+	height: 100%;
+	padding-bottom: 0;
+}
+
+.photo-mini{
+	padding: 0;
+	height: 20vh;
+
+}
 .obnovitxs{
 	padding-top:20px;
 }
-.photo-responsivemini{
+.photo-responsivemini-xs{
 	width: 100%;
-	height: 40vh;
+	height: 100%;
 }
 
+
+.three-photos-dimension-xs{
+	height: 110px;
+	padding:0;
+}
+.three-photos-dimension-sm{
+	height: 300px;
+	padding:0;
+}
 .photo-responsiveminism{
 	width: 100%;
 	height: 50vh;
+}
+
+.image-picker, .image-picker2, .image-picker3{
+	cursor: pointer; cursor: hand;
+	width: 100%;
+	height: 100%;
+	padding:0;
+}
+
+.image-picker-ok, .image-picker-ok2, .image-picker-ok3{
+	cursor: pointer; cursor: hand;
+	width: 100%;
+	height: 100%;
+	padding:0;
 }
 
 .paragraphone{
@@ -360,24 +394,10 @@
 	padding-bottom: 5px;
 }
 
-.lastvoditelmashina2{
-	padding-top: 15px;
-	width:100%;
-	height: auto;
-	padding-bottom: 5px;
-}
-
-.lastvoditelmashina2 .fa{
-	padding:0;
-	margin: 0;
-	font-size: 55px;
-	color:white;
-}
 
 .lastvoditelmashina .fa{
-	padding:15px;
 	margin: 0;
-	font-size: 55px;
+	font-size: 15px;
 	color:#a1bfb1;
 }
 
@@ -410,7 +430,7 @@
 .voditeletmashina .fa{
 	padding:0;
 	margin: 0;
-	font-size: 31px;
+	font-size: 15px;
 	color:#78A38F;
 
 }
@@ -431,19 +451,19 @@
 
 }
 
-.voditeletmashina2 .fa{
-	padding:0;
-	margin: 0;
-	font-size: 31px;
-	color:#FDFAE9;
-
-}
 
 .voditeletmashina2sm .fa{
 	padding:0;
 	margin: 0;
 	font-size: 20px;
 	color:#FDFAE9;
+
+}
+
+.voditeletmashina2 .fa{
+
+	font-size: 20px;
+	color:white;
 
 }
 
@@ -468,7 +488,7 @@
 .voditeletmashina h3{
 	margin-top:5px;
 	padding: 0;
-	font-size: 17px;
+	font-size: 15px;
 	color:gray;
 
 }
@@ -517,13 +537,14 @@
 }
 
 .voditeletmashina{
-	border-bottom: 2px dashed rgba(220, 210, 173, 0.82);
-	padding-top: 15px;
+	padding-top: 5px;
 	width:100%;
 	height: auto;
-	padding-bottom: 15px;
 }
 
+.iconphonewhatsapp{
+	padding: 0;
+}
 
 .voditeletmashinaxs{
 	border-bottom: 2px dashed rgba(220, 210, 173, 0.82);
@@ -534,7 +555,7 @@
 
 .fotka img{
 	filter: saturate(50%);
-	filter: grayscale(100%);
+
 }
 
 .fotka{
@@ -1476,6 +1497,17 @@ input, textarea{
 	border-radius: 0;
 }
 
+.messagebox-md{
+	resize: none;
+	word-wrap: break-word;
+	width: 80%;
+	padding: 10px 20px 20px 20px;
+	height:150px;
+	background-color:white;
+	border:none;
+	border-radius: 0;
+}
+
 .messageboxxs{
 	resize: none;
 	word-wrap: break-word;
@@ -1488,6 +1520,14 @@ input, textarea{
 .podrobneeotpravit{
 	padding-right: 10%;
 	background: none;
+	border: none;
+	border-radius: 0;
+}
+
+.podrobneeotpravit-md{
+	padding-right: 10%;
+	background: none;
+	color:gray;
 	border: none;
 	border-radius: 0;
 }

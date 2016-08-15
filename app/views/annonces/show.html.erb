@@ -2,116 +2,42 @@
 <div class='containercustom text-center'>
 	<div class='row text-center headershow'>
 		<div class='col-md-6 text-left fotka'>
-			<%if @annonce.image_stored?%>
-				<img src='<%= @annonce.image.thumb('800x700#').url%>' class='photo-responsive'>
-			<%else%>
-				<div class='fotopardefaultxs'>
-					<%= image_tag("marshrutka.jpg")%>
-				</div>
+			<div class='row'>
+				<%if @annonce.image_stored?%>
+					<img src='<%= @annonce.image.thumb('400x300#').url%>' class='photo-responsive'>
+				<%else%>
+					<div class=''>
+						<%= image_tag("marshrutka.jpg")%>
+					</div>
+				<%end%>
+			</div>
+			<div class='col-md-4 photo-mini'>
+				<%if @annonce.image_stored?%>
+					<img src='<%= @annonce.image.thumb('250x170#').url%>' class='photo-responsive-mini'>
+				<%else%>
+						<%= image_tag("marshrutka.jpg", class:'photo-responsive-mini')%>
+				<%end%>
+			</div>
+			<div class='col-md-4 photo-mini'>
+				<%if @annonce.image2_stored?%>
+					<img src='<%= @annonce.image2.thumb('250x170#').url%>' class='photo-responsive-mini'>
+				<%else%>
+					<%= image_tag("marshrutka.jpg", class:'photo-responsive-mini')%>
 			<%end%>
+			</div>
+			<div class='col-md-4 photo-mini'>
+				<%if @annonce.image3_stored?%>
+					<img src='<%= @annonce.image3.thumb('250x170#').url%>' class='photo-responsive-mini'>
+				<%else%>
+					<%= image_tag("marshrutka.jpg", class:'photo-responsive-mini')%>
+			<%end%>
+			</div>
 		</div>
 		<div class='col-md-6 vajnoeoba'>
-			<div class='row vajnoe2'>
-				<div class='row lastvoditelmashina2 text-center'>
-					<i class="fa fa-chevron-up" aria-hidden="true"></i>
-				</div>
-				<%if @annonce.telephones? || @annonce.telephones2?%>
-					<div class='row voditeletmashina2 text-left'>
-						<%if @annonce.telephones?%>
-							<div class='col-md-2 text-right'>
-								<%if @annonce.telephones_type1?%>
-									<i class="fa fa-mobile" aria-hidden="true"></i>
-								<%end%>
-								<%if @annonce.telephone_type1?%>
-									<i class="fa fa-whatsapp" aria-hidden="true"></i>
-								<%end%>
-							</div>
-							<div class='col-md-4 text-left colmd4'>
-								<h3 class='pinlineblock'><%=@annonce.telephones%></h3></br>
-							</div>
-						<%end%>
-						<%if @annonce.telephones2?%>
-							<div class='col-md-2 text-right'>
-								<%if @annonce.telephones_type2?%>
-									<i class="fa fa-mobile" aria-hidden="true"></i>
-								<%end%>
-								<%if @annonce.telephone_type2?%>
-									<i class="fa fa-whatsapp" aria-hidden="true"></i>
-								<%end%>
-							</div>
-							<div class='col-md-4 text-left colmd4'>
-								<h3 class='pinlineblock'><%=@annonce.telephones2%></h3></br>
-							</div>
-						<%end%>
-					</div>
-				<%end%>
-					<%if @annonce.telephones3? || @annonce.telephones4?%>
-					<div class='row voditeletmashina2 text-left'>
-						<%if @annonce.telephones3?%>
-							<div class='col-md-2 text-right'>
-								<%if @annonce.telephones_type3?%>
-									<i class="fa fa-mobile" aria-hidden="true"></i>
-								<%end%>
-								<%if @annonce.telephone_type3?%>
-									<i class="fa fa-whatsapp" aria-hidden="true"></i>
-								<%end%>
-							</div>
-							<div class='col-md-4 text-left colmd4'>
-								<h3 class='pinlineblock'><%=@annonce.telephones3%></h3></br>
-							</div>
-						<%end%>
-						<%if @annonce.telephones4?%>
-							<div class='col-md-2 text-right'>
-								<%if @annonce.telephones_type4?%>
-									<i class="fa fa-mobile" aria-hidden="true"></i>
-								<%end%>
-								<%if @annonce.telephone_type4?%>
-									<i class="fa fa-whatsapp" aria-hidden="true"></i>
-								<%end%>
-							</div>
-							<div class='col-md-4 text-left colmd4'>
-								<h3 class='pinlineblock'><%=@annonce.telephones4%></h3></br>
-							</div>
-						<%end%>
-					</div>
-				<%end%>
-				<div class='row voditeletmashinaspec2'>
-					<%if user_signed_in?%>
-						<div class='paragraphone2'>
-							<h5>Перед тем как связатсься с водителям, просьба прочитать все информации. Проевим увожение водителям!</h5>
-						</div>
-						<div class='row contactinputs'>
-							<%= form_tag conversations_path, method: :post do%>
-					 			<%= hidden_field_tag :user_id, @annonce.user_id %>
-								<%= hidden_field_tag :subject, current_user.prenom + 'прислал вам сообщение'  %>
-								<%= text_area_tag :body, nil, class: 'messagebox', id:'messagevoditelyu', placeholder: 'Задайте все свои вопросы и нажмите на "Отправить"'%>
-								<div class='text-right'>
-									<%= button_tag(type:"submit", class: 'podrobneeotpravit') do%>
-										<p>ОТПРАВИТЬ</p>
-									<%end%></br></br>
-								</div>
-							<%end%>
-						</div>
-					<%else%>
-						<div class='row'>
-							<h5>Чтобы написать водителю сообшение через mymarshrut, необходимо <%= link_to 'зарегистрироватся', new_user_registration_path %>.</h5></br>
-						</div>
-						<div class='row contactinputs'>
-								
-							<%= text_area_tag :body, nil, class: 'messagebox', id:'messagevoditelyu', placeholder: 'Задайте все свои вопросы и нажмите на "Отправить"', readonly: true%>
-							<div class='text-right'>
-								<%= button_tag( class: 'podrobneeotpravit') do%>
-									<p>ОТПРАВИТЬ</p>
-								<%end%></br></br>
-							</div>
-						</div>
-					<%end%>
-				</div>
-			</div>
 			<div class='row vajnoe'>
 				<div class='row tuda text-center'>
 					<div class='col-md-3 text-left datedeparture'>
-						<h4 class='pinlineblock'><%= @annonce.date_depart%></h4>
+						<h4 class='pinlineblock'><%= @annonce.date_depart.strftime("%d/%m/%Y")%></h4>
 					</div>
 					<div class='col-md-6 text-center'>
 						<h4><%= @annonce.ville_depart.truncate_words(1, omission: ' ') %> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ') %></h4>
@@ -151,7 +77,7 @@
 						<i class="fa fa-wifi" aria-hidden="true"></i>
 					</div>
 					<div class='col-md-4 text-left'>
-						<%if @annonce.wifi?%>
+						<%if @annonce.wifi == true%>
 							<h3 class='pinlineblock'> Есть вифи</h3>
 						<%else%>
 							<h3 class='pinlineblock'> Вифи нет</h3>
@@ -169,7 +95,7 @@
 						<i class='fa fa-coffee'></i>
 					</div>
 					<div class='col-md-4 text-left'>
-						<%if @annonce.chay?%>
+						<%if @annonce.chay == true%>
 							<h3 class='pinlineblock'>Кофе безплатно</h3>
 						<%else%>
 							<h3 class='pinlineblock'>Не указано</h3>
@@ -214,9 +140,96 @@
 						<%end%>
 					</div>
 				</div>
-				<div class='row lastvoditelmashina text-center'>
-					<i class="fa fa-chevron-down" aria-hidden="true"></i>
+				<%if @annonce.telephones? || @annonce.telephones2?%>
+					<div class='row voditeletmashina text-left'>
+						<%if @annonce.telephones?%>
+							<div class='col-md-1 text-center iconphonewhatsapp'>
+								<%if @annonce.telephones_type1?%>
+									<i class="fa fa-mobile" aria-hidden="true"></i>
+								<%end%>
+								<%if @annonce.telephone_type1?%>
+									<i class="fa fa-whatsapp" aria-hidden="true"></i>
+								<%end%>
+							</div>
+							<div class='col-md-4 text-left colmd4'>
+								<h3 class='pinlineblock'><%=@annonce.telephones%></h3></br>
+							</div>
+						<%end%>
+						<%if @annonce.telephones2?%>
+							<div class='col-md-1 text-center iconphonewhatsapp'>
+								<%if @annonce.telephones_type2?%>
+									<i class="fa fa-mobile" aria-hidden="true"></i>
+								<%end%>
+								<%if @annonce.telephone_type2?%>
+									<i class="fa fa-whatsapp" aria-hidden="true"></i>
+								<%end%>
+							</div>
+							<div class='col-md-6 text-left colmd4'>
+								<h3 class='pinlineblock'><%=@annonce.telephones2%></h3></br>
+							</div>
+						<%end%>
+					</div>
+				<%end%>
+					<%if @annonce.telephones3? || @annonce.telephones4?%>
+					<div class='row voditeletmashina text-right'>
+						<%if @annonce.telephones3?%>
+							<div class='col-md-1 text-center iconphonewhatsapp'>
+								<%if @annonce.telephones_type3?%>
+									<i class="fa fa-mobile" aria-hidden="true"></i>
+								<%end%>
+								<%if @annonce.telephone_type3?%>
+									<i class="fa fa-whatsapp" aria-hidden="true"></i>
+								<%end%>
+							</div>
+							<div class='col-md-4 text-left colmd4'>
+								<h3 class='pinlineblock'><%=@annonce.telephones3%></h3></br>
+							</div>
+						<%end%>
+						<%if @annonce.telephones4?%>
+							<div class='col-md-1 text-center iconphonewhatsapp'>
+								<%if @annonce.telephones_type4?%>
+									<i class="fa fa-mobile" aria-hidden="true"></i>
+								<%end%>
+								<%if @annonce.telephone_type4?%>
+									<i class="fa fa-whatsapp" aria-hidden="true"></i>
+								<%end%>
+							</div>
+							<div class='col-md-6 text-left colmd4'>
+								<h3 class='pinlineblock'><%=@annonce.telephones4%></h3></br>
+							</div>
+						<%end%>
+					</div>
+				<%end%>
+				<div class='row voditeletmashinaspec'>
+					<%if user_signed_in?%>
+						<div class='row contactinputs'>
+							<%= form_tag conversations_path, method: :post do%>
+					 			<%= hidden_field_tag :user_id, @annonce.user_id %>
+								<%= hidden_field_tag :subject, current_user.prenom + 'прислал вам сообщение'  %>
+								<%= text_area_tag :body, nil, class: 'messagebox-md', id:'messagevoditelyu', placeholder: 'Задайте все свои вопросы и нажмите на "Отправить"'%>
+								<div class='text-right'>
+									<%= button_tag(type:"submit", class: 'podrobneeotpravit-md') do%>
+										<p>ОТПРАВИТЬ</p>
+									<%end%></br></br>
+								</div>
+							<%end%>
+						</div>
+					<%else%>
+						<div class='row'>
+							<h5>Чтобы написать водителю сообшение через mymarshrut, необходимо <%= link_to 'зарегистрироватся', new_user_registration_path %>.</h5></br>
+						</div>
+						<div class='row contactinputs'>
+								
+							<%= text_area_tag :body, nil, class: 'messagebox', id:'messagevoditelyu', placeholder: 'Задайте все свои вопросы и нажмите на "Отправить"', readonly: true%>
+							<div class='text-right'>
+								<%= button_tag( class: 'podrobneeotpravit') do%>
+									<p>ОТПРАВИТЬ</p>
+								<%end%></br></br>
+							</div>
+						</div>
+					<%end%>
 				</div>
+
 			</div>
 		</div>
 	</div>

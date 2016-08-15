@@ -1,22 +1,47 @@
 <%= render 'shared/navbar'%>
 <div class='mobilshow'>
 	<div class='row text-center tudasyudaxs'>
-				<h4><%= @annonce.ville_depart.truncate_words(1, omission: ' ') %> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ') %></h4>
+		<h4><%= @annonce.ville_depart.truncate_words(1, omission: ' ') %> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ') %></h4>
+	</div>
+	<div class='row trois-photos-sm'>
+		<div class='row photomini'>
+			<%if @annonce.image_stored?%>
+				<img src='<%= @annonce.image.thumb('400x250#').url%>' class='photo-responsiveminism'>
+			<%else%>
+				<div class='fotopardefaultxs'>
+					<%= image_tag("marshrutka.jpg")%>
+				</div>
+			<%end%>
+		</div>
+		<div class='row three-photos-sm'>
+			<div class='col-sm-4 three-photos-dimension-sm'>
+				<%if @annonce.image_stored?%>
+					<img src='<%= @annonce.image.thumb('300x196#').url%>' class='photo-responsivemini-xs'>
+				<%else%>
+					<%= image_tag("marshrutka.jpg", class:'photo-responsivemini-xs')%>
+				<%end%>
 			</div>
-	<div class='row photomini'>
-		<%if @annonce.image_stored?%>
-			<img src='<%= @annonce.image.thumb('400x250#').url%>' class='photo-responsiveminism'>
-		<%else%>
-			<div class='fotopardefaultxs'>
-				<%= image_tag("marshrutka.jpg")%>
+			<div class='col-sm-4 three-photos-dimension-sm'>
+				<%if @annonce.image2_stored?%>
+					<img src='<%= @annonce.image2.thumb('300x196#').url%>' class='photo-responsivemini-xs'>
+				<%else%>
+					<%= image_tag("marshrutka.jpg", class:'photo-responsivemini-xs')%>
+				<%end%>
 			</div>
-		<%end%>
+			<div class='col-sm-4 three-photos-dimension-sm'>
+				<%if @annonce.image3_stored?%>
+					<img src='<%= @annonce.image3.thumb('300x196#').url%>' class='photo-responsivemini-xs'>
+				<%else%>
+					<%= image_tag("marshrutka.jpg", class:'photo-responsivemini-xs')%>
+				<%end%>
+			</div>
+		</div>
 	</div>
 	<div class='row vajnoexs'>
 		<div class='row tudadateprixxs'>
 			<div class='row '>
 				<div class='col-sm-6 text-left datedepartrowxs'>
-					<h4 class='pinlineblock'><%= @annonce.date_depart%></h4>
+					<h4 class='pinlineblock'><%= @annonce.date_depart.strftime("%d/%m/%Y")%></h4>
 				</div>
 				<div class='col-sm-6 prixpassagerxs text-right'>
 					<h4 class='pinlineblock'> <%= @annonce.prix_passager%>€</h4>
@@ -288,7 +313,6 @@
 								<div class='maplinepodrobnee pinline'></div></h4>
 							</div>
 						<%end%>
-						<%if @annonce.villeinter10? || @annonce.villeinter9? || @annonce.villeinter8? || @annonce.villeinter7?%>
 						<div class='pinlineblock gorodpodrobnee'>
 							<div class='entourp'>
 								<p class='pinline'><%=@annonce.ville_arrive.truncate_words(1, omission: ' ') %></p>
@@ -296,7 +320,6 @@
 							</br>
 							<h3 class='pinline gorodpodrobnee'><i class="fa fa-circle-o" aria-hidden="true"></i></h3>
 						</div>
-						<%end%>
 						</div>
 						
 					</div>
