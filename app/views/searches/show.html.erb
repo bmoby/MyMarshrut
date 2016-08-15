@@ -1,16 +1,107 @@
-<%= render 'shared/navbar' %>
+<%unless user_signed_in?%>
+	<nav class="navbar-search navbar-default navbar-static-top">
+		<div class='container-fluid text-center navbar-container'>
+			<div class='col-md-1 navbar-icone'>
+				<a href='<%=root_path%>'><i class="fa fa-bus" aria-hidden="true"></i></a>
+			</div>
 
-	<div class='row searchbackground text-center'>
-		<%= form_for @search, class:'gaga' do |s| %>
-			<div class="field">  
-				<%= s.text_field :ville_d, class:'home', placeholder: 'Откуда?', id:'villesdsearch'%>
-				<%= s.text_field :ville_a, class:'home', placeholder: 'Куда?', id:'villesasearch'%>
-				<p class='pinline'><%= button_tag(type: "submit", class: "poisk") do %></p>
-			 		<i class="glyphicon glyphicon-search"></i> Поиск
-				<%end%></br>
-	  		</div>
-		<% end %>
-	</div>
+			<div class='col-md-7 col-md-offset-1 navbar-search'>
+				<%= form_for @search, class:'gaga' do |s| %>
+					<div class='col-md-5 text-tight search-bar1'>  
+						<%= s.text_field :ville_d, class:'home', placeholder: 'Откуда?', id:'villesdsearch'%>
+					</div>
+					<div class='col-md-5 text-left search-bar2' >
+						<%= s.text_field :ville_a, class:'home', placeholder: 'Куда?', id:'villesasearch'%>
+					</div>
+					<div class='col-md-1 text-left search-bar3'>
+						<%= button_tag(type: "submit", class: "poisk") do %>
+					 		<i class="fa fa-search" aria-hidden="true"></i>
+						<%end%></br>
+			  		</div>
+				<% end %>
+			</div>
+
+			<div class='col-md-3'>
+				<ul class='notconnectedlinks nav navbar-nav navbar-right hidden-xs'>
+					<li><a href='<%= new_user_session_path%>'><i class="iconsignin fa fa-sign-in"></i> Bход </a></li>
+					<li><a href='<%= new_user_registration_path%>'><i class="fa fa-pencil" aria-hidden="true"></i>Pегистрация</a></li>
+				</ul>
+			</div>
+			<ul class='notconnectedlinksmobile visible-xs'>
+				<li><%= link_to new_user_session_path, class:'newusersessionclass' do%>
+					<i class="iconsignin fa fa-sign-in"></i> вход
+					<%end%>
+				</li>
+				<li><%= link_to new_user_registration_path, class:'newusersessionclass' do%>
+					<i class="fa fa-pencil" aria-hidden="true"></i> регистрация
+					<%end%>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<%else%>
+
+	<nav class="navbar-search navbar-default navbar-static-top">
+		<div class='container-fluid text-center navbar-container'>
+			<div class='col-md-1 navbar-icone'>
+				<a href='<%=root_path%>'><i class="fa fa-bus" aria-hidden="true"></i></a>
+				<%if current_user.mailbox.conversations.unread(current_user).count == 0 %>
+					<button type'button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
+						<span class='sr-only'>navigateur</span>
+						<span class='icon-bar'></span>
+						<span class='icon-bar'></span>
+						<span class='icon-bar'></span>
+					</button>
+					<%else%>
+					<button type'button' class='notibtn navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
+						<div>
+						<span class='sr-only'>navigateur</span>
+						<p class='notif'><i class="fa fa-bell" aria-hidden="true"></i> <%=current_user.mailbox.conversations.unread(current_user).count%></p>
+						</div>
+					</button>
+				<%end%>
+			</div>
+			
+			<div class='col-md-7 col-md-offset-1 navbar-search'>
+				<%= form_for @search, class:'gaga' do |s| %>
+					<div class='col-md-5 text-tight search-bar1'>  
+						<%= s.text_field :ville_d, class:'home', placeholder: 'Откуда?', id:'villesdsearch'%>
+					</div>
+					<div class='col-md-5 text-left search-bar2' >
+						<%= s.text_field :ville_a, class:'home', placeholder: 'Куда?', id:'villesasearch'%>
+					</div>
+					<div class='col-md-1 text-left search-bar3'>
+						<%= button_tag(type: "submit", class: "poisk") do %>
+					 		<i class="fa fa-search" aria-hidden="true"></i>
+						<%end%></br>
+			  		</div>
+				<% end %>
+			</div>
+
+			<div class='col-md-3'>
+				<ul class='notconnectedlinks nav navbar-nav navbar-right collapse navbar-collapse text-left'>
+					<li> <%= link_to mymenu_path_url do%>
+						<div class='pinlineblock'>
+							<%if current_user.avatars.first != nil %>
+								<%= image_tag current_user.avatars.first.image.thumb('50x50#').url, class:'profile-picturenav'%>
+							<%else%>
+								<%= image_tag("no-profile.gif", class:'profile-picturenav')%>
+							<%end%>
+						</div> Мой офис
+					<%end%>
+					</li>
+					
+		            <li role="separator" class="divider"></li>
+		            <li><%= link_to destroy_user_session_path, :method => :delete do%>
+						<i class='glyphicon glyphicon-off'></i> Выход 
+						<%end%>
+					</li>
+				</ul>
+			</div>		
+		</div>
+	</nav>
+<%end%>
+
 
 	<%if @search.search_annonces.count == 0 %>
 		<div class='text-center'>
@@ -57,7 +148,7 @@
 								</br>
 						</div>
 						<div class='row infodumilieu'>
-							<div class='col-md-4'>
+							<div class='col-md-4 listing-information'>
 								<%if annonce.nombre_chauffeurs?%>
 									<% if annonce.nombre_chauffeurs == 1%>
 										<p><i class='fa fa-male'> </i>   <%= annonce.nombre_chauffeurs %> Водитель</p>
@@ -87,7 +178,7 @@
 									<p><i class="fa fa-pause" aria-hidden="true"></i> Остановки по усмотрению водителя</p>
 								<%end%>
 							</div>
-							<div class='col-md-4 annonce_info2'>
+							<div class='col-md-4 annonce_info2 listing-information'>
 								<% if annonce.accept_colis == true%>
 									<p><i class='fa fa-check-circle'> </i> Перевозка груза:</p>
 									<p> <%= annonce.prix_kg_colis%> <i class='fa fa-eur'> </i> кг. мин вес  <%= annonce.poid_min_colis%> кг</p>
@@ -101,7 +192,7 @@
 								<%end%>
 							</div>
 
-							<div class='col-md-4 text-left prixcontact'>
+							<div class='col-md-4 text-left prixcontact listing-information'>
 								<%if annonce.telephones?%>
 									<%if annonce.telephones_type1?%>
 										<p class='pinline'><i class="fa fa-whatsapp" aria-hidden="true"></i> </p>

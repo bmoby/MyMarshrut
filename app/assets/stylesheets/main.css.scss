@@ -578,6 +578,7 @@
 
 .gorod p{
 	color:#8a8a8a;
+	font-family: 'Play', sans-serif;
 }
 .gorod h4{
 
@@ -597,6 +598,7 @@
 .gorodxs p{
 	font-size: 12px;
 	color:#8a8a8a;
+	font-family: 'Play', sans-serif;
 }
 .gorodxs h4{
 	font-size: 14px;
@@ -626,8 +628,8 @@
 }
 
 .mobiletel{
-	background-color: #F6F3EE;
-
+	background-color: #ede7de;
+	border-top: solid 0.5px gray;
 }
 
 .entourp{
@@ -635,20 +637,22 @@
 }
 
 .marshrut{
-	border-top: solid 1px #D1CBD6;
+	border: dashed 3px #e5ded3;
 	background-color: #f1ece4;
 	padding-top: 20px;
 }
 
 .marshrutxs{
 	background-color: #f1ece4;
-	padding: 6px;
-	padding-bottom: 10px;
-
+    padding: 6px;
+    padding-bottom: 10px;
+    border-top: 1px solid gray;
 }
+
 .pinline{
 	display:inline;
 }
+
 
 .maplinespec{
 	position:absolute;
@@ -975,28 +979,104 @@ textarea:focus, input:focus{
 
 
 										// Search //
-.searchbackground{
-    padding: 5px;
-    margin: 0;
-    width: 100%;
-    height: auto;
-    background-color: rgba(80, 170, 158, 0.76);
-    padding-bottom: 20px;
-    padding-top: 20px;
+
+.navbar-container{
+	padding: 0px;
+	background-color:white;
 }
 
+.navbar-search{
+	padding:0;
+}
+
+
+.navbar-icone{
+	padding-left: 0px;
+	padding-right:50px;
+    font-size: 35px;
+}
+
+.navbar-icone a{
+	color:#3E454C;
+}
+
+.navbar-icone-sm{
+    font-size: 35px;
+}
+
+.navbar-icone-sm a{
+	color:#3E454C;
+}
 
 .home {
-    width: 350px;
-    font-family: 'Prosto One', cursive;
-    height: 45px;
-    background-color: #f5f5eb;
+    width:100%;
+    
+    height: 52px;
     border: none;
     font-size: 10pt;
-    color: #747453;
-    padding-left: 10px;
+    color: #777;
+    padding: 10px;
     border-radius: 0px;
 }
+
+.home input{
+	color:white;
+}
+
+.search-bar1{
+	border-left: solid 0.2px #d5d7c2;
+	border-right: solid 0.2px #d5d7c2;
+	padding:0;
+}
+
+
+.search-bar3{
+	border-left: solid 0.2px #d5d7c2;
+	border-right: solid 0.2px #d5d7c2;
+	padding:0;
+}
+
+.poisk{
+	width: 100%;
+    height: 52px;
+    color: #777;
+    border: none;
+    background-color:white;
+    font-size:25px;
+  
+}
+
+.poisk fa{
+	color: #d5d7c2;
+	margin:0
+}
+
+.poisk:hover p{
+	margin-top: 1px;
+	color:white;
+}
+
+.no-padding{
+	padding:15px 0;
+}
+
+.office-col-sm {
+	position:relative;
+	left:35px
+}
+
+.office-col-sm a{
+	color:#777;
+}
+
+.log-out-col{
+	padding-left:0;
+}
+
+.log-out-col a{
+	color:#777;
+}
+
 
 									//Search//
 
@@ -1063,7 +1143,8 @@ textarea:focus, input:focus{
 .annoncexs{
 	background-color:#F6F3EE;
 	margin-bottom:10px;
-	padding:10px;
+	margin-top:5px;
+	padding:5px;
 	border:solid 1px #dbcfbd;
 	padding-left:0;
 	padding-right: 0;
@@ -1124,12 +1205,13 @@ width:100%;
 
 }
 
+
 .infosm{
 	width: 100%;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	background-color: #ede7de;
-	border:dashed 2px gray;
+	border-top: solid 0.5px gray;
 }
 
 .prixsm{
@@ -1159,18 +1241,22 @@ width:100%;
 	color:#cb676f;
 }
 .datedirectionxs h4{
-	color:#a5b385;
+	color:#78a38f;
 	font-family: 'Russo One', sans-serif;
 	font-size:20px;
 	
 }
 
 .datedirectionxs p{
-	color:#a5b385;
+	color:#78a38f;
 	font-size:17px;
 	font-family: 'Russo One', sans-serif;
 	margin-top:19px;
-	
+	padding-left:0;	
+}
+
+.date-price-sm{
+	padding:0;
 }
 
 .tudasyudaxs h4{
@@ -1184,7 +1270,7 @@ width:100%;
 }
 
 .datedirection p{
-	color:#a5b385;
+	color:#8faa9e;
 	font-size:19px;
 	font-family: 'Russo One', sans-serif;
 }
@@ -1198,7 +1284,7 @@ width:100%;
 }
 
 .datedirection{
-	border-bottom:dashed 2px #C3C4BC;
+	border-bottom:solid 1px #C3C4BC;
 }
 
 .datedirectionbackground{
@@ -1223,6 +1309,23 @@ width:100%;
 .deleteeditmenusm{
 	padding-top: 12px;
 }
+
+.listing-information{
+	border-left:solid 1px #C3C4BC;
+	font-size:14px;
+}
+
+.listing-information p{
+	color: gray;
+    font-family: 'Play', sans-serif;
+}
+
+.listing-information-sm p{
+	color: gray;
+    font-family: 'Play', sans-serif;
+}
+
+
 
 
 
@@ -1660,27 +1763,7 @@ input, textarea{
 	color:#F28D00;
 }
 
-.poisk{
-	width:100px;
-	height:30px;
-	padding-left:15px;
-	padding-right:15px;
-	color:gray;
-	border:none;
-	border-radius:5px;
-	background:none;
-}
 
-
-.poisk p{
-	margin-top: 5px;
-	color:gray;
-}
-
-.poisk:hover p{
-	margin-top: 5px;
-	color:white;
-}
 
 
 .poiskxss{
