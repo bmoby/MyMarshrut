@@ -22,7 +22,7 @@
 <%else%>
 
 <nav class="navbar navbar-default navbar-static-top">
-	<div class='container-fluid text-center'>
+	<div class='container-fluid text-center padding'>
 		<div class='navbar-header'>
 			<div class='navbar-brand'>
 			<a href='<%=root_path%>'><i class="fa fa-bus" aria-hidden="true"></i></a>
@@ -43,7 +43,7 @@
 					</button>
 				<%end%>
 		</div>
-			<div class='col-sm-10 col-sm-offset-1'>
+			<div class='col-sm-10 col-sm-offset-1 padding'>
 		<ul class='notconnectedlinks nav navbar-nav navbar-right collapse navbar-collapse text-left'>
 			<li> <%= link_to mymenu_path_url do%>
 				<%if current_user.avatars.first.present?%>
