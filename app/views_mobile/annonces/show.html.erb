@@ -1,33 +1,33 @@
 <%= render 'shared/navbar'%>
 <div class='mobilshow'></br>
-	<div class='ribbon'>
+	<div class='ribbon ribbon-for-mobile'>
 		<div class='ribbon-stitches-top'></div>
-		<div class='row ribbon-content'><h1>
-			<div class='row text-center'>
-				<%= @annonce.ville_depart.truncate_words(1, omission: ' ') %> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ') %>
-		</div>
-		</h1></div>
+			<div class='row ribbon-content'><h1>
+				<div class='row text-center'>
+					<%= @annonce.ville_depart.truncate_words(1, omission: ' ') %> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ') %>
+				</div></h1>
+			</div>
 		<div class='row ribbon-stitches-bottom'></div>
 	</div></br>
 	<div class='row les-photos-mini'>
 		<div class='row photomini'>
 			<%if @annonce.image_stored?%>
-					<img src='<%= @annonce.image.thumb('400x300#').url%>' class='photo-responsive img1'>
-				<%else%>
-					<div>
-						<%= image_tag("marshrutka.jpg", class:'photo-responsive img1')%>
-					</div>
-				<%end%>
-				<%if @annonce.image2_stored?%>
-					<img src='<%= @annonce.image2.thumb('400x300#').url%>' class='photo-responsive img2 hidden'>
-				<%else%>
-					<%= image_tag("marshrutka.jpg", class:'photo-responsive img2 hidden')%>
-				<%end%>
-				<%if @annonce.image3_stored?%>
-					<img src='<%= @annonce.image3.thumb('400x300#').url%>' class='photo-responsive img3 hidden'>
-				<%else%>
-					<%= image_tag("marshrutka.jpg", class:'photo-responsive img3 hidden')%>
-				<%end%>
+				<img src='<%= @annonce.image.thumb('400x300#').url%>' class='photo-responsive img1'>
+			<%else%>
+				<div>
+					<%= image_tag("marshrutka.jpg", class:'photo-responsive img1')%>
+				</div>
+			<%end%>
+			<%if @annonce.image2_stored?%>
+				<img src='<%= @annonce.image2.thumb('400x300#').url%>' class='photo-responsive img2 hidden'>
+			<%else%>
+				<%= image_tag("marshrutka.jpg", class:'photo-responsive img2 hidden')%>
+			<%end%>
+			<%if @annonce.image3_stored?%>
+				<img src='<%= @annonce.image3.thumb('400x300#').url%>' class='photo-responsive img3 hidden'>
+			<%else%>
+				<%= image_tag("marshrutka.jpg", class:'photo-responsive img3 hidden')%>
+			<%end%>
 		</div>
 		<div class='row trois-photos-xs'>
 			<div class='col-xs-4 three-photos-dimension-xs press-photo1'>
@@ -39,7 +39,7 @@
 			</div>
 			<div class='col-xs-4 three-photos-dimension-xs press-photo2'>
 				<%if @annonce.image2_stored?%>
-				<img src='<%= @annonce.image2.thumb('200x125#').url%>' class='photo-responsivemini-xs'>
+					<img src='<%= @annonce.image2.thumb('200x125#').url%>' class='photo-responsivemini-xs'>
 				<%else%>
 					<%= image_tag("marshrutka.jpg", class:'photo-responsivemini-xs')%>
 				<%end%>

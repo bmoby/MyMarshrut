@@ -1178,10 +1178,17 @@ textarea:focus, input:focus{
 }
 
 .homexs{
-  height: 30px;
+	position: relative;
+	top:8px;
+  display: inline-block;
+  width: 100%;
   border: none;
   font-size: 10pt;
   color: #777;
+}
+
+.search-bar3-xs{
+	padding: 0;
 }
 
 .image-size {
