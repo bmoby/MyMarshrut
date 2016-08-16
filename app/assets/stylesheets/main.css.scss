@@ -8,6 +8,9 @@
 	padding-left: 5px;
 }
 
+.conditions{
+	font-family: "Play" sans-serif;
+}
 
 .footer-md{
 	border-top: dashed 3px #4d5051;
@@ -270,7 +273,7 @@
 
 .mapxs{
 	padding-top: 30px;
-	height:70px;
+	height:90px;
 }
 
 .maplinepodrobnee{
@@ -950,6 +953,7 @@ textarea:focus, input:focus{
 	padding-right:0;
 }
 
+
 // DESIGN ANNONCE DISPLAY ALL --------->
 
 .leboutonpodrobnee h3{
@@ -1027,13 +1031,14 @@ textarea:focus, input:focus{
 .search-row-xs{
 	border-bottom:solid 0.2px #d5d7c2;
 	background-color:white;
+
 }
 
 .search-bar1-xs{
 	padding-left: 5px;
     padding-right: 0px;
     height: 45px;
-    border-right: solid 0.2px #d5d7c2;
+    border-right: solid 1px #d5d7c2;
     padding-top: 5px;
 }
 
@@ -1046,9 +1051,12 @@ textarea:focus, input:focus{
 
 .search-bar3-xs{
 	padding: 0px;
-    padding-right: 0px;
     border-left: solid 1px #d5d7c2;
     height: 45px;
+}
+
+.search-bar3-xs .fa{
+	padding: 0;
 }
 
 .search-bar3-xs:active{
@@ -1062,6 +1070,8 @@ textarea:focus, input:focus{
     background-color: white;
     font-size: 25px;
     padding-top: 6px;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .poisk-xs:active{

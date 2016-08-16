@@ -199,10 +199,10 @@
         </div>
 
         <div class='row text-center date-row'>
-          <div class='col-xs-1 col-xs-offset-1 calendar-xs'>
+          <div class='col-xs-1 calendar-xs text-right'>
             <i class="fa fa-calendar" aria-hidden="true"></i>
           </div>
-          <div class='field col-xs-10 text-left date'>
+          <div class='field col-xs-11 text-center date date-xs'>
           <%= f.date_select :date_depart, order: [ :day, :month, :year], prompt: { day: 'день', month: 'месяц', year: 'год' }, start_year: Date.today.year, use_month_names: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь','Декабрь'] %>
           </div>
         </div>
@@ -353,8 +353,8 @@
   
             <div class='row'>
               <div class='col-xs-10 col-xs-offset-1 car-pic-xs annImg1'>
-                <img src='<%= image_url("marshrutka.jpg")%>' class='image-picker'>
-              <img src='<%= image_url("maarshrutkaOk.jpg")%>' class='image-picker-ok hidden'>
+                <img src='<%= image_url("photo1.jpg")%>' class='image-picker'>
+              <img src='<%= image_url("photo1ok.jpg")%>' class='image-picker-ok hidden'>
               <div class="field">
               <%= f.file_field :image, class:'file-pick-image hidden'%>
             </div>
@@ -363,8 +363,8 @@
 
             <div class='row'>
               <div class='col-xs-10 col-xs-offset-1 car-pic-xs annImg2'>
-                <img src='<%= image_url("marshrutka.jpg")%>' class='image-picker2'>
-              <img src='<%= image_url("maarshrutkaOk.jpg")%>' class='image-picker-ok2 hidden'>
+                <img src='<%= image_url("photo2.jpg")%>' class='image-picker2'>
+              <img src='<%= image_url("photo2ok.jpg")%>' class='image-picker-ok2 hidden'>
               <div class="field">
               <%= f.file_field :image2, class:'file-pick-image2 hidden'%>
             </div>
@@ -373,8 +373,8 @@
 
             <div class='row'>
               <div class='col-xs-10 col-xs-offset-1 car-pic-xs annImg3'>
-                <img src='<%= image_url("marshrutka.jpg")%>' class='image-picker3'>
-              <img src='<%= image_url("maarshrutkaOk.jpg")%>' class='image-picker-ok3 hidden'>
+                <img src='<%= image_url("photo3.jpg")%>' class='image-picker3'>
+              <img src='<%= image_url("photo3ok.jpg")%>' class='image-picker-ok3 hidden'>
               <div class="field">
               <%= f.file_field :image3, class:'file-pick-image3 hidden'%>
             </div>

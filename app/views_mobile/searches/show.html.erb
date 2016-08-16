@@ -1,19 +1,19 @@
 <%= render 'shared/navbar' %>
-<div class='row text-center search-row-xs'>
 	<%= form_for @search, class:'gaga' do |s| %>
-		<div class="col-xs-5 search-bar1-xs">  
-	   		<%= s.text_field :ville_d, class:'homexs', placeholder: 'Откуда?', id:'villesdxssearch'%></br>
-	   	</div>
-	   	<div class='col-xs-5 search-bar2-xs'>
-			<%= s.text_field :ville_a, class:'homexs', placeholder: 'Куда?', id:'villesaxssearch'%>
-		</div>
-		<div class='col-xs-2 text-center search-bar3-xs'>
-			<%= button_tag(type: "submit", class: "poisk-xs") do %>
-			<i class="glyphicon glyphicon-search"></i> 
-			<%end%>
-  		</div>
+		<div class='row search-row-xs'>
+			<div class="col-xs-5 search-bar1-xs">  
+		   		<%= s.text_field :ville_d, class:'homexs', placeholder: 'Откуда?', id:'villesdxssearch'%></br>
+		   	</div>
+		   	<div class='col-xs-5  search-bar2-xs'>
+				<%= s.text_field :ville_a, class:'homexs', placeholder: 'Куда?', id:'villesaxssearch'%>
+			</div>
+			<div class='col-xs-2 text-center search-bar3-xs'>
+				<%= button_tag(type: "submit", class: "poisk-xs") do %>
+					<i class="glyphicon glyphicon-search"></i> 
+				<%end%>
+	  		</div>
+	  	</div>
 	<% end %>
-</div>
 
 <%if @search.search_annonces.count == 0 %>
 	<div class='text-center'>
@@ -107,7 +107,7 @@
 				</div>
 				<%if annonce.villeinter2?%>
 				<div class='row marshrutxs'>
-					<div class='col-md-10 text-center mapxs'>
+					<div class='col-md-10 text-left mapxs'>
 						<div class='pinlineblock gorodxs'>
 							<div class='entourp'>
 							<p class='pinline'><%= annonce.ville_depart.truncate_words(1, omission: ' ') %></p>
