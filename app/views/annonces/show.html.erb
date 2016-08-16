@@ -70,9 +70,9 @@
 					<div class='col-md-4 text-left'>
 						<h3 class='pinlineblock'>
 							<% if @annonce.accept_colis == true%> 
-								Посилки </br><%= @annonce.prix_kg_colis%>€ /кг 
+								Посылки </br><%= @annonce.prix_kg_colis%>€ /кг 
 							<%else%>
-								Посилки не принемает
+								Посылки не принемает
 							<%end%>
 						</h3>
 					</div>
@@ -82,9 +82,9 @@
 					<div class='col-md-6 text-left'>
 						<h3 class='pinlineblock'>
 							<% if @annonce.accept_colis_valeur == true%>
-								Перевозит важные бумаги
+								Перевозит ценные посылки
 							<%else%>
-								Не перевозит важные бумаги
+								Не перевозит ценные посылки
 							<%end%>
 						</h3>
 					</div>
@@ -113,7 +113,7 @@
 					</div>
 					<div class='col-md-4 text-left'>
 						<%if @annonce.chay == true%>
-							<h3 class='pinlineblock'>Кофе безплатно</h3>
+							<h3 class='pinlineblock'>Кофе/Чай</h3>
 						<%else%>
 							<h3 class='pinlineblock'>Не указано</h3>
 						<%end%>
@@ -145,15 +145,15 @@
 					</div>
 					<div class='col-md-6 text-left'>
 						<% if @annonce.arrets_chaque == 1%>
-							<h3 class='pinlineblock'>Маршрутка будет останавливается каждый час</h3>
+							<h3 class='pinlineblock'>Маршрутка будет останавливаться каждый час</h3>
 						<%elsif @annonce.arrets_chaque == 2%>
-							<h3 class='pinlineblock'>Маршрутка будет останавливается каждые <%= @annonce.arrets_chaque %> часа</h3>
+							<h3 class='pinlineblock'>Маршрутка будет останавливаться каждый <%= @annonce.arrets_chaque %> часа</h3>
 						<%elsif @annonce.arrets_chaque == 3%>
-							<h3 class='pinlineblock'>Маршрутка будет останавливается каждые <%= @annonce.arrets_chaque %> часа</h3>
+							<h3 class='pinlineblock'>Маршрутка будет останавливаться каждый <%= @annonce.arrets_chaque %> часа</h3>
 						<%elsif @annonce.arrets_chaque == 4%>
-							<h3 class='pinlineblock'>Маршрутка будет останавливается каждые <%= @annonce.arrets_chaque %> часа</h3>
+							<h3 class='pinlineblock'>Маршрутка будет останавливаться каждый <%= @annonce.arrets_chaque %> часа</h3>
 						<%else%>
-							<h3 class='pinlineblock'>Маршрутка будет останавливается каждые <%= @annonce.arrets_chaque %> часов</h3>
+							<h3 class='pinlineblock'>Маршрутка будет останавливаться каждый <%= @annonce.arrets_chaque %> часов</h3>
 						<%end%>
 					</div>
 				</div>
@@ -224,7 +224,7 @@
 								<div class='col-md-10'>
 						 			<%= hidden_field_tag :user_id, @annonce.user_id %>
 									<%= hidden_field_tag :subject, current_user.prenom + 'прислал вам сообщение'  %>
-									<%= text_area_tag :body, nil, class: 'messagebox-md', id:'messagevoditelyu', placeholder: 'Задайте все свои вопросы и нажмите на "Отправить"'%>
+									<%= text_area_tag :body, nil, class: 'messagebox-md', id:'messagevoditelyu', placeholder: 'Задайте все свои вопросы и нажмите на "Отправить".'%>
 								</div>	
 								<div class='col-md-2 text-left btn-envoyer-md'>
 									<%= button_tag(type:"submit", class: 'podrobneeotpravit-md') do%>
@@ -235,7 +235,7 @@
 						</div>
 					<%else%>
 						<div class='row neobxodimo-zaregistrirovatsya'>
-							<h5>Чтобы написать водителю сообшение через mymarshrut, необходимо <%= link_to 'зарегистрироватся', new_user_registration_path %>.</h5></br>
+							<h5>Чтобы написать водителю сообшение через mymarshrut, необходимо <%= link_to 'зарегистрироваться', new_user_registration_path %>.</h5></br>
 						</div>
 					<%end%>
 				</div>
