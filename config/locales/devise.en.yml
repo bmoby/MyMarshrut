@@ -1,6 +1,10 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
 en:
+  activerecord:
+    errors:
+      messages:
+        confirmations: "Ваш электронный адрес был успешно подтвержден."
   devise:
     confirmations:
       confirmed: "Ваш электронный адрес был успешно подтвержден."

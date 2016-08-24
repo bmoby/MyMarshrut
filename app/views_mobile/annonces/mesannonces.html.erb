@@ -2,7 +2,15 @@
 <%@mesannonces.each do |annonce|%>	
 	<div class='annoncexs text-center'>
 		<div class="row datedirectionbackground">
-			<div class='col-xs-7 text-left datedirectionxs'>
+			<div class='row text-left obnovitxs'>
+				<div class='col-xs-6 text-center'>
+					<p class='pinline'><i class="fa fa-pencil" aria-hidden="true"></i> <%= link_to 'Обновить', edit_annonce_path(annonce), class:'tabulation' %></p>
+				</div>
+				<div class='col-xs-6 text-center'>
+					<p class='pinline'><i class="fa fa-trash" aria-hidden="true"></i> <%= link_to 'Удалить ', annonce, :method => :delete, confirm: "Вы уверены что хотите удалить объявление?"%></p>
+				</div>
+			</div>	
+			<div class='row text-center datedirectionxs'>
 				<p> <%= annonce.ville_depart.truncate_words(1, omission: ' ') %>
 				<% if annonce.villeinter1?%>
 					<% unless annonce.villeinter2?%>
@@ -14,9 +22,6 @@
 				<%= annonce.ville_arrive.truncate_words(1, omission: ' ')%>
 				</p>
 			</div>
-			<div class='col-xs-5 text-right obnovitxs'>
-				<p class='pinline'><i class="fa fa-pencil" aria-hidden="true"></i> <%= link_to 'Обновить', edit_annonce_path(annonce), class:'tabulation' %></p>
-			</div>	
 		</div>
 		<div class='row text-center photo'>
 			<%= content_tag(:div, content_tag(:p, "ВОДИТЕЛЬ УЕХАЛ"), class: "expiredxs") if annonce.date_depart < Date.today %>
