@@ -37,7 +37,7 @@ class AnnoncesController < ApplicationController
 
     respond_to do |format|
       if @annonce.save
-        format.html { redirect_to @annonce, :flash => {:notice => "объявление создано" }}
+        format.html { redirect_to root_path :flash => {:notice => "объявление создано" }}
         format.json { render :show, status: :created, location: @annonce }
       else
         format.html { render :new }

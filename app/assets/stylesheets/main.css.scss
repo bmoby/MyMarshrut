@@ -1,5 +1,8 @@
 // DESIGN BODY LAYOUT --------->
 
+
+
+
 .count_mob_2partxs{
 	border-top: dashed 3px #4d5051;
 	border-bottom: dashed 3px #4d5051;
@@ -105,9 +108,10 @@
 .vajnoexs{
 	padding-left: 5px;
 	padding-right: 5px;
-	background-color: #F0DDBF;
+	background-color: white;
 
 }
+
 
 .vajnoexs h4{
 	color:#bca37e;
@@ -301,7 +305,6 @@
 	margin: 0;
 	padding: 15px;
 	height: 70vh;
-	background-color: #F0DDBF;
 }
 
 .fotopardefaultxs img{
@@ -337,7 +340,7 @@
 .containercustom2{
 	background-color: #78A38F;
 	width: 100%;
-	padding-bottom: 5%;
+	padding-bottom: 10px;
 }
 
 .cartexs2{
@@ -432,7 +435,7 @@
 	padding:0;
 	margin: 0;
 	font-size: 15px;
-	color:#c23a3a;
+	color:#6d6b6b;
 
 }
 
@@ -440,7 +443,7 @@
 	padding:0;
 	margin: 0;
 	font-size: 20px;
-	color:#c23a3a;
+	color:gray;
 }
 
 .voditeletmashinasm .fa{
@@ -485,7 +488,7 @@
 	margin-top:5px;
 	padding: 0;
 	font-size: 15px;
-	color:#b2966c;
+	color:#706f6f;
 	font-family: "Play", sans-serif;
 }
 
@@ -493,8 +496,8 @@
 	margin-top:5px;
 	padding: 0;
 	font-size: 17px;
-	color:#b2966c;
-	font-family: "Play", sans-serif;
+	color:gray;
+
 }
 
 .voditeletmashinasm h3{
@@ -824,7 +827,7 @@ body.searches{
 }
 
 body{
-	background-color: #f9f8f2;
+	background-color: #ffffff;
 	font-family: 'Comfort', sans-serif;
 	padding-bottom: 0px;
 
@@ -1634,10 +1637,26 @@ input, textarea{
 	text-align:center;
 }
 
-									
 
-									
+.dateDepartShowMd h1 {
+	font-size: 19px;
+	color:gray;
+	font-family: 'Russo One', sans-serif;
+}	
 
+.prixDepartShowMd h1{
+	
+	font-size: 19px;
+	color:#cb676f;
+	font-family: 'Russo One', sans-serif;
+
+}
+									
+.villesDepartShowMd h1 {
+	font-size: 19px;
+	color:#8faa9e;
+	font-family: 'Russo One', sans-serif;
+}
 										
 
 .nazvanie{
@@ -1708,14 +1727,23 @@ input, textarea{
 	width: 100%;
 	padding: 10px 20px 20px 20px;
 	height:70px;
-	background-color:#d1c0a7;
+	background-color:#f4f2ef;
 	border:none;
 	border-radius: 0;
 }
 
 .messagebox-md::-webkit-input-placeholder{
-	color: #f9eddb;
+	color: gray;
 }
+
+::-webkit-datetime-edit { padding: 1em; }
+::-webkit-datetime-edit-fields-wrapper { background: silver; }
+::-webkit-datetime-edit-text { color: red; padding: 0 0.3em; }
+::-webkit-datetime-edit-month-field { color: blue; }
+::-webkit-datetime-edit-day-field { color: green; }
+::-webkit-datetime-edit-year-field { color: purple; }
+::-webkit-inner-spin-button { display: none; }
+::-webkit-calendar-picker-indicator { background: orange; }
 
 .messageboxxs{
 	resize: none;

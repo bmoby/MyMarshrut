@@ -253,19 +253,19 @@
 
 
 input::-webkit-input-placeholder {
-	color:#D3D5C0;	
+	color:gray;	
 }
  
 input:-moz-placeholder { /* Firefox 18- */
-	color:#D3D5C0; 
+	color:gray; 
 }
  
 input::-moz-placeholder {  /* Firefox 19+ */
-    color:#D3D5C0;  
+    color:gray;  
 }
  
 input:-ms-input-placeholder {  
-	color:#D3D5C0;
+	color:gray;
 }
 
 .iconedeuser{

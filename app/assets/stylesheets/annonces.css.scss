@@ -518,7 +518,7 @@ select {
   border-radius: 0px;
   -moz-border-radius:0px;
   -webkit-border-radius:0px;
-  color:#d3d5c0;
+  color:gray;
   text-align:center;
   margin-bottom:10px;
   height:30px;
@@ -592,9 +592,8 @@ select:focus {
 }
 
 .wifi-chay p{
-	color:#d3d5c0;
+	color:gray;
 }
-
 
 .car-col{
 	padding:0;
@@ -757,19 +756,19 @@ select:focus {
 
 
 ::-webkit-input-placeholder {
-   color:#d3d5c0;
+   color:gray;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color:#d3d5c0;  
+   color:gray;  
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color:#d3d5c0;  
+   color:gray;  
 }
 
 :-ms-input-placeholder {  
-   color:#d3d5c0; 
+   color:gray; 
 }
 
 

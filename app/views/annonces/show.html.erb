@@ -45,24 +45,20 @@
 			</div>
 		</div>
 		<div class='col-md-6 vajnoeoba'>
-			<div class='row vajnoe'>
-				<div class='ribbon'>
-					<div class='ribbon-stitches-top'></div>
-					<div class='row ribbon-content'><h1>
-						<div class='row'>
-						<div class='col-md-3 text-left'>
-							<%= @annonce.date_depart.strftime("%d/%m/%Y")%>
-						</div>
-						<div class='col-md-6 text-center'>
-							<%= @annonce.ville_depart.truncate_words(1, omission: ' ') %> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ') %>
-						</div>
-						<div class='col-md-3 text-right'>
-							<%= @annonce.prix_passager%>€
-						</div>
+			
+				<div class='row'>
+					<div class='col-md-3 text-left dateDepartShowMd'>
+						<h1><%= @annonce.date_depart.strftime("%d/%m/%Y")%></h1>
 					</div>
-					</h1></div>
-					<div class='row ribbon-stitches-bottom'></div>
-				</div></br></br>
+					<div class='col-md-6 text-center villesDepartShowMd'>
+						<h1><%= @annonce.ville_depart.truncate_words(1, omission: ' ') %> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ') %></h1>
+					</div>
+					<div class='col-md-3 text-right prixDepartShowMd'>
+						<h1><%= @annonce.prix_passager%>€</h1>
+					</div>
+				</div>
+				<div class='row ribbon-stitches-bottom'></div>
+			<div class='row vajnoe'>
 				<div class='row voditeletmashina separation-ribbon text-left'>
 					<div class='col-md-1 text-left'>
 						<i class="fa fa-cube" aria-hidden="true"></i>
@@ -244,9 +240,10 @@
 		</div>
 	</div>
 </div>
+<%if @annonce.villeinter2?%>
 <div class='text-center containercustom2'>
-	<div class='row'>
-		<div class='col-md-6 text-left'>
+	<div class='row text-center'>
+		
 			<%if @annonce.villeinter2?%>
 				<div class='row podrobnemarshrut text-center'>
 					<div class='pinlineblock gorodpodrobnee'>
@@ -366,47 +363,9 @@
 					</div>
 				</div>
 			<%end%>
-		</div>
-		<div class='col-md-6 text-left'>
-			<div class='col-md-2'>
-				<div class='avatarpodrobneesm'>
-					<%if @annonce.user.avatars.first.present?%>
-						<%= image_tag @annonce.user.avatars.first.image.thumb('90x90#').url, class:'profile-picture'%>
-					<%else%>
-						<%= image_tag("no-profile.gif", class:'profile-picture')%>
-					<%end%>
-				</div>
-			</div>
-			<div class='col-md-10'>
-				<div class='paragraphone'>
-					<%if @annonce.description? %>
-						<h5><%= @annonce.description%></h5>
-					<%else%>
-						<h5>Едет <%= @annonce.user.prenom%> на <%=@annonce.marque_vehicule%>, по маршруту <%= @annonce.ville_depart.truncate_words(1, omission: ' ')%> - <%= @annonce.ville_arrive.truncate_words(1, omission: ' ')%> <%= @annonce.date_depart%> числа. 
-							<%if @annonce.poid_max_passager?%>
-								Дозволенный вес багажа 20 килограммов.
-							<%end%> 
-							<%if @annonce.accept_colis?%>
-								Также перевозит посылки <%= @annonce.prix_kg_colis%>€ за килограмм 
-								<%if @annonce.accept_colis_valeur?%>
-									и другие ценные посылки
-								<%end%>
-							<%end%>. 
-							<%if @annonce.chay? || @annonce.wifi?%>Дополнительные бесплатные услуги: 
-								<%if @annonce.wifi?%>
-									интернет-вифи,
-								<%end%> 
-								<%if @annonce.chay?%>
-									чай/кофе
-								<%end%>.
-							<%end%>
-						</h5>
-					<%end%>
-				</div>
-			</div>
-		</div>
 	</div>
 </div>
+<%end%>
 <%= render 'shared/footer' %>
 
 
